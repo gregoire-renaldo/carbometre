@@ -14,7 +14,9 @@ class FoodsController < ApplicationController
   def create
     @food = Food.new(food_params)
     @food.user = current_user
-    @food.ble = @food.ble * 10
+    unless @food.ble == nil
+       @food.ble * 10
+    end
     @food.save
     redirect_to food_path(@food)
   end

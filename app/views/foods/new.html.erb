@@ -1,12 +1,22 @@
 <h1>Foods#new</h1>
 <p>Find me in app/views/foods/new.html.erb</p>
-
-<%= form_for(@food) do |f| %>
-  <%= f.label :ble %>
-  <%= f.number_field :ble, step: :any %>
-  <%= f.label :carotte %>
-  <%= f.number_field :carotte, step: :any %>
-  <%= f.label :boeuf %>
-  <%= f.number_field :boeuf, step: :any %>
-  <%= f.submit %>
-<% end %>
+<h1>create a new bilan</h1>
+<div>
+  <%= form_for(@food) do |f| %>
+  <div id="div1">
+    <p>Click Me</p>
+      <%= f.label :ble %>
+      <%= f.number_field :ble, step: :any %>
+    </div>
+    <div id="div2">
+      <%= f.label :carotte %>
+      <%= f.number_field :carotte, step: :any %>
+    </div>
+    <div id="div3">
+      <%= f.label :boeuf %>
+      <%= f.number_field :boeuf, step: :any %>
+    </div>
+    <%= f.submit %>
+  <% end %>
+</div>
+<%= javascript_pack_tag 'hide_fields' %>

@@ -1,8 +1,15 @@
-<h1>Foods#show</h1>
-<p>Find me in app/views/foods/show.html.erb</p>
-<p>blé <%= @food.ble %></p>
-<p>carotte <%= @food.carotte %></p>
-<p>boeuf <%= @food.boeuf %></p>
-<%score_calculated_in_view = (@food.ble + @food.carotte + @food.boeuf).round(2) %>
-<p>total score calculated in view <%= score_calculated_in_view %></p>
-<p>total score mehod model food<%= @food.total_score %></p>
+<!-- <h1>Foods#show</h1>
+<p>Find me in app/views/foods/show.html.erb</p> -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <h1><%= current_user.email %></h1>
+      <h2>Food</h2>
+      <p>total score mehod model food<%= @food.total_score %></p>
+      <p>blé <%= @food.ble %></p>
+      <p>carotte <%= @food.carotte %></p>
+      <p>boeuf <%= @food.boeuf %></p>
+      <p>total score mehod model food<%= @food.total_score %></p>
+    </div>
+  </div>
+</div>
