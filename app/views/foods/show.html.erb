@@ -1,0 +1,8 @@
+<h1>Foods#show</h1>
+<p>Find me in app/views/foods/show.html.erb</p>
+<p>blé <%= @food.ble %></p>
+<p>carotte <%= @food.carotte %></p>
+<p>boeuf <%= @food.boeuf %></p>
+<%score_calculated_in_view = (@food.ble + @food.carotte + @food.boeuf).round(2) %>
+<p>total score calculated in view <%= score_calculated_in_view %></p>
+<p>total score mehod model food<%= @food.total_score %></p>

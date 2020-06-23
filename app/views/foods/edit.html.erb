@@ -1,0 +1,11 @@
+<h1>Foods#edit</h1>
+<p>Find me in app/views/foods/edit.html.erb</p>
+<%= form_for(@food) do |f| %>
+  <%= f.label :ble %>
+  <%= f.number_field :ble, step: :any %>
+  <%= f.label :carotte %>
+  <%= f.number_field :carotte, step: :any %>
+  <%= f.label :boeuf %>
+  <%= f.number_field :boeuf, step: :any %>
+  <%= f.submit %>
+<% end %>
