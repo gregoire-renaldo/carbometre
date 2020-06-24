@@ -2,9 +2,9 @@
 <p>Find me in app/views/foods/new.html.erb</p>
 <h1>create a new bilan</h1>
 <div>
+  <p id="hideShowBle">Click Me to show or hide blé </p>
   <%= form_for(@food) do |f| %>
   <div id="div1">
-    <p>Click Me</p>
       <%= f.label :ble %>
       <%= f.number_field :ble, step: :any %>
     </div>
