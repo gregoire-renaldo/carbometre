@@ -1,4 +1,4 @@
-class Food < ApplicationRecord
+class Footprint < ApplicationRecord
   belongs_to :user
   before_save :default_values
 

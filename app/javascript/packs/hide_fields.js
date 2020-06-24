@@ -7,6 +7,7 @@ button.addEventListener("click", (event) => {
   } else {
     element.style.display = "none";
   }
-  // innerhtml text show or + with id
-  // addevent listener to new button
 });
+
+
+// transform button + to - when show hide: toggle class ? innerhtml ?

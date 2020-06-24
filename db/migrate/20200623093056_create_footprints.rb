@@ -1,6 +1,6 @@
-class CreateFoods < ActiveRecord::Migration[6.0]
+class CreateFootprints < ActiveRecord::Migration[6.0]
   def change
-    create_table :foods do |t|
+    create_table :footprints do |t|
       t.float :ble
       t.float :carotte
       t.float :boeuf
