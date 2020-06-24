@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_24_144932) do
+ActiveRecord::Schema.define(version: 2020_06_24_152342) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,39 @@ ActiveRecord::Schema.define(version: 2020_06_24_144932) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
+    t.float "riz"
+    t.float "patate"
+    t.float "saladesaison"
+    t.float "saladess"
+    t.float "tomatesfr"
+    t.float "tomatesfrss"
+    t.float "veau"
+    t.float "laitvache"
+    t.float "poulet"
+    t.float "oeufs"
+    t.float "electricite"
+    t.float "gazkwh"
+    t.float "gazm"
+    t.float "fioul"
+    t.float "granulebois"
+    t.float "buchebois"
+    t.float "eau"
+    t.float "aspirateur"
+    t.float "congelateur"
+    t.float "refrigerateur250l"
+    t.float "fourelectrique"
+    t.float "lavelinge"
+    t.float "microonde"
+    t.float "smartphone"
+    t.float "ordinateur"
+    t.float "tgv"
+    t.float "terelectrique"
+    t.float "terthermique"
+    t.float "intercite"
+    t.float "metro"
+    t.float "bus"
+    t.float "avion"
+    t.float "avionregional"
     t.index ["user_id"], name: "index_footprints_on_user_id"
   end
 
