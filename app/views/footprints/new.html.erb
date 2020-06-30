@@ -28,78 +28,104 @@
         </div>
       </div>
       <%= form_for(@footprint) do |f| %>
+    </div>
+  <!-- all fields with class alim, to select with document query selector to hide, in JS hide_fileds -->
+    <div class="alim">
+      <div>
+        <%= f.label :ble %>
+        <%= f.number_field :ble, step: :any %>
+      </div>
+      <div>
+        <%= f.label :carotte %>
+        <%= f.number_field :carotte, step: :any %>
+      </div>
+      <div>
+        <%= f.label :riz %>
+        <%= f.number_field :riz, step: :any %>
+      </div>
+      <div>
+        <%= f.label :patate %>
+        <%= f.number_field :patate, step: :any %>
+      </div>
+      <div>
+        <%= f.label :saladesaison %>
+        <%= f.number_field :saladesaison, step: :any %>
+      </div>
+      <div>
+        <%= f.label :saladess %>
+        <%= f.number_field :saladess, step: :any %>
+      </div>
+      <div>
+        <%= f.label :tomatesfr %>
+        <%= f.number_field :tomatesfr, step: :any %>
+      </div>
+      <div>
+        <%= f.label :tomatesfrss %>
+        <%= f.number_field :tomatesfrss, step: :any %>
+      </div>
+      <div>
+        <%= f.label :veau %>
+        <%= f.number_field :veau, step: :any %>
+      </div>
+      <div>
+        <%= f.label :laitvache %>
+        <%= f.number_field :laitvache, step: :any %>
+      </div>
+      <div>
+        <%= f.label :poulet %>
+        <%= f.number_field :poulet, step: :any %>
+      </div>
+      <div>
+        <%= f.label :oeufs %>
+        <%= f.number_field :oeufs, step: :any %>
+      </div>
+    </div>
+    <!-- end of alim -->
+<!-- begining of energie -->
+    <div class="row mt-2">
+      <div class="total-mobile">
+        <p>Energie</p>
+        <div>
+          rectangle blanc total energie
+        </div>
+        <div>
+          <p id="hideShowEnergie">Click Me to show or hide Energie </p>
+        </div>
+      </div>
+    </div>
+    <!-- fields for energie -->
+    <div class=energie>
+      <div>
+        <%= f.label :electricite %>
+        <%= f.number_field :electricite, step: :any %>
+      </div>
+      <div>
+        <%= f.label :gazkwh %>
+        <%= f.number_field :gazkwh, step: :any %>
+      </div>
+      <div>
+        <%= f.label :gazm %>
+        <%= f.number_field :gazm, step: :any %>
+      </div>
+      <div>
+        <%= f.label :fioul %>
+        <%= f.number_field :fioul, step: :any %>
+      </div>
+      <div>
+        <%= f.label :granulebois %>
+        <%= f.number_field :granulebois, step: :any %>
+      </div>
+      <div>
+        <%= f.label :buchebois %>
+        <%= f.number_field :buchebois, step: :any %>
+      </div>
+      <div>
+        <%= f.label :eau %>
+        <%= f.number_field :eau, step: :any %>
+      </div>
+    </div>
+    <!-- fin de liste energie -->
 
-    </div>
-  <!-- all field with id, to select with document query selector to hide, in JS hide_fileds -->
-    <div id="div1">
-      <%= f.label :ble %>
-      <%= f.number_field :ble, step: :any %>
-    </div>
-    <div id="div2">
-      <%= f.label :carotte %>
-      <%= f.number_field :carotte, step: :any %>
-    </div>
-    <div id="div3">
-      <%= f.label :riz %>
-      <%= f.number_field :riz, step: :any %>
-    <div id="div3">
-      <%= f.label :patate %>
-      <%= f.number_field :patate, step: :any %>
-    <div id="div3">
-      <%= f.label :saladesaison %>
-      <%= f.number_field :saladesaison, step: :any %>
-    <div id="div3">
-      <%= f.label :saladess %>
-      <%= f.number_field :saladess, step: :any %>
-    <div id="div3">
-      <%= f.label :tomatesfr %>
-      <%= f.number_field :tomatesfr, step: :any %>
-    <div id="div3">
-      <%= f.label :tomatesfrss %>
-      <%= f.number_field :tomatesfrss, step: :any %>
-    <div id="div3">
-      <%= f.label :veau %>
-      <%= f.number_field :veau, step: :any %>
-    <div id="div3">
-      <%= f.label :laitvache %>
-      <%= f.number_field :laitvache, step: :any %>
-    </div>
-    <div id="div3">
-      <%= f.label :poulet %>
-      <%= f.number_field :poulet, step: :any %>
-    </div>
-    <div id="div3">
-      <%= f.label :oeufs %>
-      <%= f.number_field :oeufs, step: :any %>
-    </div>
-    <div id="div3">
-      <%= f.label :electricite %>
-      <%= f.number_field :electricite, step: :any %>
-    </div>
-    <div id="div3">
-      <%= f.label :gazkwh %>
-      <%= f.number_field :gazkwh, step: :any %>
-    </div>
-    <div id="div3">
-      <%= f.label :gazm %>
-      <%= f.number_field :gazm, step: :any %>
-    </div>
-    <div id="div3">
-      <%= f.label :fioul %>
-      <%= f.number_field :fioul, step: :any %>
-    </div>
-    <div id="div3">
-      <%= f.label :granulebois %>
-      <%= f.number_field :granulebois, step: :any %>
-    </div>
-    <div id="div3">
-      <%= f.label :buchebois %>
-      <%= f.number_field :buchebois, step: :any %>
-    </div>
-    <div id="div3">
-      <%= f.label :eau %>
-      <%= f.number_field :eau, step: :any %>
-    </div>
     <div id="div3">
       <%= f.label :aspirateur %>
       <%= f.number_field :aspirateur, step: :any %>
