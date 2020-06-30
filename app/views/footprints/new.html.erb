@@ -1,10 +1,12 @@
 <h1>Footprints#new</h1>
 <p>Find me in app/views/footprints/new.html.erb</p>
 <h1>create a new bilan</h1>
+<!-- main div containing all cards and fields -->
 <div class="container">
+  <!-- first block -->
     <div class="row">
       <div class="total-mobile">
-        <p></p>
+        <p>total align left</p>
         <div>
           total
         </div>
@@ -13,9 +15,23 @@
         </div>
       </div>
     </div>
-  <p id="hideShowBle">Click Me to show or hide blé </p>
-  <%= form_for(@footprint) do |f| %>
-  <div id="div1">
+    <!-- end of first block -->
+    <!-- block pour total alimentaire -->
+    <div class="row mt-2">
+      <div class="total-mobile">
+        <p>Alimentaire</p>
+        <div>
+          rectangle blanc total alimentaire
+        </div>
+        <div>
+          <p id="hideShowBle">Click Me to show or hide blé </p>
+        </div>
+      </div>
+      <%= form_for(@footprint) do |f| %>
+
+    </div>
+  <!-- all field with id, to select with document query selector to hide, in JS hide_fileds -->
+    <div id="div1">
       <%= f.label :ble %>
       <%= f.number_field :ble, step: :any %>
     </div>
