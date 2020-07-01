@@ -15,10 +15,10 @@ const buttonEnergie = document.getElementById("hideShowEnergie")
 const arrayEnergie = Array.from(document.getElementsByClassName("energie"));
 buttonEnergie.addEventListener("click", (event) => {
   arrayEnergie.forEach(function (element) {
-    if (element.style.display === "none") {
-      element.style.display = "block";
-    } else {
+    if (element.style.display === "block") {
       element.style.display = "none";
+    } else {
+      element.style.display = "block";
     }
   });
 });
