@@ -2,10 +2,10 @@ const buttonBle = document.getElementById("hideShowBle")
 const arrayAlim = Array.from(document.getElementsByClassName("alim"));
 buttonBle.addEventListener("click", (event) => {
   arrayAlim.forEach(function (element) {
-    if (element.style.display === "none") {
-      element.style.display = "block";
-    } else {
+    if (element.style.display === "block") {
       element.style.display = "none";
+    } else {
+      element.style.display = "block";
     }
   });
 });

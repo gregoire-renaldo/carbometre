@@ -1,6 +1,6 @@
 .total-mobile {
   background-color: #618669;
-
+  width: 90%;
   height: 50px;
   display: flex;
   justify-content: space-around;
@@ -16,7 +16,7 @@
   background-color: #96C58E;
   border-radius: 5px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 #footprint_electricite {
@@ -30,8 +30,13 @@
   z-index: 1;
   border: #96C58E;
   text-align: justify;
+  border-radius: 5px;
 }
 
 .charge p {
   margin: 0px;
+}
+
+.alim {
+  display: none;
 }
