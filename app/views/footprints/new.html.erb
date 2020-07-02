@@ -99,7 +99,7 @@
         <div class="row align-items-center item mt-1">
           <div class=" col-xs-4 field">
             <%= f.label :Electricité %>
-            <%= f.number_field :electricite, step: :any %>
+            <%= f.number_field :electricite, step: :any, id: 'userElectricite' %>
           </div>
           <div class="col-xs-2 unit">
             <p>Unit</p>
@@ -108,7 +108,7 @@
             <p>14.12</p>
           </div>
           <div class="col-xs-4 white-rectangle">
-            <p>score</p>
+            <p id="scoreelec"></p>
           </div>
         </div>
       </div>
@@ -208,3 +208,4 @@
   <% end %>
 </div>
 <%= javascript_pack_tag 'hide_fields' %>
+<%= javascript_pack_tag 'calculations' %>
