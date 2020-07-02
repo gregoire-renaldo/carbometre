@@ -26,7 +26,9 @@
   justify-content: space-around;
 }
 
-
+input[type="number"] {
+  width: 70px;
+}
 
 .white-rectangle {
   background-color: white;
@@ -58,6 +60,4 @@ margin-top :8px;
   display:none;
 }
 
-#userElectricite {
-  width: 70px;
-}
+
