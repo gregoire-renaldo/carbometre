@@ -1,13 +1,32 @@
-const button = document.getElementById("hideShowBle")
-const element = document.getElementById("div1");
-
-button.addEventListener("click", (event) => {
-  if (element.style.display === "none") {
-    element.style.display = "block";
-  } else {
-    element.style.display = "none";
-  }
+const buttonBle = document.getElementById("hideShowBle")
+const arrayAlim = Array.from(document.getElementsByClassName("alim"));
+buttonBle.addEventListener("click", (event) => {
+  arrayAlim.forEach(function (element) {
+    if (element.style.display === "block") {
+      element.style.display = "none";
+    } else {
+      element.style.display = "block";
+    }
+  });
 });
+
+
+const buttonEnergie = document.getElementById("hideShowEnergie")
+const arrayEnergie = Array.from(document.getElementsByClassName("energie"));
+buttonEnergie.addEventListener("click", (event) => {
+  arrayEnergie.forEach(function (element) {
+    if (element.style.display === "block") {
+      element.style.display = "none";
+    } else {
+      element.style.display = "block";
+    }
+  });
+});
+
+
+
+
+
 
 
 // transform button + to - when show hide: toggle class ? innerhtml ?

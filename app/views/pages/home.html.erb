@@ -1,3 +1,8 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
-<%= link_to "Create personal bilan", new_footprint_path %>
+<ul>
+  <li><%= link_to "Nouveau prévisionnel familial", new_footprint_path %></li>
+  <li><%= link_to "Nouveau prévisionnel métier",  pages_professional_bilan_path %></li>
+  <li><%= link_to "Mes previsionnels",  footprints_path %></li>
+</ul>
+
