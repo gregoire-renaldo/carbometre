@@ -51,7 +51,7 @@ class FootprintsController < ApplicationController
   private
 
   def footprint_params
-    params.require(:footprint).permit(:ble, :carotte, :boeuf)
+    params.require(:footprint).permit(:ble, :carotte, :boeuf, :riz, :saladesaison, :saladess, :tomatesfr, :tomatesfrss, :veau, :laitvache, :poulet, :oeufs, :electricite, :gazkwh, :gazm, :fioul, :granulebois, :buchebois, :eau, :aspirateur, :congelateur, :refrigerateur250l, :fourelectrique, :lavelinge, :microonde, :smartphone, :ordinateur, :tgv, :terelectrique, :terthermique, :intercite, :metro, :bus, :avion, :avionregional)
   end
 
   def calculations
