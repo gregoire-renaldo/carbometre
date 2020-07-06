@@ -50,109 +50,109 @@ class FootprintsController < ApplicationController
        @footprint.ble * 0.439
     end
     unless @footprint.carotte == nil
-       @footprint.carotte * 10
+       @footprint.carotte * 0.0706
     end
     unless @footprint.boeuf == nil
-       @footprint.boeuf * 10
+       @footprint.boeuf * 15
     end
     unless @footprint.riz == nil
-       @footprint.riz * 10
+       @footprint.riz * 3.59
     end
     unless @footprint.patate == nil
-       @footprint.patate * 10
+       @footprint.patate * 0.0861
     end
     unless @footprint.saladesaison == nil
-       @footprint.saladesaison * 10
+       @footprint.saladesaison * 0.326
     end
     unless @footprint.saladess == nil
-       @footprint.saladess * 10
+       @footprint.saladess * 11.05
     end
     unless @footprint.tomatesfr == nil
-       @footprint.tomatesfr * 10
+       @footprint.tomatesfr * 0.177
     end
     unless @footprint.tomatesfrss == nil
-       @footprint.tomatesfrss * 10
+       @footprint.tomatesfrss * 2.23
     end
     unless @footprint.veau == nil
-       @footprint.veau * 10
+       @footprint.veau * 6.5
     end
     unless @footprint.laitvache == nil
-       @footprint.laitvache * 10
+       @footprint.laitvache * 0.9
     end
     unless @footprint.poulet == nil
-       @footprint.poulet * 10
+       @footprint.poulet * 2.14
     end
     unless @footprint.oeufs == nil
-       @footprint.oeufs * 10
+       @footprint.oeufs * 1.72
     end
     unless @footprint.electricite == nil
-       @footprint.electricite * 10
+       @footprint.electricite * 0.0571
     end
     unless @footprint.gazkwh == nil
-       @footprint.gazkwh * 10
+       @footprint.gazkwh * 0.205
     end
     unless @footprint.gazm == nil
-       @footprint.gazm * 10
+       @footprint.gazm * 2.2
     end
     unless @footprint.fioul == nil
-       @footprint.fioul * 10
+       @footprint.fioul * 3.25
     end
     unless @footprint.granulebois == nil
-       @footprint.granulebois * 10
+       @footprint.granulebois * 0.111
     end
     unless @footprint.buchebois == nil
-       @footprint.buchebois * 10
+       @footprint.buchebois * 0.114
     end
     unless @footprint.eau == nil
-       @footprint.eau * 10
+       @footprint.eau * 0.132
     end
     unless @footprint.aspirateur == nil
-       @footprint.aspirateur * 10
+       @footprint.aspirateur * 52
     end
     unless @footprint.congelateur == nil
-       @footprint.congelateur * 10
+       @footprint.congelateur * 415
     end
     unless @footprint.refrigerateur250l == nil
-       @footprint.refrigerateur250l * 10
+       @footprint.refrigerateur250l * 300
     end
     unless @footprint.fourelectrique == nil
-       @footprint.fourelectrique * 10
+       @footprint.fourelectrique * 217
     end
     unless @footprint.lavelinge == nil
-       @footprint.lavelinge * 10
+       @footprint.lavelinge * 305
     end
     unless @footprint.microonde == nil
-       @footprint.microonde * 10
+       @footprint.microonde * 100
     end
     unless @footprint.smartphone == nil
-       @footprint.smartphone * 10
+       @footprint.smartphone * 15
     end
     unless @footprint.ordinateur == nil
-       @footprint.ordinateur * 10
+       @footprint.ordinateur * 150
     end
     unless @footprint.tgv == nil
-       @footprint.tgv * 10
+       @footprint.tgv * 0.00369
     end
     unless @footprint.terelectrique == nil
-       @footprint.terelectrique * 10
+       @footprint.terelectrique * 0.00891
     end
     unless @footprint.terthermique == nil
-       @footprint.terthermique * 10
+       @footprint.terthermique * 0.0798
     end
     unless @footprint.intercite == nil
-       @footprint.intercite * 10
+       @footprint.intercite * 0.0056
     end
     unless @footprint.metro == nil
-       @footprint.metro * 10
+       @footprint.metro * 0.0057
     end
     unless @footprint.bus == nil
-       @footprint.bus * 10
+       @footprint.bus * 0.09216
     end
     unless @footprint.avion == nil
-       @footprint.avion * 10
+       @footprint.avion * 0.258
     end
     unless @footprint.avionregional == nil
-       @footprint.avionregional * 10
+       @footprint.avionregional * 0.453
     end
   end
 
