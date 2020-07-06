@@ -5,7 +5,16 @@ class FootprintsController < ApplicationController
 
   def show
     @footprint = Footprint.find(params[:id])
+    respond_to do |format|
+    format.html
+    format.pdf do
+      render pdf:"Your_filename bilan",
+      template:"footprints/show.html.erb",
+      layout:"pdf.html"
+      end
+    end
   end
+
 
   def new
     @footprint = Footprint.new
