@@ -88,7 +88,7 @@
         <div class="row align-items-center item mt-1">
           <div class=" col-xs-4 field">
             <%= f.label :"Patates FR" %>
-            <%= f.number_field :riz, id: 'userPommeDeTerre' %>
+            <%= f.number_field :patate, id: 'userPommeDeTerre' %>
             <!-- change the id for input field and do js -->
           </div>
           <div class="col-xs-2 unit">
@@ -102,26 +102,82 @@
             <!-- change the id of score and do js -->
           </div>
         </div>
-
+<!-- field salade de saison -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :"Salade saison" %>
+            <%= f.number_field :saladesaison, id: 'userSaladeSaison' %>
+            <!-- change the id for input field and do js -->
+          </div>
+          <div class="col-xs-2 unit">
+            <p>kg</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>0.326</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreSaladeSaison"></p>
+            <!-- change the id of score and do js -->
+          </div>
+        </div>
+<!-- salades hor saison -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :"Salade sous serre" %>
+            <%= f.number_field :saladess, id: 'userSaladeSs' %>
+            <!-- change the id for input field and do js -->
+          </div>
+          <div class="col-xs-2 unit">
+            <p>kg</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>11.05</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreSaladeSs"></p>
+            <!-- change the id of score and do js -->
+          </div>
+        </div>
+<!-- tomates fr -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :"Tomates FR" %>
+            <%= f.number_field :tomatesfr, id: 'userTomates' %>
+            <!-- change the id for input field and do js -->
+          </div>
+          <div class="col-xs-2 unit">
+            <p>kg</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>0.177</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreTomates"></p>
+            <!-- change the id of score and do js -->
+          </div>
+        </div>
+        <!-- tomates fr sous serre -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :"Tomates FR " %>
+            <%= f.number_field :tomatesfrss, id: 'userTomatesFRss' %>
+            <!-- change the id for input field and do js -->
+          </div>
+          <div class="col-xs-2 unit">
+            <p>kg</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>2.23</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreTomatesFRss"></p>
+            <!-- change the id of score and do js -->
+          </div>
+        </div>
 
       </div>
       <!-- fin du container category -->
-      <div>
-        <%= f.label :saladesaison %>
-        <%= f.number_field :saladesaison, step: :any %>
-      </div>
-      <div>
-        <%= f.label :saladess %>
-        <%= f.number_field :saladess, step: :any %>
-      </div>
-      <div>
-        <%= f.label :tomatesfr %>
-        <%= f.number_field :tomatesfr, step: :any %>
-      </div>
-      <div>
-        <%= f.label :tomatesfrss %>
-        <%= f.number_field :tomatesfrss, step: :any %>
-      </div>
+
       <div>
         <%= f.label :veau %>
         <%= f.number_field :veau, step: :any %>

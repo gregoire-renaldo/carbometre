@@ -12,8 +12,11 @@ function totAlim() {
   const numbercarotte = Number(scoreCarotte.textContent);
   const numberriz = Number(scoreRiz.textContent);
   const numberPomedeterre = Number(scorePommedeterre.textContent);
-  // riz patates saladess tomatesfr tomatesfrss Veau Laitvache Poulet Oeufs
-  const sum = numberble + numbercarotte + numberriz + numberPomedeterre
+  const numberSaladesaison = Number(scoreSaladeSaison.textContent);
+  const numberSaladeSs = Number(scoreSaladeSs.textContent);
+  const numberTomates = Number(scoreTomates.textContent);
+  //  saladess tomatesfr tomatesfrss Veau Laitvache Poulet Oeufs
+  const sum = numberble + numbercarotte + numberriz + numberPomedeterre + numberSaladesaison + numberSaladeSs + numberTomates
   totalAlimBox.innerText = sum.toFixed(2)
 }
 
@@ -66,9 +69,53 @@ function multiplyPatate() {
   totAlim()
 }
 
+// field salade saison
+let userSaladeSaison = document.getElementById('userSaladeSaison');
+const saladesaisoncc = 0.326
+const scoreSaladeSaison = document.getElementById('scoreSaladeSaison');
+userSaladeSaison.addEventListener("input", multiplySalade);
+function multiplySalade() {
+  let one = parseFloat(userSaladeSaison.value) || 0;
+  let saladesaison = parseFloat(one * pommedeterrecc).toFixed(2);
+  scoreSaladeSaison.innerHTML = saladesaison;
+  totAlim()
+}
 
+// field salade sous serre
+let userSaladeSs = document.getElementById('userSaladeSs');
+const saladesscc = 11.05
+const scoreSaladeSs = document.getElementById('scoreSaladeSs');
+userSaladeSs.addEventListener("input", multiplySaladeSs);
+function multiplySaladeSs() {
+  let one = parseFloat(userSaladeSs.value) || 0;
+  let saladeSs = parseFloat(one * saladesscc).toFixed(2);
+  scoreSaladeSs.innerHTML = saladeSs;
+  totAlim()
+}
 
+// field tomates fr
+let userTomates = document.getElementById('userTomates');
+const tomatesscc = 0.177
+const scoreTomates = document.getElementById('scoreTomates');
+userTomates.addEventListener("input", multiplyTomates);
+function multiplyTomates() {
+  let one = parseFloat(userTomates.value) || 0;
+  let tomates = parseFloat(one * tomatesscc).toFixed(2);
+  scoreTomates.innerHTML = tomates;
+  totAlim()
+}
 
+// field tomates frss
+let userTomatesFRss = document.getElementById('userTomatesFRss');
+const tomatesFRsscc = 2.23
+const scoreTomatesFRss = document.getElementById('scoreTomatesFRss');
+userTomatesFRss.addEventListener("input", multiplyTomatesFRss);
+function multiplyTomatesFRss() {
+  let one = parseFloat(userTomatesFRss.value) || 0;
+  let tomates = parseFloat(one * tomatesFRsscc).toFixed(2);
+  scoreTomatesFRss.innerHTML = tomates;
+  totAlim()
+}
 
 
 // energie
