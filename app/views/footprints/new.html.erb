@@ -214,18 +214,29 @@
           </div>
         </div>
 
+        <!-- field lait vache -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :"lait de vache " %>
+            <%= f.number_field :laitvache, id: 'userLaitvache' %>
+            <!-- change the id for input field and do js -->
+          </div>
+          <div class="col-xs-2 unit">
+            <p>kg</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>0.9</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreLaitvache"></p>
+            <!-- change the id of score and do js -->
+          </div>
+        </div>
 
       </div>
       <!-- fin du container category alim-->
 
-      <div>
-        <%= f.label :veau %>
-        <%= f.number_field :veau, step: :any %>
-      </div>
-      <div>
-        <%= f.label :laitvache %>
-        <%= f.number_field :laitvache, step: :any %>
-      </div>
+
       <div>
         <%= f.label :poulet %>
         <%= f.number_field :poulet, step: :any %>

@@ -18,8 +18,10 @@ function totAlim() {
   const numberTomatesFrss = Number(scoreTomatesFRss.textContent);
   const numberBoeuf = Number(scoreBoeuf.textContent);
   const numberVeau = Number(scoreVeau.textContent);
+  const numberLaitvache = Number(scoreLaitvache.textContent);
   //  saladess tomatesfr tomatesfrss Veau Laitvache Poulet Oeufs
   const sum = numberble + numbercarotte + numberriz + numberPomedeterre + numberSaladesaison + numberSaladeSs + numberTomates + numberTomatesFrss + numberVeau + numberBoeuf
+    + numberLaitvache;
   totalAlimBox.innerText = sum.toFixed(2)
 }
 
@@ -141,6 +143,18 @@ function multiplyVeau() {
   let one = parseFloat(userVeau.value) || 0;
   let veau = parseFloat(one * veaucc).toFixed(2);
   scoreVeau.innerHTML = veau;
+  totAlim()
+}
+
+// field laitvache
+let userLaitvache = document.getElementById('userLaitvache');
+const laitvachecc = 0.9
+const scoreLaitvache = document.getElementById('scoreLaitvache');
+userLaitvache.addEventListener("input", multiplyLaitvache);
+function multiplyLaitvache() {
+  let one = parseFloat(userLaitvache.value) || 0;
+  let laitvache = parseFloat(one * laitvachecc).toFixed(2);
+  scoreLaitvache.innerHTML = laitvache;
   totAlim()
 }
 
