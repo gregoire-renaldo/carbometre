@@ -31,6 +31,22 @@ buttonEnergie.addEventListener("click", (event) => {
   });
 });
 
+// bouton + - energie
+const buttonLogement = document.getElementById("hideShowLogement")
+const arrayLogement = Array.from(document.getElementsByClassName("logement"));
+const logementplusmoins = document.getElementById("logementplusmoins")
+buttonLogement.addEventListener("click", (event) => {
+  arrayLogement.forEach(function (element) {
+    if (element.style.display === "block") {
+      element.style.display = "none";
+      logementplusmoins.innerHTML = "+";
+    } else {
+      element.style.display = "block";
+      logementplusmoins.innerHTML = "-";
+    }
+  });
+});
+
 
 
 
