@@ -336,23 +336,23 @@
 
     <div class="row mt-2">
       <div class="total-mobile align-items-center">
-        <p>Logement</p>
+        <p>Autres</p>
         <div class="white-rectangle">
           <p>rectangle</p>
         </div>
-        <div id="hideShowLogement">
-          <p id="logementplusmoins"> + </p>
+        <div id="hideShowAutre">
+          <p id="autreplusmoins"> + </p>
         </div>
       </div>
     </div>
-    <!-- fields for energie -->
-    <div class="logement">
+    <!-- fields for autre -->
+    <div class="autre">
       <!-- change class for the good category and do css and js -->
       <div class="container">
         <div class="row align-items-center item mt-1">
           <div class=" col-xs-4 field">
-            <%= f.label :Electricité %>
-            <%= f.number_field :electricite, step: :any, id: 'userElectricite' %>
+            <%= f.label :aspirateur %>
+            <%= f.number_field :aspirateur, id: 'userElectricite' %>
             <!-- change the id for input field and do js -->
           </div>
           <div class="col-xs-2 unit">
@@ -367,11 +367,7 @@
           </div>
         </div>
       </div>
-      <!-- end of field energie -->
-      <div id="div3">
-        <%= f.label :aspirateur %>
-        <%= f.number_field :aspirateur, step: :any %>
-      </div>
+      <!-- end of field aspirateur -->
       <div id="div3">
         <%= f.label :congelateur %>
         <%= f.number_field :congelateur, step: :any %>
@@ -392,57 +388,86 @@
         <%= f.label :microonde %>
         <%= f.number_field :microonde, step: :any %>
       </div>
-
+      <div id="div3">
+        <%= f.label :smartphone %>
+        <%= f.number_field :smartphone, step: :any %>
+      </div>
+      <div id="div3">
+        <%= f.label :ordinateur %>
+        <%= f.number_field :ordinateur, step: :any %>
+      </div>
+<!-- fin de liste logement -->
     </div>
 
+    <div class="row mt-2">
+      <div class="total-mobile align-items-center">
+        <p>Transports</p>
+        <div class="white-rectangle">
+          <p>rectangle</p>
+        </div>
+        <div id="hideShowTransport">
+          <p id="transportplusmoins"> + </p>
+        </div>
+      </div>
+    </div>
+    <!-- fields for autre -->
+    <div class="transport">
+      <!-- change class for the good category and do css and js -->
+      <div class="container">
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :tgv %>
+            <%= f.number_field :tgv, id: 'userElectricite' %>
+            <!-- change the id for input field and do js -->
+          </div>
+          <div class="col-xs-2 unit">
+            <p>Unit</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>14.12</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreelec"></p>
+            <!-- change the id of score and do js -->
+          </div>
+        </div>
 
+        <div id="div3">
+          <%= f.label :tgv %>
+          <%= f.number_field :tgv, step: :any %>
+        </div>
+        <div id="div3">
+          <%= f.label :terelectrique %>
+          <%= f.number_field :terelectrique, step: :any %>
+        </div>
+        <div id="div3">
+          <%= f.label :terthermique %>
+          <%= f.number_field :terthermique, step: :any %>
+        </div>
+        <div id="div3">
+          <%= f.label :intercite %>
+          <%= f.number_field :intercite, step: :any %>
+        </div>
+        <div id="div3">
+          <%= f.label :metro %>
+          <%= f.number_field :metro, step: :any %>
+        </div>
+        <div id="div3">
+          <%= f.label :bus %>
+          <%= f.number_field :bus, step: :any %>
+        </div>
+        <div id="div3">
+          <%= f.label :avion %>
+          <%= f.number_field :avion, step: :any %>
+        </div>
+        <div id="div3">
+          <%= f.label :avionregional %>
+          <%= f.number_field :avionregional, step: :any %>
+        </div>
+      </div>
+      <!-- fin de liste transport -->
+    </div>
 
-
-
-
-
-
-
-    <div id="div3">
-      <%= f.label :smartphone %>
-      <%= f.number_field :smartphone, step: :any %>
-    </div>
-    <div id="div3">
-      <%= f.label :ordinateur %>
-      <%= f.number_field :ordinateur, step: :any %>
-    </div>
-    <div id="div3">
-      <%= f.label :tgv %>
-      <%= f.number_field :tgv, step: :any %>
-    </div>
-    <div id="div3">
-      <%= f.label :terelectrique %>
-      <%= f.number_field :terelectrique, step: :any %>
-    </div>
-    <div id="div3">
-      <%= f.label :terthermique %>
-      <%= f.number_field :terthermique, step: :any %>
-    </div>
-    <div id="div3">
-      <%= f.label :intercite %>
-      <%= f.number_field :intercite, step: :any %>
-    </div>
-    <div id="div3">
-      <%= f.label :metro %>
-      <%= f.number_field :metro, step: :any %>
-    </div>
-    <div id="div3">
-      <%= f.label :bus %>
-      <%= f.number_field :bus, step: :any %>
-    </div>
-    <div id="div3">
-      <%= f.label :avion %>
-      <%= f.number_field :avion, step: :any %>
-    </div>
-    <div id="div3">
-      <%= f.label :avionregional %>
-      <%= f.number_field :avionregional, step: :any %>
-    </div>
     <%= f.submit %>
   </div>
   <% end %>

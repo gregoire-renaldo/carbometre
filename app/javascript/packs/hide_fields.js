@@ -31,18 +31,34 @@ buttonEnergie.addEventListener("click", (event) => {
   });
 });
 
-// bouton + - energie
-const buttonLogement = document.getElementById("hideShowLogement")
-const arrayLogement = Array.from(document.getElementsByClassName("logement"));
-const logementplusmoins = document.getElementById("logementplusmoins")
-buttonLogement.addEventListener("click", (event) => {
-  arrayLogement.forEach(function (element) {
+// bouton + - autre
+const buttonAutre = document.getElementById("hideShowAutre")
+const arrayAutre = Array.from(document.getElementsByClassName("autre"));
+const autreplusmoins = document.getElementById("autreplusmoins")
+buttonAutre.addEventListener("click", (event) => {
+  arrayAutre.forEach(function (element) {
     if (element.style.display === "block") {
       element.style.display = "none";
-      logementplusmoins.innerHTML = "+";
+      autreplusmoins.innerHTML = "+";
     } else {
       element.style.display = "block";
-      logementplusmoins.innerHTML = "-";
+      autreplusmoins.innerHTML = "-";
+    }
+  });
+});
+
+// bouton + - transport
+const buttonTransport = document.getElementById("hideShowTransport")
+const arrayTransport= Array.from(document.getElementsByClassName("transport"));
+const transportplusmoins = document.getElementById("transportplusmoins")
+buttonTransport.addEventListener("click", (event) => {
+  arrayTransport.forEach(function (element) {
+    if (element.style.display === "block") {
+      element.style.display = "none";
+      transportplusmoins.innerHTML = "+";
+    } else {
+      element.style.display = "block";
+      transportplusmoins.innerHTML = "-";
     }
   });
 });
