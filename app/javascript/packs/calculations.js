@@ -1,3 +1,7 @@
+// ajouter bouton hide en bas de chaque categ
+// sticky total categ
+
+
 // total
 
 //total by fields
@@ -19,9 +23,10 @@ function totAlim() {
   const numberBoeuf = Number(scoreBoeuf.textContent);
   const numberVeau = Number(scoreVeau.textContent);
   const numberLaitvache = Number(scoreLaitvache.textContent);
-  //  saladess tomatesfr tomatesfrss Veau Laitvache Poulet Oeufs
+  const numberPoulet = Number(scorePoulet.textContent);
+  const numberOeufs = Number(scoreOeufs.textContent);
   const sum = numberble + numbercarotte + numberriz + numberPomedeterre + numberSaladesaison + numberSaladeSs + numberTomates + numberTomatesFrss + numberVeau + numberBoeuf
-    + numberLaitvache;
+    + numberLaitvache + numberPoulet + numberOeufs;
   totalAlimBox.innerText = sum.toFixed(2)
 }
 
@@ -157,6 +162,34 @@ function multiplyLaitvache() {
   scoreLaitvache.innerHTML = laitvache;
   totAlim()
 }
+
+// field poulet
+let userPoulet = document.getElementById('userPoulet');
+const pouletcc = 2.14
+const scorePoulet = document.getElementById('scorePoulet');
+userPoulet.addEventListener("input", multiplyPoulet);
+function multiplyPoulet() {
+  let one = parseFloat(userPoulet.value) || 0;
+  let poulet = parseFloat(one * pouletcc).toFixed(2);
+  scorePoulet.innerHTML = poulet;
+  totAlim()
+}
+
+// field oeufs
+let userOeufs = document.getElementById('userOeufs');
+const oeufscc = 1.72
+const scoreOeufs = document.getElementById('scoreOeufs');
+userOeufs.addEventListener("input", multiplyOeufs);
+function multiplyOeufs() {
+  let one = parseFloat(userOeufs.value) || 0;
+  let oeufs = parseFloat(one * oeufscc).toFixed(2);
+  scoreOeufs.innerHTML = oeufs;
+  totAlim()
+}
+
+
+
+
 
 // energie
 // field electricité
