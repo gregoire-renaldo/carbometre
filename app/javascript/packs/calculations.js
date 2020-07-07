@@ -15,8 +15,11 @@ function totAlim() {
   const numberSaladesaison = Number(scoreSaladeSaison.textContent);
   const numberSaladeSs = Number(scoreSaladeSs.textContent);
   const numberTomates = Number(scoreTomates.textContent);
+  const numberTomatesFrss = Number(scoreTomatesFRss.textContent);
+  const numberBoeuf = Number(scoreBoeuf.textContent);
+  const numberVeau = Number(scoreVeau.textContent);
   //  saladess tomatesfr tomatesfrss Veau Laitvache Poulet Oeufs
-  const sum = numberble + numbercarotte + numberriz + numberPomedeterre + numberSaladesaison + numberSaladeSs + numberTomates
+  const sum = numberble + numbercarotte + numberriz + numberPomedeterre + numberSaladesaison + numberSaladeSs + numberTomates + numberTomatesFrss + numberVeau + numberBoeuf
   totalAlimBox.innerText = sum.toFixed(2)
 }
 
@@ -112,11 +115,34 @@ const scoreTomatesFRss = document.getElementById('scoreTomatesFRss');
 userTomatesFRss.addEventListener("input", multiplyTomatesFRss);
 function multiplyTomatesFRss() {
   let one = parseFloat(userTomatesFRss.value) || 0;
-  let tomates = parseFloat(one * tomatesFRsscc).toFixed(2);
-  scoreTomatesFRss.innerHTML = tomates;
+  let tomatesss = parseFloat(one * tomatesFRsscc).toFixed(2);
+  scoreTomatesFRss.innerHTML = tomatesss;
   totAlim()
 }
 
+// field boeuf
+let userBoeuf = document.getElementById('userBoeuf');
+const boeufcc = 15
+const scoreBoeuf = document.getElementById('scoreBoeuf');
+userBoeuf.addEventListener("input", multiplyBoeuf);
+function multiplyBoeuf() {
+  let one = parseFloat(userBoeuf.value) || 0;
+  let boeuf = parseFloat(one * boeufcc).toFixed(2);
+  scoreBoeuf.innerHTML = boeuf;
+  totAlim()
+}
+
+// field veau
+let userVeau = document.getElementById('userVeau');
+const veaucc = 6.5
+const scoreVeau = document.getElementById('scoreVeau');
+userVeau.addEventListener("input", multiplyVeau);
+function multiplyVeau() {
+  let one = parseFloat(userVeau.value) || 0;
+  let veau = parseFloat(one * veaucc).toFixed(2);
+  scoreVeau.innerHTML = veau;
+  totAlim()
+}
 
 // energie
 // field electricité
