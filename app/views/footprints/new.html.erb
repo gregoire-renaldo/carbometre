@@ -1,11 +1,9 @@
-<h1>Footprints#new</h1>
-<p>Find me in app/views/footprints/new.html.erb</p>
-<h1>create a new bilan</h1>
+<h2>Faire un nouveau bilan</h2>
 <!-- main div containing all cards and fields -->
 <div class="container">
   <!-- first block -->
-    <div class="row">
-      <div class="total-mobile align-items-center">
+    <div class="row sticky-top">
+      <div class="total-mobile align-items-center ">
         <p>Total</p>
         <div class="white-rectangle">
           total
@@ -21,7 +19,7 @@
       <div class="total-mobile align-items-center">
         <p>Alimentaire</p>
         <div class="white-rectangle">
-          <p>rectangle</p>
+          <p id="totalAlimBox"></p>
         </div>
         <div id="hideShowBle">
           <p id="alimplusmoins"> + </p>
@@ -45,7 +43,7 @@
           <div class="col-xs-2 charge">
             <p>0.439</p>
           </div>
-          <div class="col-xs-4 white-rectangle">
+          <div class="col-xs-4 white-rectangle id="resultBle">
             <p id="scoreble"></p>
             <!-- change the id of score and do js -->
           </div>
