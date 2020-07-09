@@ -96,8 +96,11 @@ function totTransport() {
   const numberTgv = Number(scoreTgv.textContent);
   const numberTerelec = Number(scoreTerelec.textContent);
   const numberTertherm = Number(scoreTertherm.textContent);
-  const sumTransport = numberTgv + numberTerelec + numberTertherm
-  // ter elec ter therm intercités métro bus avion avion régional
+  const numberIntercite = Number(scoreIntercite.textContent);
+  const numberMetro = Number(scoreMetro.textContent);
+  const numberBus = Number(scoreBus.textContent);
+  const sumTransport = numberTgv + numberTerelec + numberTertherm + numberIntercite + numberMetro + numberBus
+  //  bus avion avion régional
   totalTransport.innerText = sumTransport.toFixed(2);
   total();
 }
@@ -139,6 +142,41 @@ function multiplyTertherm() {
   totTransport();
 }
 
+// field intercite
+const userIntercite = document.getElementById('userIntercite');
+const intercitecc = 0.0056
+const scoreIntercite = document.getElementById('scoreIntercite');
+userIntercite.addEventListener("input", multiplyIntercite);
+function multiplyIntercite() {
+  let one = parseFloat(userIntercite.value) || 0;
+  let ccintercite = parseFloat(one * intercitecc).toFixed(3);
+  scoreIntercite.innerHTML = ccintercite;
+  totTransport();
+}
+
+// field metro / RER
+const userMetro = document.getElementById('userMetro');
+const metrocc = 0.0057
+const scoreMetro = document.getElementById('scoreMetro');
+userMetro.addEventListener("input", multiplyMetro);
+function multiplyMetro() {
+  let one = parseFloat(userMetro.value) || 0;
+  let ccmetro = parseFloat(one * metrocc).toFixed(3);
+  scoreMetro.innerHTML = ccmetro;
+  totTransport();
+}
+
+// field bus
+const userBus = document.getElementById('userBus');
+const buscc = 0.0057
+const scoreBus = document.getElementById('scoreBus');
+userBus.addEventListener("input", multiplyBus);
+function multiplyBus() {
+  let one = parseFloat(userBus.value) || 0;
+  let ccbus = parseFloat(one * buscc).toFixed(3);
+  scoreBus.innerHTML = ccbus;
+  totTransport();
+}
 
 // total category alimentaire
 const totalAlimBox = document.getElementById('totalAlimBox')

@@ -124,7 +124,7 @@
     </div>
 
     <!-- autres transports -->
-    <div class="row mt-2">
+    <div class="row mt-2 sticky-top">
       <div class="total-mobile align-items-center">
         <p>Transports</p>
         <div class="white-rectangle">
@@ -196,15 +196,66 @@
           </div>
         </div>
         <!-- fin de ter thermique -->
+        <!-- field intercite -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :intercite%>
+            <%= f.number_field :intercite, id: 'userIntercite' %>
+            <!-- change the id for input field and do js -->
+          </div>
+          <div class="col-xs-2 unit">
+            <p>km</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>0.0056</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreIntercite"></p>
+            <!-- change the id of score and do js -->
+          </div>
+        </div>
+        <!-- fin de intercite -->
+        <!-- field metro -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :"metro / RER"%>
+            <%= f.number_field :metro, id: 'userMetro' %>
+            <!-- change the id for input field and do js -->
+          </div>
+          <div class="col-xs-2 unit">
+            <p>km</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>0.0057</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreMetro"></p>
+            <!-- change the id of score and do js -->
+          </div>
+        </div>
+        <!-- fin de metro -->
+        <!-- field bus -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :"bus"%>
+            <%= f.number_field :bus, id: 'userBus' %>
+            <!-- change the id for input field and do js -->
+          </div>
+          <div class="col-xs-2 unit">
+            <p>km</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>0.0057</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreBus"></p>
+            <!-- change the id of score and do js -->
+          </div>
+        </div>
+        <!-- fin de bus -->
 
-        <div id="div3">
-          <%= f.label :intercite %>
-          <%= f.number_field :intercite, step: :any %>
-        </div>
-        <div id="div3">
-          <%= f.label :metro %>
-          <%= f.number_field :metro, step: :any %>
-        </div>
+
+
         <div id="div3">
           <%= f.label :bus %>
           <%= f.number_field :bus, step: :any %>
@@ -421,7 +472,6 @@
             <!-- change the id of score and do js -->
           </div>
         </div>
-
         <!-- field lait vache -->
         <div class="row align-items-center item mt-1">
           <div class=" col-xs-4 field">
@@ -440,7 +490,6 @@
             <!-- change the id of score and do js -->
           </div>
         </div>
-
         <!-- field poulet -->
         <div class="row align-items-center item mt-1">
           <div class=" col-xs-4 field">
@@ -459,8 +508,7 @@
             <!-- change the id of score and do js -->
           </div>
         </div>
-
-<!-- field oeufs -->
+        <!-- field oeufs -->
         <div class="row align-items-center item mt-1">
           <div class=" col-xs-4 field">
             <%= f.label :"oeufs" %>
@@ -483,7 +531,7 @@
     </div>
 
 <!-- begining of energie -->
-    <div class="row mt-2">
+    <div class="row mt-2 sticky-top">
       <div class="total-mobile align-items-center">
         <p>Energie</p>
         <div class="white-rectangle">
