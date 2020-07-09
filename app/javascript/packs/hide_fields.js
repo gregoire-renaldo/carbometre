@@ -1,5 +1,21 @@
+// bouton + -  voiture
+const buttonVoiture = document.getElementById("hideShowVoiture")
+const arrayVoiture = Array.from(document.getElementsByClassName("voiture"));
+const voitureplusmoins = document.getElementById("voitureplusmoins")
+buttonVoiture.addEventListener("click", (event) => {
+  arrayVoiture.forEach(function (element) {
+    if (element.style.display === "block") {
+      element.style.display = "none";
+      alimplusmoins.innerHTML = "+";
+    } else {
+      element.style.display = "block";
+      alimplusmoins.innerHTML = "-";
+    }
+  });
+});
 
-// bouton = - alimentation
+
+// bouton + - alimentation
 const buttonBle = document.getElementById("hideShowBle")
 const arrayAlim = Array.from(document.getElementsByClassName("alim"));
 const alimplusmoins = document.getElementById("alimplusmoins")

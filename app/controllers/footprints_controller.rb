@@ -53,7 +53,7 @@ class FootprintsController < ApplicationController
   private
 
   def footprint_params
-    params.require(:footprint).permit(:ble, :carotte, :boeuf, :riz, :saladesaison, :saladess, :tomatesfr, :tomatesfrss, :veau, :laitvache, :poulet, :oeufs, :electricite, :gazkwh, :gazm, :fioul, :granulebois, :buchebois, :eau, :aspirateur, :congelateur, :refrigerateur250l, :fourelectrique, :lavelinge, :microonde, :smartphone, :ordinateur, :tgv, :terelectrique, :terthermique, :intercite, :metro, :bus, :avion, :avionregional )
+    params.require(:footprint).permit(:ble, :carotte, :boeuf, :riz, :saladesaison, :saladess, :tomatesfr, :tomatesfrss, :veau, :laitvache, :poulet, :oeufs, :electricite, :gazkwh, :gazm, :fioul, :granulebois, :buchebois, :eau, :aspirateur, :congelateur, :refrigerateur250l, :fourelectrique, :lavelinge, :microonde, :smartphone, :ordinateur, :tgv, :terelectrique, :terthermique, :intercite, :metro, :bus, :avion, :avionregional, :essence, :gazole, :gpl, :e85, :electrique )
   end
 
   def calculations
@@ -164,6 +164,21 @@ class FootprintsController < ApplicationController
     end
     unless @footprint.avionregional == nil
        @footprint.avionregional * 0.453
+    end
+    unless @footprint.essence == nil
+       @footprint.essence * 2.8
+    end
+    unless @footprint.gazole == nil
+       @footprint.gazole * 3.16
+    end
+    unless @footprint.gpl == nil
+       @footprint.gpl * 1.86
+    end
+    unless @footprint.e85 == nil
+       @footprint.e85 * 1.68
+    end
+    unless @footprint.electrique == nil
+       @footprint.electrique * 0.0571
     end
   end
 
