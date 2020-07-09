@@ -6,8 +6,9 @@
 const totalBilan = document.getElementById('total');
 function total() {
   const numberVoiture = Number(totalVoiture.textContent);
-  const sumTotal = numberVoiture
-  totalBilan.innertext = sumTotal
+  const numberAlim = Number(totalAlimBox.textContent);
+  const sumTotal = numberVoiture + numberAlim
+  totalBilan.innerHTML = sumTotal
 }
 
 //total by fields
@@ -18,7 +19,8 @@ function totVoiture() {
   const numberEssence = Number(scoreEssence.textContent);
   const numberGazole = Number(scoreGazole.textContent);
   const sumVoiture = numberEssence + numberGazole
-  totalVoiture.innerText = sumVoiture.toFixed(2)
+  totalVoiture.innerText = sumVoiture.toFixed(2);
+  total();
 }
 
 
@@ -65,7 +67,8 @@ function totAlim() {
   const numberOeufs = Number(scoreOeufs.textContent);
   const sum = numberble + numbercarotte + numberriz + numberPomedeterre + numberSaladesaison + numberSaladeSs + numberTomates + numberTomatesFrss + numberVeau + numberBoeuf
     + numberLaitvache + numberPoulet + numberOeufs;
-  totalAlimBox.innerText = sum.toFixed(2)
+  totalAlimBox.innerText = sum.toFixed(2);
+  total();
 }
 
 // field ble
