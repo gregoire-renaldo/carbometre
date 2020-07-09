@@ -7,8 +7,9 @@ const totalBilan = document.getElementById('total');
 function total() {
   const numberVoiture = Number(totalVoiture.textContent);
   const numberTransport = Number(totalTransport.textContent);
+  const numberEnergie = Number(totalEnergie.textContent);
   const numberAlim = Number(totalAlimBox.textContent);
-  const sumTotal = numberVoiture + numberAlim + numberTransport
+  const sumTotal = numberVoiture + numberAlim + numberTransport + numberEnergie
   totalBilan.innerHTML = sumTotal.toFixed(2)
 }
 
@@ -99,7 +100,9 @@ function totTransport() {
   const numberIntercite = Number(scoreIntercite.textContent);
   const numberMetro = Number(scoreMetro.textContent);
   const numberBus = Number(scoreBus.textContent);
-  const sumTransport = numberTgv + numberTerelec + numberTertherm + numberIntercite + numberMetro + numberBus
+  const numberAvion = Number(scoreAvion.textContent);
+  const numberAvionregional = Number(scoreAvionregional.textContent);
+  const sumTransport = numberTgv + numberTerelec + numberTertherm + numberIntercite + numberMetro + numberBus + numberAvion + numberAvionregional
   //  bus avion avion régional
   totalTransport.innerText = sumTransport.toFixed(2);
   total();
@@ -168,7 +171,7 @@ function multiplyMetro() {
 
 // field bus
 const userBus = document.getElementById('userBus');
-const buscc = 0.0057
+const buscc = 0.0921666666666667
 const scoreBus = document.getElementById('scoreBus');
 userBus.addEventListener("input", multiplyBus);
 function multiplyBus() {
@@ -177,6 +180,94 @@ function multiplyBus() {
   scoreBus.innerHTML = ccbus;
   totTransport();
 }
+
+// field avion
+const userAvion = document.getElementById('userAvion');
+const avioncc = 0.258
+const scoreAvion = document.getElementById('scoreAvion');
+userAvion.addEventListener("input", multiplyAvion);
+function multiplyAvion() {
+  let one = parseFloat(userAvion.value) || 0;
+  let ccavion = parseFloat(one * avioncc).toFixed(3);
+  scoreAvion.innerHTML = ccavion;
+  totTransport();
+}
+
+// field avion regional
+const userAvionregional = document.getElementById('userAvionregional');
+const avionregionalcc = 0.453
+const scoreAvionregional = document.getElementById('scoreAvionregional');
+userAvionregional.addEventListener("input", multiplyAvionregional);
+function multiplyAvionregional() {
+  let one = parseFloat(userAvionregional.value) || 0;
+  let ccavionregional = parseFloat(one * avionregionalcc).toFixed(3);
+  scoreAvionregional.innerHTML = ccavionregional;
+  totTransport();
+}
+
+
+// category logement / energie
+const totalEnergie = document.getElementById('totalEnergie')
+function totEnergie() {
+  const numberElectricite = Number(scoreElectricite.textContent);
+  const numberGazkwh = Number(scoreGazkwh.textContent);
+  const numberGazm = Number(scoreGazm.textContent);
+  const numberFioul = Number(scoreFioul.textContent);
+  const sumEnergie = numberElectricite + numberGazkwh + numberGazm + numberFioul
+  totalEnergie.innerText = sumEnergie.toFixed(2);
+  total();
+}
+// field electricité
+let userElectricite = document.getElementById('userElectricite');
+const elecricitecc = 0.0571
+let scoreElectricite = document.getElementById('scoreelec');
+userElectricite.addEventListener("input", multiplyElec);
+function multiplyElec() {
+  let one = parseFloat(userElectricite.value) || 0;
+  let cc = parseFloat(one * elecricitecc).toFixed(2);
+  scoreElectricite.innerHTML = cc;
+  totEnergie()
+}
+// field gazkwh
+let userGaz = document.getElementById('userGaz');
+const gazkwhcc = 0.205
+let scoreGazkwh = document.getElementById('scoreGazkwh');
+userGaz.addEventListener("input", multiplyGazkwh);
+function multiplyGazkwh() {
+  let one = parseFloat(userGaz.value) || 0;
+  let cc = parseFloat(one * gazkwhcc).toFixed(2);
+  scoreGazkwh.innerHTML = cc;
+  totEnergie()
+}
+
+// field gazm
+let userGazm = document.getElementById('userGazm');
+const gazm = 2.2
+let scoreGazm = document.getElementById('scoreGazm');
+userGazm.addEventListener("input", multiplyGazm);
+function multiplyGazm() {
+  let one = parseFloat(userGazm.value) || 0;
+  let cc = parseFloat(one * gazm).toFixed(2);
+  scoreGazm.innerHTML = cc;
+  totEnergie()
+}
+
+// field fioul
+let userFioul = document.getElementById('userFioul');
+const fioul = 3.25
+let scoreFioul = document.getElementById('scoreFioul');
+userFioul.addEventListener("input", multiplyFioul);
+function multiplyFioul() {
+  let one = parseFloat(userFioul.value) || 0;
+  let cc = parseFloat(one * fioul).toFixed(2);
+  scoreFioul.innerHTML = cc;
+  totEnergie()
+}
+
+
+
+
+
 
 // total category alimentaire
 const totalAlimBox = document.getElementById('totalAlimBox')
@@ -359,15 +450,4 @@ function multiplyOeufs() {
 
 
 
-// category energie
-// field electricité
-let userElectricite = document.getElementById('userElectricite');
-const elecricitecc = 0.0571
-let resultElectricite = document.getElementById('scoreelec');
-userElectricite.addEventListener("input", multiplyElec);
-function multiplyElec() {
-  let one = parseFloat(userElectricite.value) || 0;
-  let cc = parseFloat(one * elecricitecc).toFixed(2);
-  resultElectricite.innerHTML =  cc;
-  // totEnergie()
-}
+
