@@ -2,17 +2,35 @@
 
 //total by fields
 
+// total voiture
+// const totalVoiture = document.getElementById('totalVoiture')
+// function totVoiture() {
+//   const numberEssence = Number(scoreEssence.textContent);
+//   const sumVoiture = numberEssence
+//   totalVoiture.innerText = sumVoiture.toFixed(2)
+// }
 
-// alimentaire
-// fonction calcul + apeller fonction pour chaque field
 
+// field essence
+const userEssence = document.getElementById('userEssence');
+const essencecc = 2.8
+const scoreEssence = document.getElementById('scoreEssence');
+userEssence.addEventListener("input", multiplyVoiture);
+function multiplyVoiture() {
+  let one = parseFloat(userEssence.value) || 0;
+  let ccessence = parseFloat(one * essencecc).toFixed(2);
+  scoreEssence.innerHTML = ccessence;
+  // totVoiture()
+}
+
+
+// total alimentaire
 const totalAlimBox = document.getElementById('totalAlimBox')
 function totAlim() {
   const numberble = Number(scoreBle.textContent);
   const numbercarotte = Number(scoreCarotte.textContent);
   const numberriz = Number(scoreRiz.textContent);
   const numberPomedeterre = Number(scorePommedeterre.textContent);
-  // riz patates saladess tomatesfr tomatesfrss Veau Laitvache Poulet Oeufs
   const sum = numberble + numbercarotte + numberriz + numberPomedeterre
   totalAlimBox.innerText = sum.toFixed(2)
 }
