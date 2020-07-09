@@ -213,7 +213,10 @@ function totEnergie() {
   const numberGazkwh = Number(scoreGazkwh.textContent);
   const numberGazm = Number(scoreGazm.textContent);
   const numberFioul = Number(scoreFioul.textContent);
-  const sumEnergie = numberElectricite + numberGazkwh + numberGazm + numberFioul
+  const numberGranulebois = Number(scoreGranulebois.textContent);
+  const numberBuchebois = Number(scoreBuchebois.textContent);
+  const numberEau = Number(scoreEau.textContent);
+  const sumEnergie = numberElectricite + numberGazkwh + numberGazm + numberFioul + numberGranulebois + numberBuchebois + numberEau
   totalEnergie.innerText = sumEnergie.toFixed(2);
   total();
 }
@@ -264,6 +267,42 @@ function multiplyFioul() {
   totEnergie()
 }
 
+// field granule bois
+let userGranulebois = document.getElementById('userGranulebois');
+const granulebois = 0.111
+let scoreGranulebois = document.getElementById('scoreGranulebois');
+userGranulebois.addEventListener("input", multiplyGranulebois);
+function multiplyGranulebois() {
+  let one = parseFloat(userGranulebois.value) || 0;
+  let cc = parseFloat(one * granulebois).toFixed(2);
+  scoreGranulebois.innerHTML = cc;
+  totEnergie()
+}
+
+
+// field buche bois
+let userBuche = document.getElementById('userBuche');
+const buchebois = 0.114
+let scoreBuchebois = document.getElementById('scoreBuchebois');
+userBuche.addEventListener("input", multiplyBuche);
+function multiplyBuche() {
+  let one = parseFloat(userBuche.value) || 0;
+  let cc = parseFloat(one * buchebois).toFixed(2);
+  scoreBuchebois.innerHTML = cc;
+  totEnergie()
+}
+
+// field eau
+let userEau = document.getElementById('userEau');
+const eau = 0.132
+let scoreEau = document.getElementById('scoreEau');
+userEau.addEventListener("input", multiplyEau);
+function multiplyEau() {
+  let one = parseFloat(userEau.value) || 0;
+  let cc = parseFloat(one * eau).toFixed(2);
+  scoreEau.innerHTML = cc;
+  totEnergie()
+}
 
 
 
