@@ -8,7 +8,7 @@ function total() {
   const numberVoiture = Number(totalVoiture.textContent);
   const numberAlim = Number(totalAlimBox.textContent);
   const sumTotal = numberVoiture + numberAlim
-  totalBilan.innerHTML = sumTotal
+  totalBilan.innerHTML = sumTotal.toFixed(2)
 }
 
 //total by fields
@@ -18,7 +18,8 @@ const totalVoiture = document.getElementById('totalVoiture')
 function totVoiture() {
   const numberEssence = Number(scoreEssence.textContent);
   const numberGazole = Number(scoreGazole.textContent);
-  const sumVoiture = numberEssence + numberGazole
+  const numberGpl = Number(scoreGpl.textContent);
+  const sumVoiture = numberEssence + numberGazole + numberGpl
   totalVoiture.innerText = sumVoiture.toFixed(2);
   total();
 }
@@ -45,6 +46,18 @@ function multiplyGazole() {
   let one = parseFloat(userGazole.value) || 0;
   let ccgazole = parseFloat(one * gazolecc).toFixed(2);
   scoreGazole.innerHTML = ccgazole;
+  totVoiture()
+}
+
+// field gpl
+const userGpl = document.getElementById('userGpl');
+const gplcc = 3.16
+const scoreGpl = document.getElementById('scoreGpl');
+userGpl.addEventListener("input", multiplyGpl);
+function multiplyGpl() {
+  let one = parseFloat(userGpl.value) || 0;
+  let ccgpl = parseFloat(one * gplcc).toFixed(2);
+  scoreGpl.innerHTML = ccgpl;
   totVoiture()
 }
 
