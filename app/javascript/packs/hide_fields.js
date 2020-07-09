@@ -31,6 +31,38 @@ buttonEnergie.addEventListener("click", (event) => {
   });
 });
 
+// bouton + - autre
+const buttonAutre = document.getElementById("hideShowAutre")
+const arrayAutre = Array.from(document.getElementsByClassName("autre"));
+const autreplusmoins = document.getElementById("autreplusmoins")
+buttonAutre.addEventListener("click", (event) => {
+  arrayAutre.forEach(function (element) {
+    if (element.style.display === "block") {
+      element.style.display = "none";
+      autreplusmoins.innerHTML = "+";
+    } else {
+      element.style.display = "block";
+      autreplusmoins.innerHTML = "-";
+    }
+  });
+});
+
+// bouton + - transport
+const buttonTransport = document.getElementById("hideShowTransport")
+const arrayTransport= Array.from(document.getElementsByClassName("transport"));
+const transportplusmoins = document.getElementById("transportplusmoins")
+buttonTransport.addEventListener("click", (event) => {
+  arrayTransport.forEach(function (element) {
+    if (element.style.display === "block") {
+      element.style.display = "none";
+      transportplusmoins.innerHTML = "+";
+    } else {
+      element.style.display = "block";
+      transportplusmoins.innerHTML = "-";
+    }
+  });
+});
+
 
 
 

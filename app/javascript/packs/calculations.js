@@ -1,3 +1,7 @@
+// ajouter bouton hide en bas de chaque categ
+// sticky total categ
+
+
 // total
 
 //total by fields
@@ -12,8 +16,17 @@ function totAlim() {
   const numbercarotte = Number(scoreCarotte.textContent);
   const numberriz = Number(scoreRiz.textContent);
   const numberPomedeterre = Number(scorePommedeterre.textContent);
-  // riz patates saladess tomatesfr tomatesfrss Veau Laitvache Poulet Oeufs
-  const sum = numberble + numbercarotte + numberriz + numberPomedeterre
+  const numberSaladesaison = Number(scoreSaladeSaison.textContent);
+  const numberSaladeSs = Number(scoreSaladeSs.textContent);
+  const numberTomates = Number(scoreTomates.textContent);
+  const numberTomatesFrss = Number(scoreTomatesFRss.textContent);
+  const numberBoeuf = Number(scoreBoeuf.textContent);
+  const numberVeau = Number(scoreVeau.textContent);
+  const numberLaitvache = Number(scoreLaitvache.textContent);
+  const numberPoulet = Number(scorePoulet.textContent);
+  const numberOeufs = Number(scoreOeufs.textContent);
+  const sum = numberble + numbercarotte + numberriz + numberPomedeterre + numberSaladesaison + numberSaladeSs + numberTomates + numberTomatesFrss + numberVeau + numberBoeuf
+    + numberLaitvache + numberPoulet + numberOeufs;
   totalAlimBox.innerText = sum.toFixed(2)
 }
 
@@ -66,6 +79,113 @@ function multiplyPatate() {
   totAlim()
 }
 
+// field salade saison
+let userSaladeSaison = document.getElementById('userSaladeSaison');
+const saladesaisoncc = 0.326
+const scoreSaladeSaison = document.getElementById('scoreSaladeSaison');
+userSaladeSaison.addEventListener("input", multiplySalade);
+function multiplySalade() {
+  let one = parseFloat(userSaladeSaison.value) || 0;
+  let saladesaison = parseFloat(one * pommedeterrecc).toFixed(2);
+  scoreSaladeSaison.innerHTML = saladesaison;
+  totAlim()
+}
+
+// field salade sous serre
+let userSaladeSs = document.getElementById('userSaladeSs');
+const saladesscc = 11.05
+const scoreSaladeSs = document.getElementById('scoreSaladeSs');
+userSaladeSs.addEventListener("input", multiplySaladeSs);
+function multiplySaladeSs() {
+  let one = parseFloat(userSaladeSs.value) || 0;
+  let saladeSs = parseFloat(one * saladesscc).toFixed(2);
+  scoreSaladeSs.innerHTML = saladeSs;
+  totAlim()
+}
+
+// field tomates fr
+let userTomates = document.getElementById('userTomates');
+const tomatesscc = 0.177
+const scoreTomates = document.getElementById('scoreTomates');
+userTomates.addEventListener("input", multiplyTomates);
+function multiplyTomates() {
+  let one = parseFloat(userTomates.value) || 0;
+  let tomates = parseFloat(one * tomatesscc).toFixed(2);
+  scoreTomates.innerHTML = tomates;
+  totAlim()
+}
+
+// field tomates frss
+let userTomatesFRss = document.getElementById('userTomatesFRss');
+const tomatesFRsscc = 2.23
+const scoreTomatesFRss = document.getElementById('scoreTomatesFRss');
+userTomatesFRss.addEventListener("input", multiplyTomatesFRss);
+function multiplyTomatesFRss() {
+  let one = parseFloat(userTomatesFRss.value) || 0;
+  let tomatesss = parseFloat(one * tomatesFRsscc).toFixed(2);
+  scoreTomatesFRss.innerHTML = tomatesss;
+  totAlim()
+}
+
+// field boeuf
+let userBoeuf = document.getElementById('userBoeuf');
+const boeufcc = 15
+const scoreBoeuf = document.getElementById('scoreBoeuf');
+userBoeuf.addEventListener("input", multiplyBoeuf);
+function multiplyBoeuf() {
+  let one = parseFloat(userBoeuf.value) || 0;
+  let boeuf = parseFloat(one * boeufcc).toFixed(2);
+  scoreBoeuf.innerHTML = boeuf;
+  totAlim()
+}
+
+// field veau
+let userVeau = document.getElementById('userVeau');
+const veaucc = 6.5
+const scoreVeau = document.getElementById('scoreVeau');
+userVeau.addEventListener("input", multiplyVeau);
+function multiplyVeau() {
+  let one = parseFloat(userVeau.value) || 0;
+  let veau = parseFloat(one * veaucc).toFixed(2);
+  scoreVeau.innerHTML = veau;
+  totAlim()
+}
+
+// field laitvache
+let userLaitvache = document.getElementById('userLaitvache');
+const laitvachecc = 0.9
+const scoreLaitvache = document.getElementById('scoreLaitvache');
+userLaitvache.addEventListener("input", multiplyLaitvache);
+function multiplyLaitvache() {
+  let one = parseFloat(userLaitvache.value) || 0;
+  let laitvache = parseFloat(one * laitvachecc).toFixed(2);
+  scoreLaitvache.innerHTML = laitvache;
+  totAlim()
+}
+
+// field poulet
+let userPoulet = document.getElementById('userPoulet');
+const pouletcc = 2.14
+const scorePoulet = document.getElementById('scorePoulet');
+userPoulet.addEventListener("input", multiplyPoulet);
+function multiplyPoulet() {
+  let one = parseFloat(userPoulet.value) || 0;
+  let poulet = parseFloat(one * pouletcc).toFixed(2);
+  scorePoulet.innerHTML = poulet;
+  totAlim()
+}
+
+// field oeufs
+let userOeufs = document.getElementById('userOeufs');
+const oeufscc = 1.72
+const scoreOeufs = document.getElementById('scoreOeufs');
+userOeufs.addEventListener("input", multiplyOeufs);
+function multiplyOeufs() {
+  let one = parseFloat(userOeufs.value) || 0;
+  let oeufs = parseFloat(one * oeufscc).toFixed(2);
+  scoreOeufs.innerHTML = oeufs;
+  totAlim()
+}
 
 
 
