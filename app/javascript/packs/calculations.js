@@ -2,29 +2,48 @@
 // sticky total categ
 
 
-// total
+// total Bilan
+const totalBilan = document.getElementById('total');
+function total() {
+  const numberVoiture = Number(totalVoiture.textContent);
+  const sumTotal = numberVoiture
+  totalBilan.innertext = sumTotal
+}
 
 //total by fields
 
 // total voiture
-// const totalVoiture = document.getElementById('totalVoiture')
-// function totVoiture() {
-//   const numberEssence = Number(scoreEssence.textContent);
-//   const sumVoiture = numberEssence
-//   totalVoiture.innerText = sumVoiture.toFixed(2)
-// }
+const totalVoiture = document.getElementById('totalVoiture')
+function totVoiture() {
+  const numberEssence = Number(scoreEssence.textContent);
+  const numberGazole = Number(scoreGazole.textContent);
+  const sumVoiture = numberEssence + numberGazole
+  totalVoiture.innerText = sumVoiture.toFixed(2)
+}
 
 
 // field essence
 const userEssence = document.getElementById('userEssence');
 const essencecc = 2.8
 const scoreEssence = document.getElementById('scoreEssence');
-userEssence.addEventListener("input", multiplyVoiture);
-function multiplyVoiture() {
+userEssence.addEventListener("input", multiplyEssence);
+function multiplyEssence() {
   let one = parseFloat(userEssence.value) || 0;
   let ccessence = parseFloat(one * essencecc).toFixed(2);
   scoreEssence.innerHTML = ccessence;
-  // totVoiture()
+  totVoiture();
+}
+
+// field gazole
+const userGazole = document.getElementById('userGazole');
+const gazolecc = 3.16
+const scoreGazole = document.getElementById('scoreGazole');
+userGazole.addEventListener("input", multiplyGazole);
+function multiplyGazole() {
+  let one = parseFloat(userGazole.value) || 0;
+  let ccgazole = parseFloat(one * gazolecc).toFixed(2);
+  scoreGazole.innerHTML = ccgazole;
+  totVoiture()
 }
 
 
