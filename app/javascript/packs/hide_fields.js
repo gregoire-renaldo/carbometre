@@ -6,10 +6,10 @@ buttonVoiture.addEventListener("click", (event) => {
   arrayVoiture.forEach(function (element) {
     if (element.style.display === "block") {
       element.style.display = "none";
-      alimplusmoins.innerHTML = "+";
+      voitureplusmoins.innerHTML = "+";
     } else {
       element.style.display = "block";
-      alimplusmoins.innerHTML = "-";
+      voitureplusmoins.innerHTML = "-";
     }
   });
 });

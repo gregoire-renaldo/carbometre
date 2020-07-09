@@ -6,20 +6,23 @@
 const totalBilan = document.getElementById('total');
 function total() {
   const numberVoiture = Number(totalVoiture.textContent);
+  const numberTransport = Number(totalTransport.textContent);
   const numberAlim = Number(totalAlimBox.textContent);
-  const sumTotal = numberVoiture + numberAlim
+  const sumTotal = numberVoiture + numberAlim + numberTransport
   totalBilan.innerHTML = sumTotal.toFixed(2)
 }
 
-//total by fields
 
-// total voiture
+
+// total category voiture
 const totalVoiture = document.getElementById('totalVoiture')
 function totVoiture() {
   const numberEssence = Number(scoreEssence.textContent);
   const numberGazole = Number(scoreGazole.textContent);
   const numberGpl = Number(scoreGpl.textContent);
-  const sumVoiture = numberEssence + numberGazole + numberGpl
+  const numberE85 = Number(scoreE85.textContent);
+  const numberElectrique = Number(scoreElectrique.textContent);
+  const sumVoiture = numberEssence + numberGazole + numberGpl + numberE85 + numberElectrique
   totalVoiture.innerText = sumVoiture.toFixed(2);
   total();
 }
@@ -51,7 +54,7 @@ function multiplyGazole() {
 
 // field gpl
 const userGpl = document.getElementById('userGpl');
-const gplcc = 3.16
+const gplcc = 1.86
 const scoreGpl = document.getElementById('scoreGpl');
 userGpl.addEventListener("input", multiplyGpl);
 function multiplyGpl() {
@@ -61,8 +64,56 @@ function multiplyGpl() {
   totVoiture()
 }
 
+// field e85
+const userE85 = document.getElementById('userE85');
+const e85cc = 1.68
+const scoreE85 = document.getElementById('scoreE85');
+userE85.addEventListener("input", multiplyE85);
+function multiplyE85() {
+  let one = parseFloat(userE85.value) || 0;
+  let cce85 = parseFloat(one * e85cc).toFixed(2);
+  scoreE85.innerHTML = cce85;
+  totVoiture()
+}
 
-// total alimentaire
+// field electrique
+const userElectrique = document.getElementById('userElectrique');
+const electriquecc = 0.0571
+const scoreElectrique = document.getElementById('scoreElectrique');
+userElectrique.addEventListener("input", multiplyElectrique);
+function multiplyElectrique() {
+  let one = parseFloat(userElectrique.value) || 0;
+  let ccelectrique = parseFloat(one * electriquecc).toFixed(2);
+  scoreElectrique.innerHTML = ccelectrique;
+  totVoiture()
+}
+
+// fin de category voiture
+
+// category transport
+const totalTransport = document.getElementById('totalTransport')
+function totTransport() {
+  const numberTgv = Number(scoreTgv.textContent);
+  const sumTransport = numberTgv
+  totalTransport.innerText = sumTransport.toFixed(2);
+  total();
+}
+
+
+// field tgv
+const userTgv = document.getElementById('userTgv');
+const tgvcc = 0.00369
+const scoreTgv = document.getElementById('scoreTgv');
+userTgv.addEventListener("input", multiplyTgv);
+function multiplyTgv() {
+  let one = parseFloat(userTgv.value) || 0;
+  let cctgv = parseFloat(one * tgvcc).toFixed(3);
+  scoreTgv.innerHTML = cctgv;
+  totTransport();
+}
+
+
+// total category alimentaire
 const totalAlimBox = document.getElementById('totalAlimBox')
 function totAlim() {
   const numberble = Number(scoreBle.textContent);
@@ -243,9 +294,7 @@ function multiplyOeufs() {
 
 
 
-
-
-// energie
+// category energie
 // field electricité
 let userElectricite = document.getElementById('userElectricite');
 const elecricitecc = 0.0571
@@ -255,8 +304,5 @@ function multiplyElec() {
   let one = parseFloat(userElectricite.value) || 0;
   let cc = parseFloat(one * elecricitecc).toFixed(2);
   resultElectricite.innerHTML =  cc;
-  totAlim()
-};
-// Autre valeur
-// Autres moyens de déplacement
-// voitur
+  // totEnergie()
+}
