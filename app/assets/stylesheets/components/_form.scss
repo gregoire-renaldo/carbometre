@@ -27,7 +27,7 @@
 }
 
 input[type="number"] {
-  width: 70px;
+  width: 80px;
 }
 
 .white-rectangle {
@@ -42,7 +42,8 @@ input[type="number"] {
 
 .field{
 margin-top :8px;
-text-align: right;
+margin-bottom: 8px;
+flex: 0 0 100px;
 }
 
 .charge p {
@@ -65,4 +66,10 @@ text-align: right;
   display:none;
 }
 
+.autre {
+  display:none;
+}
 
+.transport {
+  display:none;
+}
