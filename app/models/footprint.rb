@@ -39,9 +39,14 @@ class Footprint < ApplicationRecord
     self.bus = 0 if self.bus.nil?
     self.avion = 0 if self.avion.nil?
     self.avionregional = 0 if self.avionregional.nil?
+    self.essence = 0 if self.essence.nil?
+    self.gazole = 0 if self.gazole.nil?
+    self.gpl = 0 if self.gpl.nil?
+    self.e85 = 0 if self.e85.nil?
+    self.electrique = 0 if self.electrique.nil?
   end
 
   def total_score
-    (self.ble + self.boeuf + self.carotte + self.riz + self.patate + self.saladesaison + self.saladess + self.tomatesfr + self.tomatesfrss + self.veau + self.laitvache + self.poulet + self.oeufs + self.electricite + self.gazkwh + self.gazm + self.fioul + self.granulebois + self.buchebois + self.eau + self.aspirateur + self.congelateur + self.refrigerateur250l + self.fourelectrique + self.lavelinge + self.microonde + self.smartphone + self.ordinateur + self.tgv + self.terelectrique + self.terthermique + self.intercite + self.metro + self.bus + self.avion + self.avionregional).round(2)
+    (self.ble + self.boeuf + self.carotte + self.riz + self.patate + self.saladesaison + self.saladess + self.tomatesfr + self.tomatesfrss + self.veau + self.laitvache + self.poulet + self.oeufs + self.electricite + self.gazkwh + self.gazm + self.fioul + self.granulebois + self.buchebois + self.eau + self.aspirateur + self.congelateur + self.refrigerateur250l + self.fourelectrique + self.lavelinge + self.microonde + self.smartphone + self.ordinateur + self.tgv + self.terelectrique + self.terthermique + self.intercite + self.metro + self.bus + self.avion + self.avionregional + self.essence + self.gazole + self.gpl + self.e85 + self.electrique )
   end
 end
