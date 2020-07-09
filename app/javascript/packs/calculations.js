@@ -94,7 +94,10 @@ function multiplyElectrique() {
 const totalTransport = document.getElementById('totalTransport')
 function totTransport() {
   const numberTgv = Number(scoreTgv.textContent);
-  const sumTransport = numberTgv
+  const numberTerelec = Number(scoreTerelec.textContent);
+  const numberTertherm = Number(scoreTertherm.textContent);
+  const sumTransport = numberTgv + numberTerelec + numberTertherm
+  // ter elec ter therm intercités métro bus avion avion régional
   totalTransport.innerText = sumTransport.toFixed(2);
   total();
 }
@@ -109,6 +112,30 @@ function multiplyTgv() {
   let one = parseFloat(userTgv.value) || 0;
   let cctgv = parseFloat(one * tgvcc).toFixed(3);
   scoreTgv.innerHTML = cctgv;
+  totTransport();
+}
+
+// field ter elec
+const userTerelec = document.getElementById('userTerelec');
+const tereleccc = 0.00891
+const scoreTerelec = document.getElementById('scoreTerelec');
+userTerelec.addEventListener("input", multiplyTerelec);
+function multiplyTerelec() {
+  let one = parseFloat(userTerelec.value) || 0;
+  let ccterelec = parseFloat(one * tereleccc).toFixed(3);
+  scoreTerelec.innerHTML = ccterelec;
+  totTransport();
+}
+
+// field ter thermique
+const userTertherm = document.getElementById('userTertherm');
+const terthermcc = 0.0798
+const scoreTertherm = document.getElementById('scoreTertherm');
+userTertherm.addEventListener("input", multiplyTertherm);
+function multiplyTertherm() {
+  let one = parseFloat(userTertherm.value) || 0;
+  let cctertherm = parseFloat(one * terthermcc).toFixed(3);
+  scoreTertherm.innerHTML = cctertherm;
   totTransport();
 }
 
