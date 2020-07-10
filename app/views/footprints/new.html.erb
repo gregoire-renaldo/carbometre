@@ -705,14 +705,12 @@
       </div>
       <!-- end of alim -->
     </div>
-
-
-
-    <div class="row mt-2">
+<!-- début catégorie autre -->
+    <div class="row mt-2 sticky-top">
       <div class="total-mobile align-items-center">
         <p>Autres</p>
         <div class="white-rectangle">
-          <p>rectangle</p>
+          <p id="totalAutre"></p>
         </div>
         <div id="hideShowAutre">
           <p id="autreplusmoins"> + </p>
@@ -726,42 +724,118 @@
         <div class="row align-items-center item mt-1">
           <div class=" col-xs-4 field">
             <%= f.label :aspirateur %>
-            <%= f.number_field :aspirateur, id: 'userElectricite' %>
+            <%= f.number_field :aspirateur, id: 'userAspirateur' %>
             <!-- change the id for input field and do js -->
           </div>
           <div class="col-xs-2 unit">
-            <p>Unit</p>
+            <p>unité</p>
           </div>
           <div class="col-xs-2 charge">
-            <p>14.12</p>
+            <p>52</p>
           </div>
           <div class="col-xs-4 white-rectangle">
-            <p id="scoreelec"></p>
+            <p id="scoreAspirateur"></p>
             <!-- change the id of score and do js -->
           </div>
         </div>
+        <!-- field congelateur 200l -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :"congélateur 200 l" %>
+            <%= f.number_field :congelateur, id: 'userCongelateur' %>
+            <!-- change the id for input field and do js -->
+          </div>
+          <div class="col-xs-2 unit">
+            <p>unité</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>415</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreCongelateur"></p>
+            <!-- change the id of score and do js -->
+          </div>
+        </div>
+        <!-- field refrigerateur 250l -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :"réfrigérateur 250l " %>
+            <%= f.number_field :refrigerateur250l, id: 'userRefrigerateur' %>
+            <!-- change the id for input field and do js -->
+          </div>
+          <div class="col-xs-2 unit">
+            <p>unité</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>300</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreRefrigerateur"></p>
+            <!-- change the id of score and do js -->
+          </div>
+        </div>
+        <!-- field four electrique -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :"four électrique" %>
+            <%= f.number_field :fourelectrique, id: 'userFourelec' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>unité</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>217</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreFourelec"></p>
+            <!-- change the id of score and do js -->
+          </div>
+        </div>
+        <!-- field lave linge -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :"lave linge" %>
+            <%= f.number_field :lavelinge, id: 'userLavelinge' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>unité</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>305</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreLavelinge"></p>
+            <!-- change the id of score and do js -->
+          </div>
+        </div>
+        <!-- field micro-onde -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :"micro-onde" %>
+            <%= f.number_field :microonde, id: 'userMicroonde' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>unité</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>100</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreMicroonde"></p>
+            <!-- change the id of score and do js -->
+          </div>
+        </div>
+
+
+
+
+
+
+
+
       </div>
       <!-- end of field aspirateur -->
-      <div id="div3">
-        <%= f.label :congelateur %>
-        <%= f.number_field :congelateur, step: :any %>
-      </div>
-      <div id="div3">
-        <%= f.label :refrigerateur250l %>
-        <%= f.number_field :refrigerateur250l, step: :any %>
-      </div>
-      <div id="div3">
-        <%= f.label :fourelectrique %>
-        <%= f.number_field :fourelectrique, step: :any %>
-      </div>
-      <div id="div3">
-        <%= f.label :lavelinge %>
-        <%= f.number_field :lavelinge, step: :any %>
-      </div>
-      <div id="div3">
-        <%= f.label :microonde %>
-        <%= f.number_field :microonde, step: :any %>
-      </div>
+
       <div id="div3">
         <%= f.label :smartphone %>
         <%= f.number_field :smartphone, step: :any %>
@@ -770,12 +844,12 @@
         <%= f.label :ordinateur %>
         <%= f.number_field :ordinateur, step: :any %>
       </div>
-<!-- fin de liste logement -->
+<!-- fin de liste autre -->
     </div>
 
 
     <%= f.submit "Save", confirm: "Are you sure?" %>
-    <% end %>
   </div>
+  <% end %>
 <%= javascript_pack_tag 'hide_fields' %>
 <%= javascript_pack_tag 'calculations' %>

@@ -9,7 +9,8 @@ function total() {
   const numberTransport = Number(totalTransport.textContent);
   const numberEnergie = Number(totalEnergie.textContent);
   const numberAlim = Number(totalAlimBox.textContent);
-  const sumTotal = numberVoiture + numberAlim + numberTransport + numberEnergie
+  const numberAutre = Number(totalAutre.textContent);
+  const sumTotal = numberVoiture + numberAlim + numberTransport + numberEnergie + numberAutre
   totalBilan.innerHTML = sumTotal.toFixed(2)
 }
 
@@ -488,5 +489,84 @@ function multiplyOeufs() {
 }
 
 
-
+// category autre
+const totalAutre = document.getElementById('totalAutre')
+function totAutre() {
+  const numberAspirateur = Number(scoreAspirateur.textContent);
+  const numberCongelateur = Number(scoreCongelateur.textContent);
+  const numberRefrigerateur = Number(scoreRefrigerateur.textContent);
+  const numberFourelec = Number(scoreFourelec.textContent);
+  const numberLavelinge = Number(scoreLavelinge.textContent);
+  const numberMicroonde = Number(scoreMicroonde.textContent);
+  const sum = numberAspirateur + numberCongelateur + numberRefrigerateur + numberFourelec + numberLavelinge
+    + numberMicroonde
+  totalAutre.innerText = sum.toFixed(2);
+  total();
+}
+// field aspi
+let userAspirateur = document.getElementById('userAspirateur');
+const aspirateurcc = 52
+const scoreAspirateur = document.getElementById('scoreAspirateur');
+userAspirateur.addEventListener("input", multiplyAspirateur);
+function multiplyAspirateur() {
+  let one = parseFloat(userAspirateur.value) || 0;
+  let cc = parseFloat(one * aspirateurcc).toFixed(2);
+  scoreAspirateur.innerHTML = cc;
+  totAutre()
+}
+// field congélateur
+let userCongelateur = document.getElementById('userCongelateur');
+const congelateurcc = 415
+const scoreCongelateur = document.getElementById('scoreCongelateur');
+userCongelateur.addEventListener("input", multiplyCongelateur);
+function multiplyCongelateur() {
+  let one = parseFloat(userCongelateur.value) || 0;
+  let cc = parseFloat(one * congelateurcc).toFixed(2);
+  scoreCongelateur.innerHTML = cc;
+  totAutre()
+}
+// field refrigerateur 250 l
+let userRefrigerateur = document.getElementById('userRefrigerateur');
+const refrigerateurcc = 300
+const scoreRefrigerateur = document.getElementById('scoreRefrigerateur');
+userRefrigerateur.addEventListener("input", multiplyRefrigerateur);
+function multiplyRefrigerateur() {
+  let one = parseFloat(userRefrigerateur.value) || 0;
+  let cc = parseFloat(one * refrigerateurcc).toFixed(2);
+  scoreRefrigerateur.innerHTML = cc;
+  totAutre()
+}
+// field four electrique
+let userFourelec = document.getElementById('userFourelec');
+const foureleccc = 217
+const scoreFourelec = document.getElementById('scoreFourelec');
+userFourelec.addEventListener("input", multiplyFourelec);
+function multiplyFourelec() {
+  let one = parseFloat(userFourelec.value) || 0;
+  let cc = parseFloat(one * foureleccc).toFixed(2);
+  scoreFourelec.innerHTML = cc;
+  totAutre()
+}
+// field lave linge
+let userLavelinge = document.getElementById('userLavelinge');
+const lavelingecc = 217
+const scoreLavelinge = document.getElementById('scoreLavelinge');
+userLavelinge.addEventListener("input", multiplyLavelinge);
+function multiplyLavelinge() {
+  let one = parseFloat(userLavelinge.value) || 0;
+  let cc = parseFloat(one * lavelingecc).toFixed(2);
+  scoreLavelinge.innerHTML = cc;
+  totAutre()
+}
+// field micro-onde
+let userMicroonde = document.getElementById('userMicroonde');
+const microondecc = 100
+const scoreMicroonde = document.getElementById('scoreMicroonde');
+userMicroonde.addEventListener("input", multiplyMicroonde);
+function multiplyMicroonde() {
+  let one = parseFloat(userMicroonde.value) || 0;
+  let cc = parseFloat(one * microondecc).toFixed(2);
+  scoreMicroonde.innerHTML = cc;
+  totAutre()
+}
 
