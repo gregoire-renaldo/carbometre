@@ -498,8 +498,10 @@ function totAutre() {
   const numberFourelec = Number(scoreFourelec.textContent);
   const numberLavelinge = Number(scoreLavelinge.textContent);
   const numberMicroonde = Number(scoreMicroonde.textContent);
+  const numberSmartphone = Number(scoreSmartphone.textContent);
+  const numberOrdinateur = Number(scoreOrdinateur.textContent);
   const sum = numberAspirateur + numberCongelateur + numberRefrigerateur + numberFourelec + numberLavelinge
-    + numberMicroonde
+    + numberMicroonde + numberSmartphone + numberOrdinateur
   totalAutre.innerText = sum.toFixed(2);
   total();
 }
@@ -567,6 +569,28 @@ function multiplyMicroonde() {
   let one = parseFloat(userMicroonde.value) || 0;
   let cc = parseFloat(one * microondecc).toFixed(2);
   scoreMicroonde.innerHTML = cc;
+  totAutre()
+}
+// field smartphone
+let userSmartphone = document.getElementById('userSmartphone');
+const smartphonecc = 100
+const scoreSmartphone = document.getElementById('scoreSmartphone');
+userSmartphone.addEventListener("input", multiplySmartphone);
+function multiplySmartphone() {
+  let one = parseFloat(userSmartphone.value) || 0;
+  let cc = parseFloat(one * smartphonecc).toFixed(2);
+  scoreSmartphone.innerHTML = cc;
+  totAutre()
+}
+// field smartphone
+let userOrdinateur = document.getElementById('userOrdinateur');
+const ordinateurcc = 100
+const scoreOrdinateur = document.getElementById('scoreOrdinateur');
+userOrdinateur.addEventListener("input", multiplyOrdinateur);
+function multiplyOrdinateur() {
+  let one = parseFloat(userOrdinateur.value) || 0;
+  let cc = parseFloat(one * ordinateurcc).toFixed(2);
+  scoreOrdinateur.innerHTML = cc;
   totAutre()
 }
 
