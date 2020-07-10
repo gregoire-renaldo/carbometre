@@ -1,6 +1,12 @@
-<h2>Faire un nouveau bilan</h2>
 <!-- main div containing all cards and fields -->
 <div class="container">
+  <div>
+    <%= simple_form_for(@footprint) do |f| %>
+    <h2>Nouveau bilan</h2>
+    <%= f.label :"Nom du bilan" %>
+    <%= f.text_field :name %>
+
+  </div>
   <!-- total block -->
     <div class="row sticky-top">
       <div class="total-mobile align-items-center ">
@@ -9,7 +15,6 @@
           <p id="total"></p>
         </div>
         <div class="button-ddl">
-          button ddl
         </div>
       </div>
     </div>
@@ -25,7 +30,6 @@
           <p id="voitureplusmoins"> + </p>
         </div>
       </div>
-      <%= simple_form_for(@footprint) do |f| %>
     </div>
     <!-- beginning of fields voiture -->
     <div class="voiture">
@@ -763,7 +767,7 @@
 <!-- fin de container global -->
     </div>
     <div class="row justify-content-center mt-2 mb-2 ">
-        <%= f.submit "Savuvegarder", confirm: "Are you sure?" %>
+        <%= f.submit :button, data: {confirm: "Are you sure this information is correct?"} %>
     </div>
   </div>
   <% end %>

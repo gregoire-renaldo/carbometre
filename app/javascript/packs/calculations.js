@@ -573,7 +573,7 @@ function multiplyMicroonde() {
 }
 // field smartphone
 let userSmartphone = document.getElementById('userSmartphone');
-const smartphonecc = 100
+const smartphonecc = 15
 const scoreSmartphone = document.getElementById('scoreSmartphone');
 userSmartphone.addEventListener("input", multiplySmartphone);
 function multiplySmartphone() {
@@ -584,7 +584,7 @@ function multiplySmartphone() {
 }
 // field smartphone
 let userOrdinateur = document.getElementById('userOrdinateur');
-const ordinateurcc = 100
+const ordinateurcc = 150
 const scoreOrdinateur = document.getElementById('scoreOrdinateur');
 userOrdinateur.addEventListener("input", multiplyOrdinateur);
 function multiplyOrdinateur() {
