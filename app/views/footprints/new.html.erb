@@ -5,8 +5,8 @@
     <div class="row sticky-top">
       <div class="total-mobile align-items-center ">
         <p>Total</p>
-        <div class="white-rectangle">
-          total
+        <div class="white-rectangle" >
+          <p id="total"></p>
         </div>
         <div class="button-ddl">
           button ddl
@@ -15,7 +15,7 @@
     </div>
     <!-- end of total block -->
     <!-- block for total voiture -->
-    <div class="row  mt-2">
+    <div class="row mt-2 sticky-top">
       <div class="total-mobile align-items-center">
         <p>Voiture</p>
         <div class="white-rectangle">
@@ -35,7 +35,6 @@
           <div class=" col-xs-4 field">
             <%= f.label :essence %>
             <%= f.number_field :essence,  id: 'userEssence' %>
-            <!-- change the id for input field and do js -->
           </div>
           <div class="col-xs-2 unit">
             <p>kg</p>
@@ -43,16 +42,353 @@
           <div class="col-xs-2 charge">
             <p>2.8</p>
           </div>
-          <div class="col-xs-4 white-rectangle id=" resultBle">
+          <div class="col-xs-4 white-rectangle" >
             <p id="scoreEssence"></p>
-            <!-- change the id of score and do js -->
           </div>
         </div>
-
+        <!-- field gazole -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :gazole %>
+            <%= f.number_field :gazole,  id: 'userGazole' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>kg</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>3.16</p>
+          </div>
+          <div class="col-xs-4 white-rectangle" >
+            <p id="scoreGazole"></p>
+          </div>
+        </div>
+        <!-- field gpl -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :gpl %>
+            <%= f.number_field :gpl,  id: 'userGpl' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>kg</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>1.86</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreGpl"></p>
+          </div>
+        </div>
+        <!-- field e85  -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :e85 %>
+            <%= f.number_field :e85,  id: 'userE85' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>kg</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>1.68</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreE85"></p>
+          </div>
+        </div>
+        <!-- field electrique  -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :electrique %>
+            <%= f.number_field :electrique,  id: 'userElectrique' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>kWh</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>0.0571</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreElectrique"></p>
+          </div>
+        </div>
       </div>
     </div>
-
-
+    <!-- autres transports -->
+    <div class="row mt-2 sticky-top">
+      <div class="total-mobile align-items-center">
+        <p>Transports</p>
+        <div class="white-rectangle">
+          <p id="totalTransport"></p>
+        </div>
+        <div id="hideShowTransport">
+          <p id="transportplusmoins"> + </p>
+        </div>
+      </div>
+    </div>
+    <!-- fields for autres transports -->
+    <div class="transport">
+      <div class="container">
+        <!-- field tgv -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :tgv %>
+            <%= f.number_field :tgv, id: 'userTgv' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>km</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>0.00369</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreTgv"></p>
+          </div>
+        </div>
+        <!-- field ter electrique -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :"ter electrique" %>
+            <%= f.number_field :terelectrique, id: 'userTerelec' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>km</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>0.00891</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreTerelec"></p>
+          </div>
+        </div>
+        <!-- field ter thermique -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :"ter thermique" %>
+            <%= f.number_field :terthermique, id: 'userTertherm' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>km</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>0.0798</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreTertherm"></p>
+          </div>
+        </div>
+        <!-- field intercite -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :intercite%>
+            <%= f.number_field :intercite, id: 'userIntercite' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>km</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>0.0056</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreIntercite"></p>
+          </div>
+        </div>
+        <!-- field metro -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :"metro / RER"%>
+            <%= f.number_field :metro, id: 'userMetro' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>km</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>0.0057</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreMetro"></p>
+          </div>
+        </div>
+        <!-- field bus -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :"bus"%>
+            <%= f.number_field :bus, id: 'userBus' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>km</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>0.092167</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreBus"></p>
+          </div>
+        </div>
+        <!-- field avion -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :"avion"%>
+            <%= f.number_field :avion, id: 'userAvion' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>km</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>0.258</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreAvion"></p>
+          </div>
+        </div>
+        <!-- field avion regional-->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :"avion regional"%>
+            <%= f.number_field :avionregional, id: 'userAvionregional' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>km</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>0.453</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreAvionregional"></p>
+          </div>
+        </div>
+      </div>
+      <!-- fin de liste transport -->
+    </div>
+<!-- begining of energie -->
+    <div class="row mt-2 sticky-top">
+      <div class="total-mobile align-items-center">
+        <p>Logement</p>
+        <div class="white-rectangle">
+          <p id="totalEnergie"></p>
+        </div>
+        <div id="hideShowEnergie">
+          <p id="energieplusmoins"> + </p>
+        </div>
+      </div>
+    </div>
+<!-- fields for energie -->
+    <div class="energie">
+      <div class="container">
+        <!-- field electricite -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :Electricité %>
+            <%= f.number_field :electricite, step: :any, id: 'userElectricite' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>kWh</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>0.0571</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreelec"></p>
+          </div>
+        </div>
+      <!-- field gaz kwh -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :"gaz kwh" %>
+            <%= f.number_field :gazkwh, step: :any, id: 'userGaz' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>kWh</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>0.205</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreGazkwh"></p>
+          </div>
+        </div>
+        <!-- field gaz kwh -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :"gaz m³" %>
+            <%= f.number_field :gazm, id: 'userGazm' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>m³</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>2.2</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreGazm"></p>
+          </div>
+        </div>
+        <!-- field fioul -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :fioul %>
+            <%= f.number_field :fioul, id: 'userFioul' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>l</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>3.25</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreFioul"></p>
+          </div>
+        </div>
+        <!-- field granule bois -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :"granulés de bois" %>
+            <%= f.number_field :granulebois, id: 'userGranulebois' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>kg</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>0.111</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreGranulebois"></p>
+          </div>
+        </div>
+        <!-- field buche bois -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :"buche de bois" %>
+            <%= f.number_field :buchebois, id: 'userBuche' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>kg</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>0.114</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreBuchebois"></p>
+          </div>
+        </div>
+        <!-- field eau -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :eau %>
+            <%= f.number_field :eau, id: 'userEau' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>m³</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>0.132</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreEau"></p>
+          </div>
+        </div>
+      </div>
+        <!-- end of logement energie -->
+    </div>
+<!-- fin de liste energie -->
     <!-- block pour total alimentaire -->
     <div class="row  mt-2 sticky-top">
       <div class="total-mobile align-items-center">
@@ -65,7 +401,6 @@
         </div>
       </div>
     </div>
-  <!-- beginning of fields alim -->
     <div class="alim">
       <div class="container">
         <!-- field ble -->
@@ -73,7 +408,6 @@
           <div class=" col-xs-4 field">
             <%= f.label :Blé %>
             <%= f.number_field :ble, step: :any, id: 'userBle' %>
-            <!-- change the id for input field and do js -->
           </div>
           <div class="col-xs-2 unit">
             <p>kg</p>
@@ -81,9 +415,8 @@
           <div class="col-xs-2 charge">
             <p>0.439</p>
           </div>
-          <div class="col-xs-4 white-rectangle id="resultBle">
+          <div class="col-xs-4 white-rectangle">
             <p id="scoreble"></p>
-            <!-- change the id of score and do js -->
           </div>
         </div>
         <!-- field carotte -->
@@ -91,7 +424,6 @@
           <div class=" col-xs-4 field">
             <%= f.label :carotte %>
             <%= f.number_field :carotte, id: 'userCarotte' %>
-            <!-- change the id for input field and do js -->
           </div>
           <div class="col-xs-2 unit">
             <p>kg</p>
@@ -101,7 +433,6 @@
           </div>
           <div class="col-xs-4 white-rectangle">
             <p id="scoreCarotte"></p>
-            <!-- change the id of score and do js -->
           </div>
         </div>
 <!-- field riz -->
@@ -109,7 +440,6 @@
           <div class=" col-xs-4 field">
             <%= f.label :"Riz Thai" %>
             <%= f.number_field :riz, id: 'userRiz' %>
-            <!-- change the id for input field and do js -->
           </div>
           <div class="col-xs-2 unit">
             <p>kg</p>
@@ -119,7 +449,6 @@
           </div>
           <div class="col-xs-4 white-rectangle">
             <p id="scoreRiz"></p>
-            <!-- change the id of score and do js -->
           </div>
         </div>
 <!-- field patate -->
@@ -127,7 +456,6 @@
           <div class=" col-xs-4 field">
             <%= f.label :"Patates FR" %>
             <%= f.number_field :patate, id: 'userPommeDeTerre' %>
-            <!-- change the id for input field and do js -->
           </div>
           <div class="col-xs-2 unit">
             <p>kg</p>
@@ -137,7 +465,6 @@
           </div>
           <div class="col-xs-4 white-rectangle">
             <p id="scorePommeDeTerre"></p>
-            <!-- change the id of score and do js -->
           </div>
         </div>
 <!-- field salade de saison -->
@@ -145,7 +472,6 @@
           <div class=" col-xs-4 field">
             <%= f.label :"Salade saison" %>
             <%= f.number_field :saladesaison, id: 'userSaladeSaison' %>
-            <!-- change the id for input field and do js -->
           </div>
           <div class="col-xs-2 unit">
             <p>kg</p>
@@ -155,7 +481,6 @@
           </div>
           <div class="col-xs-4 white-rectangle">
             <p id="scoreSaladeSaison"></p>
-            <!-- change the id of score and do js -->
           </div>
         </div>
 <!-- salades hors saison -->
@@ -163,7 +488,6 @@
           <div class=" col-xs-4 field">
             <%= f.label :"Salade sous serre" %>
             <%= f.number_field :saladess, id: 'userSaladeSs' %>
-            <!-- change the id for input field and do js -->
           </div>
           <div class="col-xs-2 unit">
             <p>kg</p>
@@ -173,7 +497,6 @@
           </div>
           <div class="col-xs-4 white-rectangle">
             <p id="scoreSaladeSs"></p>
-            <!-- change the id of score and do js -->
           </div>
         </div>
 <!-- tomates fr -->
@@ -181,7 +504,6 @@
           <div class=" col-xs-4 field">
             <%= f.label :"Tomates FR" %>
             <%= f.number_field :tomatesfr, id: 'userTomates' %>
-            <!-- change the id for input field and do js -->
           </div>
           <div class="col-xs-2 unit">
             <p>kg</p>
@@ -191,7 +513,6 @@
           </div>
           <div class="col-xs-4 white-rectangle">
             <p id="scoreTomates"></p>
-            <!-- change the id of score and do js -->
           </div>
         </div>
         <!-- tomates fr sous serre -->
@@ -199,7 +520,6 @@
           <div class=" col-xs-4 field">
             <%= f.label :"Tomates FR " %>
             <%= f.number_field :tomatesfrss, id: 'userTomatesFRss' %>
-            <!-- change the id for input field and do js -->
           </div>
           <div class="col-xs-2 unit">
             <p>kg</p>
@@ -209,7 +529,6 @@
           </div>
           <div class="col-xs-4 white-rectangle">
             <p id="scoreTomatesFRss"></p>
-            <!-- change the id of score and do js -->
           </div>
         </div>
 <!-- field boeuf -->
@@ -217,7 +536,6 @@
           <div class=" col-xs-4 field">
             <%= f.label :"boeuf " %>
             <%= f.number_field :boeuf, id: 'userBoeuf' %>
-            <!-- change the id for input field and do js -->
           </div>
           <div class="col-xs-2 unit">
             <p>kg</p>
@@ -227,16 +545,13 @@
           </div>
           <div class="col-xs-4 white-rectangle">
             <p id="scoreBoeuf"></p>
-            <!-- change the id of score and do js -->
           </div>
         </div>
-
         <!-- field veau -->
         <div class="row align-items-center item mt-1">
           <div class=" col-xs-4 field">
             <%= f.label :"veau " %>
             <%= f.number_field :veau, id: 'userVeau' %>
-            <!-- change the id for input field and do js -->
           </div>
           <div class="col-xs-2 unit">
             <p>kg</p>
@@ -246,16 +561,13 @@
           </div>
           <div class="col-xs-4 white-rectangle">
             <p id="scoreVeau"></p>
-            <!-- change the id of score and do js -->
           </div>
         </div>
-
         <!-- field lait vache -->
         <div class="row align-items-center item mt-1">
           <div class=" col-xs-4 field">
             <%= f.label :"lait de vache " %>
             <%= f.number_field :laitvache, id: 'userLaitvache' %>
-            <!-- change the id for input field and do js -->
           </div>
           <div class="col-xs-2 unit">
             <p>kg</p>
@@ -265,16 +577,13 @@
           </div>
           <div class="col-xs-4 white-rectangle">
             <p id="scoreLaitvache"></p>
-            <!-- change the id of score and do js -->
           </div>
         </div>
-
         <!-- field poulet -->
         <div class="row align-items-center item mt-1">
           <div class=" col-xs-4 field">
             <%= f.label :"poulet" %>
             <%= f.number_field :poulet, id: 'userPoulet' %>
-            <!-- change the id for input field and do js -->
           </div>
           <div class="col-xs-2 unit">
             <p>kg</p>
@@ -284,16 +593,13 @@
           </div>
           <div class="col-xs-4 white-rectangle">
             <p id="scorePoulet"></p>
-            <!-- change the id of score and do js -->
           </div>
         </div>
-
-<!-- field oeufs -->
+        <!-- field oeufs -->
         <div class="row align-items-center item mt-1">
           <div class=" col-xs-4 field">
             <%= f.label :"oeufs" %>
             <%= f.number_field :oeufs, id: 'userOeufs' %>
-            <!-- change the id for input field and do js -->
           </div>
           <div class="col-xs-2 unit">
             <p>kg</p>
@@ -309,74 +615,12 @@
       </div>
       <!-- end of alim -->
     </div>
-
-<!-- begining of energie -->
-    <div class="row mt-2">
-      <div class="total-mobile align-items-center">
-        <p>Energie</p>
-        <div class="white-rectangle">
-          <p>rectangle</p>
-        </div>
-        <div id="hideShowEnergie">
-          <p id="energieplusmoins"> + </p>
-        </div>
-      </div>
-    </div>
-    <!-- fields for energie -->
-    <div class="energie">
-      <!-- change class for the good category and do css and js -->
-      <div class="container">
-        <div class="row align-items-center item mt-1">
-          <div class=" col-xs-4 field">
-            <%= f.label :Electricité %>
-            <%= f.number_field :electricite, step: :any, id: 'userElectricite' %>
-          <!-- change the id for input field and do js -->
-          </div>
-          <div class="col-xs-2 unit">
-            <p>Unit</p>
-          </div>
-          <div class="col-xs-2 charge">
-            <p>14.12</p>
-          </div>
-          <div class="col-xs-4 white-rectangle">
-            <p id="scoreelec"></p>
-            <!-- change the id of score and do js -->
-          </div>
-        </div>
-      </div>
-<!-- end of field energie -->
-      <div>
-        <%= f.label :gazkwh %>
-        <%= f.number_field :gazkwh, step: :any %>
-      </div>
-      <div>
-        <%= f.label :gazm %>
-        <%= f.number_field :gazm, step: :any %>
-      </div>
-      <div>
-        <%= f.label :fioul %>
-        <%= f.number_field :fioul, step: :any %>
-      </div>
-      <div>
-        <%= f.label :granulebois %>
-        <%= f.number_field :granulebois, step: :any %>
-      </div>
-      <div>
-        <%= f.label :buchebois %>
-        <%= f.number_field :buchebois, step: :any %>
-      </div>
-      <div>
-        <%= f.label :eau %>
-        <%= f.number_field :eau, step: :any %>
-      </div>
-    </div>
-    <!-- fin de liste energie -->
-
-    <div class="row mt-2">
+<!-- début catégorie autre -->
+    <div class="row mt-2 sticky-top">
       <div class="total-mobile align-items-center">
         <p>Autres</p>
         <div class="white-rectangle">
-          <p>rectangle</p>
+          <p id="totalAutre"></p>
         </div>
         <div id="hideShowAutre">
           <p id="autreplusmoins"> + </p>
@@ -390,123 +634,137 @@
         <div class="row align-items-center item mt-1">
           <div class=" col-xs-4 field">
             <%= f.label :aspirateur %>
-            <%= f.number_field :aspirateur, id: 'userElectricite' %>
-            <!-- change the id for input field and do js -->
+            <%= f.number_field :aspirateur, id: 'userAspirateur' %>
           </div>
           <div class="col-xs-2 unit">
-            <p>Unit</p>
+            <p>unité</p>
           </div>
           <div class="col-xs-2 charge">
-            <p>14.12</p>
+            <p>52</p>
           </div>
           <div class="col-xs-4 white-rectangle">
-            <p id="scoreelec"></p>
-            <!-- change the id of score and do js -->
+            <p id="scoreAspirateur"></p>
           </div>
         </div>
-      </div>
-      <!-- end of field aspirateur -->
-      <div id="div3">
-        <%= f.label :congelateur %>
-        <%= f.number_field :congelateur, step: :any %>
-      </div>
-      <div id="div3">
-        <%= f.label :refrigerateur250l %>
-        <%= f.number_field :refrigerateur250l, step: :any %>
-      </div>
-      <div id="div3">
-        <%= f.label :fourelectrique %>
-        <%= f.number_field :fourelectrique, step: :any %>
-      </div>
-      <div id="div3">
-        <%= f.label :lavelinge %>
-        <%= f.number_field :lavelinge, step: :any %>
-      </div>
-      <div id="div3">
-        <%= f.label :microonde %>
-        <%= f.number_field :microonde, step: :any %>
-      </div>
-      <div id="div3">
-        <%= f.label :smartphone %>
-        <%= f.number_field :smartphone, step: :any %>
-      </div>
-      <div id="div3">
-        <%= f.label :ordinateur %>
-        <%= f.number_field :ordinateur, step: :any %>
-      </div>
-<!-- fin de liste logement -->
-    </div>
-
-    <div class="row mt-2">
-      <div class="total-mobile align-items-center">
-        <p>Transports</p>
-        <div class="white-rectangle">
-          <p>rectangle</p>
-        </div>
-        <div id="hideShowTransport">
-          <p id="transportplusmoins"> + </p>
-        </div>
-      </div>
-    </div>
-    <!-- fields for autre -->
-    <div class="transport">
-      <!-- change class for the good category and do css and js -->
-      <div class="container">
+        <!-- field congelateur 200l -->
         <div class="row align-items-center item mt-1">
           <div class=" col-xs-4 field">
-            <%= f.label :tgv %>
-            <%= f.number_field :tgv, id: 'userElectricite' %>
-            <!-- change the id for input field and do js -->
+            <%= f.label :"congélateur 200 l" %>
+            <%= f.number_field :congelateur, id: 'userCongelateur' %>
           </div>
           <div class="col-xs-2 unit">
-            <p>Unit</p>
+            <p>unité</p>
           </div>
           <div class="col-xs-2 charge">
-            <p>14.12</p>
+            <p>415</p>
           </div>
           <div class="col-xs-4 white-rectangle">
-            <p id="scoreelec"></p>
-            <!-- change the id of score and do js -->
+            <p id="scoreCongelateur"></p>
           </div>
         </div>
-
-        <div id="div3">
-          <%= f.label :tgv %>
-          <%= f.number_field :tgv, step: :any %>
+        <!-- field refrigerateur 250l -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :"réfrigérateur 250l " %>
+            <%= f.number_field :refrigerateur250l, id: 'userRefrigerateur' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>unité</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>300</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreRefrigerateur"></p>
+          </div>
         </div>
-        <div id="div3">
-          <%= f.label :terelectrique %>
-          <%= f.number_field :terelectrique, step: :any %>
+        <!-- field four electrique -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :"four électrique" %>
+            <%= f.number_field :fourelectrique, id: 'userFourelec' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>unité</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>217</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreFourelec"></p>
+          </div>
         </div>
-        <div id="div3">
-          <%= f.label :terthermique %>
-          <%= f.number_field :terthermique, step: :any %>
+        <!-- field lave linge -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :"lave linge" %>
+            <%= f.number_field :lavelinge, id: 'userLavelinge' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>unité</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>305</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreLavelinge"></p>
+          </div>
         </div>
-        <div id="div3">
-          <%= f.label :intercite %>
-          <%= f.number_field :intercite, step: :any %>
+        <!-- field micro-onde -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :"micro-onde" %>
+            <%= f.number_field :microonde, id: 'userMicroonde' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>unité</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>100</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreMicroonde"></p>
+          </div>
         </div>
-        <div id="div3">
-          <%= f.label :metro %>
-          <%= f.number_field :metro, step: :any %>
+        <!-- field smartphone -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :"smartphone" %>
+            <%= f.number_field :smartphone, id: 'userSmartphone' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>unité</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>15</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreSmartphone"></p>
+          </div>
         </div>
-        <div id="div3">
-          <%= f.label :bus %>
-          <%= f.number_field :bus, step: :any %>
+        <!-- field smartphone -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :"ordinateur" %>
+            <%= f.number_field :ordinateur, id: 'userOrdinateur' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>unité</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>150</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreOrdinateur"></p>
+          </div>
         </div>
-        <div id="div3">
-          <%= f.label :avion %>
-          <%= f.number_field :avion, step: :any %>
-        </div>
-        <div id="div3">
-          <%= f.label :avionregional %>
-          <%= f.number_field :avionregional, step: :any %>
-        </div>
+        <!-- end of category autre -->
       </div>
-      <!-- fin de liste transport -->
+<!-- fin de container global -->
     </div>
-
-    <%= f.submit %>
+    <div class="row justify-content-center mt-2 mb-2 ">
+        <%= f.submit "Savuvegarder", confirm: "Are you sure?" %>
+    </div>
   </div>
   <% end %>
 <%= javascript_pack_tag 'hide_fields' %>

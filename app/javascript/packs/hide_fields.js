@@ -6,27 +6,26 @@ buttonVoiture.addEventListener("click", (event) => {
   arrayVoiture.forEach(function (element) {
     if (element.style.display === "block") {
       element.style.display = "none";
-      alimplusmoins.innerHTML = "+";
+      voitureplusmoins.innerHTML = "+";
     } else {
       element.style.display = "block";
-      alimplusmoins.innerHTML = "-";
+      voitureplusmoins.innerHTML = "-";
     }
   });
 });
 
-
-// bouton + - alimentation
-const buttonBle = document.getElementById("hideShowBle")
-const arrayAlim = Array.from(document.getElementsByClassName("alim"));
-const alimplusmoins = document.getElementById("alimplusmoins")
-buttonBle.addEventListener("click", (event) => {
-  arrayAlim.forEach(function (element) {
+// bouton + - transport
+const buttonTransport = document.getElementById("hideShowTransport")
+const arrayTransport = Array.from(document.getElementsByClassName("transport"));
+const transportplusmoins = document.getElementById("transportplusmoins")
+buttonTransport.addEventListener("click", (event) => {
+  arrayTransport.forEach(function (element) {
     if (element.style.display === "block") {
       element.style.display = "none";
-      alimplusmoins.innerHTML = "+";
+      transportplusmoins.innerHTML = "+";
     } else {
       element.style.display = "block";
-      alimplusmoins.innerHTML = "-";
+      transportplusmoins.innerHTML = "-";
     }
   });
 });
@@ -47,6 +46,22 @@ buttonEnergie.addEventListener("click", (event) => {
   });
 });
 
+// bouton + - alimentation
+const buttonBle = document.getElementById("hideShowBle")
+const arrayAlim = Array.from(document.getElementsByClassName("alim"));
+const alimplusmoins = document.getElementById("alimplusmoins")
+buttonBle.addEventListener("click", (event) => {
+  arrayAlim.forEach(function (element) {
+    if (element.style.display === "block") {
+      element.style.display = "none";
+      alimplusmoins.innerHTML = "+";
+    } else {
+      element.style.display = "block";
+      alimplusmoins.innerHTML = "-";
+    }
+  });
+});
+
 // bouton + - autre
 const buttonAutre = document.getElementById("hideShowAutre")
 const arrayAutre = Array.from(document.getElementsByClassName("autre"));
@@ -62,27 +77,3 @@ buttonAutre.addEventListener("click", (event) => {
     }
   });
 });
-
-// bouton + - transport
-const buttonTransport = document.getElementById("hideShowTransport")
-const arrayTransport= Array.from(document.getElementsByClassName("transport"));
-const transportplusmoins = document.getElementById("transportplusmoins")
-buttonTransport.addEventListener("click", (event) => {
-  arrayTransport.forEach(function (element) {
-    if (element.style.display === "block") {
-      element.style.display = "none";
-      transportplusmoins.innerHTML = "+";
-    } else {
-      element.style.display = "block";
-      transportplusmoins.innerHTML = "-";
-    }
-  });
-});
-
-
-
-
-
-
-
-// transform button + to - when show hide: toggle class ? innerhtml ?

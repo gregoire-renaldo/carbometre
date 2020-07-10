@@ -14,7 +14,7 @@
 
 .total-mobile p {
   text-align: center;
-  color:#d5f1d6 ;
+  color: whitesmoke ;
   margin-top: 8px;
 }
 
@@ -40,6 +40,10 @@ input[type="number"] {
   border-radius: 5px;
 }
 
+.white-rectangle p {
+  color:black;
+}
+
 .field{
 margin-top :8px;
 margin-bottom: 8px;
@@ -58,8 +62,8 @@ flex: 0 0 100px;
   display:none;
 }
 
-.alim {
-  display: none;
+.transport {
+  display:none;
 }
 
 .energie {
@@ -70,6 +74,7 @@ flex: 0 0 100px;
   display:none;
 }
 
-.transport {
-  display:none;
+.alim {
+  display: none;
 }
+
