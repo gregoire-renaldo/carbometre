@@ -594,6 +594,8 @@ function totAutre() {
 let userAspirateur = document.getElementById('userAspirateur');
 const aspirateurcc = 52
 const scoreAspirateur = document.getElementById('scoreAspirateur');
+const defaultAspirateur = (userAspirateur.value * aspirateurcc).toFixed(2)
+scoreAspirateur.innerHTML = defaultAspirateur
 userAspirateur.addEventListener("input", multiplyAspirateur);
 function multiplyAspirateur() {
   let one = parseFloat(userAspirateur.value) || 0;
@@ -605,6 +607,8 @@ function multiplyAspirateur() {
 let userCongelateur = document.getElementById('userCongelateur');
 const congelateurcc = 415
 const scoreCongelateur = document.getElementById('scoreCongelateur');
+const defaultCongelateur = (userCongelateur.value * congelateurcc).toFixed(2)
+scoreCongelateur.innerHTML = defaultCongelateur
 userCongelateur.addEventListener("input", multiplyCongelateur);
 function multiplyCongelateur() {
   let one = parseFloat(userCongelateur.value) || 0;
@@ -616,6 +620,8 @@ function multiplyCongelateur() {
 let userRefrigerateur = document.getElementById('userRefrigerateur');
 const refrigerateurcc = 300
 const scoreRefrigerateur = document.getElementById('scoreRefrigerateur');
+const defaultRefrigerateur = (userRefrigerateur.value * refrigerateurcc).toFixed(2)
+scoreRefrigerateur.innerHTML = defaultRefrigerateur
 userRefrigerateur.addEventListener("input", multiplyRefrigerateur);
 function multiplyRefrigerateur() {
   let one = parseFloat(userRefrigerateur.value) || 0;
@@ -627,6 +633,8 @@ function multiplyRefrigerateur() {
 let userFourelec = document.getElementById('userFourelec');
 const foureleccc = 217
 const scoreFourelec = document.getElementById('scoreFourelec');
+const defaultFourelec = (userFourelec.value * foureleccc).toFixed(2)
+scoreFourelec.innerHTML = defaultFourelec
 userFourelec.addEventListener("input", multiplyFourelec);
 function multiplyFourelec() {
   let one = parseFloat(userFourelec.value) || 0;
@@ -638,6 +646,8 @@ function multiplyFourelec() {
 let userLavelinge = document.getElementById('userLavelinge');
 const lavelingecc = 217
 const scoreLavelinge = document.getElementById('scoreLavelinge');
+const defaultLavelinge = (userLavelinge.value * lavelingecc).toFixed(2)
+scoreLavelinge.innerHTML = defaultLavelinge
 userLavelinge.addEventListener("input", multiplyLavelinge);
 function multiplyLavelinge() {
   let one = parseFloat(userLavelinge.value) || 0;
@@ -649,6 +659,8 @@ function multiplyLavelinge() {
 let userMicroonde = document.getElementById('userMicroonde');
 const microondecc = 100
 const scoreMicroonde = document.getElementById('scoreMicroonde');
+const defaultMicroonde = (userMicroonde.value * microondecc).toFixed(2)
+scoreMicroonde.innerHTML = defaultMicroonde
 userMicroonde.addEventListener("input", multiplyMicroonde);
 function multiplyMicroonde() {
   let one = parseFloat(userMicroonde.value) || 0;
@@ -660,6 +672,8 @@ function multiplyMicroonde() {
 let userSmartphone = document.getElementById('userSmartphone');
 const smartphonecc = 15
 const scoreSmartphone = document.getElementById('scoreSmartphone');
+const defaultSmartphone = (userSmartphone.value * smartphonecc).toFixed(2)
+scoreSmartphone.innerHTML = defaultSmartphone
 userSmartphone.addEventListener("input", multiplySmartphone);
 function multiplySmartphone() {
   let one = parseFloat(userSmartphone.value) || 0;
@@ -671,6 +685,8 @@ function multiplySmartphone() {
 let userOrdinateur = document.getElementById('userOrdinateur');
 const ordinateurcc = 150
 const scoreOrdinateur = document.getElementById('scoreOrdinateur');
+const defaultOrdinateur = (userOrdinateur.value * ordinateurcc).toFixed(2)
+scoreOrdinateur.innerHTML = defaultOrdinateur
 userOrdinateur.addEventListener("input", multiplyOrdinateur);
 function multiplyOrdinateur() {
   let one = parseFloat(userOrdinateur.value) || 0;
@@ -679,4 +695,12 @@ function multiplyOrdinateur() {
   totAutre()
 }
 
+const defaultAutre = (Number(defaultAspirateur) + Number(defaultCongelateur)
+  + Number(defaultRefrigerateur) + Number(defaultFourelec) + Number(defaultLavelinge)
+  + Number(defaultMicroonde) + Number(defaultSmartphone) + Number(defaultOrdinateur)).toFixed(2)
+totalAutre.innerHTML = defaultAutre
+
+
+totalBilan.innerHTML = (Number(defaultVoiture) + Number(defaultTransport)
+  + Number(defaultEnergie) + Number(defaultAlim) + Number(defaultAutre)).toFixed(2)
 
