@@ -3,6 +3,8 @@
   <%= simple_form_for(@footprint) do |f| %>
   <div class="mb-2 mt-2">
     <h2>Nouveau bilan</h2>
+    <%= f.label :titre %>
+    <%= f.text_field :title %>
   </div>
   <!-- total block -->
     <div class="row sticky-top">
@@ -764,7 +766,7 @@
 <!-- fin de container global -->
     </div>
     <div class="row justify-content-center mt-2 mb-2 ">
-        <%= f.submit :"Sauvegarder mon bilan", data: {confirm: "Are you sure this information is correct?"} %>
+        <%= f.submit :"Sauvegarder mon bilan", data: {confirm: "Êtes-vous sûr de vouloir créer cette empreinte ?"} %>
     </div>
     <% end %>
   </div>

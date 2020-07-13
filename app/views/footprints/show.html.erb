@@ -1,10 +1,12 @@
 <div class="container">
-  <div class="row justify-content-center">
-        <%= link_to" Modifier l'empreinte", edit_footprint_path(@footprint) %>
-        <%= link_to "Delete #{@footprint.name}",
-                    footprint_path(@footprint),
-                    method: :delete,
-                    data: { confirm: "Êtes-vous sûr ?" } %>
+  <div class="row">
+    <%= link_to" Modifier l'empreinte", edit_footprint_path(@footprint), class: "btn btn-primary" %>
+    <%= link_to "Delete #{@footprint.title}",
+                          footprint_path(@footprint),
+                          method: :delete,
+                          data: { confirm: "Êtes-vous sûr ?" },
+                          class: "btn btn-primary" %>
+    <%= link_to" Tous mes bilans", footprints_path, class: "btn btn-primary" %>
   </div>
   <div class="row">
     <div class="col-sm">
@@ -90,11 +92,26 @@
         </div>
       </div>
     </div>
-    <div class="row justify-content-center mt-2 mb-2 ">
-      <div class="col-sm justify-content-center">
-        <%= link_to" Modifier l'empreinte", edit_footprint_path(@footprint) %>
-        <%= link_to 'Create PDF document', footprint_path(@footprint, :format => :pdf), target: "_blank" %>
-      </div>
+  </div>
+  <div class="row justify-content-center mt-2 mb-2 ">
+    <div class="col-sm justify-content-center">
+      <%= link_to" Modifier l'empreinte", edit_footprint_path(@footprint) %>
+      <%= link_to 'Create PDF document', footprint_path(@footprint, :format => :pdf), target: "_blank" %>
     </div>
   </div>
+</div>
+
+
+
+
+
+
+
+
+<div>
+  <%= link_to" Modifier l'empreinte", edit_footprint_path(@footprint) %>
+  <%= link_to "Delete #{@footprint.title}",
+                        footprint_path(@footprint),
+                        method: :delete,
+                        data: { confirm: "Êtes-vous sûr ?" } %>
 </div>

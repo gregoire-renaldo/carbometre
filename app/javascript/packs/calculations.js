@@ -15,9 +15,6 @@ function total() {
   const sumTotal = numberVoiture + numberAlim + numberTransport + numberEnergie + numberAutre
   totalBilan.innerHTML = sumTotal.toFixed(2)
 }
-
-
-
 // total category voiture
 const totalVoiture = document.getElementById('totalVoiture')
 function totVoiture() {
@@ -30,7 +27,6 @@ function totVoiture() {
   totalVoiture.innerText = sumVoiture.toFixed(2);
   total();
 }
-
 
 // field essence
 const userEssence = document.getElementById('userEssence');
@@ -45,7 +41,6 @@ function multiplyEssence() {
   scoreEssence.innerHTML = ccessence;
   totVoiture();
 }
-
 
 // field gazole
 const userGazole = document.getElementById('userGazole');
@@ -74,7 +69,6 @@ function multiplyGpl() {
   scoreGpl.innerHTML = ccgpl;
   totVoiture()
 }
-
 
 // field e85
 const userE85 = document.getElementById('userE85');
@@ -105,7 +99,7 @@ function multiplyElectrique() {
 }
 
 // to display values on edit footprint
-const defaultVoiture = (Number(defaultEssence) + Number(defaultGazole) + Number(defaultGPL) + Number(defaultE85) + Number(defaultElectrique))
+const defaultVoiture = (Number(defaultEssence) + Number(defaultGazole) + Number(defaultGPL) + Number(defaultE85) + Number(defaultElectrique)).toFixed(2)
 totalVoiture.innerHTML = defaultVoiture
 
 // transport Energie Logement / autres
@@ -127,7 +121,6 @@ function totTransport() {
   totalTransport.innerText = sumTransport.toFixed(2);
   total();
 }
-
 
 // field tgv
 const userTgv = document.getElementById('userTgv');
@@ -243,7 +236,7 @@ function multiplyAvionregional() {
 // to display values on edit footprint
 const defaultTransport = (Number(defaultTgv) + Number(defaultTerelec) + Number(defaultTerTherm)
 + Number(defaultIntercite) + Number(defaultMetro) + Number(defaultBus)
-+ Number(defaultAvion) + Number(defaultAvionregional));
++ Number(defaultAvion) + Number(defaultAvionregional)).toFixed(2);
 totalTransport.innerHTML = defaultTransport
 
 // category logement / energie
