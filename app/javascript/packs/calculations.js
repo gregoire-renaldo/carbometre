@@ -3,6 +3,8 @@
 
 
 // total Bilan
+
+
 const totalBilan = document.getElementById('total');
 function total() {
   const numberVoiture = Number(totalVoiture.textContent);
@@ -34,6 +36,8 @@ function totVoiture() {
 const userEssence = document.getElementById('userEssence');
 const essencecc = 2.8
 const scoreEssence = document.getElementById('scoreEssence');
+const defaultEssence = (userEssence.value * essencecc).toFixed(2)
+scoreEssence.innerHTML = defaultEssence
 userEssence.addEventListener("input", multiplyEssence);
 function multiplyEssence() {
   let one = parseFloat(userEssence.value) || 0;
@@ -42,10 +46,13 @@ function multiplyEssence() {
   totVoiture();
 }
 
+
 // field gazole
 const userGazole = document.getElementById('userGazole');
 const gazolecc = 3.16
 const scoreGazole = document.getElementById('scoreGazole');
+const defaultGazole = (userGazole.value * gazolecc).toFixed(2)
+scoreGazole.innerHTML = defaultGazole
 userGazole.addEventListener("input", multiplyGazole);
 function multiplyGazole() {
   let one = parseFloat(userGazole.value) || 0;
@@ -58,6 +65,8 @@ function multiplyGazole() {
 const userGpl = document.getElementById('userGpl');
 const gplcc = 1.86
 const scoreGpl = document.getElementById('scoreGpl');
+const defaultGPL = (userGpl.value * gplcc).toFixed(2)
+scoreGpl.innerHTML = defaultGPL
 userGpl.addEventListener("input", multiplyGpl);
 function multiplyGpl() {
   let one = parseFloat(userGpl.value) || 0;
@@ -66,10 +75,13 @@ function multiplyGpl() {
   totVoiture()
 }
 
+
 // field e85
 const userE85 = document.getElementById('userE85');
 const e85cc = 1.68
 const scoreE85 = document.getElementById('scoreE85');
+const defaultE85 = (userE85.value * e85cc).toFixed(2)
+scoreE85.innerHTML = defaultE85
 userE85.addEventListener("input", multiplyE85);
 function multiplyE85() {
   let one = parseFloat(userE85.value) || 0;
@@ -82,6 +94,8 @@ function multiplyE85() {
 const userElectrique = document.getElementById('userElectrique');
 const electriquecc = 0.0571
 const scoreElectrique = document.getElementById('scoreElectrique');
+const defaultElectrique = (userElectrique.value * electriquecc).toFixed(2)
+scoreElectrique.innerHTML = defaultElectrique
 userElectrique.addEventListener("input", multiplyElectrique);
 function multiplyElectrique() {
   let one = parseFloat(userElectrique.value) || 0;
@@ -90,6 +104,11 @@ function multiplyElectrique() {
   totVoiture()
 }
 
+// to display values on edit footprint
+const defaultVoiture = (Number(defaultEssence) + Number(defaultGazole) + Number(defaultGPL) + Number(defaultE85) + Number(defaultElectrique))
+totalVoiture.innerHTML = defaultVoiture
+
+// transport Energie Logement / autres
 // fin de category voiture
 
 // category transport
@@ -114,6 +133,8 @@ function totTransport() {
 const userTgv = document.getElementById('userTgv');
 const tgvcc = 0.00369
 const scoreTgv = document.getElementById('scoreTgv');
+const defaultTgv = (userTgv.value * electriquecc).toFixed(2)
+scoreTgv.innerHTML = defaultTgv
 userTgv.addEventListener("input", multiplyTgv);
 function multiplyTgv() {
   let one = parseFloat(userTgv.value) || 0;
@@ -126,6 +147,8 @@ function multiplyTgv() {
 const userTerelec = document.getElementById('userTerelec');
 const tereleccc = 0.00891
 const scoreTerelec = document.getElementById('scoreTerelec');
+const defaultTerelec = (userTerelec.value * tereleccc).toFixed(2)
+scoreTerelec.innerHTML = defaultTerelec
 userTerelec.addEventListener("input", multiplyTerelec);
 function multiplyTerelec() {
   let one = parseFloat(userTerelec.value) || 0;
@@ -138,6 +161,8 @@ function multiplyTerelec() {
 const userTertherm = document.getElementById('userTertherm');
 const terthermcc = 0.0798
 const scoreTertherm = document.getElementById('scoreTertherm');
+const defaultTerTherm = (userTertherm.value * terthermcc).toFixed(2)
+scoreTertherm.innerHTML = defaultTerTherm
 userTertherm.addEventListener("input", multiplyTertherm);
 function multiplyTertherm() {
   let one = parseFloat(userTertherm.value) || 0;
@@ -150,6 +175,8 @@ function multiplyTertherm() {
 const userIntercite = document.getElementById('userIntercite');
 const intercitecc = 0.0056
 const scoreIntercite = document.getElementById('scoreIntercite');
+const defaultIntercite = (userIntercite.value * intercitecc).toFixed(2)
+scoreIntercite.innerHTML = defaultIntercite
 userIntercite.addEventListener("input", multiplyIntercite);
 function multiplyIntercite() {
   let one = parseFloat(userIntercite.value) || 0;
@@ -162,6 +189,8 @@ function multiplyIntercite() {
 const userMetro = document.getElementById('userMetro');
 const metrocc = 0.0057
 const scoreMetro = document.getElementById('scoreMetro');
+const defaultMetro = (userMetro.value * metrocc).toFixed(2)
+scoreMetro.innerHTML = defaultMetro
 userMetro.addEventListener("input", multiplyMetro);
 function multiplyMetro() {
   let one = parseFloat(userMetro.value) || 0;
@@ -174,6 +203,8 @@ function multiplyMetro() {
 const userBus = document.getElementById('userBus');
 const buscc = 0.0921666666666667
 const scoreBus = document.getElementById('scoreBus');
+const defaultBus = (userBus.value * buscc).toFixed(2)
+scoreBus.innerHTML = defaultBus
 userBus.addEventListener("input", multiplyBus);
 function multiplyBus() {
   let one = parseFloat(userBus.value) || 0;
@@ -186,6 +217,8 @@ function multiplyBus() {
 const userAvion = document.getElementById('userAvion');
 const avioncc = 0.258
 const scoreAvion = document.getElementById('scoreAvion');
+const defaultAvion = (userAvion.value * avioncc).toFixed(2)
+scoreAvion.innerHTML = defaultAvion
 userAvion.addEventListener("input", multiplyAvion);
 function multiplyAvion() {
   let one = parseFloat(userAvion.value) || 0;
@@ -198,6 +231,8 @@ function multiplyAvion() {
 const userAvionregional = document.getElementById('userAvionregional');
 const avionregionalcc = 0.453
 const scoreAvionregional = document.getElementById('scoreAvionregional');
+const defaultAvionregional = (userAvionregional.value * avionregionalcc).toFixed(2)
+scoreAvionregional.innerHTML = defaultAvionregional
 userAvionregional.addEventListener("input", multiplyAvionregional);
 function multiplyAvionregional() {
   let one = parseFloat(userAvionregional.value) || 0;
@@ -205,7 +240,11 @@ function multiplyAvionregional() {
   scoreAvionregional.innerHTML = ccavionregional;
   totTransport();
 }
-
+// to display values on edit footprint
+const defaultTransport = (Number(defaultTgv) + Number(defaultTerelec) + Number(defaultTerTherm)
++ Number(defaultIntercite) + Number(defaultMetro) + Number(defaultBus)
++ Number(defaultAvion) + Number(defaultAvionregional));
+totalTransport.innerHTML = defaultTransport
 
 // category logement / energie
 const totalEnergie = document.getElementById('totalEnergie')
@@ -222,9 +261,11 @@ function totEnergie() {
   total();
 }
 // field electricité
-let userElectricite = document.getElementById('userElectricite');
+const userElectricite = document.getElementById('userElectricite');
 const elecricitecc = 0.0571
-let scoreElectricite = document.getElementById('scoreelec');
+const scoreElectricite = document.getElementById('scoreelec');
+const defaultElectricite = (userElectricite.value * elecricitecc).toFixed(2)
+scoreElectricite.innerHTML = defaultElectricite
 userElectricite.addEventListener("input", multiplyElec);
 function multiplyElec() {
   let one = parseFloat(userElectricite.value) || 0;
@@ -233,9 +274,11 @@ function multiplyElec() {
   totEnergie()
 }
 // field gazkwh
-let userGaz = document.getElementById('userGaz');
+const userGazkwh = document.getElementById('userGaz');
 const gazkwhcc = 0.205
-let scoreGazkwh = document.getElementById('scoreGazkwh');
+const scoreGazkwh = document.getElementById('scoreGazkwh');
+const defaultGazkwh = (userGazkwh.value * gazkwhcc).toFixed(2)
+scoreGazkwh.innerHTML = defaultGazkwh
 userGaz.addEventListener("input", multiplyGazkwh);
 function multiplyGazkwh() {
   let one = parseFloat(userGaz.value) || 0;
@@ -245,9 +288,11 @@ function multiplyGazkwh() {
 }
 
 // field gazm
-let userGazm = document.getElementById('userGazm');
+const userGazm = document.getElementById('userGazm');
 const gazm = 2.2
-let scoreGazm = document.getElementById('scoreGazm');
+const scoreGazm = document.getElementById('scoreGazm');
+const defaultGazm = (userGazm.value * gazm).toFixed(2)
+scoreGazm.innerHTML = defaultGazm
 userGazm.addEventListener("input", multiplyGazm);
 function multiplyGazm() {
   let one = parseFloat(userGazm.value) || 0;
@@ -257,21 +302,25 @@ function multiplyGazm() {
 }
 
 // field fioul
-let userFioul = document.getElementById('userFioul');
-const fioul = 3.25
-let scoreFioul = document.getElementById('scoreFioul');
+const userFioul = document.getElementById('userFioul');
+const fioulcc = 3.25
+const scoreFioul = document.getElementById('scoreFioul');
+const defaultFioul = (userFioul.value * fioulcc).toFixed(2)
+scoreFioul.innerHTML = defaultFioul
 userFioul.addEventListener("input", multiplyFioul);
 function multiplyFioul() {
   let one = parseFloat(userFioul.value) || 0;
-  let cc = parseFloat(one * fioul).toFixed(2);
+  let cc = parseFloat(one * fioulcc).toFixed(2);
   scoreFioul.innerHTML = cc;
   totEnergie()
 }
 
 // field granule bois
-let userGranulebois = document.getElementById('userGranulebois');
+const userGranulebois = document.getElementById('userGranulebois');
 const granulebois = 0.111
-let scoreGranulebois = document.getElementById('scoreGranulebois');
+const scoreGranulebois = document.getElementById('scoreGranulebois');
+const defaultGranulebois = (userGranulebois.value * granulebois).toFixed(2)
+scoreGranulebois.innerHTML = defaultGranulebois
 userGranulebois.addEventListener("input", multiplyGranulebois);
 function multiplyGranulebois() {
   let one = parseFloat(userGranulebois.value) || 0;
@@ -282,32 +331,36 @@ function multiplyGranulebois() {
 
 
 // field buche bois
-let userBuche = document.getElementById('userBuche');
-const buchebois = 0.114
-let scoreBuchebois = document.getElementById('scoreBuchebois');
+const userBuche = document.getElementById('userBuche');
+const bucheboiscc = 0.114
+const scoreBuchebois = document.getElementById('scoreBuchebois');
+const defaultBuchebois = (userBuche.value * bucheboiscc).toFixed(2)
+scoreBuchebois.innerHTML = defaultBuchebois
 userBuche.addEventListener("input", multiplyBuche);
 function multiplyBuche() {
   let one = parseFloat(userBuche.value) || 0;
-  let cc = parseFloat(one * buchebois).toFixed(2);
+  let cc = parseFloat(one * bucheboiscc).toFixed(2);
   scoreBuchebois.innerHTML = cc;
   totEnergie()
 }
 
 // field eau
-let userEau = document.getElementById('userEau');
-const eau = 0.132
-let scoreEau = document.getElementById('scoreEau');
+const userEau = document.getElementById('userEau');
+const eaucc = 0.132
+const scoreEau = document.getElementById('scoreEau');
+const defaultEau = (userEau.value * eaucc).toFixed(2)
+scoreEau.innerHTML = defaultEau
 userEau.addEventListener("input", multiplyEau);
 function multiplyEau() {
   let one = parseFloat(userEau.value) || 0;
-  let cc = parseFloat(one * eau).toFixed(2);
+  let cc = parseFloat(one * eaucc).toFixed(2);
   scoreEau.innerHTML = cc;
   totEnergie()
 }
-
-
-
-
+// dipslay values on update page
+const defaultEnergie = (Number(defaultElectricite) + Number(defaultGazkwh) + Number(defaultGazm)
+  + Number(defaultFioul) + Number(defaultGranulebois) + Number(defaultBuchebois) + Number(defaultEau)).toFixed(2);
+totalEnergie.innerHTML = defaultEnergie
 
 // total category alimentaire
 const totalAlimBox = document.getElementById('totalAlimBox')
@@ -335,6 +388,8 @@ function totAlim() {
 const userBle = document.getElementById('userBle');
 const blecc = 0.439
 const scoreBle = document.getElementById('scoreble');
+const defaultBle = (userBle.value * blecc).toFixed(2)
+scoreBle.innerHTML = defaultBle
 userBle.addEventListener("input", multiplyBle);
 function multiplyBle() {
   let one = parseFloat(userBle.value) || 0;
@@ -345,9 +400,11 @@ function multiplyBle() {
 
 
 // field carotte
-let userCarotte = document.getElementById('userCarotte');
+const userCarotte = document.getElementById('userCarotte');
 const carottecc = 0.0706
 const scoreCarotte = document.getElementById('scoreCarotte');
+const defaultCarotte = (userCarotte.value * carottecc).toFixed(2)
+scoreCarotte.innerHTML = defaultCarotte
 userCarotte.addEventListener("input", multiplyCarotte);
 function multiplyCarotte() {
   let one = parseFloat(userCarotte.value) || 0;
@@ -357,9 +414,11 @@ function multiplyCarotte() {
 }
 
 // field riz
-let userRiz = document.getElementById('userRiz');
+const userRiz = document.getElementById('userRiz');
 const rizcc = 3.59
 const scoreRiz = document.getElementById('scoreRiz');
+const defaultRiz = (userRiz.value * rizcc).toFixed(2)
+scoreRiz.innerHTML = defaultRiz
 userRiz.addEventListener("input", multiplyRiz);
 function multiplyRiz() {
   let one = parseFloat(userRiz.value) || 0;
@@ -372,6 +431,8 @@ function multiplyRiz() {
 let userPommeDeTerre = document.getElementById('userPommeDeTerre');
 const pommedeterrecc = 0.0861
 const scorePommedeterre = document.getElementById('scorePommeDeTerre');
+const defaultPommeDeTerre = (userPommeDeTerre.value * pommedeterrecc).toFixed(2)
+scorePommeDeTerre.innerHTML = defaultPommeDeTerre
 userPommeDeTerre.addEventListener("input", multiplyPatate);
 function multiplyPatate() {
   let one = parseFloat(userPommeDeTerre.value) || 0;
@@ -384,6 +445,8 @@ function multiplyPatate() {
 let userSaladeSaison = document.getElementById('userSaladeSaison');
 const saladesaisoncc = 0.326
 const scoreSaladeSaison = document.getElementById('scoreSaladeSaison');
+const defaultSaladeSaison = (userSaladeSaison.value * saladesaisoncc).toFixed(2)
+scoreSaladeSaison.innerHTML = defaultSaladeSaison
 userSaladeSaison.addEventListener("input", multiplySalade);
 function multiplySalade() {
   let one = parseFloat(userSaladeSaison.value) || 0;
@@ -396,6 +459,8 @@ function multiplySalade() {
 let userSaladeSs = document.getElementById('userSaladeSs');
 const saladesscc = 11.05
 const scoreSaladeSs = document.getElementById('scoreSaladeSs');
+const defaultSaladeSs = (userSaladeSs.value * saladesscc).toFixed(2)
+scoreSaladeSs.innerHTML = defaultSaladeSs
 userSaladeSs.addEventListener("input", multiplySaladeSs);
 function multiplySaladeSs() {
   let one = parseFloat(userSaladeSs.value) || 0;
@@ -408,6 +473,8 @@ function multiplySaladeSs() {
 let userTomates = document.getElementById('userTomates');
 const tomatesscc = 0.177
 const scoreTomates = document.getElementById('scoreTomates');
+const defaultTomates = (userTomates.value * tomatesscc).toFixed(2)
+scoreTomates.innerHTML = defaultTomates
 userTomates.addEventListener("input", multiplyTomates);
 function multiplyTomates() {
   let one = parseFloat(userTomates.value) || 0;
@@ -420,6 +487,8 @@ function multiplyTomates() {
 let userTomatesFRss = document.getElementById('userTomatesFRss');
 const tomatesFRsscc = 2.23
 const scoreTomatesFRss = document.getElementById('scoreTomatesFRss');
+const defaultTomatesFRss = (userTomatesFRss.value * tomatesFRsscc).toFixed(2)
+scoreTomatesFRss.innerHTML = defaultTomatesFRss
 userTomatesFRss.addEventListener("input", multiplyTomatesFRss);
 function multiplyTomatesFRss() {
   let one = parseFloat(userTomatesFRss.value) || 0;
@@ -432,6 +501,8 @@ function multiplyTomatesFRss() {
 let userBoeuf = document.getElementById('userBoeuf');
 const boeufcc = 15
 const scoreBoeuf = document.getElementById('scoreBoeuf');
+const defaultBoeuf = (userBoeuf.value * boeufcc).toFixed(2)
+scoreBoeuf.innerHTML = defaultBoeuf
 userBoeuf.addEventListener("input", multiplyBoeuf);
 function multiplyBoeuf() {
   let one = parseFloat(userBoeuf.value) || 0;
@@ -444,6 +515,8 @@ function multiplyBoeuf() {
 let userVeau = document.getElementById('userVeau');
 const veaucc = 6.5
 const scoreVeau = document.getElementById('scoreVeau');
+const defaultVeau = (userVeau.value * veaucc).toFixed(2)
+scoreVeau.innerHTML = defaultVeau
 userVeau.addEventListener("input", multiplyVeau);
 function multiplyVeau() {
   let one = parseFloat(userVeau.value) || 0;
@@ -456,6 +529,8 @@ function multiplyVeau() {
 let userLaitvache = document.getElementById('userLaitvache');
 const laitvachecc = 0.9
 const scoreLaitvache = document.getElementById('scoreLaitvache');
+const defaultLaitDeVache = (userLaitvache.value * laitvachecc).toFixed(2)
+scoreLaitvache.innerHTML = defaultLaitDeVache
 userLaitvache.addEventListener("input", multiplyLaitvache);
 function multiplyLaitvache() {
   let one = parseFloat(userLaitvache.value) || 0;
@@ -468,6 +543,8 @@ function multiplyLaitvache() {
 let userPoulet = document.getElementById('userPoulet');
 const pouletcc = 2.14
 const scorePoulet = document.getElementById('scorePoulet');
+const defaultPoulet = (userPoulet.value * pouletcc).toFixed(2)
+scorePoulet.innerHTML = defaultPoulet
 userPoulet.addEventListener("input", multiplyPoulet);
 function multiplyPoulet() {
   let one = parseFloat(userPoulet.value) || 0;
@@ -480,6 +557,8 @@ function multiplyPoulet() {
 let userOeufs = document.getElementById('userOeufs');
 const oeufscc = 1.72
 const scoreOeufs = document.getElementById('scoreOeufs');
+const defaultOeufs = (userOeufs.value * oeufscc).toFixed(2)
+scoreOeufs.innerHTML = defaultOeufs
 userOeufs.addEventListener("input", multiplyOeufs);
 function multiplyOeufs() {
   let one = parseFloat(userOeufs.value) || 0;
@@ -487,7 +566,13 @@ function multiplyOeufs() {
   scoreOeufs.innerHTML = oeufs;
   totAlim()
 }
-
+// to display values on update form
+const defaultAlim = (Number(defaultBle) + Number(defaultCarotte)
+  + Number(defaultRiz) + Number(defaultPommeDeTerre) + Number(defaultSaladeSaison)
+  + Number(defaultSaladeSs) + Number(defaultTomates) + Number(defaultTomatesFRss)
+  + Number(defaultBoeuf) + Number(defaultVeau) + Number(defaultLaitDeVache)
+  + Number(defaultPoulet) + Number(defaultOeufs)).toFixed(2)
+totalAlimBox.innerHTML = defaultAlim
 
 // category autre
 const totalAutre = document.getElementById('totalAutre')
@@ -509,6 +594,8 @@ function totAutre() {
 let userAspirateur = document.getElementById('userAspirateur');
 const aspirateurcc = 52
 const scoreAspirateur = document.getElementById('scoreAspirateur');
+const defaultAspirateur = (userAspirateur.value * aspirateurcc).toFixed(2)
+scoreAspirateur.innerHTML = defaultAspirateur
 userAspirateur.addEventListener("input", multiplyAspirateur);
 function multiplyAspirateur() {
   let one = parseFloat(userAspirateur.value) || 0;
@@ -520,6 +607,8 @@ function multiplyAspirateur() {
 let userCongelateur = document.getElementById('userCongelateur');
 const congelateurcc = 415
 const scoreCongelateur = document.getElementById('scoreCongelateur');
+const defaultCongelateur = (userCongelateur.value * congelateurcc).toFixed(2)
+scoreCongelateur.innerHTML = defaultCongelateur
 userCongelateur.addEventListener("input", multiplyCongelateur);
 function multiplyCongelateur() {
   let one = parseFloat(userCongelateur.value) || 0;
@@ -531,6 +620,8 @@ function multiplyCongelateur() {
 let userRefrigerateur = document.getElementById('userRefrigerateur');
 const refrigerateurcc = 300
 const scoreRefrigerateur = document.getElementById('scoreRefrigerateur');
+const defaultRefrigerateur = (userRefrigerateur.value * refrigerateurcc).toFixed(2)
+scoreRefrigerateur.innerHTML = defaultRefrigerateur
 userRefrigerateur.addEventListener("input", multiplyRefrigerateur);
 function multiplyRefrigerateur() {
   let one = parseFloat(userRefrigerateur.value) || 0;
@@ -542,6 +633,8 @@ function multiplyRefrigerateur() {
 let userFourelec = document.getElementById('userFourelec');
 const foureleccc = 217
 const scoreFourelec = document.getElementById('scoreFourelec');
+const defaultFourelec = (userFourelec.value * foureleccc).toFixed(2)
+scoreFourelec.innerHTML = defaultFourelec
 userFourelec.addEventListener("input", multiplyFourelec);
 function multiplyFourelec() {
   let one = parseFloat(userFourelec.value) || 0;
@@ -553,6 +646,8 @@ function multiplyFourelec() {
 let userLavelinge = document.getElementById('userLavelinge');
 const lavelingecc = 217
 const scoreLavelinge = document.getElementById('scoreLavelinge');
+const defaultLavelinge = (userLavelinge.value * lavelingecc).toFixed(2)
+scoreLavelinge.innerHTML = defaultLavelinge
 userLavelinge.addEventListener("input", multiplyLavelinge);
 function multiplyLavelinge() {
   let one = parseFloat(userLavelinge.value) || 0;
@@ -564,6 +659,8 @@ function multiplyLavelinge() {
 let userMicroonde = document.getElementById('userMicroonde');
 const microondecc = 100
 const scoreMicroonde = document.getElementById('scoreMicroonde');
+const defaultMicroonde = (userMicroonde.value * microondecc).toFixed(2)
+scoreMicroonde.innerHTML = defaultMicroonde
 userMicroonde.addEventListener("input", multiplyMicroonde);
 function multiplyMicroonde() {
   let one = parseFloat(userMicroonde.value) || 0;
@@ -575,6 +672,8 @@ function multiplyMicroonde() {
 let userSmartphone = document.getElementById('userSmartphone');
 const smartphonecc = 15
 const scoreSmartphone = document.getElementById('scoreSmartphone');
+const defaultSmartphone = (userSmartphone.value * smartphonecc).toFixed(2)
+scoreSmartphone.innerHTML = defaultSmartphone
 userSmartphone.addEventListener("input", multiplySmartphone);
 function multiplySmartphone() {
   let one = parseFloat(userSmartphone.value) || 0;
@@ -586,6 +685,8 @@ function multiplySmartphone() {
 let userOrdinateur = document.getElementById('userOrdinateur');
 const ordinateurcc = 150
 const scoreOrdinateur = document.getElementById('scoreOrdinateur');
+const defaultOrdinateur = (userOrdinateur.value * ordinateurcc).toFixed(2)
+scoreOrdinateur.innerHTML = defaultOrdinateur
 userOrdinateur.addEventListener("input", multiplyOrdinateur);
 function multiplyOrdinateur() {
   let one = parseFloat(userOrdinateur.value) || 0;
@@ -593,4 +694,13 @@ function multiplyOrdinateur() {
   scoreOrdinateur.innerHTML = cc;
   totAutre()
 }
+
+const defaultAutre = (Number(defaultAspirateur) + Number(defaultCongelateur)
+  + Number(defaultRefrigerateur) + Number(defaultFourelec) + Number(defaultLavelinge)
+  + Number(defaultMicroonde) + Number(defaultSmartphone) + Number(defaultOrdinateur)).toFixed(2)
+totalAutre.innerHTML = defaultAutre
+
+
+totalBilan.innerHTML = (Number(defaultVoiture) + Number(defaultTransport)
+  + Number(defaultEnergie) + Number(defaultAlim) + Number(defaultAutre)).toFixed(2)
 
