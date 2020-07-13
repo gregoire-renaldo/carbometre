@@ -3,6 +3,7 @@
 
 
 // total Bilan
+
 const totalBilan = document.getElementById('total');
 function total() {
   const numberVoiture = Number(totalVoiture.textContent);

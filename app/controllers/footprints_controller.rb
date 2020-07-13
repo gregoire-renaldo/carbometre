@@ -38,7 +38,7 @@ class FootprintsController < ApplicationController
     @footprint = Footprint.find(params[:id])
     @footprint.update(footprint_params)
 
-    # no need for app/views/footprints/update.html.erb
+
     redirect_to footprint_path(@footprint)
   end
 
@@ -53,7 +53,7 @@ class FootprintsController < ApplicationController
   private
 
   def footprint_params
-    params.require(:footprint).permit(:name, :ble, :carotte, :boeuf, :riz, :saladesaison, :saladess, :tomatesfr, :tomatesfrss, :veau, :laitvache, :poulet, :oeufs, :electricite, :gazkwh, :gazm, :fioul, :granulebois, :buchebois, :eau, :aspirateur, :congelateur, :refrigerateur250l, :fourelectrique, :lavelinge, :microonde, :smartphone, :ordinateur, :tgv, :terelectrique, :terthermique, :intercite, :metro, :bus, :avion, :avionregional, :essence, :gazole, :gpl, :e85, :electrique )
+    params.require(:footprint).permit(:name,:patate, :ble, :carotte, :boeuf, :riz, :saladesaison, :saladess, :tomatesfr, :tomatesfrss, :veau, :laitvache, :poulet, :oeufs, :electricite, :gazkwh, :gazm, :fioul, :granulebois, :buchebois, :eau, :aspirateur, :congelateur, :refrigerateur250l, :fourelectrique, :lavelinge, :microonde, :smartphone, :ordinateur, :tgv, :terelectrique, :terthermique, :intercite, :metro, :bus, :avion, :avionregional, :essence, :gazole, :gpl, :e85, :electrique )
   end
 
   def calculations

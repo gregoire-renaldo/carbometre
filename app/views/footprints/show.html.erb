@@ -1,4 +1,11 @@
 <div class="container">
+  <div class="row justify-content-center">
+        <%= link_to" Modifier l'empreinte", edit_footprint_path(@footprint) %>
+        <%= link_to "Delete #{@footprint.name}",
+                    footprint_path(@footprint),
+                    method: :delete,
+                    data: { confirm: "Êtes-vous sûr ?" } %>
+  </div>
   <div class="row">
     <div class="col-sm">
       <h2>Total : <%= @footprint.total_score %></h2>
@@ -85,6 +92,7 @@
     </div>
     <div class="row justify-content-center mt-2 mb-2 ">
       <div class="col-sm justify-content-center">
+        <%= link_to" Modifier l'empreinte", edit_footprint_path(@footprint) %>
         <%= link_to 'Create PDF document', footprint_path(@footprint, :format => :pdf), target: "_blank" %>
       </div>
     </div>
