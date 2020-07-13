@@ -99,7 +99,7 @@ function multiplyElectrique() {
 }
 
 // to display values on edit footprint
-const defaultVoiture = (Number(defaultEssence) + Number(defaultGazole) + Number(defaultGPL) + Number(defaultE85) + Number(defaultElectrique))
+const defaultVoiture = (Number(defaultEssence) + Number(defaultGazole) + Number(defaultGPL) + Number(defaultE85) + Number(defaultElectrique)).toFixed(2)
 totalVoiture.innerHTML = defaultVoiture
 
 // transport Energie Logement / autres
@@ -236,7 +236,7 @@ function multiplyAvionregional() {
 // to display values on edit footprint
 const defaultTransport = (Number(defaultTgv) + Number(defaultTerelec) + Number(defaultTerTherm)
 + Number(defaultIntercite) + Number(defaultMetro) + Number(defaultBus)
-+ Number(defaultAvion) + Number(defaultAvionregional));
++ Number(defaultAvion) + Number(defaultAvionregional)).toFixed(2);
 totalTransport.innerHTML = defaultTransport
 
 // category logement / energie

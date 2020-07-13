@@ -3,6 +3,8 @@
   <%= simple_form_for(@footprint) do |f| %>
   <div class="mb-2 mt-2">
     <h2>Nouveau bilan</h2>
+    <%= f.label :titre %>
+    <%= f.text_field :title %>
   </div>
   <!-- total block -->
     <div class="row sticky-top">
