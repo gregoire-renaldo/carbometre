@@ -1,6 +1,7 @@
 <!-- all user footprints, clickable, redirecting show  -->
 <div class="container">
-  <div class="row justify-content-around ">
+  <div class="row justify-content-around">
+    <h3>Mes empreintes</h3>
     <%= current_user.username%>
     <% @footprints.each do |footprint| %>
     <% if footprint.user_id == current_user.id %>
