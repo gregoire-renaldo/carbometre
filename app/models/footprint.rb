@@ -47,10 +47,11 @@ class Footprint < ApplicationRecord
     self.e85 = 0 if self.e85.nil?
     self.electrique = 0 if self.electrique.nil?
     self.autre = 0 if self.autre.nil?
+    self.valeur2 = 0 if self.valeur2.nil?
   end
 
   def total_score
-    self.ble + self.boeuf + self.carotte + self.riz + self.patate + self.saladesaison + self.saladess + self.tomatesfr + self.tomatesfrss + self.veau + self.laitvache + self.poulet + self.oeufs + self.electricite + self.gazkwh + self.gazm + self.fioul + self.granulebois + self.buchebois + self.eau + self.aspirateur + self.congelateur + self.refrigerateur250l + self.fourelectrique + self.lavelinge + self.microonde + self.smartphone + self.ordinateur + self.tgv + self.terelectrique + self.terthermique + self.intercite + self.metro + self.bus + self.avion + self.avionregional + self.essence + self.gazole + self.gpl + self.e85 + self.electrique + self.autre
+    self.ble + self.boeuf + self.carotte + self.riz + self.patate + self.saladesaison + self.saladess + self.tomatesfr + self.tomatesfrss + self.veau + self.laitvache + self.poulet + self.oeufs + self.electricite + self.gazkwh + self.gazm + self.fioul + self.granulebois + self.buchebois + self.eau + self.aspirateur + self.congelateur + self.refrigerateur250l + self.fourelectrique + self.lavelinge + self.microonde + self.smartphone + self.ordinateur + self.tgv + self.terelectrique + self.terthermique + self.intercite + self.metro + self.bus + self.avion + self.avionregional + self.essence + self.gazole + self.gpl + self.e85 + self.electrique + self.autre + self.valeur2
   end
 
   def total_voiture
@@ -74,7 +75,7 @@ class Footprint < ApplicationRecord
   end
 
   def total_valeur
-    self.autre
+    self.autre + self.valeur2
   end
 
 
