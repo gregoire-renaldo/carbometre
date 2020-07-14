@@ -1,7 +1,7 @@
 <!-- main div containing all cards and fields -->
 <div class="container">
   <%= simple_form_for(@footprint) do |f| %>
-  <div class="mb-2">
+  <div class="mb-2" align="center">
     <h3>Nouvelle empreinte</h3>
     <%= f.label :titre, class:"titre"%>
     <%= f.text_field :title, maxlength: 20, class:"field_titre"  %>
