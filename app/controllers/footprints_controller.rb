@@ -53,7 +53,7 @@ class FootprintsController < ApplicationController
   private
 
   def footprint_params
-    params.require(:footprint).permit(:autre, :title, :patate, :ble, :carotte, :boeuf, :riz, :saladesaison, :saladess, :tomatesfr, :tomatesfrss, :veau, :laitvache, :poulet, :oeufs, :electricite, :gazkwh, :gazm, :fioul, :granulebois, :buchebois, :eau, :aspirateur, :congelateur, :refrigerateur250l, :fourelectrique, :lavelinge, :microonde, :smartphone, :ordinateur, :tgv, :terelectrique, :terthermique, :intercite, :metro, :bus, :avion, :avionregional, :essence, :gazole, :gpl, :e85, :electrique )
+    params.require(:footprint).permit(:valeur2, :autre, :title, :patate, :ble, :carotte, :boeuf, :riz, :saladesaison, :saladess, :tomatesfr, :tomatesfrss, :veau, :laitvache, :poulet, :oeufs, :electricite, :gazkwh, :gazm, :fioul, :granulebois, :buchebois, :eau, :aspirateur, :congelateur, :refrigerateur250l, :fourelectrique, :lavelinge, :microonde, :smartphone, :ordinateur, :tgv, :terelectrique, :terthermique, :intercite, :metro, :bus, :avion, :avionregional, :essence, :gazole, :gpl, :e85, :electrique )
   end
 
   def calculations
@@ -182,6 +182,9 @@ class FootprintsController < ApplicationController
     end
     unless @footprint.autre == nil
        @footprint.autre * 1
+    end
+    unless @footprint.valeur2 == nil
+       @footprint.valeur2 * 1
     end
   end
 

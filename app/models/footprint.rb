@@ -47,6 +47,7 @@ class Footprint < ApplicationRecord
     self.e85 = 0 if self.e85.nil?
     self.electrique = 0 if self.electrique.nil?
     self.autre = 0 if self.autre.nil?
+    self.valeur2 = 0 if self.valeur2.nil?
   end
 
   def total_score
@@ -74,7 +75,7 @@ class Footprint < ApplicationRecord
   end
 
   def total_valeur
-    self.autre
+    self.autre + self.valeur2
   end
 
 

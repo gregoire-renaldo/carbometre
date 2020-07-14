@@ -695,11 +695,14 @@ const defaultAutre = (Number(defaultAspirateur) + Number(defaultCongelateur)
   + Number(defaultMicroonde) + Number(defaultSmartphone) + Number(defaultOrdinateur)).toFixed(2)
 totalAutre.innerHTML = defaultAutre
 
+
+
 // category valeur additionnelle
 const totalValeur = document.getElementById('totalValeur')
 function totValeur() {
   const numberValeur1 = Number(scoreValeur1.textContent);
-  const sum = numberValeur1
+  const numberValeur2 = Number(scoreValeur2.textContent);
+  const sum = numberValeur1 + numberValeur2
   totalValeur.innerText = sum.toFixed(2);
   total();
 }
@@ -716,7 +719,23 @@ function multiplyValeur1() {
   scoreValeur1.innerHTML = cc;
   totValeur()
 }
-const defaultValeur = (Number(defaultValeur1)).toFixed(2)
+// field valeur 2
+let userValeur2 = document.getElementById('userValeur2');
+const valeur2cc = 1
+const scoreValeur2 = document.getElementById('scoreValeur2');
+const defaultValeur2 = (userValeur2.value * valeur2cc).toFixed(2)
+scoreValeur2.innerHTML = defaultValeur2
+userValeur2.addEventListener("input", multiplyValeur2);
+function multiplyValeur2() {
+  let one = parseFloat(userValeur2.value) || 0;
+  let cc = parseFloat(one * valeur2cc).toFixed(2);
+  scoreValeur2.innerHTML = cc;
+  totValeur()
+}
+
+
+
+const defaultValeur = (Number(defaultValeur1)+Number(defaultValeur2)).toFixed(2)
 totalValeur.innerHTML = defaultValeur
 
 
