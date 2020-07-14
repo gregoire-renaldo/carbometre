@@ -9,14 +9,14 @@
   </div>
   <div class="row">
     <div class="col-sm">
-      <h3>Total : <%= @footprint.total_score %></h3>
+      <h3>Total : <%= @footprint.total_score %> kg</h3>
       <div class="row ">
         <div class="col-sm">
-        <h4>Total Voiture : <%= @footprint.total_voiture %></h4>
+        <h4>Total Voiture : <%= @footprint.total_voiture %> kg</h4>
           <ul class="list-group">
             <li class="list-group-item"> Essence <%= @footprint.essence%> kg</li>
             <li class="list-group-item"> Gazole <%= @footprint.gazole%> kg</li>
-            <li class="list-group-item"> Gpl <%= @footprint.gpl%> kg</li>
+            <li class="list-group-item"> GPL <%= @footprint.gpl%> kg</li>
             <li class="list-group-item"> E85 <%= @footprint.e85%> kg</li>
             <li class="list-group-item"> Electrique <%= @footprint.electrique%> kg</li>
           </ul>
@@ -25,11 +25,11 @@
 
       <div class="row ">
         <div class="col-sm">
-        <h4>Total Autres transports : <%= @footprint.total_autre_transport %></h4>
+        <h4>Total Autres transports : <%= @footprint.total_autre_transport %> kg</h4>
           <ul class="list-group">
             <li class="list-group-item"> TGV <%= @footprint.tgv%> kg</li>
-            <li class="list-group-item"> Ter Electrique <%= @footprint.terelectrique%> kg</li>
-            <li class="list-group-item"> Ter Thermique <%= @footprint.terthermique%> kg</li>
+            <li class="list-group-item"> TER Electrique <%= @footprint.terelectrique%> kg</li>
+            <li class="list-group-item"> TER Thermique <%= @footprint.terthermique%> kg</li>
             <li class="list-group-item"> Intercité <%= @footprint.intercite%> kg</li>
             <li class="list-group-item"> Metro <%= @footprint.metro%> kg</li>
             <li class="list-group-item"> Bus <%= @footprint.bus%> kg</li>
@@ -41,48 +41,48 @@
 
       <div class="row ">
         <div class="col-sm">
-          <h4>Total Logement : <%= @footprint.total_logement %></h4>
+          <h4>Total Logement : <%= @footprint.total_logement %> kg</h4>
           <ul class="list-group">
-            <li class="list-group-item"> TGV <%= @footprint.electricite%> kg</li>
-            <li class="list-group-item"> Ter Electrique <%= @footprint.gazkwh%> kg</li>
-            <li class="list-group-item"> Ter Thermique <%= @footprint.gazm%> kg</li>
-            <li class="list-group-item"> Intercité <%= @footprint.fioul%> kg</li>
-            <li class="list-group-item"> Metro <%= @footprint.granulebois%> kg</li>
-            <li class="list-group-item"> Bus <%= @footprint.buchebois%> kg</li>
-            <li class="list-group-item"> Avion <%= @footprint.eau%> kg</li>
+            <li class="list-group-item"> Electricité <%= @footprint.electricite%> kg</li>
+            <li class="list-group-item"> Gaz kWh <%= @footprint.gazkwh%> kg</li>
+            <li class="list-group-item"> Gaz m³ <%= @footprint.gazm%> kg</li>
+            <li class="list-group-item"> Fioul <%= @footprint.fioul%> kg</li>
+            <li class="list-group-item"> Granules de bois <%= @footprint.granulebois%> kg</li>
+            <li class="list-group-item"> Bûches de bois <%= @footprint.buchebois%> kg</li>
+            <li class="list-group-item"> Eau <%= @footprint.eau%> kg</li>
           </ul>
         </div>
       </div>
 
       <div class="row ">
         <div class="col-sm">
-        <h4>Total Alimentation : <%= @footprint.total_alimentation %></h4>
+        <h4>Total Alimentation : <%= @footprint.total_alimentation %> kg</h4>
           <ul class="list-group">
             <li class="list-group-item"> Blé français <%= @footprint.ble%> kg</li>
-            <li class="list-group-item"> Riz Thailandais<%= @footprint.riz%> kg</li>
+            <li class="list-group-item"> Riz Thailandais <%= @footprint.riz%> kg</li>
             <li class="list-group-item"> Carottes françaises <%= @footprint.carotte%> kg</li>
             <li class="list-group-item"> Pommes de terre France <%= @footprint.patate%> kg</li>
             <li class="list-group-item"> Salade de saison <%= @footprint.saladesaison%> kg</li>
             <li class="list-group-item"> Salades <%= @footprint.saladess%> kg</li>
             <li class="list-group-item"> Tomates France <%= @footprint.tomatesfr%> kg</li>
             <li class="list-group-item"> Tomates France sous serre  <%= @footprint.tomatesfrss%> kg</li>
+            <li class="list-group-item"> Lait vache  <%= @footprint.laitvache%> kg</li>
             <li class="list-group-item"> Boeuf  <%= @footprint.boeuf%> kg</li>
             <li class="list-group-item"> Veau  <%= @footprint.veau%> kg</li>
-            <li class="list-group-item"> Lait vache  <%= @footprint.laitvache%> kg</li>
-            <li class="list-group-item"> Lait poulet  <%= @footprint.poulet%> kg</li>
-            <li class="list-group-item"> Lait oeufs  <%= @footprint.oeufs%> kg</li>
+            <li class="list-group-item"> Poulet  <%= @footprint.poulet%> kg</li>
+            <li class="list-group-item"> Oeufs  <%= @footprint.oeufs%> kg</li>
           </ul>
         </div>
       </div>
 
       <div class="row ">
         <div class="col-sm">
-        <h4>Total Autres : <%= @footprint.total_autres %></h4>
+        <h4>Total Autres : <%= @footprint.total_autres %> kg</h4>
           <ul class="list-group">
             <li class="list-group-item"> Aspirateur <%= @footprint.aspirateur%> kg</li>
             <li class="list-group-item"> Congélateur 200 l<%= @footprint.congelateur%> kg</li>
             <li class="list-group-item"> Réfrigérateur 250 l <%= @footprint.refrigerateur250l%> kg</li>
-            <li class="list-group-item"> Four electrique <%= @footprint.fourelectrique%> kg</li>
+            <li class="list-group-item"> Four électrique <%= @footprint.fourelectrique%> kg</li>
             <li class="list-group-item"> Lave linge <%= @footprint.lavelinge%> kg</li>
             <li class="list-group-item"> Micro-onde <%= @footprint.microonde%> kg</li>
             <li class="list-group-item"> Smartphone <%= @footprint.smartphone%> kg</li>
@@ -93,10 +93,10 @@
 
       <div class="row ">
         <div class="col-sm">
-          <h4>Total Autres : <%= @footprint.total_valeur %></h4>
+          <h4>Total Autres : <%= @footprint.total_valeur %> kg</h4>
           <ul class="list-group">
-            <li class="list-group-item"> Aspirateur <%= @footprint.autre%> kg</li>
-            <li class="list-group-item"> Congélateur 200 l<%= @footprint.valeur2%> kg</li>
+            <li class="list-group-item"> Valeur 1 <%= @footprint.autre%> kg</li>
+            <li class="list-group-item"> Valeur 2 <%= @footprint.valeur2%> kg</li>
           </ul>
         </div>
       </div>
@@ -106,10 +106,10 @@
 
     </div>
   </div>
-  <div class="row justify-content-center mt-2 mb-2 ">
+  <div class="row mt-2 mb-2" align="center">
     <div class="col-sm justify-content-center">
-      <%= link_to" Modifier l'empreinte", edit_footprint_path(@footprint) %>
-      <%= link_to 'Exporter (pdf)', footprint_path(@footprint, :format => :pdf), target: "_blank" %>
+      <%= link_to" Modifier l'empreinte", edit_footprint_path(@footprint), class:"btn btn-gradient" %>
+      <!-- <%= link_to 'Exporter (pdf)', footprint_path(@footprint, :format => :pdf), target: "_blank" %> -->
     </div>
   </div>
 </div>
