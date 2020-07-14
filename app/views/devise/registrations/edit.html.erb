@@ -31,14 +31,14 @@
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Modifier" %>
+      <%= f.button :submit, "Modifier", class:"btn btn-gradient" %>
     </div>
     <% end %>
     <div class="row">
-      <%= link_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+      <%= link_to "Retour", :back, class:"btn btn-gradient" %>
     </div>
 
-    <%= link_to "Retour", :back %>
+    <%= link_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
 
   </div>
 
