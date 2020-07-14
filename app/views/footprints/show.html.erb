@@ -14,11 +14,11 @@
         <div class="col-sm">
         <h4>Total Voiture : <%= @footprint.total_voiture %> kg</h4>
           <ul class="list-group">
-            <li class="list-group-item"> Essence <%= @footprint.essence%> kg</li>
-            <li class="list-group-item"> Gazole <%= @footprint.gazole%> kg</li>
-            <li class="list-group-item"> GPL <%= @footprint.gpl%> kg</li>
-            <li class="list-group-item"> E85 <%= @footprint.e85%> kg</li>
-            <li class="list-group-item"> Electrique <%= @footprint.electrique%> kg</li>
+            <li class="list-group-item"> Essence <%= @footprint.essence*2.8%> kg</li>
+            <li class="list-group-item"> Gazole <%= @footprint.gazole*3.16%> kg</li>
+            <li class="list-group-item"> GPL <%= @footprint.gpl*1.86%> kg</li>
+            <li class="list-group-item"> E85 <%= @footprint.e85*1.68%> kg</li>
+            <li class="list-group-item"> Electrique <%= @footprint.electrique*0.0571%> kg</li>
           </ul>
         </div>
       </div>
@@ -27,14 +27,14 @@
         <div class="col-sm">
         <h4>Total Autres transports : <%= @footprint.total_autre_transport %> kg</h4>
           <ul class="list-group">
-            <li class="list-group-item"> TGV <%= @footprint.tgv%> kg</li>
-            <li class="list-group-item"> TER Electrique <%= @footprint.terelectrique%> kg</li>
-            <li class="list-group-item"> TER Thermique <%= @footprint.terthermique%> kg</li>
-            <li class="list-group-item"> Intercité <%= @footprint.intercite%> kg</li>
-            <li class="list-group-item"> Metro <%= @footprint.metro%> kg</li>
-            <li class="list-group-item"> Bus <%= @footprint.bus%> kg</li>
-            <li class="list-group-item"> Avion <%= @footprint.avion%> kg</li>
-            <li class="list-group-item"> Avion régional <%= @footprint.avionregional%> kg</li>
+            <li class="list-group-item"> TGV <%= @footprint.tgv*0.00369%> kg</li>
+            <li class="list-group-item"> TER Electrique <%= @footprint.terelectrique*0.00891%> kg</li>
+            <li class="list-group-item"> TER Thermique <%= @footprint.terthermique*0.0798%> kg</li>
+            <li class="list-group-item"> Intercité <%= @footprint.intercite*0.0056%> kg</li>
+            <li class="list-group-item"> Metro <%= @footprint.metro*0.0057%> kg</li>
+            <li class="list-group-item"> Bus <%= @footprint.bus*0.092166667%> kg</li>
+            <li class="list-group-item"> Avion <%= @footprint.avion*0.258%> kg</li>
+            <li class="list-group-item"> Avion régional <%= @footprint.avionregional*0.453%> kg</li>
           </ul>
         </div>
       </div>
@@ -43,13 +43,13 @@
         <div class="col-sm">
           <h4>Total Logement : <%= @footprint.total_logement %> kg</h4>
           <ul class="list-group">
-            <li class="list-group-item"> Electricité <%= @footprint.electricite%> kg</li>
-            <li class="list-group-item"> Gaz kWh <%= @footprint.gazkwh%> kg</li>
-            <li class="list-group-item"> Gaz m³ <%= @footprint.gazm%> kg</li>
-            <li class="list-group-item"> Fioul <%= @footprint.fioul%> kg</li>
-            <li class="list-group-item"> Granules de bois <%= @footprint.granulebois%> kg</li>
-            <li class="list-group-item"> Bûches de bois <%= @footprint.buchebois%> kg</li>
-            <li class="list-group-item"> Eau <%= @footprint.eau%> kg</li>
+            <li class="list-group-item"> Electricité <%= @footprint.electricite*0.071%> kg</li>
+            <li class="list-group-item"> Gaz kWh <%= @footprint.gazkwh*0.205%> kg</li>
+            <li class="list-group-item"> Gaz m³ <%= @footprint.gazm*2.2%> kg</li>
+            <li class="list-group-item"> Fioul <%= @footprint.fioul*3.25%> kg</li>
+            <li class="list-group-item"> Granules de bois <%= @footprint.granulebois*0.111%> kg</li>
+            <li class="list-group-item"> Bûches de bois <%= @footprint.buchebois*0.114%> kg</li>
+            <li class="list-group-item"> Eau <%= @footprint.eau*0.132%> kg</li>
           </ul>
         </div>
       </div>
@@ -59,18 +59,18 @@
         <h4>Total Alimentation : <%= @footprint.total_alimentation %> kg</h4>
           <ul class="list-group">
             <li class="list-group-item"> Blé français <%= @footprint.ble*0.439%> kg</li>
-            <li class="list-group-item"> Riz Thailandais <%= @footprint.riz%> kg</li>
-            <li class="list-group-item"> Carottes françaises <%= @footprint.carotte%> kg</li>
-            <li class="list-group-item"> Pommes de terre France <%= @footprint.patate%> kg</li>
-            <li class="list-group-item"> Salade de saison <%= @footprint.saladesaison%> kg</li>
-            <li class="list-group-item"> Salades <%= @footprint.saladess%> kg</li>
-            <li class="list-group-item"> Tomates France <%= @footprint.tomatesfr%> kg</li>
-            <li class="list-group-item"> Tomates France sous serre  <%= @footprint.tomatesfrss%> kg</li>
-            <li class="list-group-item"> Lait vache  <%= @footprint.laitvache%> kg</li>
-            <li class="list-group-item"> Boeuf  <%= @footprint.boeuf%> kg</li>
-            <li class="list-group-item"> Veau  <%= @footprint.veau%> kg</li>
-            <li class="list-group-item"> Poulet  <%= @footprint.poulet%> kg</li>
-            <li class="list-group-item"> Oeufs  <%= @footprint.oeufs%> kg</li>
+            <li class="list-group-item"> Riz Thailandais <%= @footprint.riz*3.59%> kg</li>
+            <li class="list-group-item"> Carottes françaises <%= @footprint.carotte*0.0706%> kg</li>
+            <li class="list-group-item"> Pommes de terre France <%= @footprint.patate*0.0861%> kg</li>
+            <li class="list-group-item"> Salade de saison <%= @footprint.saladesaison*0.326%> kg</li>
+            <li class="list-group-item"> Salades <%= @footprint.saladess*11.05%> kg</li>
+            <li class="list-group-item"> Tomates France <%= @footprint.tomatesfr*0.177%> kg</li>
+            <li class="list-group-item"> Tomates France sous serre  <%= @footprint.tomatesfrss*2.23%> kg</li>
+            <li class="list-group-item"> Lait vache  <%= @footprint.laitvache*0.9%> kg</li>
+            <li class="list-group-item"> Boeuf  <%= @footprint.boeuf*15%> kg</li>
+            <li class="list-group-item"> Veau  <%= @footprint.veau*6.5%> kg</li>
+            <li class="list-group-item"> Poulet  <%= @footprint.poulet*2.14%> kg</li>
+            <li class="list-group-item"> Oeufs  <%= @footprint.oeufs*1.72%> kg</li>
           </ul>
         </div>
       </div>
