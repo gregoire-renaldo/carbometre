@@ -77,3 +77,19 @@ buttonAutre.addEventListener("click", (event) => {
     }
   });
 });
+
+// bouton + - valuers
+const buttonValeur = document.getElementById("hideShowValeur")
+const arrayValeur = Array.from(document.getElementsByClassName("valeur"));
+const valeurplusmoins = document.getElementById("valeurplusmoins")
+buttonValeur.addEventListener("click", (event) => {
+  arrayValeur.forEach(function (element) {
+    if (element.style.display === "block") {
+      element.style.display = "none";
+      valeurplusmoins.innerHTML = "+";
+    } else {
+      element.style.display = "block";
+      valeurplusmoins.innerHTML = "-";
+    }
+  });
+});
