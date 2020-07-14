@@ -12,7 +12,9 @@ function total() {
   const numberEnergie = Number(totalEnergie.textContent);
   const numberAlim = Number(totalAlimBox.textContent);
   const numberAutre = Number(totalAutre.textContent);
-  const sumTotal = numberVoiture + numberAlim + numberTransport + numberEnergie + numberAutre
+  const numberValeur = Number(totalValeur.textContent);
+  const sumTotal = numberVoiture + numberAlim + numberTransport
+    + numberEnergie + numberAutre + numberValeur;
   totalBilan.innerHTML = sumTotal.toFixed(2)
 }
 // total category voiture
@@ -693,7 +695,32 @@ const defaultAutre = (Number(defaultAspirateur) + Number(defaultCongelateur)
   + Number(defaultMicroonde) + Number(defaultSmartphone) + Number(defaultOrdinateur)).toFixed(2)
 totalAutre.innerHTML = defaultAutre
 
+// category valeur additionnelle
+const totalValeur = document.getElementById('totalValeur')
+function totValeur() {
+  const numberValeur1 = Number(scoreValeur1.textContent);
+  const sum = numberValeur1
+  totalValeur.innerText = sum.toFixed(2);
+  total();
+}
+// field valeur 1
+let userValeur1 = document.getElementById('userValeur1');
+const valeur1cc = 1
+const scoreValeur1 = document.getElementById('scoreValeur1');
+const defaultValeur1 = (userValeur1.value * valeur1cc).toFixed(2)
+scoreValeur1.innerHTML = defaultValeur1
+userValeur1.addEventListener("input", multiplyValeur1);
+function multiplyValeur1() {
+  let one = parseFloat(userValeur1.value) || 0;
+  let cc = parseFloat(one * valeur1cc).toFixed(2);
+  scoreValeur1.innerHTML = cc;
+  totValeur()
+}
+const defaultValeur = (Number(defaultValeur1)).toFixed(2)
+totalValeur.innerHTML = defaultValeur
+
+
 
 totalBilan.innerHTML = (Number(defaultVoiture) + Number(defaultTransport)
-  + Number(defaultEnergie) + Number(defaultAlim) + Number(defaultAutre)).toFixed(2)
+  + Number(defaultEnergie) + Number(defaultAlim) + Number(defaultAutre) + Number(defaultValeur)).toFixed(2)
 
