@@ -1,29 +1,48 @@
 <!-- all user footprints, clickable, redirecting show  -->
 <div class="container">
-  <div class="row justify-content-around">
+  <div class="row justify-content-center">
     <h3>Mes empreintes</h3>
-    <%= current_user.username%>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="my-1 mx-5" id= "en-tete" >
+      <p>Selon l'Accord de Paris 2015 : il ne faut pas dépasser <strong>860 kg CO2eq</strong> par terrien en 2050.
+      </p>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
     <% @footprints.each do |footprint| %>
     <% if footprint.user_id == current_user.id %>
-    <div class="card mx-2 my-2" style="width: 16rem;">
+    <div class="card mx-2 my-2" style="width: 20rem;">
       <div class="card-body">
-        <h5 class="card-title"><%=link_to footprint.title, footprint_path(footprint) %></h5>
-        <h6 class="card-subtitle mb-2 text-muted">Total empreinte <%= footprint.total_score%></h6>
-        <p class="card-text">Total voiture <%= footprint.total_voiture%></p>
-        <p class="card-text">Total transport <%= footprint.total_autre_transport%></p>
-        <p class="card-text">Total logement <%= footprint.total_logement%></p>
-        <p class="card-text">Total alimentation <%= footprint.total_alimentation%></p>
-        <p class="card-text">Total autres <%= footprint.total_autres%></p>
-        <%= link_to" Modifier", edit_footprint_path(footprint) %>
-        <%= link_to "Supprimer",
-                        footprint_path(footprint),
-                        method: :delete,
-                        data: { confirm: "Êtes-vous sûrde vouloir supprimer cette empreinte ?" } %>
+        <h4 class="card-title titre mt-1"><%=link_to footprint.title, footprint_path(footprint) %></h4>
+        <h5 class="card-subtitle mb-2">Total <%= footprint.total_score%> kg</h5>
+        <p class="card-text">Total voiture <%= footprint.total_voiture%> kg</p>
+        <p class="card-text">Total transport <%= footprint.total_autre_transport%> kg</p>
+        <p class="card-text">Total logement <%= footprint.total_logement%> kg</p>
+        <p class="card-text">Total alimentation <%= footprint.total_alimentation%> kg</p>
+        <p class="card-text">Total autres <%= footprint.total_autres%> kg</p>
+        <div class="row justify-content-between">
+          <div class="col-6">
+            <%= link_to" Modifier", edit_footprint_path(footprint), class:"btn btn-gradient" %>
+          </div>
+          <div class="col-6">
+            <%= link_to "Supprimer",
+                            footprint_path(footprint),
+                            method: :delete,
+                            data: { confirm: "Êtes-vous sûrde vouloir supprimer cette empreinte ?" }, class:"btn btn-gradient"%>
+
+          </div>
+
+        </div>
       </div>
     </div>
     <% end %>
     <% end %>
   </div>
+
+
 </div>
 
 
