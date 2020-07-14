@@ -1,10 +1,10 @@
 <!-- main div containing all cards and fields -->
 <div class="container">
   <%= simple_form_for(@footprint) do |f| %>
-  <div class="mb-2 mt-2">
-    <h2>Nouvelle empreinte</h2>
-    <%= f.label :titre %>
-    <%= f.text_field :title, maxlength: 20  %>
+  <div class="mb-2" align="center">
+    <h3>Nouvelle empreinte</h3>
+    <%= f.label :titre, class:"titre"%>
+    <%= f.text_field :title, maxlength: 20, class:"field_titre"  %>
   </div>
   <!-- total block -->
     <div class="row sticky-top">
@@ -40,7 +40,7 @@
             <%= f.number_field :essence,  id: 'userEssence' %>
           </div>
           <div class="col-xs-2 unit">
-            <p>kg</p>
+            <p>l</p>
           </div>
           <div class="col-xs-2 charge">
             <p>2.8</p>
@@ -56,7 +56,7 @@
             <%= f.number_field :gazole,  id: 'userGazole' %>
           </div>
           <div class="col-xs-2 unit">
-            <p>kg</p>
+            <p>l</p>
           </div>
           <div class="col-xs-2 charge">
             <p>3.16</p>
@@ -72,7 +72,7 @@
             <%= f.number_field :gpl,  id: 'userGpl' %>
           </div>
           <div class="col-xs-2 unit">
-            <p>kg</p>
+            <p>l</p>
           </div>
           <div class="col-xs-2 charge">
             <p>1.86</p>
@@ -88,7 +88,7 @@
             <%= f.number_field :e85,  id: 'userE85' %>
           </div>
           <div class="col-xs-2 unit">
-            <p>kg</p>
+            <p>l</p>
           </div>
           <div class="col-xs-2 charge">
             <p>1.68</p>
@@ -765,8 +765,8 @@
       </div>
 <!-- fin de container global -->
     </div>
-    <div class="row justify-content-center mt-2 mb-2 ">
-        <%= f.submit :"Sauvegarder mon bilan", data: {confirm: "Êtes-vous sûr de vouloir créer cette empreinte ?"} %>
+    <div class="row justify-content-center mt-2">
+        <%= f.submit :"Sauvegarder mon bilan", data: {confirm: "Êtes-vous sûr de vouloir créer cette empreinte ?"}, class:"btn btn-gradient mb-5" %>
     </div>
     <% end %>
   </div>

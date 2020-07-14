@@ -2,4 +2,25 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
+  border-radius: 5px;
+}
+
+div.card-body {
+  background-color: #618669;
+}
+
+h6.card-body {
+  font-weight: bold;
+}
+
+p.card-text {
+  color: whitesmoke;
+}
+
+#en-tete {
+  color: whitesmoke;
+}
+
+.titre a {
+  color: white;
 }
