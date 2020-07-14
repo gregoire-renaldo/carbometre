@@ -1,6 +1,6 @@
 class Footprint < ApplicationRecord
   belongs_to :user
-  before_save :default_values
+  before_save :default_values, :total_score
 
   validates_length_of :title, maximum: 21, allow_blank: true
 
@@ -51,33 +51,164 @@ class Footprint < ApplicationRecord
   end
 
   def total_score
-    self.ble + self.boeuf + self.carotte + self.riz + self.patate + self.saladesaison + self.saladess + self.tomatesfr + self.tomatesfrss + self.veau + self.laitvache + self.poulet + self.oeufs + self.electricite + self.gazkwh + self.gazm + self.fioul + self.granulebois + self.buchebois + self.eau + self.aspirateur + self.congelateur + self.refrigerateur250l + self.fourelectrique + self.lavelinge + self.microonde + self.smartphone + self.ordinateur + self.tgv + self.terelectrique + self.terthermique + self.intercite + self.metro + self.bus + self.avion + self.avionregional + self.essence + self.gazole + self.gpl + self.e85 + self.electrique + self.autre + self.valeur2
+    (self.ble*0.439) + (self.boeuf*15) + (self.carotte*0.0706) + (self.riz*3.59) + (self.patate*0.0861) + (self.saladesaison*0.326) + (self.saladess*11.05) + (self.tomatesfr*0.177) + (self.tomatesfrss*2.23) + (self.veau*6.5) + (self.laitvache*0.9) + (self.poulet*2.14) + (self.oeufs*1.72) + (self.electricite*0.571) + (self.gazkwh*0.205) + (self.gazm*2.2) + (self.fioul*3.25) + (self.granulebois*0.11) + (self.buchebois*0.114) + (self.eau*0.132) + (self.aspirateur*52) + (self.congelateur*415) + (self.refrigerateur250l*300) + (self.fourelectrique*217) + (self.lavelinge*305) + (self.microonde*100) + (self.smartphone*15) + (self.ordinateur*150) + (self.tgv*0.00369) + (self.terelectrique*0.00891) + (self.terthermique*0.0798) + (self.intercite*0.0056) + (self.metro*0.0057) + (self.bus*0.092166667) + (self.avion*0.258) + (self.avionregional*0.453) + (self.essence*2.8) + (self.gazole*3.16) + (self.gpl*1.86) + (self.e85*1.68) + (self.electrique*0.071) + self.autre + self.valeur2
   end
 
   def total_voiture
-    self.essence + self.gazole + self.gpl + self.e85 + self.electrique
+    (self.essence*2.8) + (self.gazole*3.16) + (self.gpl*1.86) + (self.e85*1.68) + (self.electrique*0.071)
   end
 
   def total_autre_transport
-    self.tgv + self.terelectrique + self.terthermique + self.intercite + self.metro + self.bus + self.avion + self.avionregional
+    (self.tgv*0.00369) + (self.terelectrique*0.00891) + (self.terthermique*0.0798) + (self.intercite*0.0056) + (self.metro*0.0057) + (self.bus*0.092166667) + (self.avion*0.258) + (self.avionregional*0.453)
   end
 
   def total_logement
-    self.electricite + self.gazkwh + self.gazm + self.fioul + self.granulebois + self.buchebois + self.eau
+    (self.electricite*0.0571) + (self.gazkwh*0.205) + (self.gazm*2.2) + (self.fioul*3.25) + (self.granulebois*0.11) + (self.buchebois*0.114) + (self.eau*0.132)
   end
 
   def total_alimentation
-    self.ble + self.boeuf + self.carotte + self.riz + self.patate + self.saladesaison + self.saladess + self.tomatesfr + self.tomatesfrss + self.veau + self.laitvache + self.poulet + self.oeufs
+    (self.ble*0.439) + (self.boeuf*15) + (self.carotte*0.0706) + (self.riz*3.59) + (self.patate*0.0861) + (self.saladesaison*0.326) + (self.saladess*0.1105) + (self.tomatesfr*0.177) + (self.tomatesfrss*2.23) + (self.veau*6.5) + (self.laitvache*0.9) + (self.poulet*2.14) + (self.oeufs*1.72)
   end
 
   def total_autres
-    self.aspirateur + self.congelateur + self.refrigerateur250l + self.fourelectrique + self.lavelinge + self.microonde + self.smartphone + self.ordinateur
+    (self.aspirateur*52) + (self.congelateur*415) + (self.refrigerateur250l*300) + (self.fourelectrique*217) + (self.lavelinge*305) + (self.microonde*100) + (self.smartphone*15) + (self.ordinateur*150)
   end
 
   def total_valeur
-    self.autre + self.valeur2
+    self.autre  + self.valeur2
   end
 
+  # def calculations
+  #   unless self.ble == nil
+  #      self.ble * 0.439
+  #   end
+  #   unless self.carotte == nil
+  #      self.carotte * 0.0706
+  #   end
+  #   unless self.boeuf == nil
+  #      self.boeuf * 15
+  #   end
+  #   unless self.riz == nil
+  #      self.riz * 3.59
+  #   end
+  #   unless self.patate == nil
+  #      self.patate * 0.0861
+  #   end
+  #   unless self.saladesaison == nil
+  #      self.saladesaison * 0.326
+  #   end
+  #   unless self.saladess == nil
+  #      self.saladess * 11.05
+  #   end
+  #   unless self.tomatesfr == nil
+  #      self.tomatesfr * 0.177
+  #   end
+  #   unless self.tomatesfrss == nil
+  #      self.tomatesfrss * 2.23
+  #   end
+  #   unless self.veau == nil
+  #      self.veau * 6.5
+  #   end
+  #   unless self.laitvache == nil
+  #      self.laitvache * 0.9
+  #   end
+  #   unless self.poulet == nil
+  #      self.poulet * 2.14
+  #   end
+  #   unless self.oeufs == nil
+  #      self.oeufs * 1.72
+  #   end
+  #   unless self.electricite == nil
+  #      self.electricite * 0.0571
+  #   end
+  #   unless self.gazkwh == nil
+  #      self.gazkwh * 0.205
+  #   end
+  #   unless self.gazm == nil
+  #      self.gazm * 2.2
+  #   end
+  #   unless self.fioul == nil
+  #      self.fioul * 3.25
+  #   end
+  #   unless self.granulebois == nil
+  #      self.granulebois * 0.111
+  #   end
+  #   unless self.buchebois == nil
+  #      self.buchebois * 0.114
+  #   end
+  #   unless self.eau == nil
+  #      self.eau * 0.132
+  #   end
+  #   unless self.aspirateur == nil
+  #      self.aspirateur * 52
+  #   end
+  #   unless self.congelateur == nil
+  #      self.congelateur * 415
+  #   end
+  #   unless self.refrigerateur250l == nil
+  #      self.refrigerateur250l * 300
+  #   end
+  #   unless self.fourelectrique == nil
+  #      self.fourelectrique * 217
+  #   end
+  #   unless self.lavelinge == nil
+  #      self.lavelinge * 305
+  #   end
+  #   unless self.microonde == nil
+  #      self.microonde * 100
+  #   end
+  #   unless self.smartphone == nil
+  #      self.smartphone * 15
+  #   end
+  #   unless self.ordinateur == nil
+  #      self.ordinateur * 150
+  #   end
+  #   unless self.tgv == nil
+  #      self.tgv * 0.00369
+  #   end
+  #   unless self.terelectrique == nil
+  #      self.terelectrique * 0.00891
+  #   end
+  #   unless self.terthermique == nil
+  #      self.terthermique * 0.0798
+  #   end
+  #   unless self.intercite == nil
+  #      self.intercite * 0.0056
+  #   end
+  #   unless self.metro == nil
+  #      self.metro * 0.0057
+  #   end
+  #   unless self.bus == nil
+  #      self.bus * 0.09216
+  #   end
+  #   unless self.avion == nil
+  #      self.avion * 0.258
+  #   end
+  #   unless self.avionregional == nil
+  #      self.avionregional * 0.453
+  #   end
+  #   unless self.essence == nil
+  #      self.essence * 2.8
+  #   end
+  #   unless self.gazole == nil
+  #      self.gazole * 3.16
+  #   end
+  #   unless self.gpl == nil
+  #      self.gpl * 1.86
+  #   end
+  #   unless self.e85 == nil
+  #      self.e85 * 1.68
+  #   end
+  #   unless self.electrique == nil
+  #      self.electrique * 0.0571
+  #   end
+  #   unless self.autre == nil
+  #      self.autre * 1
+  #   end
+  #   unless self.valeur2 == nil
+  #      self.valeur2 * 1
+  #   end
+  # end
 
 
 
