@@ -1,20 +1,26 @@
 <!-- all user footprints, clickable, redirecting show  -->
 <div class="container">
   <div class="row justify-content-around ">
+    <%= current_user.username%>
     <% @footprints.each do |footprint| %>
+    <% if footprint.user_id == current_user.id %>
     <div class="card mx-2 my-2" style="width: 16rem;">
       <div class="card-body">
-        <h5 class="card-title"><%= footprint.title%></h5>
-        <h6 class="card-subtitle mb-2 text-muted"><%= footprint.total_score%></h6>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
-        </p>
-        <%= link_to" Modifier l'empreinte", edit_footprint_path(footprint) %>
+        <h5 class="card-title"><%=link_to footprint.title, footprint_path(footprint) %></h5>
+        <h6 class="card-subtitle mb-2 text-muted">Total empreinte <%= footprint.total_score%></h6>
+        <p class="card-text">Total voiture <%= footprint.total_voiture%></p>
+        <p class="card-text">Total transport <%= footprint.total_autre_transport%></p>
+        <p class="card-text">Total logement <%= footprint.total_logement%></p>
+        <p class="card-text">Total alimentation <%= footprint.total_alimentation%></p>
+        <p class="card-text">Total autres <%= footprint.total_autres%></p>
+        <%= link_to" Modifier", edit_footprint_path(footprint) %>
         <%= link_to "Supprimer",
                         footprint_path(footprint),
                         method: :delete,
-                        data: { confirm: "Êtes-vous sûr ?" } %>
+                        data: { confirm: "Êtes-vous sûrde vouloir supprimer cette empreinte ?" } %>
       </div>
     </div>
+    <% end %>
     <% end %>
   </div>
 </div>

@@ -2,6 +2,8 @@ class Footprint < ApplicationRecord
   belongs_to :user
   before_save :default_values
 
+  validates_length_of :title, maximum: 21, allow_blank: true
+
   def default_values
     self.ble = 0 if self.ble.nil?
     self.carotte = 0 if self.carotte.nil?
@@ -69,6 +71,8 @@ class Footprint < ApplicationRecord
   def total_autres
     self.aspirateur + self.congelateur + self.refrigerateur250l + self.fourelectrique + self.lavelinge + self.microonde + self.smartphone + self.ordinateur
   end
+
+
 
 
 

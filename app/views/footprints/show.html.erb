@@ -1,19 +1,18 @@
 <div class="container">
-  <div class="row">
-    <%= link_to" Modifier l'empreinte", edit_footprint_path(@footprint), class: "btn btn-primary" %>
-    <%= link_to "Delete #{@footprint.title}",
+  <div class="row justify-content-center">
+    <%= link_to" Modifier l'empreinte", edit_footprint_path(@footprint), class: "btn btn-gradient" %>
+    <%= link_to "Supprimer",
                           footprint_path(@footprint),
                           method: :delete,
-                          data: { confirm: "Êtes-vous sûr ?" },
-                          class: "btn btn-primary" %>
-    <%= link_to" Tous mes bilans", footprints_path, class: "btn btn-primary" %>
+                          data: { confirm: "Êtes-vous sûr de vouloir supprimer cette emepreinte ?" },
+                          class: "btn btn-gradient" %>
   </div>
   <div class="row">
     <div class="col-sm">
-      <h2>Total : <%= @footprint.total_score %></h2>
+      <h3>Total : <%= @footprint.total_score %></h3>
       <div class="row ">
         <div class="col-sm">
-        <h3>Total Voiture : <%= @footprint.total_voiture %></h3>
+        <h4>Total Voiture : <%= @footprint.total_voiture %></h4>
           <ul class="list-group">
             <li class="list-group-item"> Essence <%= @footprint.essence%> kg</li>
             <li class="list-group-item"> Gazole <%= @footprint.gazole%> kg</li>
@@ -26,7 +25,7 @@
 
       <div class="row ">
         <div class="col-sm">
-        <h3>Total Autres transports : <%= @footprint.total_autre_transport %></h3>
+        <h4>Total Autres transports : <%= @footprint.total_autre_transport %></h4>
           <ul class="list-group">
             <li class="list-group-item"> TGV <%= @footprint.tgv%> kg</li>
             <li class="list-group-item"> Ter Electrique <%= @footprint.terelectrique%> kg</li>
@@ -42,7 +41,7 @@
 
       <div class="row ">
         <div class="col-sm">
-          <h3>Total Logement : <%= @footprint.total_logement %></h3>
+          <h4>Total Logement : <%= @footprint.total_logement %></h4>
           <ul class="list-group">
             <li class="list-group-item"> TGV <%= @footprint.electricite%> kg</li>
             <li class="list-group-item"> Ter Electrique <%= @footprint.gazkwh%> kg</li>
@@ -57,7 +56,7 @@
 
       <div class="row ">
         <div class="col-sm">
-        <h3>Total Alimentation : <%= @footprint.total_alimentation %></h3>
+        <h4>Total Alimentation : <%= @footprint.total_alimentation %></h4>
           <ul class="list-group">
             <li class="list-group-item"> Blé français <%= @footprint.ble%> kg</li>
             <li class="list-group-item"> Riz Thailandais<%= @footprint.riz%> kg</li>
@@ -78,7 +77,7 @@
 
       <div class="row ">
         <div class="col-sm">
-        <h3>Total Autres : <%= @footprint.total_autres %></h3>
+        <h4>Total Autres : <%= @footprint.total_autres %></h4>
           <ul class="list-group">
             <li class="list-group-item"> Aspirateur <%= @footprint.aspirateur%> kg</li>
             <li class="list-group-item"> Congélateur 200 l<%= @footprint.congelateur%> kg</li>
@@ -96,22 +95,7 @@
   <div class="row justify-content-center mt-2 mb-2 ">
     <div class="col-sm justify-content-center">
       <%= link_to" Modifier l'empreinte", edit_footprint_path(@footprint) %>
-      <%= link_to 'Create PDF document', footprint_path(@footprint, :format => :pdf), target: "_blank" %>
+      <%= link_to 'Exporter (pdf)', footprint_path(@footprint, :format => :pdf), target: "_blank" %>
     </div>
   </div>
-</div>
-
-
-
-
-
-
-
-
-<div>
-  <%= link_to" Modifier l'empreinte", edit_footprint_path(@footprint) %>
-  <%= link_to "Delete #{@footprint.title}",
-                        footprint_path(@footprint),
-                        method: :delete,
-                        data: { confirm: "Êtes-vous sûr ?" } %>
 </div>
