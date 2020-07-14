@@ -1,7 +1,20 @@
-<h1>Carbometre</h1>
-<ul>
-  <li><%= link_to "Nouvelle empreinte personnelle", new_footprint_path %></li>
-  <li><%= link_to "Nouvelle empreinte entreprise",  pages_professional_bilan_path %></li>
-  <li><%= link_to "Mes empreintes",  footprints_path %></li>
-</ul>
+<div class="container" id="container_home" align="center">
+  <div class="row ">
+    <div class="col" align="center">
+      <h2 class="mt-2">Carbometre</h2>
+      <div class="mt-3">
+        <%= link_to "Nouvelle empreinte personnelle", new_footprint_path, class: "btn btn-gradient" %>
+      </div>
+      <div class="mt-3">
+        <%= link_to "Nouvelle empreinte entreprise",  pages_professional_bilan_path, class: "btn btn-gradient" %>
+      </div>
+      <div class="mt-3">
+        <%= link_to "Mes empreintes",  footprints_path, class: "btn btn-gradient" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
