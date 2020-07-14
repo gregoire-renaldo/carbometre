@@ -73,6 +73,10 @@ class Footprint < ApplicationRecord
     self.aspirateur + self.congelateur + self.refrigerateur250l + self.fourelectrique + self.lavelinge + self.microonde + self.smartphone + self.ordinateur
   end
 
+  def total_valeur
+    self.autre
+  end
+
 
 
 
