@@ -67,7 +67,7 @@ class Footprint < ApplicationRecord
   end
 
   def total_alimentation
-    ((self.ble*0.439) + (self.boeuf*15) + (self.carotte*0.0706) + (self.riz*3.59) + (self.patate*0.0861) + (self.saladesaison*0.326) + (self.saladess*0.1105) + (self.tomatesfr*0.177) + (self.tomatesfrss*2.23) + (self.veau*6.5) + (self.laitvache*0.9) + (self.poulet*2.14) + (self.oeufs*1.72).ceil(2))
+    ((self.ble*0.439) + (self.boeuf*15) + (self.carotte*0.0706) + (self.riz*3.59) + (self.patate*0.0861) + (self.saladesaison*0.326) + (self.saladess*0.1105) + (self.tomatesfr*0.177) + (self.tomatesfrss*2.23) + (self.veau*6.5) + (self.laitvache*0.9) + (self.poulet*2.14) + (self.oeufs*1.72)).ceil(2)
   end
 
   def total_autres
