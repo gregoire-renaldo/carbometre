@@ -12,13 +12,13 @@
       <h3>Total : <%= @footprint.total_score %> kg</h3>
       <div class="row ">
         <div class="col-sm">
-        <h4>Total Voiture : <%= @footprint.total_voiture %> kg</h4>
+        <h4>Total Voiture : <%= @footprint.total_voiture%> kg</h4>
           <ul class="list-group">
-            <li class="list-group-item"> Essence <%= @footprint.essence*2.8%> kg</li>
-            <li class="list-group-item"> Gazole <%= @footprint.gazole*3.16%> kg</li>
-            <li class="list-group-item"> GPL <%= @footprint.gpl*1.86%> kg</li>
-            <li class="list-group-item"> E85 <%= @footprint.e85*1.68%> kg</li>
-            <li class="list-group-item"> Electrique <%= @footprint.electrique*0.0571%> kg</li>
+            <li class="list-group-item"> Essence <%= (@footprint.essence*2.8) + @footprint.total_essencel%> kg</li>
+            <li class="list-group-item"> Gazole <%= (@footprint.gazole*3.16) + @footprint.total_gazolel%> kg</li>
+            <li class="list-group-item"> GPL <%= (@footprint.gpl*1.86 ) + @footprint.total_gpll%> kg</li>
+            <li class="list-group-item"> E85 <%= (@footprint.e85*1.68) + @footprint.total_e85l%> kg</li>
+            <li class="list-group-item"> Electrique <%= (@footprint.electrique*0.0571) + @footprint.total_electriquel%> kg</li>
           </ul>
         </div>
       </div>

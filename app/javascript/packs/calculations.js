@@ -25,7 +25,12 @@ function totVoiture() {
   const numberGpl = Number(scoreGpl.textContent);
   const numberE85 = Number(scoreE85.textContent);
   const numberElectrique = Number(scoreElectrique.textContent);
-  const sumVoiture = numberEssence + numberGazole + numberGpl + numberE85 + numberElectrique
+  const numberEssencel = Number(scoreEssencel.textContent);
+  const numberGazolel = Number(scoreGazolel.textContent);
+  const numberLgpl = Number(scoreLgpl.textContent);
+  const numberLe85 = Number(scoreLe85.textContent);
+  const numberLelectrique = Number(scoreLelectrique.textContent);
+  const sumVoiture = numberEssence + numberGazole + numberGpl + numberE85 + numberElectrique + numberEssencel + numberGazolel + numberLgpl + numberLe85 + numberLelectrique
   totalVoiture.innerText = sumVoiture.toFixed(2);
   total();
 }
@@ -44,6 +49,27 @@ function multiplyEssence() {
   totVoiture();
 }
 
+// field essence litre
+const userEssencel = document.getElementById('userEssencel')
+const userKmessencel = document.getElementById('userKmessencel')
+const scoreEssencel = document.getElementById('scoreEssencel');
+const defaultEssencel = ((userEssencel.value / 100) * userKmessencel.value * essencecc).toFixed(2)
+scoreEssencel.innerHTML = defaultEssencel
+userEssencel.addEventListener("input", changConsoEssencel);
+function changConsoEssencel() {
+  let one = parseFloat(userEssencel.value)/100 || 0;
+  let consoEssencel = parseFloat(one * essencecc * (userKmessencel.value)).toFixed(2);
+  scoreEssencel.innerHTML = consoEssencel
+  totVoiture()
+}
+userKmessencel.addEventListener("input", changeConsoKmessencel);
+function changeConsoKmessencel () {
+  let one = parseFloat (userKmessencel.value) || 0;
+  let consoEssencel = parseFloat(one * essencecc * ((userEssencel.value)/100)).toFixed(2);
+  scoreEssencel.innerHTML = consoEssencel
+  totVoiture()
+}
+
 // field gazole
 const userGazole = document.getElementById('userGazole');
 const gazolecc = 3.16
@@ -55,6 +81,25 @@ function multiplyGazole() {
   let one = parseFloat(userGazole.value) || 0;
   let ccgazole = parseFloat(one * gazolecc).toFixed(2);
   scoreGazole.innerHTML = ccgazole;
+  totVoiture()
+}
+const userGazolel = document.getElementById('userGazolel')
+const userKmgazolel = document.getElementById('userKmgazolel')
+const scoreGazolel = document.getElementById('scoreGazolel');
+const defaultGazolel = ((userGazolel.value / 100) * userKmgazolel.value * gazolecc).toFixed(2)
+scoreGazolel.innerHTML = defaultGazolel
+userGazolel.addEventListener("input", changConsoGazolel);
+function changConsoGazolel() {
+  let one = parseFloat(userGazolel.value) / 100 || 0;
+  let consoGazolel = parseFloat(one * gazolecc * (userKmgazolel.value)).toFixed(2);
+  scoreGazolel.innerHTML = consoGazolel
+  totVoiture()
+}
+userKmgazolel.addEventListener("input", changeConsoKmgazolel);
+function changeConsoKmgazolel() {
+  let one = parseFloat(userKmgazolel.value) || 0;
+  let consoGazolel = parseFloat(one * gazolecc * ((userGazolel.value) / 100)).toFixed(2);
+  scoreGazolel.innerHTML = consoGazolel
   totVoiture()
 }
 
@@ -71,6 +116,26 @@ function multiplyGpl() {
   scoreGpl.innerHTML = ccgpl;
   totVoiture()
 }
+const userLgpl = document.getElementById('userLgpl')
+const userKmgpl = document.getElementById('userKmgpl')
+const scoreLgpl = document.getElementById('scoreLgpl');
+const defaultLgpl = ((userLgpl.value / 100) * userKmgpl.value * gplcc).toFixed(2)
+scoreLgpl.innerHTML = defaultLgpl
+userLgpl.addEventListener("input", changConsoLgpl);
+function changConsoLgpl() {
+  let one = parseFloat(userLgpl.value) / 100 || 0;
+  let consoLgpl = parseFloat(one * gplcc * (userKmgpl.value)).toFixed(2);
+  scoreLgpl.innerHTML = consoLgpl
+  totVoiture()
+}
+userKmgpl.addEventListener("input", changeConsoKmgpl);
+function changeConsoKmgpl() {
+  let one = parseFloat(userKmgpl.value) || 0;
+  let consoLgpl = parseFloat(one * gplcc * ((userLgpl.value) / 100)).toFixed(2);
+  scoreLgpl.innerHTML = consoLgpl
+  totVoiture()
+}
+
 
 // field e85
 const userE85 = document.getElementById('userE85');
@@ -83,6 +148,25 @@ function multiplyE85() {
   let one = parseFloat(userE85.value) || 0;
   let cce85 = parseFloat(one * e85cc).toFixed(2);
   scoreE85.innerHTML = cce85;
+  totVoiture()
+}
+const userLe85 = document.getElementById('userLe85')
+const userKme85 = document.getElementById('userKme85')
+const scoreLe85 = document.getElementById('scoreLe85');
+const defaultLe85 = ((userLe85.value / 100) * userKme85.value * e85cc).toFixed(2)
+scoreLe85.innerHTML = defaultLe85
+userLe85.addEventListener("input", changConsoLe85);
+function changConsoLe85() {
+  let one = parseFloat(userLe85.value) / 100 || 0;
+  let consoLe85 = parseFloat(one * e85cc * (userKme85.value)).toFixed(2);
+  scoreLe85.innerHTML = consoLe85
+  totVoiture()
+}
+userKme85.addEventListener("input", changeConsoKme85);
+function changeConsoKme85() {
+  let one = parseFloat(userKme85.value) || 0;
+  let consoLe85 = parseFloat(one * e85cc * ((userLe85.value) / 100)).toFixed(2);
+  scoreLe85.innerHTML = consoLe85
   totVoiture()
 }
 
@@ -99,9 +183,29 @@ function multiplyElectrique() {
   scoreElectrique.innerHTML = ccelectrique;
   totVoiture()
 }
+const userLelectrique = document.getElementById('userLelectrique')
+const userKmelectrique = document.getElementById('userKmelectrique')
+const scoreLelectrique = document.getElementById('scoreLelectrique');
+const defaultLelectrique = ((userLelectrique.value / 100) * userKmelectrique.value * electriquecc).toFixed(2);
+scoreLelectrique.innerHTML = defaultLelectrique
+userLelectrique.addEventListener("input", changConsoLelectrique);
+function changConsoLelectrique() {
+  let one = parseFloat(userLelectrique.value) / 100 || 0;
+  let consoLelectrique = parseFloat(one * electriquecc * (userKmelectrique.value)).toFixed(2);
+  scoreLelectrique.innerHTML = consoLelectrique
+  totVoiture()
+}
+userKmelectrique.addEventListener("input", changeConsoKmelectrique);
+function changeConsoKmelectrique() {
+  let one = parseFloat(userKmelectrique.value) || 0;
+  let consoLelectrique = parseFloat(one * electriquecc * ((userLelectrique.value) / 100)).toFixed(2);
+  scoreLelectrique.innerHTML = consoLelectrique
+  totVoiture()
+}
 
 // to display values on edit footprint
-const defaultVoiture = (Number(defaultEssence) + Number(defaultGazole) + Number(defaultGPL) + Number(defaultE85) + Number(defaultElectrique)).toFixed(2)
+const defaultVoiture = (Number(defaultEssence) + Number(defaultGazole) + Number(defaultGPL) + Number(defaultE85) + Number(defaultElectrique)
+  + Number(defaultEssencel) + Number(defaultGazolel) + Number(defaultLgpl) + Number(defaultLe85) + Number(defaultLelectrique) ).toFixed(2);
 totalVoiture.innerHTML = defaultVoiture
 
 // transport Energie Logement / autres

@@ -49,14 +49,44 @@ class Footprint < ApplicationRecord
     self.autre = 0 if self.autre.nil?
     self.valeur2 = 0 if self.valeur2.nil?
     self.streaming = 0 if self.streaming.nil?
+    self.lessence = 0 if self.lessence.nil?
+    self.kmessence = 0 if self.kmessence.nil?
+    self.gazolel = 0 if self.gazolel.nil?
+    self.kmgazolel = 0 if self.kmgazolel.nil?
+    self.lgpl = 0 if self.lgpl.nil?
+    self.kmgpl = 0 if self.kmgpl.nil?
+    self.le85 = 0 if self.le85.nil?
+    self.kme85 = 0 if self.kme85.nil?
+    self.lelectrique = 0 if self.lelectrique.nil?
+    self.kmelectrique = 0 if self.kmelectrique.nil?
   end
 
   def total_score
-    ((self.ble*0.439) + (self.boeuf*15) + (self.carotte*0.0706) + (self.riz*3.59) + (self.patate*0.0861) + (self.saladesaison*0.326) + (self.saladess*11.05) + (self.tomatesfr*0.177) + (self.tomatesfrss*2.23) + (self.veau*6.5) + (self.laitvache*0.9) + (self.poulet*2.14) + (self.oeufs*1.72) + (self.electricite*0.571) + (self.gazkwh*0.205) + (self.gazm*2.2) + (self.fioul*3.25) + (self.granulebois*0.11) + (self.buchebois*0.114) + (self.eau*0.132) + (self.aspirateur*52) + (self.congelateur*415) + (self.refrigerateur250l*300) + (self.fourelectrique*217) + (self.lavelinge*305) + (self.microonde*100) + (self.smartphone*15) + (self.ordinateur*150) + (self.tgv*0.00369) + (self.terelectrique*0.00891) + (self.terthermique*0.0798) + (self.intercite*0.0056) + (self.metro*0.0057) + (self.bus*0.092166667) + (self.avion*0.258) + (self.avionregional*0.453) + (self.essence*2.8) + (self.gazole*3.16) + (self.gpl*1.86) + (self.e85*1.68) + (self.electrique*0.071) + (self.autre) + (self.valeur2)).ceil(2)
+    ((self.ble*0.439) + (self.boeuf*15) + (self.carotte*0.0706) + (self.riz*3.59) + (self.patate*0.0861) + (self.saladesaison*0.326) + (self.saladess*11.05) + (self.tomatesfr*0.177) + (self.tomatesfrss*2.23) + (self.veau*6.5) + (self.laitvache*0.9) + (self.poulet*2.14) + (self.oeufs*1.72) + (self.electricite*0.571) + (self.gazkwh*0.205) + (self.gazm*2.2) + (self.fioul*3.25) + (self.granulebois*0.11) + (self.buchebois*0.114) + (self.eau*0.132) + (self.aspirateur*52) + (self.congelateur*415) + (self.refrigerateur250l*300) + (self.fourelectrique*217) + (self.lavelinge*305) + (self.microonde*100) + (self.smartphone*15) + (self.ordinateur*150) + (self.tgv*0.00369) + (self.terelectrique*0.00891) + (self.terthermique*0.0798) + (self.intercite*0.0056) + (self.metro*0.0057) + (self.bus*0.092166667) + (self.avion*0.258) + (self.avionregional*0.453) + (self.essence*2.8) + (self.gazole*3.16) + (self.gpl*1.86) + (self.e85*1.68) + (self.electrique*0.071) + (self.autre) + (self.valeur2) + (((self.lessence/100) * self.kmessence*2.8)) + (((self.gazolel/100) * self.kmgazolel*3.16)) + (((self.lgpl/100) * self.kmgpl*1.86)) + (((self.le85/100) * self.kme85*1.68)) + (((self.lelectrique/100) * self.kmelectrique*0.0571))).ceil(2)
   end
 
   def total_voiture
-    ((self.essence*2.8) + (self.gazole*3.16) + (self.gpl*1.86) + (self.e85*1.68) + (self.electrique*0.071)).ceil(2)
+    ((((self.lelectrique/100) * self.kmelectrique*0.0571)) + (((self.le85/100) * self.kme85*1.68)) + (((self.lgpl/100) * self.kmgpl*1.86)) + (((self.lessence/100) * self.kmessence*2.8)) + (((self.gazolel/100) * self.kmgazolel*3.16)) + (self.essence*2.8) + (self.gazole*3.16) + (self.gpl*1.86) + (self.e85*1.68) + (self.electrique*0.071)).ceil(2)
+  end
+
+  def total_essencel
+    (((self.lessence/100) * self.kmessence*2.8)).ceil(2)
+  end
+
+  def total_gazolel
+    (((self.gazolel/100) * self.kmgazolel*3.16)).ceil(2)
+  end
+
+  def total_gpll
+    (((self.lgpl/100) * self.kmgpl*1.86)).ceil(2)
+  end
+
+  def total_e85l
+    (((self.le85/100) * self.kme85*1.68)).ceil(2)
+  end
+
+  def total_electriquel
+    (((self.lelectrique/100) * self.kmelectrique*0.0571)).ceil(2)
   end
 
   def total_autre_transport
@@ -78,6 +108,8 @@ class Footprint < ApplicationRecord
   def total_valeur
     (self.autre  + self.valeur2).ceil(2)
   end
+
+
 
   # def calculations
   #   unless self.ble == nil
