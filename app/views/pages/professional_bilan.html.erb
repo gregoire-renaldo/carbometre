@@ -8,11 +8,31 @@
   <div class="row">
     <div class="col-sm list-pro" align="center">
          <li class="btn btn-gradient mt-2">Demander l’empreinte carbone à l’entreprise</li>
-         <li> <%= link_to "chercher l'empreinte sur basecarbone.fr", "https://www.basecarbone.fr/fr/bilanenligne/bilans", class: "btn btn-gradient mt-2", target: "_blank" %></li>
-         <li> <%= link_to "demander une étude à reseau@escape-jobs.com", "https://www.escape-jobs.fr/", class: "btn btn-gradient mt-2 mb-4", target: "_blank" %></li>
-      </div>
+         <li> <%= link_to "Chercher l'empreinte sur basecarbone.fr", "https://www.basecarbone.fr/fr/bilanenligne/bilans", class: "btn btn-gradient mt-2", target: "_blank" %></li>
+         <li> <%= link_to "Demander une étude à reseau@escape-jobs.com", "https://www.escape-jobs.fr/", class: "btn btn-gradient mt-2 mb-4", target: "_blank" %></li>
     </div>
   </div>
 
-  Le prévisionnel métier est très sommaire : diviser l’empreinte carbone de l’entreprise par le nombre d’employés.
+  <div class="row justify-content-center">
+    <h4>Calculer epreinte entreprise</h4>
+  </div>
+  <div class="row mb-2">
+    <div class="col">
+      <label for="empreinte-entreprise" class="field-entreprise">empreinte carbone:</label><br>
+      <input id="empreinte-entreprise" type="number" />
+    </div>
+    <div class="col">
+      <label for="effectif" class="field-entreprise">effectif de l'entreprise:</label><br>
+      <input id="effectif" type="number" />
+    </div>
+    <div class="col">
+      <p class="field-entreprise">Empreinte entreprise</p>
+      <div class="white-rectangle-pro"  >
+        <p id="totalhhhhhh"></p>
+      </div>
+    </div>
+  </div>
+  <div class="bottom">
+  </div>
+</div>
 
