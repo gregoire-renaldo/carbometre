@@ -4,8 +4,18 @@
 
 // total Bilan
 
-
 const totalBilan = document.getElementById('total');
+
+const totalPerson = document.getElementById('total-personne')
+const userPerson = document.getElementById('userPerson')
+userPerson.addEventListener("input", divide)
+function divide () {
+  let person = parseFloat(userPerson.value) || 1
+  console.log(Number(totalBilan.textContent))
+  scorePerson = (Number(totalBilan.textContent) / person).toFixed(2)
+  totalPerson.innerHTML = scorePerson
+}
+
 function total() {
   const numberVoiture = Number(totalVoiture.textContent);
   const numberTransport = Number(totalTransport.textContent);
@@ -16,6 +26,7 @@ function total() {
   const sumTotal = numberVoiture + numberAlim + numberTransport
     + numberEnergie + numberAutre + numberValeur;
   totalBilan.innerHTML = sumTotal.toFixed(2)
+  divide()
 }
 // total category voiture
 const totalVoiture = document.getElementById('totalVoiture')
