@@ -580,8 +580,9 @@ function totAutre() {
   const numberMicroonde = Number(scoreMicroonde.textContent);
   const numberSmartphone = Number(scoreSmartphone.textContent);
   const numberOrdinateur = Number(scoreOrdinateur.textContent);
+  const numberStreaming = Number(scoreStreaming.textContent);
   const sum = numberAspirateur + numberCongelateur + numberRefrigerateur + numberFourelec + numberLavelinge
-    + numberMicroonde + numberSmartphone + numberOrdinateur
+    + numberMicroonde + numberSmartphone + numberOrdinateur + numberStreaming
   totalAutre.innerText = sum.toFixed(2);
   total();
 }
@@ -676,7 +677,7 @@ function multiplySmartphone() {
   scoreSmartphone.innerHTML = cc;
   totAutre()
 }
-// field smartphone
+// field ordinateur
 let userOrdinateur = document.getElementById('userOrdinateur');
 const ordinateurcc = 150
 const scoreOrdinateur = document.getElementById('scoreOrdinateur');
@@ -690,9 +691,24 @@ function multiplyOrdinateur() {
   totAutre()
 }
 
+// field streaming
+let userStreaming = document.getElementById('userStreaming');
+const streamingcc = 25
+const scoreStreaming = document.getElementById('scoreStreaming');
+const defaultStreaming = (userStreaming.value * streamingcc).toFixed(2)
+scoreStreaming.innerHTML = defaultStreaming
+userStreaming.addEventListener("input", multiplyStreaming);
+function multiplyStreaming() {
+  let one = parseFloat(userStreaming.value) || 0;
+  let cc = parseFloat(one * streamingcc).toFixed(2);
+  scoreStreaming.innerHTML = cc;
+  totAutre()
+}
+
 const defaultAutre = (Number(defaultAspirateur) + Number(defaultCongelateur)
   + Number(defaultRefrigerateur) + Number(defaultFourelec) + Number(defaultLavelinge)
-  + Number(defaultMicroonde) + Number(defaultSmartphone) + Number(defaultOrdinateur)).toFixed(2)
+  + Number(defaultMicroonde) + Number(defaultSmartphone) + Number(defaultOrdinateur)
+  + Number(defaultStreaming)).toFixed(2)
 totalAutre.innerHTML = defaultAutre
 
 

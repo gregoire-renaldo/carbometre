@@ -48,6 +48,7 @@ class Footprint < ApplicationRecord
     self.electrique = 0 if self.electrique.nil?
     self.autre = 0 if self.autre.nil?
     self.valeur2 = 0 if self.valeur2.nil?
+    self.streaming = 0 if self.streaming.nil?
   end
 
   def total_score
@@ -71,7 +72,7 @@ class Footprint < ApplicationRecord
   end
 
   def total_autres
-    ((self.aspirateur*52) + (self.congelateur*415) + (self.refrigerateur250l*300) + (self.fourelectrique*217) + (self.lavelinge*305) + (self.microonde*100) + (self.smartphone*15) + (self.ordinateur*150)).ceil(2)
+    ((self.aspirateur*52) + (self.congelateur*415) + (self.refrigerateur250l*300) + (self.fourelectrique*217) + (self.lavelinge*305) + (self.microonde*100) + (self.smartphone*15) + (self.ordinateur*150) + (self.streaming*25)).ceil(2)
   end
 
   def total_valeur
