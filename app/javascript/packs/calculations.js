@@ -28,7 +28,8 @@ function totVoiture() {
   const numberEssencel = Number(scoreEssencel.textContent);
   const numberGazolel = Number(scoreGazolel.textContent);
   const numberLgpl = Number(scoreLgpl.textContent);
-  const sumVoiture = numberEssence + numberGazole + numberGpl + numberE85 + numberElectrique + numberEssencel + numberGazolel + numberLgpl;
+  const numberLe85 = Number(scoreLe85.textContent);
+  const sumVoiture = numberEssence + numberGazole + numberGpl + numberE85 + numberElectrique + numberEssencel + numberGazolel + numberLgpl + numberLe85;
   totalVoiture.innerText = sumVoiture.toFixed(2);
   total();
 }
@@ -148,6 +149,25 @@ function multiplyE85() {
   scoreE85.innerHTML = cce85;
   totVoiture()
 }
+const userLe85 = document.getElementById('userLe85')
+const userKme85 = document.getElementById('userKme85')
+const scoreLe85 = document.getElementById('scoreLe85');
+const defaultLe85 = ((userLe85.value / 100) * userKme85.value * e85cc).toFixed(2)
+scoreLe85.innerHTML = defaultLe85
+userLe85.addEventListener("input", changConsoLe85);
+function changConsoLe85() {
+  let one = parseFloat(userLe85.value) / 100 || 0;
+  let consoLe85 = parseFloat(one * e85cc * (userKme85.value)).toFixed(2);
+  scoreLe85.innerHTML = consoLe85
+  totVoiture()
+}
+userKme85.addEventListener("input", changeConsoKme85);
+function changeConsoKme85() {
+  let one = parseFloat(userKme85.value) || 0;
+  let consoLe85 = parseFloat(one * e85cc * ((userLe85.value) / 100)).toFixed(2);
+  scoreLe85.innerHTML = consoLe85
+  totVoiture()
+}
 
 // field electrique
 const userElectrique = document.getElementById('userElectrique');
@@ -165,7 +185,7 @@ function multiplyElectrique() {
 
 // to display values on edit footprint
 const defaultVoiture = (Number(defaultEssence) + Number(defaultGazole) + Number(defaultGPL) + Number(defaultE85) + Number(defaultElectrique)
-  + Number(defaultEssencel) + Number(defaultGazolel) + Number(defaultLgpl)).toFixed(2);
+  + Number(defaultEssencel) + Number(defaultGazolel) + Number(defaultLgpl) + Number(defaultLe85)).toFixed(2);
 totalVoiture.innerHTML = defaultVoiture
 
 // transport Energie Logement / autres
