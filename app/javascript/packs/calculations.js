@@ -27,7 +27,8 @@ function totVoiture() {
   const numberElectrique = Number(scoreElectrique.textContent);
   const numberEssencel = Number(scoreEssencel.textContent);
   const numberGazolel = Number(scoreGazolel.textContent);
-  const sumVoiture = numberEssence + numberGazole + numberGpl + numberE85 + numberElectrique + numberEssencel + numberGazolel;
+  const numberLgpl = Number(scoreLgpl.textContent);
+  const sumVoiture = numberEssence + numberGazole + numberGpl + numberE85 + numberElectrique + numberEssencel + numberGazolel + numberLgpl;
   totalVoiture.innerText = sumVoiture.toFixed(2);
   total();
 }
@@ -113,6 +114,26 @@ function multiplyGpl() {
   scoreGpl.innerHTML = ccgpl;
   totVoiture()
 }
+const userLgpl = document.getElementById('userLgpl')
+const userKmgpl = document.getElementById('userKmgpl')
+const scoreLgpl = document.getElementById('scoreLgpl');
+const defaultLgpl = ((userLgpl.value / 100) * userKmgpl.value * gplcc).toFixed(2)
+scoreLgpl.innerHTML = defaultLgpl
+userLgpl.addEventListener("input", changConsoLgpl);
+function changConsoLgpl() {
+  let one = parseFloat(userLgpl.value) / 100 || 0;
+  let consoLgpl = parseFloat(one * gplcc * (userKmgpl.value)).toFixed(2);
+  scoreLgpl.innerHTML = consoLgpl
+  totVoiture()
+}
+userKmgpl.addEventListener("input", changeConsoKmgpl);
+function changeConsoKmgpl() {
+  let one = parseFloat(userKmgpl.value) || 0;
+  let consoLgpl = parseFloat(one * gplcc * ((userLgpl.value) / 100)).toFixed(2);
+  scoreLgpl.innerHTML = consoLgpl
+  totVoiture()
+}
+
 
 // field e85
 const userE85 = document.getElementById('userE85');
@@ -144,7 +165,7 @@ function multiplyElectrique() {
 
 // to display values on edit footprint
 const defaultVoiture = (Number(defaultEssence) + Number(defaultGazole) + Number(defaultGPL) + Number(defaultE85) + Number(defaultElectrique)
-  + Number(defaultEssencel) + Number(defaultGazolel)).toFixed(2);
+  + Number(defaultEssencel) + Number(defaultGazolel) + Number(defaultLgpl)).toFixed(2);
 totalVoiture.innerHTML = defaultVoiture
 
 // transport Energie Logement / autres
