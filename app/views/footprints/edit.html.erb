@@ -5,6 +5,8 @@
     <h3>Mettre à jour l'empreinte</h3>
     <%= f.label :titre, class:"titre" %>
     <%= f.text_field :title, maxlength: 20, class:"field_titre" %>
+    <%= f.label :personnes, class:"titre"%>
+    <%= f.number_field :person, class:"field_titre", id:'userPerson'  %>
   </div>
   <!-- total block -->
   <div class="row sticky-top">
@@ -16,6 +18,15 @@
       <div class="button-ddl">
       </div>
     </div>
+    <div class="total-mobile align-items-center ">
+      <p>Total par personne</p>
+      <div class="white-rectangle">
+        <p id="total-personne"></p>
+      </div>
+      <div class="button-ddl">
+      </div>
+    </div>
+
   </div>
   <!-- end of total block -->
   <!-- block for total voiture -->
