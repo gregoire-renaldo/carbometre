@@ -1,6 +1,6 @@
 class FootprintsController < ApplicationController
   def index
-    @footprints = Footprint.all
+    @footprints = Footprint.all.order("created_at DESC")
   end
 
   def show
