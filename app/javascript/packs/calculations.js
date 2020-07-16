@@ -16,6 +16,8 @@ function divide () {
   totalPerson.innerHTML = scorePerson
 }
 
+
+
 function total() {
   const numberVoiture = Number(totalVoiture.textContent);
   const numberTransport = Number(totalTransport.textContent);
@@ -874,3 +876,5 @@ totalValeur.innerHTML = defaultValeur
 totalBilan.innerHTML = (Number(defaultVoiture) + Number(defaultTransport)
   + Number(defaultEnergie) + Number(defaultAlim) + Number(defaultAutre) + Number(defaultValeur)).toFixed(2)
 
+const defaultTotPerson = ((totalBilan.textContent) / userPerson.value).toFixed(2);
+totalPerson.innerHTML = defaultTotPerson
