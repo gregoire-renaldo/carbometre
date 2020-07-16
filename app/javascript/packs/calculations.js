@@ -25,7 +25,8 @@ function totVoiture() {
   const numberGpl = Number(scoreGpl.textContent);
   const numberE85 = Number(scoreE85.textContent);
   const numberElectrique = Number(scoreElectrique.textContent);
-  const sumVoiture = numberEssence + numberGazole + numberGpl + numberE85 + numberElectrique
+  const numberEssencel = Number(scoreEssencel.textContent);
+  const sumVoiture = numberEssence + numberGazole + numberGpl + numberE85 + numberElectrique + numberEssencel
   totalVoiture.innerText = sumVoiture.toFixed(2);
   total();
 }
@@ -43,6 +44,37 @@ function multiplyEssence() {
   scoreEssence.innerHTML = ccessence;
   totVoiture();
 }
+
+// event listener on input conso
+const userEssencel = document.getElementById('userEssencel')
+const userKmessencel = document.getElementById('userKmessencel')
+const scoreEssencel = document.getElementById('scoreEssencel');
+
+const defaultEssencel = ((userEssencel.value / 100) * userKmessencel.value * essencecc).toFixed(2)
+scoreEssencel.innerHTML = defaultEssencel
+
+userEssencel.addEventListener("input", changConsoEssencel);
+function changConsoEssencel() {
+  let one = parseFloat(userEssencel.value)/100 || 0;
+  let consoEssencel = parseFloat(one * essencecc * (userKmessencel.value)).toFixed(2);
+  scoreEssencel.innerHTML = consoEssencel
+  totVoiture()
+}
+userKmessencel.addEventListener("input", changeConsoKmessencel);
+function changeConsoKmessencel () {
+  let one = parseFloat (userKmessencel.value) || 0;
+  let consoEssencel = parseFloat(one * essencecc * ((userEssencel.value)/100)).toFixed(2);
+  scoreEssencel.innerHTML = consoEssencel
+  totVoiture()
+}
+
+// event listener on input nombre km
+// multply both by carbon charge
+// incrément tot essencel
+// increment tot voiture
+
+// default to do
+
 
 // field gazole
 const userGazole = document.getElementById('userGazole');
@@ -101,7 +133,7 @@ function multiplyElectrique() {
 }
 
 // to display values on edit footprint
-const defaultVoiture = (Number(defaultEssence) + Number(defaultGazole) + Number(defaultGPL) + Number(defaultE85) + Number(defaultElectrique)).toFixed(2)
+const defaultVoiture = (Number(defaultEssence) + Number(defaultGazole) + Number(defaultGPL) + Number(defaultE85) + Number(defaultElectrique) + Number(defaultEssencel)).toFixed(2)
 totalVoiture.innerHTML = defaultVoiture
 
 // transport Energie Logement / autres

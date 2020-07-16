@@ -49,6 +49,8 @@ class Footprint < ApplicationRecord
     self.autre = 0 if self.autre.nil?
     self.valeur2 = 0 if self.valeur2.nil?
     self.streaming = 0 if self.streaming.nil?
+    self.essencel = 0 if self.streaming.nil?
+    self.kmessencel = 0 if self.streaming.nil?
   end
 
   def total_score
@@ -57,6 +59,10 @@ class Footprint < ApplicationRecord
 
   def total_voiture
     ((self.essence*2.8) + (self.gazole*3.16) + (self.gpl*1.86) + (self.e85*1.68) + (self.electrique*0.071)).ceil(2)
+  end
+
+  def total_essencel
+    (((self.Essencel/100) * self.Kmessencel)*2.8).ceil(2)
   end
 
   def total_autre_transport
@@ -78,6 +84,8 @@ class Footprint < ApplicationRecord
   def total_valeur
     (self.autre  + self.valeur2).ceil(2)
   end
+
+
 
   # def calculations
   #   unless self.ble == nil
