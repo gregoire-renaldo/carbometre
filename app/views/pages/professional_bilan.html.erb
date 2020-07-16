@@ -1,3 +1,14 @@
+<script>
+  function calculate() {
+    var myBox1 = document.getElementById('empreinte-entreprise').value;
+    var myBox2 = document.getElementById('effectif').value;
+    var totalPro = document.getElementById('totalPro');
+    var myResult = myBox1 / myBox2;
+    totalPro.value = myResult;
+  }
+</script>
+
+
 <div class="container">
   <h2>Empreinte métier</h2>
   <div class="row myx-2 intro">
@@ -14,12 +25,12 @@
   </div>
 
   <div class="row justify-content-center">
-    <h4>Calculer epreinte entreprise</h4>
+    <h4>Calculer empreinte entreprise</h4>
   </div>
   <div class="row mb-2">
     <div class="col">
       <label for="empreinte-entreprise" class="field-entreprise">empreinte carbone:</label><br>
-      <input id="empreinte-entreprise" type="number" />
+      <input id="empreinte-entreprise" type="number"  />
     </div>
     <div class="col">
       <label for="effectif" class="field-entreprise">effectif de l'entreprise:</label><br>
@@ -28,11 +39,14 @@
     <div class="col">
       <p class="field-entreprise">Empreinte entreprise</p>
       <div class="white-rectangle-pro"  >
-        <p id="totalhhhhhh"></p>
+        <p id="totalPro"></p>
       </div>
     </div>
   </div>
   <div class="bottom">
   </div>
 </div>
+
+<%= javascript_pack_tag 'pro' %>
+
 
