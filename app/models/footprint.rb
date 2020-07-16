@@ -59,7 +59,7 @@ class Footprint < ApplicationRecord
     self.kme85 = 0 if self.kme85.nil?
     self.lelectrique = 0 if self.lelectrique.nil?
     self.kmelectrique = 0 if self.kmelectrique.nil?
-    self.person = 1 if self.kmelectrique.nil?
+    self.person = 1 if self.person.nil?
   end
 
   def total_score

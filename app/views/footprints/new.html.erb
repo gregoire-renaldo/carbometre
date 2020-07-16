@@ -6,7 +6,7 @@
     <%= f.label :titre, class:"titre"%>
     <%= f.text_field :title, maxlength: 20, class:"field_titre"  %>
     <%= f.label :personnes, class:"titre"%>
-    <%= f.number_field :person, class:"field_titre", id:'userPerson'  %>
+    <%= f.number_field :person, :value => 1, class:"field_titre", id:'userPerson'  %>
   </div>
   <!-- total block -->
     <div class="row sticky-top">
