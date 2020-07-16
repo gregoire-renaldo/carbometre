@@ -51,6 +51,8 @@ class Footprint < ApplicationRecord
     self.streaming = 0 if self.streaming.nil?
     self.essencel = 0 if self.streaming.nil?
     self.kmessencel = 0 if self.streaming.nil?
+    self.gazolel = 0 if self.streaming.nil?
+    self.kmgazolel = 0 if self.streaming.nil?
   end
 
   def total_score
@@ -63,6 +65,10 @@ class Footprint < ApplicationRecord
 
   def total_essencel
     (((self.Essencel/100) * self.Kmessencel)*2.8).ceil(2)
+  end
+
+  def total_gazolel
+    (((self.gazolel/100) * self.kmgazolel)*3.16).ceil(2)
   end
 
   def total_autre_transport

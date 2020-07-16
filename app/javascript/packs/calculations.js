@@ -26,7 +26,8 @@ function totVoiture() {
   const numberE85 = Number(scoreE85.textContent);
   const numberElectrique = Number(scoreElectrique.textContent);
   const numberEssencel = Number(scoreEssencel.textContent);
-  const sumVoiture = numberEssence + numberGazole + numberGpl + numberE85 + numberElectrique + numberEssencel
+  const numberGazolel = Number(scoreGazolel.textContent);
+  const sumVoiture = numberEssence + numberGazole + numberGpl + numberE85 + numberElectrique + numberEssencel + numberGazolel;
   totalVoiture.innerText = sumVoiture.toFixed(2);
   total();
 }
@@ -45,14 +46,12 @@ function multiplyEssence() {
   totVoiture();
 }
 
-// event listener on input conso
+// field essence litre
 const userEssencel = document.getElementById('userEssencel')
 const userKmessencel = document.getElementById('userKmessencel')
 const scoreEssencel = document.getElementById('scoreEssencel');
-
 const defaultEssencel = ((userEssencel.value / 100) * userKmessencel.value * essencecc).toFixed(2)
 scoreEssencel.innerHTML = defaultEssencel
-
 userEssencel.addEventListener("input", changConsoEssencel);
 function changConsoEssencel() {
   let one = parseFloat(userEssencel.value)/100 || 0;
@@ -68,14 +67,6 @@ function changeConsoKmessencel () {
   totVoiture()
 }
 
-// event listener on input nombre km
-// multply both by carbon charge
-// incrément tot essencel
-// increment tot voiture
-
-// default to do
-
-
 // field gazole
 const userGazole = document.getElementById('userGazole');
 const gazolecc = 3.16
@@ -87,6 +78,25 @@ function multiplyGazole() {
   let one = parseFloat(userGazole.value) || 0;
   let ccgazole = parseFloat(one * gazolecc).toFixed(2);
   scoreGazole.innerHTML = ccgazole;
+  totVoiture()
+}
+const userGazolel = document.getElementById('userGazolel')
+const userKmgazolel = document.getElementById('userKmgazolel')
+const scoreGazolel = document.getElementById('scoreGazolel');
+const defaultGazolel = ((userGazolel.value / 100) * userKmgazolel.value * gazolecc).toFixed(2)
+scoreGazolel.innerHTML = defaultGazolel
+userGazolel.addEventListener("input", changConsoGazolel);
+function changConsoGazolel() {
+  let one = parseFloat(userGazolel.value) / 100 || 0;
+  let consoGazolel = parseFloat(one * gazolecc * (userKmgazolel.value)).toFixed(2);
+  scoreGazolel.innerHTML = consoGazolel
+  totVoiture()
+}
+userKmgazolel.addEventListener("input", changeConsoKmgazolel);
+function changeConsoKmgazolel() {
+  let one = parseFloat(userKmgazolel.value) || 0;
+  let consoGazolel = parseFloat(one * gazolecc * ((userGazolel.value) / 100)).toFixed(2);
+  scoreGazolel.innerHTML = consoGazolel
   totVoiture()
 }
 
@@ -133,7 +143,8 @@ function multiplyElectrique() {
 }
 
 // to display values on edit footprint
-const defaultVoiture = (Number(defaultEssence) + Number(defaultGazole) + Number(defaultGPL) + Number(defaultE85) + Number(defaultElectrique) + Number(defaultEssencel)).toFixed(2)
+const defaultVoiture = (Number(defaultEssence) + Number(defaultGazole) + Number(defaultGPL) + Number(defaultE85) + Number(defaultElectrique)
+  + Number(defaultEssencel) + Number(defaultGazolel)).toFixed(2);
 totalVoiture.innerHTML = defaultVoiture
 
 // transport Energie Logement / autres
