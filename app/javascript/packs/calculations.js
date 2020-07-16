@@ -29,7 +29,8 @@ function totVoiture() {
   const numberGazolel = Number(scoreGazolel.textContent);
   const numberLgpl = Number(scoreLgpl.textContent);
   const numberLe85 = Number(scoreLe85.textContent);
-  const sumVoiture = numberEssence + numberGazole + numberGpl + numberE85 + numberElectrique + numberEssencel + numberGazolel + numberLgpl + numberLe85;
+  const numberLelectrique = Number(scoreLelectrique.textContent);
+  const sumVoiture = numberEssence + numberGazole + numberGpl + numberE85 + numberElectrique + numberEssencel + numberGazolel + numberLgpl + numberLe85 + numberLelectrique
   totalVoiture.innerText = sumVoiture.toFixed(2);
   total();
 }
@@ -182,10 +183,29 @@ function multiplyElectrique() {
   scoreElectrique.innerHTML = ccelectrique;
   totVoiture()
 }
+const userLelectrique = document.getElementById('userLelectrique')
+const userKmelectrique = document.getElementById('userKmelectrique')
+const scoreLelectrique = document.getElementById('scoreLelectrique');
+const defaultLelectrique = ((userLelectrique.value / 100) * userKmelectrique.value * electriquecc).toFixed(2);
+scoreLelectrique.innerHTML = defaultLelectrique
+userLelectrique.addEventListener("input", changConsoLelectrique);
+function changConsoLelectrique() {
+  let one = parseFloat(userLelectrique.value) / 100 || 0;
+  let consoLelectrique = parseFloat(one * electriquecc * (userKmelectrique.value)).toFixed(2);
+  scoreLelectrique.innerHTML = consoLelectrique
+  totVoiture()
+}
+userKmelectrique.addEventListener("input", changeConsoKmelectrique);
+function changeConsoKmelectrique() {
+  let one = parseFloat(userKmelectrique.value) || 0;
+  let consoLelectrique = parseFloat(one * electriquecc * ((userLelectrique.value) / 100)).toFixed(2);
+  scoreLelectrique.innerHTML = consoLelectrique
+  totVoiture()
+}
 
 // to display values on edit footprint
 const defaultVoiture = (Number(defaultEssence) + Number(defaultGazole) + Number(defaultGPL) + Number(defaultE85) + Number(defaultElectrique)
-  + Number(defaultEssencel) + Number(defaultGazolel) + Number(defaultLgpl) + Number(defaultLe85)).toFixed(2);
+  + Number(defaultEssencel) + Number(defaultGazolel) + Number(defaultLgpl) + Number(defaultLe85) + Number(defaultLelectrique) ).toFixed(2);
 totalVoiture.innerHTML = defaultVoiture
 
 // transport Energie Logement / autres
