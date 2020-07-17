@@ -2,11 +2,16 @@
 <div class="container">
   <%= simple_form_for(@footprint) do |f| %>
   <div class="mb-2" align="center">
-    <h3>Nouvelle empreinte</h3>
+    <h3>Nouvelle empreinte familiale</h3>
     <%= f.label :titre, class:"titre"%>
     <%= f.text_field :title, maxlength: 20, class:"field_titre"  %>
     <%= f.label :personnes, class:"titre"%>
     <%= f.number_field :person, :value => 1, class:"field_titre", id:'userPerson'  %>
+  </div>
+  <div class="intro">
+    <p>Vous allez détailler vos sources de gaz à effet de serre (majoritairement gaz carbonique qui nous fait parler carbone en
+    tonnes de CO2 équivalent) en précisant combien de personnes dans votre calcul (un titre pour retrouver votre calcul ou
+    projet, par exemple prévision 2021, prévision 2022)</p>
   </div>
   <!-- total block -->
     <div class="row sticky-top">
@@ -40,9 +45,14 @@
         </div>
       </div>
     </div>
+
     <!-- beginning of fields voiture -->
     <div class="voiture">
       <div class="container">
+        <div class="intro">
+          <p>Vous avez le choix de calcul en kilomètres (en précisant votre consommation) ou en litrage complet (les coefficients
+          mentionnés sont les kg de CO2 par litre ou unité mentionnée, selon valeurs de l’ADEME)</p>
+        </div>
         <div class="conso-voiture mt-1">
           Calcul par nombre de litres ou nombre de kWh
         </div>
@@ -81,7 +91,7 @@
         <!-- field gpl -->
         <div class="row align-items-center item mt-1">
           <div class=" col-xs-4 field">
-            <%= f.label :"GPL" %>
+            <%= f.label :gpl, "GPL" %>
             <%= f.number_field :gpl,  id: 'userGpl' %>
           </div>
           <div class="col-xs-2 unit">
@@ -230,8 +240,6 @@
             <p id="scoreLelectrique"></p>
           </div>
         </div>
-
-
       </div>
     </div>
     <!-- autres transports -->
@@ -252,7 +260,7 @@
         <!-- field tgv -->
         <div class="row align-items-center item mt-1">
           <div class=" col-xs-4 field">
-            <%= f.label :TGV %>
+            <%= f.label :tgv, "TGV" %>
             <%= f.number_field :tgv, id: 'userTgv' %>
           </div>
           <div class="col-xs-2 unit">
@@ -268,7 +276,7 @@
         <!-- field ter electrique -->
         <div class="row align-items-center item mt-1">
           <div class=" col-xs-4 field">
-            <%= f.label :"TER electrique" %>
+            <%= f.label :terelectrique, "TER electrique" %>
             <%= f.number_field :terelectrique, id: 'userTerelec' %>
           </div>
           <div class="col-xs-2 unit">
@@ -284,7 +292,7 @@
         <!-- field ter thermique -->
         <div class="row align-items-center item mt-1">
           <div class=" col-xs-4 field">
-            <%= f.label :"TER thermique" %>
+            <%= f.label :terthermique, "TER thermique" %>
             <%= f.number_field :terthermique, id: 'userTertherm' %>
           </div>
           <div class="col-xs-2 unit">
@@ -300,7 +308,7 @@
         <!-- field intercite -->
         <div class="row align-items-center item mt-1">
           <div class=" col-xs-4 field">
-            <%= f.label :intercite%>
+            <%= f.label :intercite, "Train intercité"%>
             <%= f.number_field :intercite, id: 'userIntercite' %>
           </div>
           <div class="col-xs-2 unit">
@@ -316,7 +324,7 @@
         <!-- field metro -->
         <div class="row align-items-center item mt-1">
           <div class=" col-xs-4 field">
-            <%= f.label :"metro / RER"%>
+            <%= f.label :metro, "metro / RER"%>
             <%= f.number_field :metro, id: 'userMetro' %>
           </div>
           <div class="col-xs-2 unit">
@@ -364,7 +372,7 @@
         <!-- field avion regional-->
         <div class="row align-items-center item mt-1">
           <div class=" col-xs-4 field">
-            <%= f.label :"avion regional"%>
+            <%= f.label :avionregional, "avion régional"%>
             <%= f.number_field :avionregional, id: 'userAvionregional' %>
           </div>
           <div class="col-xs-2 unit">
@@ -414,7 +422,7 @@
       <!-- field gaz kwh -->
         <div class="row align-items-center item mt-1">
           <div class=" col-xs-4 field">
-            <%= f.label :"gaz kwh" %>
+            <%= f.label :gazkwh, "Gaz kWh" %>
             <%= f.number_field :gazkwh, step: :any, id: 'userGaz' %>
           </div>
           <div class="col-xs-2 unit">
@@ -505,6 +513,54 @@
           </div>
           <div class="col-xs-4 white-rectangle">
             <p id="scoreEau"></p>
+          </div>
+        </div>
+        <!-- field streaming -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :"streaming" %>
+            <%= f.number_field :streaming, id: 'userStreaming' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>100 h</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>25</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreStreaming"></p>
+          </div>
+        </div>
+        <!-- field mail -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :"tweet" %>
+            <%= f.number_field :tweet, id: 'userTweet' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>unité</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>0.00002</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreTweet"></p>
+          </div>
+        </div>
+        <!-- field mail -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :"mail avec pj" %>
+            <%= f.number_field :mail, id: 'userMail' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>unité</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>0.035</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreMail"></p>
           </div>
         </div>
       </div>
@@ -733,6 +789,10 @@
             <p id="scoreOeufs"></p>
           </div>
         </div>
+        <div class="intro">
+          <p>Pour ajouter d’autres aliments ou produits, utiliser l’appli Karbon qui scanne les code-barres pour évaluer l’empreinte
+          carbone, saisie sous « ajouter des valeurs »</p>
+        </div>
 <!-- fin du container category alim-->
       </div>
       <!-- end of alim -->
@@ -753,6 +813,10 @@
     <div class="autre">
       <!-- change class for the good category and do css and js -->
       <div class="container">
+        <div class="intro">
+          <p>Il s’agit des contenus carbone pour des achats, si vous n’achetez aucun de ces appareils cette année, ne mentionnez rien
+          (leur consommation est déjà intégrée dans « logement »)</p>
+        </div>
         <div class="row align-items-center item mt-1">
           <div class=" col-xs-4 field">
             <%= f.label :aspirateur %>
@@ -880,22 +944,9 @@
             <p id="scoreOrdinateur"></p>
           </div>
         </div>
-        <!-- field streaming -->
-        <div class="row align-items-center item mt-1">
-          <div class=" col-xs-4 field">
-            <%= f.label :"streaming" %>
-            <%= f.number_field :streaming, id: 'userStreaming' %>
-          </div>
-          <div class="col-xs-2 unit">
-            <p>100 h</p>
-          </div>
-          <div class="col-xs-2 charge">
-            <p>25</p>
-          </div>
-          <div class="col-xs-4 white-rectangle">
-            <p id="scoreStreaming"></p>
-          </div>
-        </div>
+
+
+
         <!-- end of category autre -->
       </div>
 
@@ -903,7 +954,7 @@
     </div>
     <div class="row mt-2 sticky-top">
       <div class="total-mobile align-items-center">
-        <p>Ajouter valeurs</p>
+        <p>Autres valeurs valeurs</p>
         <div class="white-rectangle">
           <p id="totalValeur"></p>
         </div>
@@ -915,6 +966,9 @@
     <div class="valeur">
       <!-- change class for the good category and do css and js -->
       <div class="container">
+        <div class="intro">
+          <p>Nous proposons ici d’ajouter des kg de CO2 tels que collectés par l’application Karbon ou par l’usage d’autres produits</p>
+        </div>
         <div class="row align-items-center item mt-1">
           <div class=" col-xs-4 field">
             <%= f.label :"valeur 1" %>

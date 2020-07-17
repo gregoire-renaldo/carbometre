@@ -11,7 +11,6 @@ const userPerson = document.getElementById('userPerson')
 userPerson.addEventListener("input", divide)
 function divide () {
   let person = parseFloat(userPerson.value) || 1
-  console.log(Number(totalBilan.textContent))
   scorePerson = (Number(totalBilan.textContent) / person).toFixed(2)
   totalPerson.innerHTML = scorePerson
 }
@@ -368,7 +367,10 @@ function totEnergie() {
   const numberGranulebois = Number(scoreGranulebois.textContent);
   const numberBuchebois = Number(scoreBuchebois.textContent);
   const numberEau = Number(scoreEau.textContent);
-  const sumEnergie = numberElectricite + numberGazkwh + numberGazm + numberFioul + numberGranulebois + numberBuchebois + numberEau
+  const numberStreaming = Number(scoreStreaming.textContent);
+  const numberTweet = Number(scoreTweet.textContent);
+  const numberMail = Number(scoreMail.textContent);
+  const sumEnergie = numberElectricite + numberGazkwh + numberGazm + numberFioul + numberGranulebois + numberBuchebois + numberEau + numberStreaming + numberTweet + numberMail
   totalEnergie.innerText = sumEnergie.toFixed(2);
   total();
 }
@@ -469,9 +471,53 @@ function multiplyEau() {
   scoreEau.innerHTML = cc;
   totEnergie()
 }
+
+// field streaming
+let userStreaming = document.getElementById('userStreaming');
+const streamingcc = 25
+const scoreStreaming = document.getElementById('scoreStreaming');
+const defaultStreaming = (userStreaming.value * streamingcc).toFixed(2)
+scoreStreaming.innerHTML = defaultStreaming
+userStreaming.addEventListener("input", multiplyStreaming);
+function multiplyStreaming() {
+  let one = parseFloat(userStreaming.value) || 0;
+  let cc = parseFloat(one * streamingcc).toFixed(2);
+  scoreStreaming.innerHTML = cc;
+  totEnergie()
+}
+
+// field tweet
+let userTweet = document.getElementById('userTweet');
+const tweetcc = 0.00002
+const scoreTweet = document.getElementById('scoreTweet');
+const defaultTweet = (userTweet.value * tweetcc).toFixed(2)
+scoreTweet.innerHTML = defaultTweet
+userTweet.addEventListener("input", multiplyTweet);
+function multiplyTweet() {
+  let one = parseFloat(userTweet.value) || 0;
+  let cc = parseFloat(one * tweetcc).toFixed(4);
+  scoreTweet.innerHTML = cc;
+  totEnergie()
+}
+
+// field mail
+let userMail = document.getElementById('userMail');
+const mailcc = 0.035
+const scoreMail = document.getElementById('scoreMail');
+const defaultMail = (userMail.value * mailcc).toFixed(2)
+scoreMail.innerHTML = defaultMail
+userMail.addEventListener("input", multiplyMail);
+function multiplyMail() {
+  let one = parseFloat(userMail.value) || 0;
+  let cc = parseFloat(one * mailcc).toFixed(2);
+  scoreMail.innerHTML = cc;
+  totEnergie()
+}
+
 // dipslay values on update page
 const defaultEnergie = (Number(defaultElectricite) + Number(defaultGazkwh) + Number(defaultGazm)
-  + Number(defaultFioul) + Number(defaultGranulebois) + Number(defaultBuchebois) + Number(defaultEau)).toFixed(2);
+  + Number(defaultFioul) + Number(defaultGranulebois) + Number(defaultBuchebois) + Number(defaultEau)
+  + Number(defaultStreaming) + Number(defaultTweet) + Number(defaultMail)).toFixed(2);
 totalEnergie.innerHTML = defaultEnergie
 
 // total category alimentaire
@@ -697,9 +743,8 @@ function totAutre() {
   const numberMicroonde = Number(scoreMicroonde.textContent);
   const numberSmartphone = Number(scoreSmartphone.textContent);
   const numberOrdinateur = Number(scoreOrdinateur.textContent);
-  const numberStreaming = Number(scoreStreaming.textContent);
   const sum = numberAspirateur + numberCongelateur + numberRefrigerateur + numberFourelec + numberLavelinge
-    + numberMicroonde + numberSmartphone + numberOrdinateur + numberStreaming
+    + numberMicroonde + numberSmartphone + numberOrdinateur
   totalAutre.innerText = sum.toFixed(2);
   total();
 }
@@ -808,24 +853,12 @@ function multiplyOrdinateur() {
   totAutre()
 }
 
-// field streaming
-let userStreaming = document.getElementById('userStreaming');
-const streamingcc = 25
-const scoreStreaming = document.getElementById('scoreStreaming');
-const defaultStreaming = (userStreaming.value * streamingcc).toFixed(2)
-scoreStreaming.innerHTML = defaultStreaming
-userStreaming.addEventListener("input", multiplyStreaming);
-function multiplyStreaming() {
-  let one = parseFloat(userStreaming.value) || 0;
-  let cc = parseFloat(one * streamingcc).toFixed(2);
-  scoreStreaming.innerHTML = cc;
-  totAutre()
-}
+
+
 
 const defaultAutre = (Number(defaultAspirateur) + Number(defaultCongelateur)
   + Number(defaultRefrigerateur) + Number(defaultFourelec) + Number(defaultLavelinge)
-  + Number(defaultMicroonde) + Number(defaultSmartphone) + Number(defaultOrdinateur)
-  + Number(defaultStreaming)).toFixed(2)
+  + Number(defaultMicroonde) + Number(defaultSmartphone) + Number(defaultOrdinateur)).toFixed(2)
 totalAutre.innerHTML = defaultAutre
 
 

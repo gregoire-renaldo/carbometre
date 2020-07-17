@@ -7,4 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts 'Cleaning database...'
 Footprint.destroy_all
+User.destroy_all
 puts 'done'
