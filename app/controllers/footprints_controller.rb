@@ -52,7 +52,7 @@ class FootprintsController < ApplicationController
   private
 
   def footprint_params
-    params.require(:footprint).permit(:mail, :tweet, :person, :lelectrique, :kmelectrique, :le85, :kme85, :lgpl, :kmgpl, :gazolel, :kmgazolel, :lessence, :kmessence, :streaming, :valeur2, :autre, :title, :patate, :ble, :carotte, :boeuf, :riz, :saladesaison, :saladess, :tomatesfr, :tomatesfrss, :veau, :laitvache, :poulet, :oeufs, :electricite, :gazkwh, :gazm, :fioul, :granulebois, :buchebois, :eau, :aspirateur, :congelateur, :refrigerateur250l, :fourelectrique, :lavelinge, :microonde, :smartphone, :ordinateur, :tgv, :terelectrique, :terthermique, :intercite, :metro, :bus, :avion, :avionregional, :essence, :gazole, :gpl, :e85, :electrique )
+    params.require(:footprint).permit(:voiture, :voitureelec, :velo, :veloelec, :mail, :tweet, :person, :lelectrique, :kmelectrique, :le85, :kme85, :lgpl, :kmgpl, :gazolel, :kmgazolel, :lessence, :kmessence, :streaming, :valeur2, :autre, :title, :patate, :ble, :carotte, :boeuf, :riz, :saladesaison, :saladess, :tomatesfr, :tomatesfrss, :veau, :laitvache, :poulet, :oeufs, :electricite, :gazkwh, :gazm, :fioul, :granulebois, :buchebois, :eau, :aspirateur, :congelateur, :refrigerateur250l, :fourelectrique, :lavelinge, :microonde, :smartphone, :ordinateur, :tgv, :terelectrique, :terthermique, :intercite, :metro, :bus, :avion, :avionregional, :essence, :gazole, :gpl, :e85, :electrique )
   end
 
 end
