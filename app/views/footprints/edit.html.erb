@@ -26,7 +26,6 @@
       <div class="button-ddl">
       </div>
     </div>
-
   </div>
   <!-- end of total block -->
   <!-- block for total voiture -->
@@ -892,6 +891,38 @@
         </div>
         <div class="col-xs-4 white-rectangle">
           <p id="scoreStreaming"></p>
+        </div>
+      </div>
+      <!-- field tweet -->
+      <div class="row align-items-center item mt-1">
+        <div class=" col-xs-4 field">
+          <%= f.label :"tweet" %>
+          <%= f.number_field :tweet, id: 'userTweet' %>
+        </div>
+        <div class="col-xs-2 unit">
+          <p>unité</p>
+        </div>
+        <div class="col-xs-2 charge">
+          <p>0.00002</p>
+        </div>
+        <div class="col-xs-4 white-rectangle">
+          <p id="scoreTweet"></p>
+        </div>
+      </div>
+      <!-- field mail -->
+      <div class="row align-items-center item mt-1">
+        <div class=" col-xs-4 field">
+          <%= f.label :"mail avec pj" %>
+          <%= f.number_field :mail, id: 'userMail' %>
+        </div>
+        <div class="col-xs-2 unit">
+          <p>unité</p>
+        </div>
+        <div class="col-xs-2 charge">
+          <p>0.035</p>
+        </div>
+        <div class="col-xs-4 white-rectangle">
+          <p id="scoreMail"></p>
         </div>
       </div>
       <!-- end of category autre -->

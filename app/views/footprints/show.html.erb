@@ -13,7 +13,7 @@
       <h5>Total par personne <%="(#{(@footprint.person).ceil(0)})"%> : <%= @footprint.score_person  %>  kg</h5>
       <div class="row mt2">
         <div class="col-sm">
-        <h4>Total Voiture : <%= @footprint.total_voiture%> kg</h4>
+        <h4>Voiture : <%= @footprint.total_voiture%> kg</h4>
           <ul class="list-group">
             <li class="list-group-item"> Essence <%= ((@footprint.essence*2.8) + @footprint.total_essencel).ceil(2)%> kg</li>
             <li class="list-group-item"> Gazole <%= ((@footprint.gazole*3.16) + @footprint.total_gazolel).ceil(2)%> kg</li>
@@ -23,10 +23,9 @@
           </ul>
         </div>
       </div>
-
       <div class="row ">
         <div class="col-sm">
-        <h4>Total Autres transports : <%= @footprint.total_autre_transport %> kg</h4>
+        <h4>Autres transports : <%= @footprint.total_autre_transport %> kg</h4>
           <ul class="list-group">
             <li class="list-group-item"> TGV <%= (@footprint.tgv*0.00369).ceil(2)%> kg</li>
             <li class="list-group-item"> TER Electrique <%= (@footprint.terelectrique*0.00891).ceil(2)%> kg</li>
@@ -39,10 +38,9 @@
           </ul>
         </div>
       </div>
-
       <div class="row ">
         <div class="col-sm">
-          <h4>Total Logement : <%= @footprint.total_logement %> kg</h4>
+          <h4>Logement : <%= @footprint.total_logement %> kg</h4>
           <ul class="list-group">
             <li class="list-group-item"> Electricité <%= (@footprint.electricite*0.071).ceil(2)%> kg</li>
             <li class="list-group-item"> Gaz kWh <%= (@footprint.gazkwh*0.205).ceil(2)%> kg</li>
@@ -54,10 +52,9 @@
           </ul>
         </div>
       </div>
-
       <div class="row ">
         <div class="col-sm">
-        <h4>Total Alimentation : <%= @footprint.total_alimentation %> kg</h4>
+        <h4>Alimentation : <%= @footprint.total_alimentation %> kg</h4>
           <ul class="list-group">
             <li class="list-group-item"> Blé français <%= (@footprint.ble*0.439).ceil(2)%> kg</li>
             <li class="list-group-item"> Riz Thailandais <%= (@footprint.riz*3.59).ceil(2)%> kg</li>
@@ -75,10 +72,9 @@
           </ul>
         </div>
       </div>
-
       <div class="row ">
         <div class="col-sm">
-        <h4>Total Autres : <%= @footprint.total_autres %> kg</h4>
+        <h4>Autres : <%= @footprint.total_autres %> kg</h4>
           <ul class="list-group">
             <li class="list-group-item"> Aspirateur <%= (@footprint.aspirateur).ceil(2)%> kg</li>
             <li class="list-group-item"> Congélateur 200 l<%= (@footprint.congelateur).ceil(2)%> kg</li>
@@ -89,23 +85,20 @@
             <li class="list-group-item"> Smartphone <%= (@footprint.smartphone).ceil(2)%> kg</li>
             <li class="list-group-item"> Ordinateur <%= (@footprint.ordinateur).ceil(2)%> kg</li>
             <li class="list-group-item"> Streaming <%= (@footprint.streaming).ceil(2)%> kg</li>
+            <li class="list-group-item"> Tweet <%= (@footprint.tweet).ceil(4)%> kg</li>
+            <li class="list-group-item"> Mail avec pj <%= (@footprint.mail).ceil(2)%> kg</li>
           </ul>
         </div>
       </div>
-
       <div class="row ">
         <div class="col-sm">
-          <h4>Total Autres : <%= @footprint.total_valeur %> kg</h4>
+          <h4>Valeurs additionnelle : <%= @footprint.total_valeur %> kg</h4>
           <ul class="list-group">
             <li class="list-group-item"> Valeur 1 <%= (@footprint.autre).ceil(2)%> kg</li>
             <li class="list-group-item"> Valeur 2 <%= (@footprint.valeur2).ceil(2)%> kg</li>
           </ul>
         </div>
       </div>
-
-
-
-
     </div>
   </div>
   <div class="row mt-2 mb-2" align="center">
@@ -113,5 +106,7 @@
       <%= link_to" Modifier l'empreinte", edit_footprint_path(@footprint), class:"btn btn-gradient" %>
       <!-- <%= link_to 'Exporter (pdf)', footprint_path(@footprint, :format => :pdf), target: "_blank" %> -->
     </div>
+  </div>
+  <div class="bottom">
   </div>
 </div>

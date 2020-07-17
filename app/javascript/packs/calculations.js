@@ -698,8 +698,10 @@ function totAutre() {
   const numberSmartphone = Number(scoreSmartphone.textContent);
   const numberOrdinateur = Number(scoreOrdinateur.textContent);
   const numberStreaming = Number(scoreStreaming.textContent);
+  const numberTweet = Number(scoreTweet.textContent);
+  const numberMail = Number(scoreMail.textContent);
   const sum = numberAspirateur + numberCongelateur + numberRefrigerateur + numberFourelec + numberLavelinge
-    + numberMicroonde + numberSmartphone + numberOrdinateur + numberStreaming
+    + numberMicroonde + numberSmartphone + numberOrdinateur + numberStreaming + numberTweet + numberMail
   totalAutre.innerText = sum.toFixed(2);
   total();
 }
@@ -822,10 +824,39 @@ function multiplyStreaming() {
   totAutre()
 }
 
+// field tweet
+let userTweet = document.getElementById('userTweet');
+const tweetcc = 0.00002
+const scoreTweet = document.getElementById('scoreTweet');
+const defaultTweet = (userTweet.value * tweetcc).toFixed(2)
+scoreTweet.innerHTML = defaultTweet
+userTweet.addEventListener("input", multiplyTweet);
+function multiplyTweet() {
+  let one = parseFloat(userTweet.value) || 0;
+  let cc = parseFloat(one * tweetcc).toFixed(4);
+  scoreTweet.innerHTML = cc;
+  totAutre()
+}
+
+// field mail
+let userMail = document.getElementById('userMail');
+const mailcc = 0.035
+const scoreMail = document.getElementById('scoreMail');
+const defaultMail = (userMail.value * mailcc).toFixed(2)
+scoreMail.innerHTML = defaultMail
+userMail.addEventListener("input", multiplyMail);
+function multiplyMail() {
+  let one = parseFloat(userMail.value) || 0;
+  let cc = parseFloat(one * mailcc).toFixed(2);
+  scoreMail.innerHTML = cc;
+  totAutre()
+}
+
+
 const defaultAutre = (Number(defaultAspirateur) + Number(defaultCongelateur)
   + Number(defaultRefrigerateur) + Number(defaultFourelec) + Number(defaultLavelinge)
   + Number(defaultMicroonde) + Number(defaultSmartphone) + Number(defaultOrdinateur)
-  + Number(defaultStreaming)).toFixed(2)
+  + Number(defaultStreaming) + Number(defaultTweet) + Number(defaultMail)).toFixed(2)
 totalAutre.innerHTML = defaultAutre
 
 
