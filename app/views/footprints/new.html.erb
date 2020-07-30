@@ -825,7 +825,7 @@
             <p>unité</p>
           </div>
           <div class="col-xs-2 charge">
-            <p>52</p>
+            <p>52 kg</p>
           </div>
           <div class="col-xs-4 white-rectangle">
             <p id="scoreAspirateur"></p>
@@ -841,7 +841,7 @@
             <p>unité</p>
           </div>
           <div class="col-xs-2 charge">
-            <p>415</p>
+            <p>415 kg</p>
           </div>
           <div class="col-xs-4 white-rectangle">
             <p id="scoreCongelateur"></p>
@@ -857,7 +857,7 @@
             <p>unité</p>
           </div>
           <div class="col-xs-2 charge">
-            <p>300</p>
+            <p>300 kg</p>
           </div>
           <div class="col-xs-4 white-rectangle">
             <p id="scoreRefrigerateur"></p>
@@ -873,7 +873,7 @@
             <p>unité</p>
           </div>
           <div class="col-xs-2 charge">
-            <p>217</p>
+            <p>217 kg</p>
           </div>
           <div class="col-xs-4 white-rectangle">
             <p id="scoreFourelec"></p>
@@ -889,7 +889,7 @@
             <p>unité</p>
           </div>
           <div class="col-xs-2 charge">
-            <p>305</p>
+            <p>305 kg</p>
           </div>
           <div class="col-xs-4 white-rectangle">
             <p id="scoreLavelinge"></p>
@@ -905,7 +905,7 @@
             <p>unité</p>
           </div>
           <div class="col-xs-2 charge">
-            <p>100</p>
+            <p>100 kg</p>
           </div>
           <div class="col-xs-4 white-rectangle">
             <p id="scoreMicroonde"></p>
@@ -921,7 +921,7 @@
             <p>unité</p>
           </div>
           <div class="col-xs-2 charge">
-            <p>15</p>
+            <p>15 kg</p>
           </div>
           <div class="col-xs-4 white-rectangle">
             <p id="scoreSmartphone"></p>
@@ -937,12 +937,77 @@
             <p>unité</p>
           </div>
           <div class="col-xs-2 charge">
-            <p>150</p>
+            <p>150 kg</p>
           </div>
           <div class="col-xs-4 white-rectangle">
             <p id="scoreOrdinateur"></p>
           </div>
         </div>
+        <!-- field vélo -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :velo, "Vélo" %>
+            <%= f.number_field :velo, id: 'userVelo' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>unité</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>60 kg</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreVelo"></p>
+          </div>
+        </div>
+        <!-- field vélo éléctrique -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :veloelec, "Vélo éléctrique" %>
+            <%= f.number_field :veloelec, id: 'userVeloelectrique' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>unité</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>160 kg</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreVeloelectrique"></p>
+          </div>
+        </div>
+        <!-- field auto française -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :voiture, "Auto française" %>
+            <%= f.number_field :voiture, id: 'userAutofr' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>kg</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>5.5 kg/kg</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreAutofr"></p>
+          </div>
+        </div>
+        <!-- field auto fr electrique -->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :voitureelec, "Auto française électrique" %>
+            <%= f.number_field :voitureelec, id: 'userAutofrelec' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>kg</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>7.6 kg/kg</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreAutofrelec"></p>
+          </div>
+        </div>
+
 
 
 

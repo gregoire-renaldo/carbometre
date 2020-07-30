@@ -742,8 +742,13 @@ function totAutre() {
   const numberMicroonde = Number(scoreMicroonde.textContent);
   const numberSmartphone = Number(scoreSmartphone.textContent);
   const numberOrdinateur = Number(scoreOrdinateur.textContent);
+  const numberVelo = Number(scoreVelo.textContent);
+  const numberVeloelec = Number(scoreVeloelectrique.textContent);
+  const numberAutofr = Number(scoreAutofr.textContent);
+  const numberAutofrelec = Number(scoreAutofrelec.textContent);
   const sum = numberAspirateur + numberCongelateur + numberRefrigerateur + numberFourelec + numberLavelinge
-    + numberMicroonde + numberSmartphone + numberOrdinateur
+    + numberMicroonde + numberSmartphone + numberOrdinateur + numberAutofr
+    + numberVelo + numberVeloelec + numberAutofrelec
   totalAutre.innerText = sum.toFixed(2);
   total();
 }
@@ -851,13 +856,66 @@ function multiplyOrdinateur() {
   scoreOrdinateur.innerHTML = cc;
   totAutre()
 }
+// field velo
+let userVelo = document.getElementById('userVelo');
+const velocc = 60
+const scoreVelo = document.getElementById('scoreVelo');
+const defaultVelo = (userVelo.value * velocc).toFixed(2)
+scoreVelo.innerHTML = defaultVelo
+userVelo.addEventListener("input", multiplyVelo);
+function multiplyVelo() {
+  let one = parseFloat(userVelo.value) || 0;
+  let cc = parseFloat(one * velocc).toFixed(2);
+  scoreVelo.innerHTML = cc;
+  totAutre()
+}
 
+// field velo éléctrique
+let userVeloelectrique = document.getElementById('userVeloelectrique');
+const veloelectriquecc = 160
+const scoreVeloelectrique = document.getElementById('scoreVeloelectrique');
+const defaultVeloelectrique = (userVeloelectrique.value * veloelectriquecc).toFixed(2)
+scoreVeloelectrique.innerHTML = defaultVeloelectrique
+userVeloelectrique.addEventListener("input", multiplyVeloelec);
+function multiplyVeloelec() {
+  let one = parseFloat(userVeloelectrique.value) || 0;
+  let cc = parseFloat(one * veloelectriquecc).toFixed(2);
+  scoreVeloelectrique.innerHTML = cc;
+  totAutre()
+}
 
+// field auto fr
+let userAutofr = document.getElementById('userAutofr');
+const autofrcc = 5.5
+const scoreAutofr = document.getElementById('scoreAutofr');
+const defaultAutofr = (userAutofr.value * autofrcc).toFixed(2)
+scoreAutofr.innerHTML = defaultAutofr
+userAutofr.addEventListener("input", multiplyAutofr);
+function multiplyAutofr() {
+  let one = parseFloat(userAutofr.value) || 0;
+  let cc = parseFloat(one * autofrcc).toFixed(2);
+  scoreAutofr.innerHTML = cc;
+  totAutre()
+}
 
+// field auto fr elec
+const userAutofrelec = document.getElementById('userAutofrelec');
+const autofreleccc = 7.6
+const scoreAutofrelec = document.getElementById('scoreAutofrelec');
+const defaultAutofrelec = (userAutofrelec.value * autofreleccc).toFixed(2)
+scoreAutofrelec.innerHTML = defaultAutofrelec
+userAutofrelec.addEventListener("input", multiplyAutofrelec);
+function multiplyAutofrelec() {
+  let one = parseFloat(userAutofrelec.value) || 0;
+  let cc = parseFloat(one * autofreleccc).toFixed(2);
+  scoreAutofrelec.innerHTML = cc;
+  totAutre()
+}
 
 const defaultAutre = (Number(defaultAspirateur) + Number(defaultCongelateur)
   + Number(defaultRefrigerateur) + Number(defaultFourelec) + Number(defaultLavelinge)
-  + Number(defaultMicroonde) + Number(defaultSmartphone) + Number(defaultOrdinateur)).toFixed(2)
+  + Number(defaultMicroonde) + Number(defaultSmartphone) + Number(defaultOrdinateur)
+  + Number(defaultVelo) + Number(defaultVeloelectrique) + Number(defaultAutofr) + Number(defaultAutofrelec)).toFixed(2)
 totalAutre.innerHTML = defaultAutre
 
 
