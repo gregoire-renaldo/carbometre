@@ -228,13 +228,12 @@ const totalTransport = document.getElementById('totalTransport')
 function totTransport() {
   const numberTgv = Number(scoreTgv.textContent);
   const numberTerelec = Number(scoreTerelec.textContent);
-  const numberTertherm = Number(scoreTertherm.textContent);
   const numberIntercite = Number(scoreIntercite.textContent);
   const numberMetro = Number(scoreMetro.textContent);
   const numberBus = Number(scoreBus.textContent);
   const numberAvion = Number(scoreAvion.textContent);
   const numberAvionregional = Number(scoreAvionregional.textContent);
-  const sumTransport = numberTgv + numberTerelec + numberTertherm + numberIntercite + numberMetro + numberBus + numberAvion + numberAvionregional
+  const sumTransport = numberTgv + numberTerelec + numberIntercite + numberMetro + numberBus + numberAvion + numberAvionregional
   //  bus avion avion régional
   totalTransport.innerText = sumTransport.toFixed(2);
   total();
@@ -242,9 +241,9 @@ function totTransport() {
 
 // field tgv
 const userTgv = document.getElementById('userTgv');
-const tgvcc = 0.00369
+const tgvcc = 0.00173
 const scoreTgv = document.getElementById('scoreTgv');
-const defaultTgv = (userTgv.value * electriquecc).toFixed(2)
+const defaultTgv = (userTgv.value * tgvcc).toFixed(2)
 scoreTgv.innerHTML = defaultTgv
 userTgv.addEventListener("input", multiplyTgv);
 function multiplyTgv() {
@@ -256,7 +255,7 @@ function multiplyTgv() {
 
 // field ter elec
 const userTerelec = document.getElementById('userTerelec');
-const tereleccc = 0.00891
+const tereleccc = 0.00248
 const scoreTerelec = document.getElementById('scoreTerelec');
 const defaultTerelec = (userTerelec.value * tereleccc).toFixed(2)
 scoreTerelec.innerHTML = defaultTerelec
@@ -269,18 +268,18 @@ function multiplyTerelec() {
 }
 
 // field ter thermique
-const userTertherm = document.getElementById('userTertherm');
-const terthermcc = 0.0798
-const scoreTertherm = document.getElementById('scoreTertherm');
-const defaultTerTherm = (userTertherm.value * terthermcc).toFixed(2)
-scoreTertherm.innerHTML = defaultTerTherm
-userTertherm.addEventListener("input", multiplyTertherm);
-function multiplyTertherm() {
-  let one = parseFloat(userTertherm.value) || 0;
-  let cctertherm = parseFloat(one * terthermcc).toFixed(3);
-  scoreTertherm.innerHTML = cctertherm;
-  totTransport();
-}
+// const userTertherm = document.getElementById('userTertherm');
+// const terthermcc = 0.0798
+// const scoreTertherm = document.getElementById('scoreTertherm');
+// const defaultTerTherm = (userTertherm.value * terthermcc).toFixed(2)
+// scoreTertherm.innerHTML = defaultTerTherm
+// userTertherm.addEventListener("input", multiplyTertherm);
+// function multiplyTertherm() {
+//   let one = parseFloat(userTertherm.value) || 0;
+//   let cctertherm = parseFloat(one * terthermcc).toFixed(3);
+//   scoreTertherm.innerHTML = cctertherm;
+//   totTransport();
+// }
 
 // field intercite
 const userIntercite = document.getElementById('userIntercite');
@@ -352,7 +351,7 @@ function multiplyAvionregional() {
   totTransport();
 }
 // to display values on edit footprint
-const defaultTransport = (Number(defaultTgv) + Number(defaultTerelec) + Number(defaultTerTherm)
+const defaultTransport = (Number(defaultTgv) + Number(defaultTerelec)
 + Number(defaultIntercite) + Number(defaultMetro) + Number(defaultBus)
 + Number(defaultAvion) + Number(defaultAvionregional)).toFixed(2);
 totalTransport.innerHTML = defaultTransport
@@ -474,7 +473,7 @@ function multiplyEau() {
 
 // field streaming
 let userStreaming = document.getElementById('userStreaming');
-const streamingcc = 25
+const streamingcc = 0.25
 const scoreStreaming = document.getElementById('scoreStreaming');
 const defaultStreaming = (userStreaming.value * streamingcc).toFixed(2)
 scoreStreaming.innerHTML = defaultStreaming
@@ -608,7 +607,7 @@ scoreSaladeSaison.innerHTML = defaultSaladeSaison
 userSaladeSaison.addEventListener("input", multiplySalade);
 function multiplySalade() {
   let one = parseFloat(userSaladeSaison.value) || 0;
-  let saladesaison = parseFloat(one * pommedeterrecc).toFixed(2);
+  let saladesaison = parseFloat(one * saladesaisoncc).toFixed(2);
   scoreSaladeSaison.innerHTML = saladesaison;
   totAlim()
 }
@@ -802,7 +801,7 @@ function multiplyFourelec() {
 }
 // field lave linge
 let userLavelinge = document.getElementById('userLavelinge');
-const lavelingecc = 217
+const lavelingecc = 315
 const scoreLavelinge = document.getElementById('scoreLavelinge');
 const defaultLavelinge = (userLavelinge.value * lavelingecc).toFixed(2)
 scoreLavelinge.innerHTML = defaultLavelinge
