@@ -28,8 +28,8 @@
         <h4>Autres transports : <%= @footprint.total_autre_transport %> kg</h4>
           <ul class="list-group">
             <li class="list-group-item"> TGV <%= (@footprint.tgv*0.00369).ceil(2)%> kg</li>
-            <li class="list-group-item"> TER Electrique <%= (@footprint.terelectrique*0.00891).ceil(2)%> kg</li>
-            <li class="list-group-item"> TER Thermique <%= (@footprint.terthermique*0.0798).ceil(2)%> kg</li>
+            <li class="list-group-item"> TER <%= (@footprint.terelectrique*0.00248).ceil(2)%> kg</li>
+            <!-- <li class="list-group-item"> TER Thermique <%= (@footprint.terthermique*0.0798).ceil(2)%> kg</li> -->
             <li class="list-group-item"> Intercité <%= (@footprint.intercite*0.0056).ceil(2)%> kg</li>
             <li class="list-group-item"> Metro <%= (@footprint.metro*0.0057).ceil(2)%> kg</li>
             <li class="list-group-item"> Bus <%= (@footprint.bus*0.092166667).ceil(2)%> kg</li>
