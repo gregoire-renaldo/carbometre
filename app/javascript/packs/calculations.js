@@ -473,7 +473,7 @@ function multiplyEau() {
 
 // field streaming
 let userStreaming = document.getElementById('userStreaming');
-const streamingcc = 25
+const streamingcc = 0.25
 const scoreStreaming = document.getElementById('scoreStreaming');
 const defaultStreaming = (userStreaming.value * streamingcc).toFixed(2)
 scoreStreaming.innerHTML = defaultStreaming
