@@ -79,14 +79,14 @@
         <div class="col-sm">
         <h4>Autres : <%= @footprint.total_autres %> kg</h4>
           <ul class="list-group">
-            <li class="list-group-item"> Aspirateur <%= (@footprint.aspirateur).ceil(2)%> kg</li>
-            <li class="list-group-item"> Congélateur 200 l<%= (@footprint.congelateur).ceil(2)%> kg</li>
-            <li class="list-group-item"> Réfrigérateur 250 l <%= (@footprint.refrigerateur250l).ceil(2)%> kg</li>
-            <li class="list-group-item"> Four électrique <%= (@footprint.fourelectrique).ceil(2)%> kg</li>
-            <li class="list-group-item"> Lave linge <%= (@footprint.lavelinge).ceil(2)%> kg</li>
-            <li class="list-group-item"> Micro-onde <%= (@footprint.microonde).ceil(2)%> kg</li>
-            <li class="list-group-item"> Smartphone <%= (@footprint.smartphone).ceil(2)%> kg</li>
-            <li class="list-group-item"> Ordinateur <%= (@footprint.ordinateur).ceil(2)%> kg</li>
+            <li class="list-group-item"> Aspirateur <%= (@footprint.aspirateur*52).ceil(2)%> kg</li>
+            <li class="list-group-item"> Congélateur 200 l<%= (@footprint.congelateur*415).ceil(2)%> kg</li>
+            <li class="list-group-item"> Réfrigérateur 250 l <%= (@footprint.refrigerateur250l*300).ceil(2)%> kg</li>
+            <li class="list-group-item"> Four électrique <%= (@footprint.fourelectrique*217).ceil(2)%> kg</li>
+            <li class="list-group-item"> Lave linge <%= (@footprint.lavelinge*315).ceil(2)%> kg</li>
+            <li class="list-group-item"> Micro-onde <%= (@footprint.microonde*100).ceil(2)%> kg</li>
+            <li class="list-group-item"> Smartphone <%= (@footprint.smartphone*15).ceil(2)%> kg</li>
+            <li class="list-group-item"> Ordinateur <%= (@footprint.ordinateur*150).ceil(2)%> kg</li>
           </ul>
         </div>
       </div>

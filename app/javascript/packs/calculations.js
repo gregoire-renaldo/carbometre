@@ -244,7 +244,7 @@ function totTransport() {
 const userTgv = document.getElementById('userTgv');
 const tgvcc = 0.00369
 const scoreTgv = document.getElementById('scoreTgv');
-const defaultTgv = (userTgv.value * electriquecc).toFixed(2)
+const defaultTgv = (userTgv.value * tgvcc).toFixed(2)
 scoreTgv.innerHTML = defaultTgv
 userTgv.addEventListener("input", multiplyTgv);
 function multiplyTgv() {
@@ -608,7 +608,7 @@ scoreSaladeSaison.innerHTML = defaultSaladeSaison
 userSaladeSaison.addEventListener("input", multiplySalade);
 function multiplySalade() {
   let one = parseFloat(userSaladeSaison.value) || 0;
-  let saladesaison = parseFloat(one * pommedeterrecc).toFixed(2);
+  let saladesaison = parseFloat(one * saladesaisoncc).toFixed(2);
   scoreSaladeSaison.innerHTML = saladesaison;
   totAlim()
 }
@@ -802,7 +802,7 @@ function multiplyFourelec() {
 }
 // field lave linge
 let userLavelinge = document.getElementById('userLavelinge');
-const lavelingecc = 217
+const lavelingecc = 315
 const scoreLavelinge = document.getElementById('scoreLavelinge');
 const defaultLavelinge = (userLavelinge.value * lavelingecc).toFixed(2)
 scoreLavelinge.innerHTML = defaultLavelinge
