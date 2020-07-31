@@ -747,9 +747,10 @@ function totAutre() {
   const numberAutofr = Number(scoreAutofr.textContent);
   const numberAutofrelec = Number(scoreAutofrelec.textContent);
   const numberJeanmonde = Number(scoreJeanmonde.textContent);
+  const numberJeanfr = Number(scoreJeanfr.textContent);
   const sum = numberAspirateur + numberCongelateur + numberRefrigerateur + numberFourelec + numberLavelinge
     + numberMicroonde + numberSmartphone + numberOrdinateur + numberAutofr
-    + numberVelo + numberVeloelec + numberAutofrelec + numberJeanmonde
+    + numberVelo + numberVeloelec + numberAutofrelec + numberJeanmonde + numberJeanfr
   totalAutre.innerText = sum.toFixed(2);
   total();
 }
@@ -927,11 +928,25 @@ function multiplyJeanmonde() {
   totAutre()
 }
 
+// field jean fr
+const userJeanfr = document.getElementById('userJeanfr');
+const jeanfrcc = 15
+const scoreJeanfr = document.getElementById('scoreJeanfr');
+const defaultJeanfr = (userJeanfr.value * jeanfrcc).toFixed(2)
+scoreJeanfr.innerHTML = defaultJeanfr
+userJeanfr.addEventListener("input", multiplyJeanfr);
+function multiplyJeanfr() {
+  let one = parseFloat(userJeanfr.value) || 0;
+  let cc = parseFloat(one * jeanfrcc).toFixed(2);
+  scoreJeanfr.innerHTML = cc;
+  totAutre()
+}
+
 const defaultAutre = (Number(defaultAspirateur) + Number(defaultCongelateur)
   + Number(defaultRefrigerateur) + Number(defaultFourelec) + Number(defaultLavelinge)
   + Number(defaultMicroonde) + Number(defaultSmartphone) + Number(defaultOrdinateur)
   + Number(defaultVelo) + Number(defaultVeloelectrique) + Number(defaultAutofr) + Number(defaultAutofrelec)
-  + Number(defaultJeanmonde)).toFixed(2)
+  + Number(defaultJeanmonde) + Number(defaultJeanfr)).toFixed(2)
 totalAutre.innerHTML = defaultAutre
 
 
