@@ -748,9 +748,12 @@ function totAutre() {
   const numberAutofrelec = Number(scoreAutofrelec.textContent);
   const numberJeanmonde = Number(scoreJeanmonde.textContent);
   const numberJeanfr = Number(scoreJeanfr.textContent);
+  const numberAutoasie = Number(scoreAutoasie.textContent);
+  const numberAutoasieelec = Number(scoreAutoasieelec.textContent);
   const sum = numberAspirateur + numberCongelateur + numberRefrigerateur + numberFourelec + numberLavelinge
     + numberMicroonde + numberSmartphone + numberOrdinateur + numberAutofr
     + numberVelo + numberVeloelec + numberAutofrelec + numberJeanmonde + numberJeanfr
+    + numberAutoasie + numberAutoasieelec
   totalAutre.innerText = sum.toFixed(2);
   total();
 }
@@ -942,11 +945,39 @@ function multiplyJeanfr() {
   totAutre()
 }
 
+// field auto asie
+const userAutoasie = document.getElementById('userAutoasie');
+const autoasiecc = 11
+const scoreAutoasie = document.getElementById('scoreAutoasie');
+const defaultAutoasie = (userAutoasie.value * autoasiecc).toFixed(2)
+scoreAutoasie.innerHTML = defaultAutoasie
+userAutoasie.addEventListener("input", multiplyAutoasie);
+function multiplyAutoasie() {
+  let one = parseFloat(userAutoasie.value) || 0;
+  let cc = parseFloat(one * autoasiecc).toFixed(2);
+  scoreAutoasie.innerHTML = cc;
+  totAutre()
+}
+
+// field auto asie electrique
+const userAutoasieelec = document.getElementById('userAutoasieelec');
+const autoasieelec = 15
+const scoreAutoasieelec = document.getElementById('scoreAutoasieelec');
+const defaultAutoasieelec = (userAutoasieelec.value * autoasieelec).toFixed(2)
+scoreAutoasieelec.innerHTML = defaultAutoasieelec
+userAutoasieelec.addEventListener("input", multiplyAutoasieelec);
+function multiplyAutoasieelec() {
+  let one = parseFloat(userAutoasieelec.value) || 0;
+  let cc = parseFloat(one * autoasieelec).toFixed(2);
+  scoreAutoasieelec.innerHTML = cc;
+  totAutre()
+}
+
 const defaultAutre = (Number(defaultAspirateur) + Number(defaultCongelateur)
   + Number(defaultRefrigerateur) + Number(defaultFourelec) + Number(defaultLavelinge)
   + Number(defaultMicroonde) + Number(defaultSmartphone) + Number(defaultOrdinateur)
   + Number(defaultVelo) + Number(defaultVeloelectrique) + Number(defaultAutofr) + Number(defaultAutofrelec)
-  + Number(defaultJeanmonde) + Number(defaultJeanfr)).toFixed(2)
+  + Number(defaultJeanmonde) + Number(defaultJeanfr) + Number(defaultAutoasie) + Number(defaultAutoasieelec)).toFixed(2)
 totalAutre.innerHTML = defaultAutre
 
 
