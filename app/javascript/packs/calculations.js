@@ -1,20 +1,18 @@
-// ajouter bouton hide en bas de chaque categ
 // sticky total categ
-
 
 // total Bilan
 
 const totalBilan = document.getElementById('total');
-
 const totalPerson = document.getElementById('total-personne')
 const userPerson = document.getElementById('userPerson')
+
+
 userPerson.addEventListener("input", divide)
 function divide () {
-  let person = parseFloat(userPerson.value) || 1
-  scorePerson = (Number(totalBilan.textContent) / person).toFixed(2)
+  person = parseFloat(userPerson.value) || 1
+  let scorePerson = (Number(totalBilan.textContent) / person).toFixed(2)
   totalPerson.innerHTML = scorePerson
 }
-
 
 
 function total() {
@@ -24,8 +22,8 @@ function total() {
   const numberAlim = Number(totalAlimBox.textContent);
   const numberAutre = Number(totalAutre.textContent);
   const numberValeur = Number(totalValeur.textContent);
-  const sumTotal = numberVoiture + numberAlim + numberTransport
-    + numberEnergie + numberAutre + numberValeur;
+  const sumTotal =  numberVoiture + numberAlim + numberTransport
+    + numberEnergie + numberAutre + numberValeur  ;
   totalBilan.innerHTML = sumTotal.toFixed(2)
   divide()
 }
@@ -1035,7 +1033,7 @@ function multiplyValeur2() {
 
 
 
-const defaultValeur = (Number(defaultValeur1)+Number(defaultValeur2)).toFixed(2)
+const defaultValeur = ( Number(defaultValeur1) + Number(defaultValeur2)).toFixed(2)
 totalValeur.innerHTML = defaultValeur
 
 
