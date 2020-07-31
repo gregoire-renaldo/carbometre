@@ -1,20 +1,18 @@
-// ajouter bouton hide en bas de chaque categ
 // sticky total categ
-
 
 // total Bilan
 
 const totalBilan = document.getElementById('total');
-
 const totalPerson = document.getElementById('total-personne')
 const userPerson = document.getElementById('userPerson')
+
+
 userPerson.addEventListener("input", divide)
 function divide () {
-  let person = parseFloat(userPerson.value) || 1
-  scorePerson = (Number(totalBilan.textContent) / person).toFixed(2)
+  person = parseFloat(userPerson.value) || 1
+  let scorePerson = (Number(totalBilan.textContent) / person).toFixed(2)
   totalPerson.innerHTML = scorePerson
 }
-
 
 
 function total() {
@@ -24,8 +22,8 @@ function total() {
   const numberAlim = Number(totalAlimBox.textContent);
   const numberAutre = Number(totalAutre.textContent);
   const numberValeur = Number(totalValeur.textContent);
-  const sumTotal = numberVoiture + numberAlim + numberTransport
-    + numberEnergie + numberAutre + numberValeur;
+  const sumTotal =  numberVoiture + numberAlim + numberTransport
+    + numberEnergie + numberAutre + numberValeur  ;
   totalBilan.innerHTML = sumTotal.toFixed(2)
   divide()
 }
@@ -746,9 +744,15 @@ function totAutre() {
   const numberVeloelec = Number(scoreVeloelectrique.textContent);
   const numberAutofr = Number(scoreAutofr.textContent);
   const numberAutofrelec = Number(scoreAutofrelec.textContent);
+  const numberJeanmonde = Number(scoreJeanmonde.textContent);
+  const numberJeanfr = Number(scoreJeanfr.textContent);
+  const numberAutoasie = Number(scoreAutoasie.textContent);
+  const numberAutoasieelec = Number(scoreAutoasieelec.textContent);
+  const numberAppartementneuf = Number(scoreAppartementneuf.textContent);
   const sum = numberAspirateur + numberCongelateur + numberRefrigerateur + numberFourelec + numberLavelinge
     + numberMicroonde + numberSmartphone + numberOrdinateur + numberAutofr
-    + numberVelo + numberVeloelec + numberAutofrelec
+    + numberVelo + numberVeloelec + numberAutofrelec + numberJeanmonde + numberJeanfr + numberAppartementneuf
+    + numberAutoasie + numberAutoasieelec
   totalAutre.innerText = sum.toFixed(2);
   total();
 }
@@ -912,10 +916,81 @@ function multiplyAutofrelec() {
   totAutre()
 }
 
+// field jean monde
+const userJeanmonde = document.getElementById('userJeanmonde');
+const jeanmondecc = 23
+const scoreJeanmonde = document.getElementById('scoreJeanmonde');
+const defaultJeanmonde = (userJeanmonde.value * jeanmondecc).toFixed(2)
+scoreJeanmonde.innerHTML = defaultJeanmonde
+userJeanmonde.addEventListener("input", multiplyJeanmonde);
+function multiplyJeanmonde() {
+  let one = parseFloat(userJeanmonde.value) || 0;
+  let cc = parseFloat(one * jeanmondecc).toFixed(2);
+  scoreJeanmonde.innerHTML = cc;
+  totAutre()
+}
+
+// field jean fr
+const userJeanfr = document.getElementById('userJeanfr');
+const jeanfrcc = 15
+const scoreJeanfr = document.getElementById('scoreJeanfr');
+const defaultJeanfr = (userJeanfr.value * jeanfrcc).toFixed(2)
+scoreJeanfr.innerHTML = defaultJeanfr
+userJeanfr.addEventListener("input", multiplyJeanfr);
+function multiplyJeanfr() {
+  let one = parseFloat(userJeanfr.value) || 0;
+  let cc = parseFloat(one * jeanfrcc).toFixed(2);
+  scoreJeanfr.innerHTML = cc;
+  totAutre()
+}
+
+// field auto asie
+const userAutoasie = document.getElementById('userAutoasie');
+const autoasiecc = 11
+const scoreAutoasie = document.getElementById('scoreAutoasie');
+const defaultAutoasie = (userAutoasie.value * autoasiecc).toFixed(2)
+scoreAutoasie.innerHTML = defaultAutoasie
+userAutoasie.addEventListener("input", multiplyAutoasie);
+function multiplyAutoasie() {
+  let one = parseFloat(userAutoasie.value) || 0;
+  let cc = parseFloat(one * autoasiecc).toFixed(2);
+  scoreAutoasie.innerHTML = cc;
+  totAutre()
+}
+
+// field auto asie electrique
+const userAutoasieelec = document.getElementById('userAutoasieelec');
+const autoasieelec = 15
+const scoreAutoasieelec = document.getElementById('scoreAutoasieelec');
+const defaultAutoasieelec = (userAutoasieelec.value * autoasieelec).toFixed(2)
+scoreAutoasieelec.innerHTML = defaultAutoasieelec
+userAutoasieelec.addEventListener("input", multiplyAutoasieelec);
+function multiplyAutoasieelec() {
+  let one = parseFloat(userAutoasieelec.value) || 0;
+  let cc = parseFloat(one * autoasieelec).toFixed(2);
+  scoreAutoasieelec.innerHTML = cc;
+  totAutre()
+}
+
+// field appartement neuf
+const userAppartementneuf = document.getElementById('userAppartementneuf');
+const appartementneufcc = 1000
+const scoreAppartementneuf = document.getElementById('scoreAppartementneuf');
+const defaultAppartementneuf = (userAppartementneuf.value * appartementneufcc).toFixed(2)
+scoreAppartementneuf.innerHTML = defaultAppartementneuf
+userAppartementneuf.addEventListener("input", multiplyAppartementneuf);
+function multiplyAppartementneuf() {
+  let one = parseFloat(userAppartementneuf.value) || 0;
+  let cc = parseFloat(one * appartementneufcc).toFixed(2);
+  scoreAppartementneuf.innerHTML = cc;
+  totAutre()
+}
+
 const defaultAutre = (Number(defaultAspirateur) + Number(defaultCongelateur)
   + Number(defaultRefrigerateur) + Number(defaultFourelec) + Number(defaultLavelinge)
   + Number(defaultMicroonde) + Number(defaultSmartphone) + Number(defaultOrdinateur)
-  + Number(defaultVelo) + Number(defaultVeloelectrique) + Number(defaultAutofr) + Number(defaultAutofrelec)).toFixed(2)
+  + Number(defaultVelo) + Number(defaultVeloelectrique) + Number(defaultAutofr) + Number(defaultAutofrelec)
+  + Number(defaultJeanmonde) + Number(defaultJeanfr) + Number(defaultAutoasie) + Number(defaultAutoasieelec) + Number(defaultAppartementneuf)).toFixed(2)
 totalAutre.innerHTML = defaultAutre
 
 
@@ -958,7 +1033,7 @@ function multiplyValeur2() {
 
 
 
-const defaultValeur = (Number(defaultValeur1)+Number(defaultValeur2)).toFixed(2)
+const defaultValeur = ( Number(defaultValeur1) + Number(defaultValeur2)).toFixed(2)
 totalValeur.innerHTML = defaultValeur
 
 

@@ -85,18 +85,23 @@
             <li class="list-group-item"> Four électrique <%= (@footprint.fourelectrique*217).ceil(2)%> kg</li>
             <li class="list-group-item"> Lave linge <%= (@footprint.lavelinge*315).ceil(2)%> kg</li>
             <li class="list-group-item"> Micro-onde <%= (@footprint.microonde*100).ceil(2)%> kg</li>
+            <li class="list-group-item"> Jeans mondial <%= (@footprint.jeanmonde*23).ceil(2)%> kg</li>
+            <li class="list-group-item"> Jeans français <%= (@footprint.jeanfr*15).ceil(2)%> kg</li>
             <li class="list-group-item"> Smartphone 5'' <%= (@footprint.smartphone*15).ceil(2)%> kg</li>
             <li class="list-group-item"> Ordinateur <%= (@footprint.ordinateur*150).ceil(2)%> kg</li>
             <li class="list-group-item"> Vélo <%= (@footprint.velo*60).ceil(2)%> kg</li>
             <li class="list-group-item"> Vélo électrique <%= (@footprint.veloelec*160).ceil(2)%> kg</li>
             <li class="list-group-item"> Auto française <%= (@footprint.voiture*5.5).ceil(2)%> kg</li>
             <li class="list-group-item"> Auto française éléctrique <%= (@footprint.voitureelec*7.6).ceil(2)%> kg</li>
+            <li class="list-group-item"> Auto d'Asie <%= (@footprint.voitureasie*11).ceil(2)%> kg</li>
+            <li class="list-group-item"> Auto d'Asie électrique <%= (@footprint.voitureasie*15).ceil(2)%> kg</li>
+            <li class="list-group-item"> Appartement neuf <%= (@footprint.appartemnentneuf*1000).ceil(2)%> kg</li>
           </ul>
         </div>
       </div>
       <div class="row ">
         <div class="col-sm">
-          <h4>Valeurs additionnelle : <%= @footprint.total_valeur %> kg</h4>
+          <h4>Valeurs additionnelles : <%= @footprint.total_valeur %> kg</h4>
           <ul class="list-group">
             <li class="list-group-item"> Valeur 1 <%= (@footprint.autre).ceil(2)%> kg</li>
             <li class="list-group-item"> Valeur 2 <%= (@footprint.valeur2).ceil(2)%> kg</li>

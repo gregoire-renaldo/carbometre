@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_17_141138) do
+ActiveRecord::Schema.define(version: 2020_07_31_124142) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,6 +81,11 @@ ActiveRecord::Schema.define(version: 2020_07_17_141138) do
     t.float "velo"
     t.float "veloelec"
     t.float "voitureelec"
+    t.float "voitureasie"
+    t.float "voitureasieelec"
+    t.float "jeanmonde"
+    t.float "jeanfr"
+    t.float "appartemnentneuf"
     t.index ["user_id"], name: "index_footprints_on_user_id"
   end
 
