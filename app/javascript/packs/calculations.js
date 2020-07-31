@@ -750,9 +750,10 @@ function totAutre() {
   const numberJeanfr = Number(scoreJeanfr.textContent);
   const numberAutoasie = Number(scoreAutoasie.textContent);
   const numberAutoasieelec = Number(scoreAutoasieelec.textContent);
+  const numberAppartementneuf = Number(scoreAppartementneuf.textContent);
   const sum = numberAspirateur + numberCongelateur + numberRefrigerateur + numberFourelec + numberLavelinge
     + numberMicroonde + numberSmartphone + numberOrdinateur + numberAutofr
-    + numberVelo + numberVeloelec + numberAutofrelec + numberJeanmonde + numberJeanfr
+    + numberVelo + numberVeloelec + numberAutofrelec + numberJeanmonde + numberJeanfr + numberAppartementneuf
     + numberAutoasie + numberAutoasieelec
   totalAutre.innerText = sum.toFixed(2);
   total();
@@ -973,11 +974,25 @@ function multiplyAutoasieelec() {
   totAutre()
 }
 
+// field appartement neuf
+const userAppartementneuf = document.getElementById('userAppartementneuf');
+const appartementneufcc = 1000
+const scoreAppartementneuf = document.getElementById('scoreAppartementneuf');
+const defaultAppartementneuf = (userAppartementneuf.value * appartementneufcc).toFixed(2)
+scoreAppartementneuf.innerHTML = defaultAppartementneuf
+userAppartementneuf.addEventListener("input", multiplyAppartementneuf);
+function multiplyAppartementneuf() {
+  let one = parseFloat(userAppartementneuf.value) || 0;
+  let cc = parseFloat(one * appartementneufcc).toFixed(2);
+  scoreAppartementneuf.innerHTML = cc;
+  totAutre()
+}
+
 const defaultAutre = (Number(defaultAspirateur) + Number(defaultCongelateur)
   + Number(defaultRefrigerateur) + Number(defaultFourelec) + Number(defaultLavelinge)
   + Number(defaultMicroonde) + Number(defaultSmartphone) + Number(defaultOrdinateur)
   + Number(defaultVelo) + Number(defaultVeloelectrique) + Number(defaultAutofr) + Number(defaultAutofrelec)
-  + Number(defaultJeanmonde) + Number(defaultJeanfr) + Number(defaultAutoasie) + Number(defaultAutoasieelec)).toFixed(2)
+  + Number(defaultJeanmonde) + Number(defaultJeanfr) + Number(defaultAutoasie) + Number(defaultAutoasieelec) + Number(defaultAppartementneuf)).toFixed(2)
 totalAutre.innerHTML = defaultAutre
 
 
