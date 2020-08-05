@@ -13,6 +13,11 @@
       <h5>Total par personne <%="(#{(@footprint.person).ceil(0)})"%> : <%= @footprint.score_person  %>  kg</h5>
       <div class="row mt2">
         <div class="col-sm">
+          <div class="intro">
+            <p>En synthèse nous avons comptabilisé les émissions de gaz à effet de serre dont la France est responsable de façon
+            collective, par ses services d’État, qu’elle doit également s’engager à réduire pour satisfaire la neutralité carbone. L’ADEME l’évalue en 2020 à <b>2500 kg</b> par personne.</p>
+          </div>
+
         <h4>Voiture : <%= @footprint.total_voiture%> kg</h4>
           <ul class="list-group">
             <li class="list-group-item"> Essence <%= ((@footprint.essence*2.8) + @footprint.total_essencel).ceil(2)%> kg</li>
