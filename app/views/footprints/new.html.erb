@@ -180,7 +180,6 @@
             <p id="scoreGazolel"></p>
           </div>
         </div>
-
         <!-- field gpll  -->
         <div class="row align-items-center item mt-1">
           <div class=" col-xs-2 field" align="center">
@@ -200,7 +199,6 @@
             <p id="scoreLgpl"></p>
           </div>
         </div>
-
         <!-- field e85  -->
         <div class="row align-items-center item mt-1">
           <div class=" col-xs-2 field" align="center">
@@ -485,7 +483,7 @@
         <!-- field buche bois -->
         <div class="row align-items-center item mt-1">
           <div class=" col-xs-4 field">
-            <%= f.label :"buche de bois" %>
+            <%= f.label :buchebois, "Bois buches" %>
             <%= f.number_field :buchebois, id: 'userBuche' %>
           </div>
           <div class="col-xs-2 unit">
@@ -517,7 +515,7 @@
         <!-- field streaming -->
         <div class="row align-items-center item mt-1">
           <div class=" col-xs-4 field">
-            <%= f.label :"streaming" %>
+            <%= f.label :streaming, "Streaming(Youtube, Netflix...)" %>
             <%= f.number_field :streaming, id: 'userStreaming' %>
           </div>
           <div class="col-xs-2 unit">
@@ -814,7 +812,8 @@
       <div class="container">
         <div class="intro">
           <p>Il s’agit des contenus carbone pour des achats, si vous n’achetez aucun de ces appareils cette année, ne mentionnez rien
-          (leur consommation est déjà intégrée dans « logement »)</p>
+          (leur consommation est déjà intégrée dans « logement »). Pour ces achats ponctuels, à imputer sur plusieurs années, le calcul intègre leur fin de vie (en années). Si le vendeur
+          vous donne une autre valeur, vous pouvez comparer avec notre base ADEME.</p>
         </div>
         <div class="row align-items-center item mt-1">
           <div class=" col-xs-4 field">
@@ -994,7 +993,7 @@
         <!-- field vélo éléctrique -->
         <div class="row align-items-center item mt-1">
           <div class=" col-xs-4 field">
-            <%= f.label :veloelec, "Vélo éléctrique" %>
+            <%= f.label :veloelec, "Vélo électrique" %>
             <%= f.number_field :veloelec, id: 'userVeloelectrique' %>
           </div>
           <div class="col-xs-2 unit">
