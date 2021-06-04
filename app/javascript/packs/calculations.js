@@ -974,7 +974,7 @@ function multiplyAutoasieelec() {
 
 // field appartement neuf
 const userAppartementneuf = document.getElementById('userAppartementneuf');
-const appartementneufcc = 1000
+const appartementneufcc = 500
 const scoreAppartementneuf = document.getElementById('scoreAppartementneuf');
 const defaultAppartementneuf = (userAppartementneuf.value * appartementneufcc).toFixed(2)
 scoreAppartementneuf.innerHTML = defaultAppartementneuf
