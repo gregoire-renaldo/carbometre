@@ -1,28 +1,28 @@
 <!-- main div containing all cards and fields -->
 <div class="container">
   <%= simple_form_for(@footprint) do |f| %>
-  <div class="mb-2" align="center">
-    <h3>Nouvelle empreinte familiale</h3>
-    <%= f.label :titre, class:"titre"%>
-    <%= f.text_field :title, maxlength: 20, class:"field_titre"  %>
-    <%= f.label :personnes, class:"titre"%>
-    <%= f.number_field :person, :value => 1, class:"field_titre", id:'userPerson'  %>
-  </div>
-  <div class="intro">
-    <p>Vous allez détailler vos sources de gaz à effet de serre (majoritairement gaz carbonique qui nous fait parler carbone en
-    tonnes de CO2 équivalent) en précisant combien de personnes dans votre calcul (un titre pour retrouver votre calcul ou
-    projet, par exemple prévision 2021, prévision 2022)</p>
-  </div>
-  <%= render partial: "form", locals: {f: f} %>
+    <div class="mb-2 text-center" >
+      <h3>Nouvelle empreinte familiale</h3>
+      <%= f.label :titre, class:"titre"%>
+      <%= f.text_field :title, maxlength: 20, class:"field_titre"  %>
+      <%= f.label :personnes, class:"titre"%>
+      <%= f.number_field :person, :value => 1, class:"field_titre", id:'userPerson'  %>
+    </div>
+    <div class="intro">
+      <p>Vous allez détailler vos sources de gaz à effet de serre (majoritairement gaz carbonique qui nous fait parler carbone en
+        tonnes de CO2 équivalent) en précisant combien de personnes dans votre calcul (un titre pour retrouver votre calcul ou
+        projet, par exemple prévision 2021, prévision 2022)</p>
+    </div>
+    <%= render partial: "form", locals: {f: f} %>
     <div class="intro">
       <p>Enfin, nous devons comptabiliser les émissions de gaz à effet de serre dont la France est
-      responsable de façon collective, par ses services d’État, qu’elle doit également s’engager à réduire
-      pour satisfaire la neutralité carbone. L’ADEME l’évalue en 2020 à <b>1500 kg</b> par personne.</p>
+        responsable de façon collective, par ses services d’État, qu’elle doit également s’engager à réduire
+        pour satisfaire la neutralité carbone. L’ADEME l’évalue en 2020 à <b>1500 kg</b> par personne.</p>
     </div>
     <div class="row justify-content-center mt-2">
-        <%= f.submit :"Sauvegarder mon bilan", data: {confirm: "Êtes-vous sûr de vouloir créer cette empreinte ?"}, class:"btn btn-gradient mb-5" %>
+      <%= f.submit :"Sauvegarder mon bilan", data: {confirm: "Êtes-vous sûr de vouloir créer cette empreinte ?"}, class:"btn btn-gradient mb-5" %>
     </div>
-    <% end %>
-  </div>
+  <% end %>
+</div>
 <%= javascript_pack_tag 'hide_fields' %>
 <%= javascript_pack_tag 'calculations' %>
