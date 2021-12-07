@@ -1,0 +1,230 @@
+ <!-- block pour total alimentaire -->
+<div class="row  mt-2 sticky-top">
+  <div class="total-mobile align-items-center">
+    <p>Alimentaire&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+    <div class="white-rectangle">
+      <p id="totalAlimBox"></p>
+    </div>
+    <div id="hideShowBle">
+      <p id="alimplusmoins"> + </p>
+    </div>
+  </div>
+</div>
+<div class="alim">
+  <div class="container">
+    <!-- field ble -->
+    <div class="row align-items-center item mt-1">
+      <div class=" col-xs-4 field">
+        <%= f.label :ble, "Blé France" %>
+        <%= f.number_field :ble, step: :any, id: 'userBle' %>
+      </div>
+      <div class="col-xs-2 unit">
+        <p>kg</p>
+      </div>
+      <div class="col-xs-2 charge">
+        <p>0.439 kg/kg</p>
+      </div>
+      <div class="col-xs-4 white-rectangle">
+        <p id="scoreble"></p>
+      </div>
+    </div>
+    <!-- field carotte -->
+    <div class="row align-items-center item mt-1">
+      <div class=" col-xs-4 field">
+        <%= f.label :carotte, "Carotte France" %>
+        <%= f.number_field :carotte, id: 'userCarotte' %>
+      </div>
+      <div class="col-xs-2 unit">
+        <p>kg</p>
+      </div>
+      <div class="col-xs-2 charge">
+        <p>0.0706 kg/kg</p>
+      </div>
+      <div class="col-xs-4 white-rectangle">
+        <p id="scoreCarotte"></p>
+      </div>
+    </div>
+    <!-- field riz -->
+    <div class="row align-items-center item mt-1">
+      <div class=" col-xs-4 field">
+        <%= f.label :"Riz Thai" %>
+        <%= f.number_field :riz, id: 'userRiz' %>
+      </div>
+      <div class="col-xs-2 unit">
+        <p>kg</p>
+      </div>
+      <div class="col-xs-2 charge">
+        <p>3.59 kg/kg</p>
+      </div>
+      <div class="col-xs-4 white-rectangle">
+        <p id="scoreRiz"></p>
+      </div>
+    </div>
+    <!-- field patate -->
+    <div class="row align-items-center item mt-1">
+      <div class=" col-xs-4 field">
+        <%= f.label :"Patates FR" %>
+        <%= f.number_field :patate, id: 'userPommeDeTerre' %>
+      </div>
+      <div class="col-xs-2 unit">
+        <p>kg</p>
+      </div>
+      <div class="col-xs-2 charge">
+        <p>0.0861 kg/kg</p>
+      </div>
+      <div class="col-xs-4 white-rectangle">
+        <p id="scorePommeDeTerre"></p>
+      </div>
+    </div>
+    <!-- field salade de saison -->
+    <div class="row align-items-center item mt-1">
+      <div class=" col-xs-4 field">
+        <%= f.label :"Salade saison" %>
+        <%= f.number_field :saladesaison, id: 'userSaladeSaison' %>
+      </div>
+      <div class="col-xs-2 unit">
+        <p>kg</p>
+      </div>
+      <div class="col-xs-2 charge">
+        <p>0.326 kg/kg</p>
+      </div>
+      <div class="col-xs-4 white-rectangle">
+        <p id="scoreSaladeSaison"></p>
+      </div>
+    </div>
+    <!-- salades hors saison -->
+    <div class="row align-items-center item mt-1">
+      <div class=" col-xs-4 field">
+        <%= f.label :"Salade sous serre" %>
+        <%= f.number_field :saladess, id: 'userSaladeSs' %>
+      </div>
+      <div class="col-xs-2 unit">
+        <p>kg</p>
+      </div>
+      <div class="col-xs-2 charge">
+        <p>11.05 kg/kg</p>
+      </div>
+      <div class="col-xs-4 white-rectangle">
+        <p id="scoreSaladeSs"></p>
+      </div>
+    </div>
+    <!-- tomates fr -->
+    <div class="row align-items-center item mt-1">
+      <div class=" col-xs-4 field">
+        <%= f.label :tomatesfr, "Tomates France plein champs" %>
+        <%= f.number_field :tomatesfr, id: 'userTomates' %>
+      </div>
+      <div class="col-xs-2 unit">
+        <p>kg</p>
+      </div>
+      <div class="col-xs-2 charge">
+        <p>0.177 kg/kg</p>
+      </div>
+      <div class="col-xs-4 white-rectangle">
+        <p id="scoreTomates"></p>
+      </div>
+    </div>
+    <!-- tomates fr sous serre -->
+    <div class="row align-items-center item mt-1">
+      <div class=" col-xs-4 field">
+        <%= f.label :tomatesfrss, "Tomates France sous serre" %>
+        <%= f.number_field :tomatesfrss, id: 'userTomatesFRss' %>
+      </div>
+      <div class="col-xs-2 unit">
+        <p>kg</p>
+      </div>
+      <div class="col-xs-2 charge">
+        <p>2.23 kg/kg</p>
+      </div>
+      <div class="col-xs-4 white-rectangle">
+        <p id="scoreTomatesFRss"></p>
+      </div>
+    </div>
+    <!-- field boeuf -->
+    <div class="row align-items-center item mt-1">
+      <div class=" col-xs-4 field">
+        <%= f.label :"boeuf " %>
+        <%= f.number_field :boeuf, id: 'userBoeuf' %>
+      </div>
+      <div class="col-xs-2 unit">
+        <p>kg</p>
+      </div>
+      <div class="col-xs-2 charge">
+        <p>15 kg/kg</p>
+      </div>
+      <div class="col-xs-4 white-rectangle">
+        <p id="scoreBoeuf"></p>
+      </div>
+    </div>
+    <!-- field veau -->
+    <div class="row align-items-center item mt-1">
+      <div class=" col-xs-4 field">
+        <%= f.label :"veau " %>
+        <%= f.number_field :veau, id: 'userVeau' %>
+      </div>
+      <div class="col-xs-2 unit">
+        <p>kg</p>
+      </div>
+      <div class="col-xs-2 charge">
+        <p>6.5 kg/kg</p>
+      </div>
+      <div class="col-xs-4 white-rectangle">
+        <p id="scoreVeau"></p>
+      </div>
+    </div>
+    <!-- field lait vache -->
+    <div class="row align-items-center item mt-1">
+      <div class=" col-xs-4 field">
+        <%= f.label :"lait de vache " %>
+        <%= f.number_field :laitvache, id: 'userLaitvache' %>
+      </div>
+      <div class="col-xs-2 unit">
+        <p>kg</p>
+      </div>
+      <div class="col-xs-2 charge">
+        <p>0.9 kg/kg</p>
+      </div>
+      <div class="col-xs-4 white-rectangle">
+        <p id="scoreLaitvache"></p>
+      </div>
+    </div>
+    <!-- field poulet -->
+    <div class="row align-items-center item mt-1">
+      <div class=" col-xs-4 field">
+        <%= f.label :"poulet" %>
+        <%= f.number_field :poulet, id: 'userPoulet' %>
+      </div>
+      <div class="col-xs-2 unit">
+        <p>kg</p>
+      </div>
+      <div class="col-xs-2 charge">
+        <p>2.14 kg/kg</p>
+      </div>
+      <div class="col-xs-4 white-rectangle">
+        <p id="scorePoulet"></p>
+      </div>
+    </div>
+    <!-- field oeufs -->
+    <div class="row align-items-center item mt-1">
+      <div class=" col-xs-4 field">
+        <%= f.label :"oeufs" %>
+        <%= f.number_field :oeufs, id: 'userOeufs' %>
+      </div>
+      <div class="col-xs-2 unit">
+        <p>kg</p>
+      </div>
+      <div class="col-xs-2 charge">
+        <p>1.72 kg/kg</p>
+      </div>
+      <div class="col-xs-4 white-rectangle">
+        <p id="scoreOeufs"></p>
+      </div>
+    </div>
+    <div class="intro">
+      <p>Pour ajouter d’autres aliments ou produits, utiliser l’appli Karbon qui scanne les code-barres pour évaluer l’empreinte
+        carbone, saisie sous « ajouter des valeurs »</p>
+    </div>
+    <!-- fin du container category alim-->
+  </div>
+  <!-- end of alim -->
+</div>
