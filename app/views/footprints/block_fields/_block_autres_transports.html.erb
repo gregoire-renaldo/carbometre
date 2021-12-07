@@ -1,0 +1,146 @@
+    <!-- autres transports -->
+<div class="row mt-2 sticky-top">
+  <div class="total-mobile align-items-center">
+    <p>Transports&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+    <div class="white-rectangle">
+      <p id="totalTransport"></p>
+    </div>
+    <div id="hideShowTransport">
+      <p id="transportplusmoins"> + </p>
+    </div>
+  </div>
+</div>
+<!-- fields for autres transports -->
+<div class="transport">
+  <div class="container">
+    <!-- field tgv -->
+    <div class="row align-items-center item mt-1">
+      <div class=" col-xs-4 field">
+        <%= f.label :tgv, "TGV" %>
+        <%= f.number_field :tgv, id: 'userTgv' %>
+      </div>
+      <div class="col-xs-2 unit">
+        <p>km</p>
+      </div>
+      <div class="col-xs-2 charge">
+        <p>0.00173 kg/km</p>
+      </div>
+      <div class="col-xs-4 white-rectangle">
+        <p id="scoreTgv"></p>
+      </div>
+    </div>
+    <!-- field ter electrique -->
+    <div class="row align-items-center item mt-1">
+      <div class=" col-xs-4 field">
+        <%= f.label :terelectrique, "TER" %>
+        <%= f.number_field :terelectrique, id: 'userTerelec' %>
+      </div>
+      <div class="col-xs-2 unit">
+        <p>km</p>
+      </div>
+      <div class="col-xs-2 charge">
+        <p>0.00248 kg/km</p>
+      </div>
+      <div class="col-xs-4 white-rectangle">
+        <p id="scoreTerelec"></p>
+      </div>
+    </div>
+    <!-- field ter thermique -->
+    <!-- <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :terthermique, "TER thermique" %>
+            <%= f.number_field :terthermique, id: 'userTertherm' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>km</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>0.0798 kg/km</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreTertherm"></p>
+          </div>
+        </div> -->
+    <!-- field intercite -->
+    <div class="row align-items-center item mt-1">
+      <div class=" col-xs-4 field">
+        <%= f.label :intercite, "Train intercité"%>
+        <%= f.number_field :intercite, id: 'userIntercite' %>
+      </div>
+      <div class="col-xs-2 unit">
+        <p>km</p>
+      </div>
+      <div class="col-xs-2 charge">
+        <p>0.0056 kg/km</p>
+      </div>
+      <div class="col-xs-4 white-rectangle">
+        <p id="scoreIntercite"></p>
+      </div>
+    </div>
+    <!-- field metro -->
+    <div class="row align-items-center item mt-1">
+      <div class=" col-xs-4 field">
+        <%= f.label :metro, "Metro / RER"%>
+        <%= f.number_field :metro, id: 'userMetro' %>
+      </div>
+      <div class="col-xs-2 unit">
+        <p>km</p>
+      </div>
+      <div class="col-xs-2 charge">
+        <p>0.0057 kg/km</p>
+      </div>
+      <div class="col-xs-4 white-rectangle">
+        <p id="scoreMetro"></p>
+      </div>
+    </div>
+    <!-- field bus -->
+    <div class="row align-items-center item mt-1">
+      <div class=" col-xs-4 field">
+        <%= f.label :"bus"%>
+        <%= f.number_field :bus, id: 'userBus' %>
+      </div>
+      <div class="col-xs-2 unit">
+        <p>km</p>
+      </div>
+      <div class="col-xs-2 charge">
+        <p>0.092167 kg/km</p>
+      </div>
+      <div class="col-xs-4 white-rectangle">
+        <p id="scoreBus"></p>
+      </div>
+    </div>
+    <!-- field avion -->
+    <div class="row align-items-center item mt-1">
+      <div class=" col-xs-4 field">
+        <%= f.label :avion, "Avion long courrier"%>
+        <%= f.number_field :avion, id: 'userAvion' %>
+      </div>
+      <div class="col-xs-2 unit">
+        <p>km</p>
+      </div>
+      <div class="col-xs-2 charge">
+        <p>0.258 kg/km</p>
+      </div>
+      <div class="col-xs-4 white-rectangle">
+        <p id="scoreAvion"></p>
+      </div>
+    </div>
+    <!-- field avion regional-->
+    <div class="row align-items-center item mt-1">
+      <div class=" col-xs-4 field">
+        <%= f.label :avionregional, "Avion court courrier"%>
+        <%= f.number_field :avionregional, id: 'userAvionregional' %>
+      </div>
+      <div class="col-xs-2 unit">
+        <p>km</p>
+      </div>
+      <div class="col-xs-2 charge">
+        <p>0.453 kg/km</p>
+      </div>
+      <div class="col-xs-4 white-rectangle">
+        <p id="scoreAvionregional"></p>
+      </div>
+    </div>
+  </div>
+  <!-- fin de liste transport -->
+</div>

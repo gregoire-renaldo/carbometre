@@ -1,0 +1,179 @@
+<!-- begining of energie -->
+<div class="row mt-2 sticky-top">
+  <div class="total-mobile align-items-center">
+    <p>Logement&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+    <div class="white-rectangle">
+      <p id="totalEnergie"></p>
+    </div>
+    <div id="hideShowEnergie">
+      <p id="energieplusmoins"> + </p>
+    </div>
+  </div>
+</div>
+<!-- fields for energie -->
+<div class="energie">
+  <div class="container">
+    <!-- field electricite -->
+    <div class="row align-items-center item mt-1">
+      <div class=" col-xs-4 field">
+        <%= f.label :Electricité %>
+        <%= f.number_field :electricite, step: :any, id: 'userElectricite' %>
+      </div>
+      <div class="col-xs-2 unit">
+        <p>kWh</p>
+      </div>
+      <div class="col-xs-2 charge">
+        <p>0.0571 kg/kWh</p>
+      </div>
+      <div class="col-xs-4 white-rectangle">
+        <p id="scoreelec"></p>
+      </div>
+    </div>
+    <!-- field gaz kwh -->
+    <div class="row align-items-center item mt-1">
+      <div class=" col-xs-4 field">
+        <%= f.label :gazkwh, "Gaz kWh" %>
+        <%= f.number_field :gazkwh, step: :any, id: 'userGaz' %>
+      </div>
+      <div class="col-xs-2 unit">
+        <p>kWh</p>
+      </div>
+      <div class="col-xs-2 charge">
+        <p>0.205 kg/kWh</p>
+      </div>
+      <div class="col-xs-4 white-rectangle">
+        <p id="scoreGazkwh"></p>
+      </div>
+    </div>
+    <!-- field gaz kwh -->
+    <div class="row align-items-center item mt-1">
+      <div class=" col-xs-4 field">
+        <%= f.label :"gaz m³" %>
+        <%= f.number_field :gazm, id: 'userGazm' %>
+      </div>
+      <div class="col-xs-2 unit">
+        <p>m³</p>
+      </div>
+      <div class="col-xs-2 charge">
+        <p>2.2 kg/m³</p>
+      </div>
+      <div class="col-xs-4 white-rectangle">
+        <p id="scoreGazm"></p>
+      </div>
+    </div>
+    <!-- field fioul -->
+    <div class="row align-items-center item mt-1">
+      <div class=" col-xs-4 field">
+        <%= f.label :fioul %>
+        <%= f.number_field :fioul, id: 'userFioul' %>
+      </div>
+      <div class="col-xs-2 unit">
+        <p>l</p>
+      </div>
+      <div class="col-xs-2 charge">
+        <p>3.25 kg/l</p>
+      </div>
+      <div class="col-xs-4 white-rectangle">
+        <p id="scoreFioul"></p>
+      </div>
+    </div>
+    <!-- field granule bois -->
+    <div class="row align-items-center item mt-1">
+      <div class=" col-xs-4 field">
+        <%= f.label :"granulés de bois" %>
+        <%= f.number_field :granulebois, id: 'userGranulebois' %>
+      </div>
+      <div class="col-xs-2 unit">
+        <p>kg</p>
+      </div>
+      <div class="col-xs-2 charge">
+        <p>0.111 kg/kg</p>
+      </div>
+      <div class="col-xs-4 white-rectangle">
+        <p id="scoreGranulebois"></p>
+      </div>
+    </div>
+    <!-- field buche bois -->
+    <div class="row align-items-center item mt-1">
+      <div class=" col-xs-4 field">
+        <%= f.label :buchebois, "Bois buches" %>
+        <%= f.number_field :buchebois, id: 'userBuche' %>
+      </div>
+      <div class="col-xs-2 unit">
+        <p>kg</p>
+      </div>
+      <div class="col-xs-2 charge">
+        <p>0.114 kg/kg</p>
+      </div>
+      <div class="col-xs-4 white-rectangle">
+        <p id="scoreBuchebois"></p>
+      </div>
+    </div>
+    <!-- field eau -->
+    <div class="row align-items-center item mt-1">
+      <div class=" col-xs-4 field">
+        <%= f.label :eau %>
+        <%= f.number_field :eau, id: 'userEau' %>
+      </div>
+      <div class="col-xs-2 unit">
+        <p>m³</p>
+      </div>
+      <div class="col-xs-2 charge">
+        <p>0.132 kg/m³</p>
+      </div>
+      <div class="col-xs-4 white-rectangle">
+        <p id="scoreEau"></p>
+      </div>
+    </div>
+    <!-- field streaming -->
+    <div class="row align-items-center item mt-1">
+      <div class=" col-xs-4 field">
+        <%= f.label :streaming, "Streaming(Youtube, Netflix...)" %>
+        <%= f.number_field :streaming, id: 'userStreaming' %>
+      </div>
+      <div class="col-xs-2 unit">
+        <p>h</p>
+      </div>
+      <div class="col-xs-2 charge">
+        <p>0.25 kg/h</p>
+      </div>
+      <div class="col-xs-4 white-rectangle">
+        <p id="scoreStreaming"></p>
+      </div>
+    </div>
+    <!-- field mail -->
+    <div class="row align-items-center item mt-1">
+      <div class=" col-xs-4 field">
+        <%= f.label :"tweet" %>
+        <%= f.number_field :tweet, id: 'userTweet' %>
+      </div>
+      <div class="col-xs-2 unit">
+        <p>unité</p>
+      </div>
+      <div class="col-xs-2 charge">
+        <p>0.00002</p>
+      </div>
+      <div class="col-xs-4 white-rectangle">
+        <p id="scoreTweet"></p>
+      </div>
+    </div>
+    <!-- field mail -->
+    <div class="row align-items-center item mt-1">
+      <div class=" col-xs-4 field">
+        <%= f.label :"mail avec pj" %>
+        <%= f.number_field :mail, id: 'userMail' %>
+      </div>
+      <div class="col-xs-2 unit">
+        <p>unité</p>
+      </div>
+      <div class="col-xs-2 charge">
+        <p>0.035</p>
+      </div>
+      <div class="col-xs-4 white-rectangle">
+        <p id="scoreMail"></p>
+      </div>
+    </div>
+  </div>
+  <!-- end of logement energie -->
+</div>
+<!-- fin de liste energie -->
