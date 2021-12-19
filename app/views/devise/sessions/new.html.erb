@@ -10,14 +10,13 @@
                   input_html: { autocomplete: "username", id: 'usernameField' } %>
     <%= f.input :email,
     :as => :hidden,
-                  required: false,
+                  required: true,
                   autofocus: true,
                   input_html: {  id: 'fieldEmail' } %>
     <%= f.input :password,
-    :as => :hidden, 
+    :as => :hidden,
                   required: false,
-                  input_html: { value: "azerty" },
-                  label: 'Mot de passe' %>
+                  input_html: { value: "azerty" }%>
     <%= f.input :remember_me,
                 label: "Se souvenir de moi",
                  as: :boolean if devise_mapping.rememberable? %>

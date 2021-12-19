@@ -6,6 +6,7 @@ console.log(fieldEmail)
 
 fieldUsername.addEventListener('input', addEmail )
 function addEmail() {
+  console.log('hello')
   let email = fieldUsername.value
   fieldEmail.innerHTML = email + '@mail.com'
   fieldEmail.value = email + '@mail.com'
