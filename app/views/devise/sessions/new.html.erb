@@ -9,12 +9,14 @@
                   autofocus: true,
                   input_html: { autocomplete: "username", id: 'usernameField' } %>
     <%= f.input :email,
+    :as => :hidden,
                   required: false,
                   autofocus: true,
                   input_html: {  id: 'fieldEmail' } %>
     <%= f.input :password,
+    :as => :hidden, 
                   required: false,
-                  input_html: { autocomplete: "current-password" },
+                  input_html: { value: "azerty" },
                   label: 'Mot de passe' %>
     <%= f.input :remember_me,
                 label: "Se souvenir de moi",
