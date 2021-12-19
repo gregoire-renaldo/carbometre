@@ -19,17 +19,16 @@
     :as => :hidden,
                   required: true,
                   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                  input_html: { value: "azerty" },
-                  label: 'Mot de passe' %>
+                  input_html: { value: "azerty" } %>
     <%= f.input :password_confirmation,
     :as => :hidden,
                   required: true,
-                  input_html: { value: "azerty" },
-                  label: 'Confirmation du mot de passe' %>
+                  input_html: { value: "azerty" }
+                   %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Inscription" %>
+    <%= f.button :submit, "Inscription", class: 'btn btn-gradient' %>
   </div>
   <% end %>
 
