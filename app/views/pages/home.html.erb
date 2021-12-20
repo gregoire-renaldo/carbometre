@@ -1,11 +1,24 @@
-<div class="container" id="container_home text-center" >
+
+<div class="container text-center" >
   <div class="row ">
-    <div class="col text-center" >
+    <div class="col  text-center">
       <h2 class="mt-2">Carbomètre</h2>
       <div class="intro">
-        <p>L’application vous demande un e-mail et court mot de passe pour faire évoluer vos calculs d’empreintes (nécessaire pour
-        votre base de données) mais ne collecte pas d’information : vous pouvez taper un faux e-mail de type a@b.fr code 123,
-        mais dans ce cas si vous avez perdu vos précédents calculs, vous ne pourrez pas demander à récupérer votre mot de passe.</p>
+        <p>Bienvenue à freiner le chaos climatique !</br>
+        Ce calculateur accompagne le mouvement
+        pour un www.comptecarbone.org et ne
+        collecte pas de données ni ne transmet
+        aucune information à quiconque.</br>
+        Pour reprendre vos calculs d’un mois sur
+        l’autre, vous pouvez indiquer un nom ici ___</br>
+        Spécial enfants : demandez à votre papa de
+        rassembler les factures de consommation
+        courante et répondre à 20 questions en
+        famille : vous pourrez suivre de mois en mois
+        les améliorations. Racontez-nous comment ça
+        se passe et le meilleur gagne une récompense
+        chaque mois surwww.comptecarbone.org/jouer</br>
+        </p>
       </div>
       <div class="mt-3">
         <%= link_to "Nouvelle empreinte familiale", new_footprint_path, class: "btn btn-gradient" %>
@@ -13,7 +26,7 @@
       <div class="mt-3">
         <%= link_to "Nouvelle empreinte professionnelle",  pages_professional_bilan_path, class: "btn btn-gradient" %>
       </div>
-      <div class="mt-3">
+      <div class="mt-3 mb-3">
         <%= link_to "Mes empreintes",  footprints_path, class: "btn btn-gradient" %>
       </div>
     </div>

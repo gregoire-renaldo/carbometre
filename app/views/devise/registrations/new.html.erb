@@ -6,33 +6,33 @@
 
   <div class="form-inputs">
     <%= f.input :email,
+    :as => :hidden,
                   required: true,
                   autofocus: true,
-                  input_html: { autocomplete: "email" }%>
+                  input_html: {  id: 'fieldEmail' } %>
     <%= f.input :username,
                     required: true,
                     autofocus: true,
-                    input_html: { autocomplete: "nom d'utilisateur" },
-                    label: "Nom d'utilisateur"%>
+                    input_html: { id: 'usernameField' },
+                    label: "Nom d'utilisateur" %>
     <%= f.input :password,
+    :as => :hidden,
                   required: true,
                   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                  input_html: { autocomplete: "nouveau mot de passe" },
-                  label: 'Mot de passe' %>
+                  input_html: { value: "azerty" } %>
     <%= f.input :password_confirmation,
+    :as => :hidden,
                   required: true,
-                  input_html: { autocomplete: "nouveau mot de passe" },
-                  label: 'Confirmation du mot de passe' %>
+                  input_html: { value: "azerty" }
+                   %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Inscription" %>
+    <%= f.button :submit, "Inscription", class: 'btn btn-gradient' %>
   </div>
   <% end %>
 
   <%= render "devise/shared/links" %>
 
 </div>
-
-
-
+<%= javascript_pack_tag 'create_account' %>

@@ -1,4 +1,25 @@
 // Specific CSS for your home-page
-#container_home {
-  height: 800px;
+html {
+  height: 100vh;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  background-color: green;
+}
+
+footer {
+  min-height: 50px;
+  background: PapayaWhip;
+}
+
+/* Trick */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: auto;
 }
