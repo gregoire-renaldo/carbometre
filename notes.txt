@@ -26,12 +26,12 @@ params !
 - enlever streaming Tweet, Mail avec pj
 
 # Alimentaire
-Agneau kg 6
-Truite élevage kg 3.08
-Crevettes kg 9.3
-Poisson pêche européenne kg 1.9
-Poisson pêche tropicale kg 3.8
-Pomme kg 0.0675
+# Agneau kg 6
+# Truite élevage kg 3.08
+# Crevettes kg 9.3
+# Poisson pêche européenne kg 1.9
+# Poisson pêche tropicale kg 3.8
+# Pomme kg 0.0675
 
 #  Achats ponctuels
 Déplacer jean dans catégorie vêtements
@@ -59,3 +59,6 @@ Anorak 39
 
 # Différents usages
 mettre Tweet mail streaming
+
+
+if empty case, == 0

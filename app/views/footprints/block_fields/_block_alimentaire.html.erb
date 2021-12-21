@@ -223,6 +223,102 @@
         <p id="scoreOeufs"></p>
       </div>
     </div>
+    <!-- field agneau -->
+    <div class="row align-items-center item mt-1">
+      <div class=" col-xs-4 field">
+        <%= f.label :"agneau" %>
+        <%= f.number_field :agneau, id: 'userAgneau' %>
+      </div>
+      <div class="col-xs-2 unit">
+        <p>kg</p>
+      </div>
+      <div class="col-xs-2 charge">
+        <p>6 kg/kg</p>
+      </div>
+      <div class="col-xs-4 white-rectangle">
+        <p id="scoreAgneau"></p>
+      </div>
+    </div>
+    <!-- field truite -->
+    <div class="row align-items-center item mt-1">
+      <div class=" col-xs-4 field">
+        <%= f.label :"truite" %>
+        <%= f.number_field :truite, id: 'userTruite' %>
+      </div>
+      <div class="col-xs-2 unit">
+        <p>kg</p>
+      </div>
+      <div class="col-xs-2 charge">
+        <p>3.08 kg/kg</p>
+      </div>
+      <div class="col-xs-4 white-rectangle">
+        <p id="scoreTruite"></p>
+      </div>
+    </div>
+    <!-- field crevette -->
+    <div class="row align-items-center item mt-1">
+      <div class=" col-xs-4 field">
+        <%= f.label :"crevette" %>
+        <%= f.number_field :crevette, id: 'userCrevette' %>
+      </div>
+      <div class="col-xs-2 unit">
+        <p>kg</p>
+      </div>
+      <div class="col-xs-2 charge">
+        <p>9.03 kg/kg</p>
+      </div>
+      <div class="col-xs-4 white-rectangle">
+        <p id="scoreCrevette"></p>
+      </div>
+    </div>
+    <!-- field poisson peche -->
+    <div class="row align-items-center item mt-1">
+      <div class=" col-xs-4 field">
+        <%= f.label :"Poisson pêche européenne" %>
+        <%= f.number_field :poissonpecheeuro, id: 'userPecheeuro' %>
+      </div>
+      <div class="col-xs-2 unit">
+        <p>kg</p>
+      </div>
+      <div class="col-xs-2 charge">
+        <p>1.9 kg/kg</p>
+      </div>
+      <div class="col-xs-4 white-rectangle">
+        <p id="scorePecheeuro"></p>
+      </div>
+    </div>
+    <!-- field poisson peche tropicale -->
+    <div class="row align-items-center item mt-1">
+      <div class=" col-xs-4 field">
+        <%= f.label :"Poisson pêche tropicale" %>
+        <%= f.number_field :poissonpechetropico, id: 'userPechetropico' %>
+      </div>
+      <div class="col-xs-2 unit">
+        <p>kg</p>
+      </div>
+      <div class="col-xs-2 charge">
+        <p>3.8 kg/kg</p>
+      </div>
+      <div class="col-xs-4 white-rectangle">
+        <p id="scorePechetropico"></p>
+      </div>
+    </div>
+    <!-- field poisson peche pomme -->
+    <div class="row align-items-center item mt-1">
+      <div class=" col-xs-4 field">
+        <%= f.label :"Pomme" %>
+        <%= f.number_field :pomme, id: 'userPomme' %>
+      </div>
+      <div class="col-xs-2 unit">
+        <p>kg</p>
+      </div>
+      <div class="col-xs-2 charge">
+        <p>0.0675 kg/kg</p>
+      </div>
+      <div class="col-xs-4 white-rectangle">
+        <p id="scorePomme"></p>
+      </div>
+    </div>
     <div class="intro">
       <p>Pour ajouter d’autres aliments ou produits, utiliser l’appli Karbon qui scanne les code-barres pour évaluer l’empreinte
         carbone, saisie sous « ajouter des valeurs »</p>

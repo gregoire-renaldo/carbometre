@@ -47,24 +47,24 @@ function totVoiture() {
 }
 
 // function to refacto
-function field (userField, scoreCarbon, scoreField, functionTotToPass) {
-  console.log('infield')
-  const userValue = document.getElementById(userField)
-  const carbonMultiplier = document.getElementById(scoreCarbon)
-  const scoreValue = scoreField
-  const defaultValue = (userValue.value * carbonMultiplier).toFixed(2)
-  scoreValue.innerHTML = defaultValue
-  userValue.addEventListener("input", multiplyField );
-  function multiplyField() {
-    console.log('hello')
-    let one = parseFloat(userValue.value) || 0
-    let ccfield = parseFloat(one * carbonMultiplier).toFixed(2)
-    scoreValue.innerHTML = ccfield;
-    functionTotToPass()
-  }
-}
+// function field (userField, scoreCarbon, scoreField, callback) {
+//   console.log('infield')
+//   const userValue = document.getElementById(userField)
+//   const carbonMultiplier = document.getElementById(scoreCarbon)
+//   const scoreValue = scoreField
+//   const defaultValue = (userValue.value * carbonMultiplier).toFixed(2)
+//   scoreValue.innerHTML = defaultValue
+//   userValue.addEventListener("input", multiplyField );
+//   function multiplyField() {
+//     console.log('hello')
+//     let one = parseFloat(userValue.value) || 0
+//     let ccfield = parseFloat(one * carbonMultiplier).toFixed(2)
+//     scoreValue.innerHTML = ccfield;
+//     callback()
+//   }
+// }
 
-
+// (field('userEssence',2.8,'scoreEssence', totVoiture()))()
 
 
 const userEssence = document.getElementById('userEssence');
@@ -268,8 +268,8 @@ function changeConsoKmelectrique() {
 }
 
 // to display values on edit footprint
-const defaultVoiture = (Number(defaultEssence) + Number(defaultGazole) + Number(defaultGPL) + Number(defaultE85) + Number(defaultElectrique)
-  + Number(defaultEssencel) + Number(defaultGazolel) + Number(defaultLgpl) + Number(defaultLe85) + Number(defaultLelectrique) ).toFixed(2);
+const defaultVoiture = (Number(defaultEssence) + Number(defaultGazole) + Number(defaultGPL) + Number(defaultE85) + Number(defaultElectrique) + Number(defaultGaz)
+  + Number(defaultEssencel) + Number(defaultGazolel) + Number(defaultLgpl) + Number(defaultLe85) + Number(defaultLelectrique) + Number(defaultLgaz) ).toFixed(2);
 totalVoiture.innerHTML = defaultVoiture
 
 // transport Energie Logement / autres
@@ -615,8 +615,14 @@ function totAlim() {
   const numberLaitvache = Number(scoreLaitvache.textContent);
   const numberPoulet = Number(scorePoulet.textContent);
   const numberOeufs = Number(scoreOeufs.textContent);
+  const numberAgneau = Number(scoreAgneau.textContent);
+  const numberTruite = Number(scoreTruite.textContent);
+  const numberCrevette = Number(scoreCrevette.textContent);
+  const numberPecheeuro = Number(scorePecheeuro.textContent);
+  const numberPechetropico = Number(scorePechetropico.textContent);
+  const numberPomme = Number(scorePomme.textContent);
   const sum = numberble + numbercarotte + numberriz + numberPomedeterre + numberSaladesaison + numberSaladeSs + numberTomates + numberTomatesFrss + numberVeau + numberBoeuf
-    + numberLaitvache + numberPoulet + numberOeufs;
+    + numberLaitvache + numberPoulet + numberOeufs + numberAgneau + numberTruite + numberCrevette + numberPecheeuro + numberPechetropico + numberPomme;
   totalAlimBox.innerText = sum.toFixed(2);
   total();
 }
@@ -803,12 +809,99 @@ function multiplyOeufs() {
   scoreOeufs.innerHTML = oeufs;
   totAlim()
 }
+
+
+// field agneau
+let userAgneau = document.getElementById('userAgneau');
+const agneaucc = 6
+const scoreAgneau = document.getElementById('scoreAgneau');
+const defaultAgneau = (userAgneau.value * agneaucc).toFixed(2)
+scoreAgneau.innerHTML = defaultAgneau
+userAgneau.addEventListener("input", multiplyAgneau);
+function multiplyAgneau() {
+  let one = parseFloat(userAgneau.value) || 0;
+  let agneau = parseFloat(one * agneaucc).toFixed(2);
+  scoreAgneau.innerHTML = agneau;
+  totAlim()
+}
+
+// field truite
+let userTruite = document.getElementById('userTruite');
+const truitecc = 3.08
+const scoreTruite = document.getElementById('scoreTruite');
+const defaultTruite = (userTruite.value * truitecc).toFixed(2)
+scoreTruite.innerHTML = defaultTruite
+userTruite.addEventListener("input", multiplyTruite);
+function multiplyTruite() {
+  let one = parseFloat(userTruite.value) || 0;
+  let truite = parseFloat(one * truitecc).toFixed(2);
+  scoreTruite.innerHTML = truite;
+  totAlim()
+}
+
+// field crevette
+let userCrevette = document.getElementById('userCrevette');
+const crevettecc = 9.03
+const scoreCrevette = document.getElementById('scoreCrevette');
+const defaultCrevette = (userCrevette.value * crevettecc).toFixed(2)
+scoreCrevette.innerHTML = defaultCrevette
+userCrevette.addEventListener("input", multiplyCrevette);
+function multiplyCrevette() {
+  let one = parseFloat(userCrevette.value) || 0;
+  let crevette = parseFloat(one * crevettecc).toFixed(2);
+  scoreCrevette.innerHTML = crevette;
+  totAlim()
+}
+
+// field peche euro
+let userPecheeuro = document.getElementById('userPecheeuro');
+const pecheeurocc = 1.9
+const scorePecheeuro = document.getElementById('scorePecheeuro');
+const defaultPecheeuro = (userPecheeuro.value * pecheeurocc).toFixed(2)
+scorePecheeuro.innerHTML = defaultPecheeuro
+userPecheeuro.addEventListener("input", multiplyPecheeuro);
+function multiplyPecheeuro() {
+  let one = parseFloat(userPecheeuro.value) || 0;
+  let pecheeuro = parseFloat(one * pecheeurocc).toFixed(2);
+  scorePecheeuro.innerHTML = pecheeuro;
+  totAlim()
+}
+// field peche tropico
+let userPechetropico = document.getElementById('userPechetropico');
+const pechetropicocc = 3.8
+const scorePechetropico = document.getElementById('scorePechetropico');
+const defaultPecheTropico = (userPechetropico.value * pechetropicocc).toFixed(2)
+scorePechetropico.innerHTML = defaultPecheTropico
+userPechetropico.addEventListener("input", multiplyPechetropico);
+function multiplyPechetropico() {
+  let one = parseFloat(userPechetropico.value) || 0;
+  let pechetropico = parseFloat(one * pechetropicocc).toFixed(2);
+  scorePechetropico.innerHTML = pechetropico;
+  totAlim()
+}
+// field pomme
+let userPomme = document.getElementById('userPomme');
+const pommecc = 0.0675
+const scorePomme = document.getElementById('scorePomme');
+const defaultPomme = (userPomme.value * pommecc).toFixed(2)
+scorePomme.innerHTML = defaultPomme
+userPomme.addEventListener("input", multiplyPomme);
+function multiplyPomme() {
+  let one = parseFloat(userPomme.value) || 0;
+  let pomme = parseFloat(one * pommecc).toFixed(2);
+  scorePomme.innerHTML = pomme;
+  totAlim()
+}
+
+
 // to display values on update form
 const defaultAlim = (Number(defaultBle) + Number(defaultCarotte)
   + Number(defaultRiz) + Number(defaultPommeDeTerre) + Number(defaultSaladeSaison)
   + Number(defaultSaladeSs) + Number(defaultTomates) + Number(defaultTomatesFRss)
   + Number(defaultBoeuf) + Number(defaultVeau) + Number(defaultLaitDeVache)
-  + Number(defaultPoulet) + Number(defaultOeufs)).toFixed(2)
+  + Number(defaultPoulet) + Number(defaultOeufs) + Number(defaultAgneau)
+  + Number(defaultTruite) + Number(defaultCrevette) + Number(defaultPecheeuro)
+  + Number(defaultPecheTropico) + Number(defaultPomme) ).toFixed(2)
 totalAlimBox.innerHTML = defaultAlim
 
 // category autre
