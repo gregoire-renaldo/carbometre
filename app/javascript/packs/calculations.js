@@ -6,7 +6,6 @@ const totalBilan = document.getElementById('total');
 const totalPerson = document.getElementById('total-personne')
 const userPerson = document.getElementById('userPerson')
 
-
 userPerson.addEventListener("input", divide)
 function divide () {
   person = parseFloat(userPerson.value) || 1
@@ -215,9 +214,6 @@ function changeConsoKmgaz() {
   totVoiture()
 }
 
-
-
-
 // field electrique
 const userElectrique = document.getElementById('userElectrique');
 const electriquecc = 0.0571
@@ -402,10 +398,11 @@ function totEnergie() {
   const numberGranulebois = Number(scoreGranulebois.textContent);
   const numberBuchebois = Number(scoreBuchebois.textContent);
   const numberEau = Number(scoreEau.textContent);
+  const numberEauusee = Number(scoreEauusee.textContent);
   const numberStreaming = Number(scoreStreaming.textContent);
   const numberTweet = Number(scoreTweet.textContent);
   const numberMail = Number(scoreMail.textContent);
-  const sumEnergie = numberElectricite + numberGazkwh + numberGazm + numberFioul + numberGranulebois + numberBuchebois + numberEau + numberStreaming + numberTweet + numberMail
+  const sumEnergie = numberElectricite + numberGazkwh + numberGazm + numberFioul + numberGranulebois + numberBuchebois + numberEau + numberStreaming + numberTweet + numberMail + numberEauusee
   totalEnergie.innerText = sumEnergie.toFixed(2);
   total();
 }
@@ -504,6 +501,19 @@ function multiplyEau() {
   let one = parseFloat(userEau.value) || 0;
   let cc = parseFloat(one * eaucc).toFixed(2);
   scoreEau.innerHTML = cc;
+  totEnergie()
+}
+// field eau usee
+const userEauusee = document.getElementById('userEauusee');
+const eauuseecc = 0.262
+const scoreEauusee = document.getElementById('scoreEauusee');
+const defaultEauusee = (userEauusee.value * eauuseecc).toFixed(2)
+scoreEauusee.innerHTML = defaultEauusee
+userEauusee.addEventListener("input", multiplyEauusee);
+function multiplyEauusee() {
+  let one = parseFloat(userEauusee.value) || 0;
+  let cc = parseFloat(one * eauuseecc).toFixed(2);
+  scoreEauusee.innerHTML = cc;
   totEnergie()
 }
 
@@ -1032,7 +1042,6 @@ const defaultAutre = (Number(defaultAspirateur) + Number(defaultCongelateur)
 totalAutre.innerHTML = defaultAutre
 
 
-
 // category valeur additionnelle
 const totalValeur = document.getElementById('totalValeur')
 function totValeur() {
@@ -1069,12 +1078,8 @@ function multiplyValeur2() {
   totValeur()
 }
 
-
-
 const defaultValeur = ( Number(defaultValeur1) + Number(defaultValeur2)).toFixed(2)
 totalValeur.innerHTML = defaultValeur
-
-
 
 totalBilan.innerHTML = (Number(defaultVoiture) + Number(defaultTransport)
   + Number(defaultEnergie) + Number(defaultAlim) + Number(defaultAutre) + Number(defaultValeur)).toFixed(2)

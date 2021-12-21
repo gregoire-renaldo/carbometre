@@ -13,12 +13,12 @@ params !
 
 # ajouter total dans model + show
 
-Gaz naturel véhicule kg 3.35
-Gaz naturel véhicule kWh / 100 km
+# Gaz naturel véhicule kg 3.35
+# Gaz naturel véhicule kWh / 100 km
 
 
-TER devient TER traction moyenne 0.0248
-train intercité 0.00529
+# TER devient TER traction moyenne 0.0248
+# train intercité 0.00529
 
 # Logement
 Eau usée m³ 0.262
