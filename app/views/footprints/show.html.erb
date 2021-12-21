@@ -55,7 +55,8 @@
             <li class="list-group-item"> Granules de bois <%= (@footprint.granulebois*0.111).ceil(2)%> kg</li>
             <li class="list-group-item"> Bûches de bois <%= (@footprint.buchebois*0.114).ceil(2)%> kg</li>
             <li class="list-group-item"> Eau <%= (@footprint.eau*0.132).ceil(2)%> kg</li>
-            <li class="list-group-item"> Eaux usées<%= (@footprint.eauusee*0.262).ceil(2)%> kg</li>
+            <li class="list-group-item"> Eaux usées <%= (@footprint.eauusee*0.262).ceil(2)%> kg</li>
+            <li class="list-group-item"> Déchets OM <%= (@footprint.dechets*0.172).ceil(2)%> kg</li>
             <li class="list-group-item"> Streaming <%= (@footprint.streaming*0.25).ceil(2)%> kg</li>
             <li class="list-group-item"> Tweet <%= (@footprint.tweet*0.00002).ceil(4)%> kg</li>
             <li class="list-group-item"> Mail avec pj <%= (@footprint.mail*0.035).ceil(2)%> kg</li>

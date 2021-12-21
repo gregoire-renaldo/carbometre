@@ -46,7 +46,27 @@ function totVoiture() {
   total();
 }
 
-// field essence
+// function to refacto
+function field (userField, scoreCarbon, scoreField, functionTotToPass) {
+  console.log('infield')
+  const userValue = document.getElementById(userField)
+  const carbonMultiplier = document.getElementById(scoreCarbon)
+  const scoreValue = scoreField
+  const defaultValue = (userValue.value * carbonMultiplier).toFixed(2)
+  scoreValue.innerHTML = defaultValue
+  userValue.addEventListener("input", multiplyField );
+  function multiplyField() {
+    console.log('hello')
+    let one = parseFloat(userValue.value) || 0
+    let ccfield = parseFloat(one * carbonMultiplier).toFixed(2)
+    scoreValue.innerHTML = ccfield;
+    functionTotToPass()
+  }
+}
+
+
+
+
 const userEssence = document.getElementById('userEssence');
 const essencecc = 2.8
 const scoreEssence = document.getElementById('scoreEssence');
@@ -399,10 +419,11 @@ function totEnergie() {
   const numberBuchebois = Number(scoreBuchebois.textContent);
   const numberEau = Number(scoreEau.textContent);
   const numberEauusee = Number(scoreEauusee.textContent);
+  const numberDechet = Number(scoreDechet.textContent);
   const numberStreaming = Number(scoreStreaming.textContent);
   const numberTweet = Number(scoreTweet.textContent);
   const numberMail = Number(scoreMail.textContent);
-  const sumEnergie = numberElectricite + numberGazkwh + numberGazm + numberFioul + numberGranulebois + numberBuchebois + numberEau + numberStreaming + numberTweet + numberMail + numberEauusee
+  const sumEnergie = numberDechet + numberElectricite + numberGazkwh + numberGazm + numberFioul + numberGranulebois + numberBuchebois + numberEau + numberStreaming + numberTweet + numberMail + numberEauusee
   totalEnergie.innerText = sumEnergie.toFixed(2);
   total();
 }
@@ -514,6 +535,19 @@ function multiplyEauusee() {
   let one = parseFloat(userEauusee.value) || 0;
   let cc = parseFloat(one * eauuseecc).toFixed(2);
   scoreEauusee.innerHTML = cc;
+  totEnergie()
+}
+// field dechet OM
+const userDechet = document.getElementById('userDechet');
+const dechetcc = 0.172
+const scoreDechet = document.getElementById('scoreDechet');
+const defaultdechet = (userDechet.value * dechetcc).toFixed(2)
+scoreDechet.innerHTML = defaultdechet
+userDechet.addEventListener("input", multiplyDechet);
+function multiplyDechet() {
+  let one = parseFloat(userDechet.value) || 0;
+  let cc = parseFloat(one * dechetcc).toFixed(2);
+  scoreDechet.innerHTML = cc;
   totEnergie()
 }
 

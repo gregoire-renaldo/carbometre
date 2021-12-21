@@ -114,7 +114,7 @@ class Footprint < ApplicationRecord
   end
 
   def total_logement
-    ((self.streaming*0.25) + (self.mail*0.035) + (self.tweet*0.00002) + (self.electricite*0.0571) + (self.gazkwh*0.205) + (self.gazm*2.2) + (self.fioul*3.25) + (self.granulebois*0.11) + (self.buchebois*0.114) + (self.eau*0.132) + (self.eauusee*0.262)).ceil(2)
+    ((self.streaming*0.25) + (self.mail*0.035) + (self.tweet*0.00002) + (self.electricite*0.0571) + (self.gazkwh*0.205) + (self.gazm*2.2) + (self.fioul*3.25) + (self.granulebois*0.11) + (self.buchebois*0.114) + (self.eau*0.132) + (self.eauusee*0.262) + (self.dechets*0.172)).ceil(2)
   end
 
   def total_alimentation

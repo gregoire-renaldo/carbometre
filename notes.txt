@@ -21,8 +21,8 @@ params !
 # train intercité 0.00529
 
 # Logement
-Eau usée m³ 0.262
-Déchets OM kg 0.172
+# Eau usée m³ 0.262
+# Déchets OM kg 0.172
 - enlever streaming Tweet, Mail avec pj
 
 # Alimentaire
