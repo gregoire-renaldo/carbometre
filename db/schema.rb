@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_31_124142) do
+ActiveRecord::Schema.define(version: 2021_12_21_130843) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,6 +86,34 @@ ActiveRecord::Schema.define(version: 2020_07_31_124142) do
     t.float "jeanmonde"
     t.float "jeanfr"
     t.float "appartemnentneuf"
+    t.float "voitgaznatkg", default: 0.0
+    t.float "voitgaznatkwh", default: 0.0
+    t.float "eauusee", default: 0.0
+    t.float "dechets", default: 0.0
+    t.float "agneau", default: 0.0
+    t.float "truite", default: 0.0
+    t.float "crevette", default: 0.0
+    t.float "poissonpecheeuro", default: 0.0
+    t.float "poissonpechetropico", default: 0.0
+    t.float "pomme", default: 0.0
+    t.float "voitureelecmoins50", default: 0.0
+    t.float "voitureelecplus50", default: 0.0
+    t.float "trotinette", default: 0.0
+    t.float "chemisecoton", default: 0.0
+    t.float "chemiseviscose", default: 0.0
+    t.float "tshirtcoton", default: 0.0
+    t.float "tshirtpoly", default: 0.0
+    t.float "polaire", default: 0.0
+    t.float "pullacrylique", default: 0.0
+    t.float "pullenlaine", default: 0.0
+    t.float "sweat", default: 0.0
+    t.float "polo", default: 0.0
+    t.float "robecoton", default: 0.0
+    t.float "robepolyester", default: 0.0
+    t.float "chaussuretissu", default: 0.0
+    t.float "chaussuresport", default: 0.0
+    t.float "anorak", default: 0.0
+    t.float "voitgaznat", default: 0.0
     t.index ["user_id"], name: "index_footprints_on_user_id"
   end
 

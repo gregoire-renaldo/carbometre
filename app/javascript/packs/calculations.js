@@ -34,13 +34,15 @@ function totVoiture() {
   const numberGazole = Number(scoreGazole.textContent);
   const numberGpl = Number(scoreGpl.textContent);
   const numberE85 = Number(scoreE85.textContent);
+  const numberGaz = Number(scoreGaz.textContent);
   const numberElectrique = Number(scoreElectrique.textContent);
   const numberEssencel = Number(scoreEssencel.textContent);
   const numberGazolel = Number(scoreGazolel.textContent);
   const numberLgpl = Number(scoreLgpl.textContent);
   const numberLe85 = Number(scoreLe85.textContent);
+  const numberLGaz = Number(scoreLgaz.textContent);
   const numberLelectrique = Number(scoreLelectrique.textContent);
-  const sumVoiture = numberEssence + numberGazole + numberGpl + numberE85 + numberElectrique + numberEssencel + numberGazolel + numberLgpl + numberLe85 + numberLelectrique
+  const sumVoiture = numberEssence + numberGazole + numberGpl + numberE85 + numberElectrique + numberEssencel + numberGazolel + numberLgpl + numberLe85 + numberLelectrique + numberGaz + numberLGaz
   totalVoiture.innerText = sumVoiture.toFixed(2);
   total();
 }
@@ -179,6 +181,42 @@ function changeConsoKme85() {
   scoreLe85.innerHTML = consoLe85
   totVoiture()
 }
+
+// field gaz nat
+const userGaznat = document.getElementById('userGaznat');
+const gazcc = 3.35
+const scoreGaz = document.getElementById('scoreGaz');
+const defaultGaz = (userGaznat.value * gazcc).toFixed(2)
+scoreGaz.innerHTML = defaultGaz
+userGaznat.addEventListener("input", multiplyGaznat);
+function multiplyGaznat() {
+  let one = parseFloat(userGaznat.value) || 0;
+  let cce85 = parseFloat(one * gazcc).toFixed(2);
+  scoreGaz.innerHTML = cce85;
+  totVoiture()
+}
+const userLGaz = document.getElementById('userLGaz')
+const userKGaz = document.getElementById('userKGaz')
+const scoreLgaz = document.getElementById('scoreLgaz');
+const defaultLgaz = ((userLGaz.value / 100) * userKGaz.value * gazcc).toFixed(2)
+scoreLgaz.innerHTML = defaultLgaz
+userLGaz.addEventListener("input", changConsoLgaz);
+function changConsoLgaz() {
+  let one = parseFloat(userLGaz.value) / 100 || 0;
+  let consoLgaz = parseFloat(one * gazcc * (userKGaz.value)).toFixed(2);
+  scoreLgaz.innerHTML = consoLgaz
+  totVoiture()
+}
+userKGaz.addEventListener("input", changeConsoKmgaz);
+function changeConsoKmgaz() {
+  let one = parseFloat(userKGaz.value) || 0;
+  let consoLgaz = parseFloat(one * gazcc * ((userLGaz.value) / 100)).toFixed(2);
+  scoreLgaz.innerHTML = consoLgaz
+  totVoiture()
+}
+
+
+
 
 // field electrique
 const userElectrique = document.getElementById('userElectrique');

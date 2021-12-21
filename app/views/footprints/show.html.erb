@@ -24,6 +24,7 @@
             <li class="list-group-item"> Gazole <%= ((@footprint.gazole*3.16) + @footprint.total_gazolel).ceil(2)%> kg</li>
             <li class="list-group-item"> GPL <%= ((@footprint.gpl*1.86 ) + @footprint.total_gpll).ceil(2)%> kg</li>
             <li class="list-group-item"> E85 <%= ((@footprint.e85*1.68) + @footprint.total_e85l).ceil(2)%> kg</li>
+            <li class="list-group-item"> Gaz nat <%= ((@footprint.voitgaznat*3.35) + @footprint.total_gazl).ceil(2)%> kg</li>
             <li class="list-group-item"> Electrique <%= ((@footprint.electrique*0.0571) + @footprint.total_electriquel).ceil(2)%> kg</li>
           </ul>
         </div>
