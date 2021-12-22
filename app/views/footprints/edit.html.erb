@@ -8,6 +8,9 @@
       <%= f.label :personnes, class:"titre"%>
       <%= f.number_field :person,  class:"field_titre", id:'userPerson'  %>
     </div>
+    <div class="text-center titre">
+    Ceci est le <%=@footprint_num%>ème calcul du carbomètre
+    </div>
     <%= render partial: "form", locals: {f: f} %>
     <div class="intro">
       <p>Enfin, nous devons comptabiliser les émissions de gaz à effet de serre dont la France est

@@ -4,7 +4,6 @@ class FootprintsController < ApplicationController
   end
 
   def show
-
     @footprint = Footprint.find(params[:id])
     respond_to do |format|
     format.html
@@ -19,6 +18,7 @@ class FootprintsController < ApplicationController
 
   def new
     @footprint = Footprint.new
+    @footprint_num = Footprint.all.length + 1
   end
 
   def create
@@ -31,6 +31,7 @@ class FootprintsController < ApplicationController
 
   def edit
     @footprint = Footprint.find(params[:id])
+    @footprint_num = @footprint.id + 1
   end
 
   def update
