@@ -15,10 +15,9 @@
         <div class="col-sm">
           <div class="intro">
             <p>En synthèse nous avons comptabilisé les émissions de gaz à effet de serre dont la France est responsable de façon
-            collective, par ses services d’État, qu’elle doit également s’engager à réduire pour satisfaire la neutralité carbone. L’ADEME l’évalue en 2020 à <b>1500 kg</b> par personne.</p>
+              collective, par ses services d’État, qu’elle doit également s’engager à réduire pour satisfaire la neutralité carbone. L’ADEME l’évalue en 2020 à <b>1500 kg</b> par personne.</p>
           </div>
-
-        <h4>Voiture : <%= @footprint.total_voiture%> kg</h4>
+          <h4>Voiture : <%= @footprint.total_voiture%> kg</h4>
           <ul class="list-group">
             <li class="list-group-item"> Essence <%= ((@footprint.essence*2.8) + @footprint.total_essencel).ceil(2)%> kg</li>
             <li class="list-group-item"> Gazole <%= ((@footprint.gazole*3.16) + @footprint.total_gazolel).ceil(2)%> kg</li>
@@ -31,7 +30,7 @@
       </div>
       <div class="row ">
         <div class="col-sm">
-        <h4>Autres transports : <%= @footprint.total_autre_transport %> kg</h4>
+          <h4>Autres transports : <%= @footprint.total_autre_transport %> kg</h4>
           <ul class="list-group">
             <li class="list-group-item"> TGV <%= (@footprint.tgv*0.00173).ceil(2)%> kg</li>
             <li class="list-group-item"> TER <%= (@footprint.terelectrique*0.00248).ceil(2)%> kg</li>
@@ -57,16 +56,12 @@
             <li class="list-group-item"> Eau <%= (@footprint.eau*0.132).ceil(2)%> kg</li>
             <li class="list-group-item"> Eaux usées <%= (@footprint.eauusee*0.262).ceil(2)%> kg</li>
             <li class="list-group-item"> Déchets OM <%= (@footprint.dechets*0.172).ceil(2)%> kg</li>
-            <li class="list-group-item"> Streaming <%= (@footprint.streaming*0.25).ceil(2)%> kg</li>
-            <li class="list-group-item"> Tweet <%= (@footprint.tweet*0.00002).ceil(4)%> kg</li>
-            <li class="list-group-item"> Mail avec pj <%= (@footprint.mail*0.035).ceil(2)%> kg</li>
           </ul>
         </div>
       </div>
-
       <div class="row ">
         <div class="col-sm">
-        <h4>Alimentation : <%= @footprint.total_alimentation %> kg</h4>
+          <h4>Alimentation : <%= @footprint.total_alimentation %> kg</h4>
           <ul class="list-group">
             <li class="list-group-item"> Blé France <%= (@footprint.ble*0.439).ceil(2)%> kg</li>
             <li class="list-group-item"> Riz Thailandais <%= (@footprint.riz*3.59).ceil(2)%> kg</li>
@@ -92,7 +87,7 @@
       </div>
       <div class="row ">
         <div class="col-sm">
-        <h4>Vetements : <%= @footprint.total_vetements %> kg</h4>
+          <h4>Vetements : <%= @footprint.total_vetements %> kg</h4>
           <ul class="list-group">
             <li class="list-group-item"> Chemise Coton <%= (@footprint.chemisecoton*11).ceil(2)%> kg</li>
             <li class="list-group-item"> Chemise Viscose <%= (@footprint.chemiseviscose*10).ceil(2)%> kg</li>
@@ -111,11 +106,9 @@
           </ul>
         </div>
       </div>
-
-
       <div class="row ">
         <div class="col-sm">
-        <h4>Autres : <%= @footprint.total_autres %> kg</h4>
+          <h4>Autres : <%= @footprint.total_autres %> kg</h4>
           <ul class="list-group">
             <li class="list-group-item"> Aspirateur <%= (@footprint.aspirateur*52).ceil(2)%> kg</li>
             <li class="list-group-item"> Congélateur 200 l<%= (@footprint.congelateur*415).ceil(2)%> kg</li>
@@ -134,6 +127,16 @@
             <li class="list-group-item"> Auto d'Asie <%= (@footprint.voitureasie*11).ceil(2)%> kg</li>
             <li class="list-group-item"> Auto d'Asie électrique <%= (@footprint.voitureasie*15).ceil(2)%> kg</li>
             <li class="list-group-item"> Appartement neuf <%= (@footprint.appartemnentneuf*500).ceil(2)%> kg</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row ">
+        <div class="col-sm">
+          <h4>Divers : <%= @footprint.total_divers %> kg</h4>
+          <ul class="list-group">
+            <li class="list-group-item"> Streaming <%= (@footprint.streaming*0.25).ceil(2)%> kg</li>
+            <li class="list-group-item"> Tweet <%= (@footprint.tweet*0.00002).ceil(4)%> kg</li>
+            <li class="list-group-item"> Mail avec pj <%= (@footprint.mail*0.035).ceil(2)%> kg</li>
           </ul>
         </div>
       </div>

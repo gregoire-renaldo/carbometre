@@ -76,6 +76,21 @@ buttonVetement.addEventListener("click", (event) => {
     }
   });
 });
+// bouton + - diver
+const buttonDivers = document.getElementById("hideShowDivers")
+const arrayDivers = Array.from(document.getElementsByClassName("divers"));
+const diversplusmoins = document.getElementById("diversplusmoins")
+buttonDivers.addEventListener("click", (event) => {
+  arrayDivers.forEach(function (element) {
+    if (element.style.display === "block") {
+      element.style.display = "none";
+      diversplusmoins.innerHTML = "+";
+    } else {
+      element.style.display = "block";
+      diversplusmoins.innerHTML = "-";
+    }
+  });
+});
 
 
 // bouton + - autre

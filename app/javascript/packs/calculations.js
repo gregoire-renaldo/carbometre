@@ -1,5 +1,4 @@
 // sticky total categ
-
 // total Bilan
 
 const totalBilan = document.getElementById('total');
@@ -21,9 +20,10 @@ function total() {
   const numberAlim = Number(totalAlimBox.textContent);
   const numberVetements = Number(totalVetement.textContent);
   const numberAutre = Number(totalAutre.textContent);
+  const numberDivers = Number(totalDivers.textContent);
   const numberValeur = Number(totalValeur.textContent);
   const sumTotal =  numberVoiture + numberAlim + numberTransport
-    + numberEnergie + numberAutre + numberValeur + numberVetements ;
+    + numberEnergie + numberAutre + numberValeur + numberVetements + numberDivers ;
   totalBilan.innerHTML = sumTotal.toFixed(2)
   divide()
 }
@@ -421,10 +421,8 @@ function totEnergie() {
   const numberEau = Number(scoreEau.textContent);
   const numberEauusee = Number(scoreEauusee.textContent);
   const numberDechet = Number(scoreDechet.textContent);
-  const numberStreaming = Number(scoreStreaming.textContent);
-  const numberTweet = Number(scoreTweet.textContent);
-  const numberMail = Number(scoreMail.textContent);
-  const sumEnergie = numberDechet + numberElectricite + numberGazkwh + numberGazm + numberFioul + numberGranulebois + numberBuchebois + numberEau + numberStreaming + numberTweet + numberMail + numberEauusee
+
+  const sumEnergie = numberDechet + numberElectricite + numberGazkwh + numberGazm + numberFioul + numberGranulebois + numberBuchebois + numberEau  + numberEauusee
   totalEnergie.innerText = sumEnergie.toFixed(2);
   total();
 }
@@ -552,52 +550,11 @@ function multiplyDechet() {
   totEnergie()
 }
 
-// field streaming
-let userStreaming = document.getElementById('userStreaming');
-const streamingcc = 0.25
-const scoreStreaming = document.getElementById('scoreStreaming');
-const defaultStreaming = (userStreaming.value * streamingcc).toFixed(2)
-scoreStreaming.innerHTML = defaultStreaming
-userStreaming.addEventListener("input", multiplyStreaming);
-function multiplyStreaming() {
-  let one = parseFloat(userStreaming.value) || 0;
-  let cc = parseFloat(one * streamingcc).toFixed(2);
-  scoreStreaming.innerHTML = cc;
-  totEnergie()
-}
 
-// field tweet
-let userTweet = document.getElementById('userTweet');
-const tweetcc = 0.00002
-const scoreTweet = document.getElementById('scoreTweet');
-const defaultTweet = (userTweet.value * tweetcc).toFixed(2)
-scoreTweet.innerHTML = defaultTweet
-userTweet.addEventListener("input", multiplyTweet);
-function multiplyTweet() {
-  let one = parseFloat(userTweet.value) || 0;
-  let cc = parseFloat(one * tweetcc).toFixed(4);
-  scoreTweet.innerHTML = cc;
-  totEnergie()
-}
-
-// field mail
-let userMail = document.getElementById('userMail');
-const mailcc = 0.035
-const scoreMail = document.getElementById('scoreMail');
-const defaultMail = (userMail.value * mailcc).toFixed(2)
-scoreMail.innerHTML = defaultMail
-userMail.addEventListener("input", multiplyMail);
-function multiplyMail() {
-  let one = parseFloat(userMail.value) || 0;
-  let cc = parseFloat(one * mailcc).toFixed(2);
-  scoreMail.innerHTML = cc;
-  totEnergie()
-}
 
 // dipslay values on update page
 const defaultEnergie = (Number(defaultElectricite) + Number(defaultGazkwh) + Number(defaultGazm)
-  + Number(defaultFioul) + Number(defaultGranulebois) + Number(defaultBuchebois) + Number(defaultEau)
-  + Number(defaultStreaming) + Number(defaultTweet) + Number(defaultMail)).toFixed(2);
+  + Number(defaultFioul) + Number(defaultGranulebois) + Number(defaultBuchebois) + Number(defaultEau)).toFixed(2);
 totalEnergie.innerHTML = defaultEnergie
 
 // total category alimentaire
@@ -913,8 +870,19 @@ function totVetements() {
   const numberTshirtCoton = Number(scoreTshirtCoton.textContent);
   const numberTshirtPoly = Number(scoreTshirtPolyester.textContent);
   const numberPolair = Number(scorePolair.textContent);
+  const numberPullAcry = Number(scorePullAcrylique.textContent);
+  const numberPulllaine = Number(scorePullEnLaine.textContent);
+  const numberSweat = Number(scoreSweat.textContent);
+  const numberPolo = Number(scorePolo.textContent);
+  const numberRobeC = Number(scoreRobeCoton.textContent);
+  const numberRobePoly = Number(scoreRobePoly.textContent);
+  const numberChaussureTissu = Number(scoreChaussureTissu.textContent);
+  const numberSport = Number(scoreChaussureSport.textContent);
+  const numberAnorak = Number(scoreAnorak.textContent);
   const sum = numberChemiseCoton + numberChemiseViscose + numberTshirtCoton
-  +numberTshirtPoly + numberPolair
+  +numberTshirtPoly + numberPolair + numberPullAcry + numberPulllaine
+  +numberSweat + numberPolo + numberRobeC+numberRobePoly + numberChaussureTissu
+  +numberSport + numberAnorak
   totalVetement.innerText = sum.toFixed(2);
   total();
 }
@@ -974,20 +942,140 @@ function multiplyTshirtPoly() {
 }
 // field polair
 let userPolair = document.getElementById('userPolair');
-const polaircc = 6
+const polaircc = 24
 const scorePolair = document.getElementById('scorePolair');
 const defaultPolair = (userPolair.value * polaircc).toFixed(2)
 scorePolair.innerHTML = defaultPolair
-userPolair.addEventListener("input", multiplyTshirtPoly);
-function multiplyTshirtPoly() {
+userPolair.addEventListener("input", multiplyTPolair);
+function multiplyTPolair() {
   let one = parseFloat(userPolair.value) || 0;
   let cc = parseFloat(one * polaircc).toFixed(2);
   scorePolair.innerHTML = cc;
   totVetements()
 }
+// field pull acrylique
+let userPullAcrylique = document.getElementById('userPullAcrylique');
+const pullacryliquecc = 26
+const scorePullAcrylique = document.getElementById('scorePullAcrylique');
+const defaultAcrylique = (userPullAcrylique.value * pullacryliquecc).toFixed(2)
+scorePullAcrylique.innerHTML = defaultAcrylique
+userPullAcrylique.addEventListener("input", multiplyPullAcry);
+function multiplyPullAcry() {
+  let one = parseFloat(userPullAcrylique.value) || 0;
+  let cc = parseFloat(one * pullacryliquecc).toFixed(2);
+  scorePullAcrylique.innerHTML = cc;
+  totVetements()
+}
+// field pull laine
+let userPullEnLaine = document.getElementById('userPullEnLaine');
+const pullenlainecc = 53
+const scorePullEnLaine = document.getElementById('scorePullEnLaine');
+const defaultpullenlaine = (userPullEnLaine.value * pullenlainecc).toFixed(2)
+scorePullEnLaine.innerHTML = defaultpullenlaine
+userPullEnLaine.addEventListener("input", multiplyPulllaine);
+function multiplyPulllaine() {
+  let one = parseFloat(userPullEnLaine.value) || 0;
+  let cc = parseFloat(one * pullenlainecc).toFixed(2);
+  scorePullEnLaine.innerHTML = cc;
+  totVetements()
+}
+// field sweat
+let userSweat = document.getElementById('userSweat');
+const sweatcc = 27
+const scoreSweat = document.getElementById('scoreSweat');
+const defaultsweat = (userSweat.value * sweatcc).toFixed(2)
+scoreSweat.innerHTML = defaultsweat
+userSweat.addEventListener("input", multiplySweat);
+function multiplySweat() {
+  let one = parseFloat(userSweat.value) || 0;
+  let cc = parseFloat(one * sweatcc).toFixed(2);
+  scoreSweat.innerHTML = cc;
+  totVetements()
+}
+// field polo
+let userPolo = document.getElementById('userPolo');
+const polocc = 8
+const scorePolo = document.getElementById('scorePolo');
+const defaultpolo = (userPolo.value * polocc).toFixed(2)
+scorePolo.innerHTML = defaultpolo
+userPolo.addEventListener("input", multiplyPolo);
+function multiplyPolo() {
+  let one = parseFloat(userPolo.value) || 0;
+  let cc = parseFloat(one * polocc).toFixed(2);
+  scorePolo.innerHTML = cc;
+  totVetements()
+}
+// field robe coton
+let userRobeCoton = document.getElementById('userRobeCoton');
+const robecotoncc = 50
+const scoreRobeCoton = document.getElementById('scoreRobeCoton');
+const defaultRobeCoton = (userRobeCoton.value * robecotoncc).toFixed(2)
+scoreRobeCoton.innerHTML = defaultRobeCoton
+userRobeCoton.addEventListener("input", multiplyRobeC);
+function multiplyRobeC() {
+  let one = parseFloat(userRobeCoton.value) || 0;
+  let cc = parseFloat(one * robecotoncc).toFixed(2);
+  scoreRobeCoton.innerHTML = cc;
+  totVetements()
+}
+// field robe poly
+let userRobePoly = document.getElementById('userRobePoly');
+const robecpolycc = 52
+const scoreRobePoly = document.getElementById('scoreRobePoly');
+const defaultRobePoly = (userRobePoly.value * robecpolycc).toFixed(2)
+scoreRobePoly.innerHTML = defaultRobePoly
+userRobePoly.addEventListener("input", multiplyRobePoly);
+function multiplyRobePoly() {
+  let one = parseFloat(userRobePoly.value) || 0;
+  let cc = parseFloat(one * robecpolycc).toFixed(2);
+  scoreRobePoly.innerHTML = cc;
+  totVetements()
+}
+// field chaussure tissu
+let userChaussureTissu = document.getElementById('userChaussureTissu');
+const chaussureTissucc = 17
+const scoreChaussureTissu = document.getElementById('scoreChaussureTissu');
+const defaultChaussureTissu = (userChaussureTissu.value * chaussureTissucc).toFixed(2)
+scoreChaussureTissu.innerHTML = defaultChaussureTissu
+userChaussureTissu.addEventListener("input", multiplyChaussureTissu);
+function multiplyChaussureTissu() {
+  let one = parseFloat(userChaussureTissu.value) || 0;
+  let cc = parseFloat(one * chaussureTissucc).toFixed(2);
+  scoreChaussureTissu.innerHTML = cc;
+  totVetements()
+}
+// field chaussure sport
+let userChaussureSport = document.getElementById('userChaussureSport');
+const chaussureSportcc = 19
+const scoreChaussureSport = document.getElementById('scoreChaussureSport');
+const defaultChaussureSport = (userChaussureSport.value * chaussureSportcc).toFixed(2)
+scoreChaussureSport.innerHTML = defaultChaussureSport
+userChaussureSport.addEventListener("input", multiplyChaussureSport);
+function multiplyChaussureSport() {
+  let one = parseFloat(userChaussureSport.value) || 0;
+  let cc = parseFloat(one * chaussureSportcc).toFixed(2);
+  scoreChaussureSport.innerHTML = cc;
+  totVetements()
+}
+// field anorak
+let userAnorak = document.getElementById('userAnorak');
+const anorakcc = 39
+const scoreAnorak = document.getElementById('scoreAnorak');
+const defaultAnorak = (userAnorak.value * anorakcc).toFixed(2)
+scoreAnorak.innerHTML = defaultAnorak
+userAnorak.addEventListener("input", multiplyAnorak);
+function multiplyAnorak() {
+  let one = parseFloat(userAnorak.value) || 0;
+  let cc = parseFloat(one * anorakcc).toFixed(2);
+  scoreAnorak.innerHTML = cc;
+  totVetements()
+}
 
 const defaultVetement = ( Number(defaultChemiseCoton) + Number(defaultChemiseviscose)
-+Number(defaultTshirtCoton) +Number(defaultTshirtPoly) +Number(defaultPolair)).toFixed(2)
++Number(defaultTshirtCoton) +Number(defaultTshirtPoly) +Number(defaultPolair)
++Number(defaultAcrylique) + Number(defaultpullenlaine)+Number(defaultsweat)
++Number(defaultpolo) +Number(defaultRobeCoton)+Number(defaultRobePoly)
++Number(defaultChaussureTissu) + Number(defaultChaussureSport)+Number(defaultAnorak)).toFixed(2)
 totalVetement.innerHTML = defaultVetement
 
 
@@ -1256,6 +1344,63 @@ const defaultAutre = (Number(defaultAspirateur) + Number(defaultCongelateur)
   + Number(defaultJeanmonde) + Number(defaultJeanfr) + Number(defaultAutoasie) + Number(defaultAutoasieelec) + Number(defaultAppartementneuf)).toFixed(2)
 totalAutre.innerHTML = defaultAutre
 
+// category divers
+const totalDivers = document.getElementById('totalDivers')
+function totDivers() {
+  const numberStreaming = Number(scoreStreaming.textContent);
+  const numberTweet = Number(scoreTweet.textContent);
+  const numberMail = Number(scoreMail.textContent);
+
+  const sum = numberStreaming + numberTweet + numberMail
+  totalDivers.innerText = sum.toFixed(2);
+  total();
+}
+// field streaming
+let userStreaming = document.getElementById('userStreaming');
+const streamingcc = 0.25
+const scoreStreaming = document.getElementById('scoreStreaming');
+const defaultStreaming = (userStreaming.value * streamingcc).toFixed(2)
+scoreStreaming.innerHTML = defaultStreaming
+userStreaming.addEventListener("input", multiplyStreaming);
+function multiplyStreaming() {
+  let one = parseFloat(userStreaming.value) || 0;
+  let cc = parseFloat(one * streamingcc).toFixed(2);
+  scoreStreaming.innerHTML = cc;
+  totDivers()
+}
+
+// field tweet
+let userTweet = document.getElementById('userTweet');
+const tweetcc = 0.00002
+const scoreTweet = document.getElementById('scoreTweet');
+const defaultTweet = (userTweet.value * tweetcc).toFixed(2)
+scoreTweet.innerHTML = defaultTweet
+userTweet.addEventListener("input", multiplyTweet);
+function multiplyTweet() {
+  let one = parseFloat(userTweet.value) || 0;
+  let cc = parseFloat(one * tweetcc).toFixed(4);
+  scoreTweet.innerHTML = cc;
+  totDivers()
+}
+
+// field mail
+let userMail = document.getElementById('userMail');
+const mailcc = 0.035
+const scoreMail = document.getElementById('scoreMail');
+const defaultMail = (userMail.value * mailcc).toFixed(2)
+scoreMail.innerHTML = defaultMail
+userMail.addEventListener("input", multiplyMail);
+function multiplyMail() {
+  let one = parseFloat(userMail.value) || 0;
+  let cc = parseFloat(one * mailcc).toFixed(2);
+  scoreMail.innerHTML = cc;
+  totDivers()
+}
+
+const defaultDivers = ( + Number(defaultStreaming) + Number(defaultTweet) + Number(defaultMail)).toFixed(2)
+totalDivers.innerHTML = defaultDivers
+
+
 
 // category valeur additionnelle
 const totalValeur = document.getElementById('totalValeur')
@@ -1297,7 +1442,7 @@ const defaultValeur = ( Number(defaultValeur1) + Number(defaultValeur2)).toFixed
 totalValeur.innerHTML = defaultValeur
 
 totalBilan.innerHTML = (Number(defaultVoiture) + Number(defaultTransport)
-  + Number(defaultEnergie) + Number(defaultAlim) + Number(defaultAutre) + Number(defaultValeur)).toFixed(2)
+  + Number(defaultEnergie) + Number(defaultAlim) + Number(defaultAutre) + Number(defaultValeur) + Number(defaultDivers)).toFixed(2)
 
 const defaultTotPerson = ((totalBilan.textContent) / userPerson.value).toFixed(2);
 totalPerson.innerHTML = defaultTotPerson

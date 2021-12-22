@@ -23,7 +23,7 @@ params !
 # Logement
 # Eau usée m³ 0.262
 # Déchets OM kg 0.172
-- enlever streaming Tweet, Mail avec pj
+# - enlever streaming Tweet, Mail avec pj
 
 # Alimentaire
 # Agneau kg 6
@@ -46,19 +46,19 @@ trotinette electrique 92
 # Chemise viscose unité 10
 # T-shirt coton 5
 # T-shirt polyester 6
-Polaire 24
-Pull acrylique 26
-Pull en laine 53
-Sweat 27
-Polo 8
-Robe coton 50
-Robe polyester 52
-Chaussure tissu 17
-Chaussures sport 19
-Anorak 39
+# Polaire 24
+# Pull acrylique 26
+# Pull en laine 53
+# Sweat 27
+# Polo 8
+# Robe coton 50
+# Robe polyester 52
+# Chaussure tissu 17
+# Chaussures sport 19
+# Anorak 39
 
 # Différents usages
-mettre Tweet mail streaming
+# mettre Tweet mail streaming
 
 
 if empty case, == 0, in method in model ?
