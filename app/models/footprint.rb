@@ -5,11 +5,7 @@ class Footprint < ApplicationRecord
   validates_length_of :title, maximum: 21, allow_blank: true
 
   def default_values
-    # self.attributes.each_pair do |name, value|
-    #   if value = nil
-    #     value =0
-    #   end
-    # end
+
 
     self.ble = 0 if self.ble.nil?
     self.carotte = 0 if self.carotte.nil?
@@ -78,6 +74,36 @@ class Footprint < ApplicationRecord
     self.jeanmonde = 0 if self.jeanmonde.nil?
     self.jeanfr = 0 if self.jeanfr.nil?
     self.appartemnentneuf = 0 if self.appartemnentneuf.nil?
+    self.voitgaznatkg = 0 if self.voitgaznatkg.nil?
+    self.voitgaznatkwh = 0 if self.voitgaznatkwh.nil?
+    self.voitgaznatkwh = 0 if self.voitgaznatkwh.nil?
+    self.eauusee = 0 if self.eauusee.nil?
+    self.dechets = 0 if self.dechets.nil?
+    self.agneau = 0 if self.agneau.nil?
+    self.truite = 0 if self.truite.nil?
+    self.truite = 0 if self.truite.nil?
+    self.crevette = 0 if self.crevette.nil?
+    self.poissonpecheeuro = 0 if self.poissonpecheeuro.nil?
+    self.poissonpechetropico = 0 if self.poissonpechetropico.nil?
+    self.pomme = 0 if self.pomme.nil?
+    self.voitureelecmoins50 = 0 if self.voitureelecmoins50.nil?
+    self.voitureelecplus50 = 0 if self.voitureelecplus50.nil?
+    self.trotinette = 0 if self.trotinette.nil?
+    self.chemisecoton = 0 if self.chemisecoton.nil?
+    self.chemiseviscose = 0 if self.chemiseviscose.nil?
+    self.tshirtcoton = 0 if self.tshirtcoton.nil?
+    self.tshirtpoly = 0 if self.tshirtpoly.nil?
+    self.polaire = 0 if self.polaire.nil?
+    self.pullacrylique = 0 if self.pullacrylique.nil?
+    self.pullenlaine = 0 if self.pullenlaine.nil?
+    self.sweat = 0 if self.sweat.nil?
+    self.polo = 0 if self.polo.nil?
+    self.robecoton = 0 if self.robecoton.nil?
+    self.robepolyester = 0 if self.robepolyester.nil?
+    self.chaussuretissu = 0 if self.chaussuretissu.nil?
+    self.chaussuresport = 0 if self.chaussuresport.nil?
+    self.anorak = 0 if self.anorak.nil?
+    self.voitgaznat = 0 if self.voitgaznat.nil?
   end
 
   def total_score
