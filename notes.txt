@@ -62,7 +62,7 @@ pointer on button =
 #  Achats ponctuels
 Déplacer jean dans catégorie vêtements
 
-Voiture éléctrique < 50kWh unité 11000
-Voiture éléctrique > 50kWh unité 14500
+# Voiture éléctrique < 50kWh unité 11000
+# Voiture éléctrique > 50kWh unité 14500
 
-trotinette electrique 92
+# trotinette electrique 92

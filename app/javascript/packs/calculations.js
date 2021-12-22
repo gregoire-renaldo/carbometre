@@ -864,6 +864,8 @@ totalAlimBox.innerHTML = defaultAlim
 // category vetement
 const totalVetement = document.getElementById('totalVetements')
 function totVetements() {
+  const numberJeanmonde = Number(scoreJeanmonde.textContent);
+  const numberJeanfr = Number(scoreJeanfr.textContent);
   const numberChemiseCoton = Number(scoreChemisecoton.textContent);
   const numberChemiseViscose = Number(scoreChemisecviscose.textContent);
   const numberTshirtCoton = Number(scoreTshirtCoton.textContent);
@@ -881,9 +883,37 @@ function totVetements() {
   const sum = numberChemiseCoton + numberChemiseViscose + numberTshirtCoton
   +numberTshirtPoly + numberPolair + numberPullAcry + numberPulllaine
   +numberSweat + numberPolo + numberRobeC+numberRobePoly + numberChaussureTissu
-  +numberSport + numberAnorak
+  +numberSport + numberAnorak + numberJeanmonde +numberJeanfr
   totalVetement.innerText = sum.toFixed(2);
   total();
+}
+
+// field jean monde
+const userJeanmonde = document.getElementById('userJeanmonde');
+const jeanmondecc = 23
+const scoreJeanmonde = document.getElementById('scoreJeanmonde');
+const defaultJeanmonde = (userJeanmonde.value * jeanmondecc).toFixed(2)
+scoreJeanmonde.innerHTML = defaultJeanmonde
+userJeanmonde.addEventListener("input", multiplyJeanmonde);
+function multiplyJeanmonde() {
+  let one = parseFloat(userJeanmonde.value) || 0;
+  let cc = parseFloat(one * jeanmondecc).toFixed(2);
+  scoreJeanmonde.innerHTML = cc;
+  totVetements()
+}
+
+// field jean fr
+const userJeanfr = document.getElementById('userJeanfr');
+const jeanfrcc = 15
+const scoreJeanfr = document.getElementById('scoreJeanfr');
+const defaultJeanfr = (userJeanfr.value * jeanfrcc).toFixed(2)
+scoreJeanfr.innerHTML = defaultJeanfr
+userJeanfr.addEventListener("input", multiplyJeanfr);
+function multiplyJeanfr() {
+  let one = parseFloat(userJeanfr.value) || 0;
+  let cc = parseFloat(one * jeanfrcc).toFixed(2);
+  scoreJeanfr.innerHTML = cc;
+  totVetements()
 }
 
 
@@ -1074,7 +1104,8 @@ const defaultVetement = ( Number(defaultChemiseCoton) + Number(defaultChemisevis
 +Number(defaultTshirtCoton) +Number(defaultTshirtPoly) +Number(defaultPolair)
 +Number(defaultAcrylique) + Number(defaultpullenlaine)+Number(defaultsweat)
 +Number(defaultpolo) +Number(defaultRobeCoton)+Number(defaultRobePoly)
-+Number(defaultChaussureTissu) + Number(defaultChaussureSport)+Number(defaultAnorak)).toFixed(2)
++Number(defaultChaussureTissu) + Number(defaultChaussureSport)+Number(defaultAnorak)
++ Number(defaultJeanmonde) + Number(defaultJeanfr)).toFixed(2)
 totalVetement.innerHTML = defaultVetement
 
 
@@ -1094,8 +1125,6 @@ function totAutre() {
   const numberVeloelec = Number(scoreVeloelectrique.textContent);
   const numberAutofr = Number(scoreAutofr.textContent);
   const numberAutofrelec = Number(scoreAutofrelec.textContent);
-  const numberJeanmonde = Number(scoreJeanmonde.textContent);
-  const numberJeanfr = Number(scoreJeanfr.textContent);
   const numberAutoasie = Number(scoreAutoasie.textContent);
   const numberAutoasieelec = Number(scoreAutoasieelec.textContent);
   const numberVoitElecMoins = Number(scoreVoitureElecMoins.textContent);
@@ -1104,7 +1133,7 @@ function totAutre() {
   const numberAppartementneuf = Number(scoreAppartementneuf.textContent);
   const sum = numberAspirateur + numberCongelateur + numberRefrigerateur + numberFourelec + numberLavelinge
     + numberMicroonde + numberSmartphone + numberOrdinateur + numberAutofr
-    + numberVelo + numberVeloelec + numberAutofrelec + numberJeanmonde + numberJeanfr + numberAppartementneuf
+    + numberVelo + numberVeloelec + numberAutofrelec + numberAppartementneuf
     + numberAutoasie + numberAutoasieelec + numberVoitElecMoins + numberVoitElecPlus + numberTroti
   totalAutre.innerText = sum.toFixed(2);
   total();
@@ -1269,33 +1298,7 @@ function multiplyAutofrelec() {
   totAutre()
 }
 
-// field jean monde
-const userJeanmonde = document.getElementById('userJeanmonde');
-const jeanmondecc = 23
-const scoreJeanmonde = document.getElementById('scoreJeanmonde');
-const defaultJeanmonde = (userJeanmonde.value * jeanmondecc).toFixed(2)
-scoreJeanmonde.innerHTML = defaultJeanmonde
-userJeanmonde.addEventListener("input", multiplyJeanmonde);
-function multiplyJeanmonde() {
-  let one = parseFloat(userJeanmonde.value) || 0;
-  let cc = parseFloat(one * jeanmondecc).toFixed(2);
-  scoreJeanmonde.innerHTML = cc;
-  totAutre()
-}
 
-// field jean fr
-const userJeanfr = document.getElementById('userJeanfr');
-const jeanfrcc = 15
-const scoreJeanfr = document.getElementById('scoreJeanfr');
-const defaultJeanfr = (userJeanfr.value * jeanfrcc).toFixed(2)
-scoreJeanfr.innerHTML = defaultJeanfr
-userJeanfr.addEventListener("input", multiplyJeanfr);
-function multiplyJeanfr() {
-  let one = parseFloat(userJeanfr.value) || 0;
-  let cc = parseFloat(one * jeanfrcc).toFixed(2);
-  scoreJeanfr.innerHTML = cc;
-  totAutre()
-}
 
 // field auto asie
 const userAutoasie = document.getElementById('userAutoasie');
@@ -1382,7 +1385,7 @@ const defaultAutre = (Number(defaultAspirateur) + Number(defaultCongelateur)
   + Number(defaultRefrigerateur) + Number(defaultFourelec) + Number(defaultLavelinge)
   + Number(defaultMicroonde) + Number(defaultSmartphone) + Number(defaultOrdinateur)
   + Number(defaultVelo) + Number(defaultVeloelectrique) + Number(defaultAutofr) + Number(defaultAutofrelec)
-  + Number(defaultJeanmonde) + Number(defaultJeanfr) + Number(defaultAutoasie) + Number(defaultAutoasieelec)
+  + Number(defaultAutoasie) + Number(defaultAutoasieelec)
   + Number(defaultAppartementneuf) + Number(defaultVoitElecMoins)
   + Number(defaultVoitElecPlus) + Number(defaultTroti)).toFixed(2)
 totalAutre.innerHTML = defaultAutre

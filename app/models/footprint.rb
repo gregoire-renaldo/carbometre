@@ -154,11 +154,11 @@ class Footprint < ApplicationRecord
   end
 
   def total_vetements
-    (  (self.chemisecoton*11) + (self.chemiseviscose*10) + (self.tshirtcoton*5) + (self.tshirtpoly*6) + (self.polaire*24) + (self.pullacrylique*26) + (self.pullenlaine*53)+ (self.sweat*27) + (self.polo*8) + (self.robecoton*50) + (self.robepolyester*52) + (self.chaussuretissu*17) + (self.chaussuresport*19) + (self.anorak*39) ).ceil(2)
+    ( (self.jeanfr*15) + (self.jeanmonde*23) + (self.chemisecoton*11) + (self.chemiseviscose*10) + (self.tshirtcoton*5) + (self.tshirtpoly*6) + (self.polaire*24) + (self.pullacrylique*26) + (self.pullenlaine*53)+ (self.sweat*27) + (self.polo*8) + (self.robecoton*50) + (self.robepolyester*52) + (self.chaussuretissu*17) + (self.chaussuresport*19) + (self.anorak*39) ).ceil(2)
   end
 
   def total_autres
-    ((self.appartemnentneuf*500) + (self.voitureasieelec*15) + (self.jeanfr*15) + (self.jeanmonde*23) + (self.voitureelec*7.6) + (self.voiture*5.5) + (self.velo*60) + (self.veloelec*160) + (self.aspirateur*52) + (self.congelateur*415) + (self.refrigerateur250l*300) + (self.fourelectrique*217) + (self.lavelinge*315) + (self.microonde*100) + (self.smartphone*15) + (self.ordinateur*150) + (self.voitureelecmoins50*11000) + (self.voitureelecplus50*14500) + (self.trotinette*92)     ).ceil(2)
+    ((self.appartemnentneuf*500) + (self.voitureasieelec*15) +  (self.voitureelec*7.6) + (self.voiture*5.5) + (self.velo*60) + (self.veloelec*160) + (self.aspirateur*52) + (self.congelateur*415) + (self.refrigerateur250l*300) + (self.fourelectrique*217) + (self.lavelinge*315) + (self.microonde*100) + (self.smartphone*15) + (self.ordinateur*150) + (self.voitureelecmoins50*11000) + (self.voitureelecplus50*14500) + (self.trotinette*92)     ).ceil(2)
   end
 
   def total_divers
