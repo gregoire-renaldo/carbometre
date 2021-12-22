@@ -31,7 +31,7 @@ class FootprintsController < ApplicationController
 
   def edit
     @footprint = Footprint.find(params[:id])
-    @footprint_num = @footprint.id + 1
+    @footprint_num = @footprint.id 
   end
 
   def update

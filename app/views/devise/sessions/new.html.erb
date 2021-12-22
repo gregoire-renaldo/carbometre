@@ -1,5 +1,5 @@
 <div class="container">
-<h2>Se connecter</h2>
+<h2 class="mt-3">Se connecter</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
@@ -7,7 +7,9 @@
     <%= f.input :username,
                   required: false,
                   autofocus: true,
-                  input_html: { autocomplete: "username", id: 'usernameField' } %>
+                  input_html: { autocomplete: "username", id: 'usernameField' },
+                  label: "Nom d'utilsateur"
+                   %>
     <%= f.input :email,
     :as => :hidden,
                   required: true,
@@ -22,12 +24,13 @@
                  as: :boolean if devise_mapping.rememberable? %>
   </div>
 
-  <div class="form-actions">
+  <div class="form-actions mb-3">
     <%= f.button :submit, "Se connecter", class:"btn btn-gradient" %>
   </div>
   <% end %>
-
+<div class="mb-5">
   <%= render "devise/shared/links" %>
+</div>
 </div>
 
 
