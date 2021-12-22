@@ -768,7 +768,6 @@ function multiplyOeufs() {
   totAlim()
 }
 
-
 // field agneau
 let userAgneau = document.getElementById('userAgneau');
 const agneaucc = 6
@@ -1099,11 +1098,14 @@ function totAutre() {
   const numberJeanfr = Number(scoreJeanfr.textContent);
   const numberAutoasie = Number(scoreAutoasie.textContent);
   const numberAutoasieelec = Number(scoreAutoasieelec.textContent);
+  const numberVoitElecMoins = Number(scoreVoitureElecMoins.textContent);
+  const numberVoitElecPlus = Number(scoreVoitureElecPlus.textContent);
+  const numberTroti = Number(scoreTrotinette.textContent);
   const numberAppartementneuf = Number(scoreAppartementneuf.textContent);
   const sum = numberAspirateur + numberCongelateur + numberRefrigerateur + numberFourelec + numberLavelinge
     + numberMicroonde + numberSmartphone + numberOrdinateur + numberAutofr
     + numberVelo + numberVeloelec + numberAutofrelec + numberJeanmonde + numberJeanfr + numberAppartementneuf
-    + numberAutoasie + numberAutoasieelec
+    + numberAutoasie + numberAutoasieelec + numberVoitElecMoins + numberVoitElecPlus + numberTroti
   totalAutre.innerText = sum.toFixed(2);
   total();
 }
@@ -1322,6 +1324,45 @@ function multiplyAutoasieelec() {
   scoreAutoasieelec.innerHTML = cc;
   totAutre()
 }
+// field voiture electrique < 50kwh
+const userVoitureElecMoins = document.getElementById('userVoitureElecMoins');
+const voitelecmoinscc = 11000
+const scoreVoitureElecMoins = document.getElementById('scoreVoitureElecMoins');
+const defaultVoitElecMoins = (userVoitureElecMoins.value * voitelecmoinscc).toFixed(2)
+scoreVoitureElecMoins.innerHTML = defaultVoitElecMoins
+userVoitureElecMoins.addEventListener("input", multiplyVoitElecMoins);
+function multiplyVoitElecMoins() {
+  let one = parseFloat(userVoitureElecMoins.value) || 0;
+  let cc = parseFloat(one * voitelecmoinscc).toFixed(2);
+  scoreVoitureElecMoins.innerHTML = cc;
+  totAutre()
+}
+// field voiture electrique > 50kwh
+const userVoitureElecPlus = document.getElementById('userVoitureElecPlus');
+const voitelecpluscc = 14500
+const scoreVoitureElecPlus = document.getElementById('scoreVoitureElecPlus');
+const defaultVoitElecPlus = (userVoitureElecPlus.value * voitelecpluscc).toFixed(2)
+scoreVoitureElecPlus.innerHTML = defaultVoitElecPlus
+userVoitureElecPlus.addEventListener("input", multiplyVoitElecPlus);
+function multiplyVoitElecPlus() {
+  let one = parseFloat(userVoitureElecPlus.value) || 0;
+  let cc = parseFloat(one * voitelecpluscc).toFixed(2);
+  scoreVoitureElecPlus.innerHTML = cc;
+  totAutre()
+}
+// field troti
+const userTrotinette = document.getElementById('userTrotinette');
+const troticc = 92
+const scoreTrotinette = document.getElementById('scoreTrotinette');
+const defaultTroti = (userTrotinette.value * troticc).toFixed(2)
+scoreTrotinette.innerHTML = defaultTroti
+userTrotinette.addEventListener("input", multiplyTroti);
+function multiplyTroti() {
+  let one = parseFloat(userTrotinette.value) || 0;
+  let cc = parseFloat(one * troticc).toFixed(2);
+  scoreTrotinette.innerHTML = cc;
+  totAutre()
+}
 
 // field appartement neuf
 const userAppartementneuf = document.getElementById('userAppartementneuf');
@@ -1341,7 +1382,9 @@ const defaultAutre = (Number(defaultAspirateur) + Number(defaultCongelateur)
   + Number(defaultRefrigerateur) + Number(defaultFourelec) + Number(defaultLavelinge)
   + Number(defaultMicroonde) + Number(defaultSmartphone) + Number(defaultOrdinateur)
   + Number(defaultVelo) + Number(defaultVeloelectrique) + Number(defaultAutofr) + Number(defaultAutofrelec)
-  + Number(defaultJeanmonde) + Number(defaultJeanfr) + Number(defaultAutoasie) + Number(defaultAutoasieelec) + Number(defaultAppartementneuf)).toFixed(2)
+  + Number(defaultJeanmonde) + Number(defaultJeanfr) + Number(defaultAutoasie) + Number(defaultAutoasieelec)
+  + Number(defaultAppartementneuf) + Number(defaultVoitElecMoins)
+  + Number(defaultVoitElecPlus) + Number(defaultTroti)).toFixed(2)
 totalAutre.innerHTML = defaultAutre
 
 // category divers

@@ -33,13 +33,7 @@ params !
 # Poisson pêche tropicale kg 3.8
 # Pomme kg 0.0675
 
-#  Achats ponctuels
-Déplacer jean dans catégorie vêtements
 
-Voiture éléctrique < 50kWh unité 11000
-Voiture éléctrique > 50kWh unité 14500
-
-trotinette electrique 92
 
 #  Vêtements  catégorie à ajouter
 # Chemise coton unité 11
@@ -64,3 +58,11 @@ trotinette electrique 92
 if empty case, == 0, in method in model ?
 
 pointer on button =
+
+#  Achats ponctuels
+Déplacer jean dans catégorie vêtements
+
+Voiture éléctrique < 50kWh unité 11000
+Voiture éléctrique > 50kWh unité 14500
+
+trotinette electrique 92

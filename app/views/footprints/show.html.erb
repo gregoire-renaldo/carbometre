@@ -126,7 +126,10 @@
             <li class="list-group-item"> Auto française éléctrique <%= (@footprint.voitureelec*7.6).ceil(2)%> kg</li>
             <li class="list-group-item"> Auto d'Asie <%= (@footprint.voitureasie*11).ceil(2)%> kg</li>
             <li class="list-group-item"> Auto d'Asie électrique <%= (@footprint.voitureasie*15).ceil(2)%> kg</li>
-            <li class="list-group-item"> Appartement neuf <%= (@footprint.appartemnentneuf*500).ceil(2)%> kg</li>
+            <li class="list-group-item"> Voiture éléctrique < 50 kWh <%= (@footprint.voitureasie*15).ceil(2)%> kg</li>
+            <li class="list-group-item"> Voiture éléctrique > 50 kWh <%= (@footprint.voitureelecmoins50*11000).ceil(2)%> kg</li>
+            <li class="list-group-item"> Trotinette <%= (@footprint.voitureelecplus50*11000).ceil(2)%> kg</li>
+            <li class="list-group-item"> Appartement neuf <%= (@footprint.trotinette*92).ceil(2)%> kg</li>
           </ul>
         </div>
       </div>

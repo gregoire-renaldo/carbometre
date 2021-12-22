@@ -277,6 +277,54 @@
             <p id="scoreAutoasieelec"></p>
           </div>
         </div>
+        <!-- field voiture elec < 50 kWh-->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :voitureelecmoins50, "Voiture électrique < 50kWh" %>
+            <%= f.number_field :voitureelecmoins50, id: 'userVoitureElecMoins' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>unité</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>11000 kg</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreVoitureElecMoins"></p>
+          </div>
+        </div>
+        <!-- field voiture elec > 50 kWh-->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :voitureelecplus50, "Voiture électrique > 50kWh" %>
+            <%= f.number_field :voitureelecplus50, id: 'userVoitureElecPlus' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>unité</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>14500 kg</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreVoitureElecPlus"></p>
+          </div>
+        </div>
+        <!-- field troti elec-->
+        <div class="row align-items-center item mt-1">
+          <div class=" col-xs-4 field">
+            <%= f.label :trotinette, "Trotinette éléctrique" %>
+            <%= f.number_field :trotinette, id: 'userTrotinette' %>
+          </div>
+          <div class="col-xs-2 unit">
+            <p>unité</p>
+          </div>
+          <div class="col-xs-2 charge">
+            <p>92 kg</p>
+          </div>
+          <div class="col-xs-4 white-rectangle">
+            <p id="scoreTrotinette"></p>
+          </div>
+        </div>
         <!-- field appartement neuf-->
         <div class="row align-items-center item mt-1">
           <div class=" col-xs-4 field">
