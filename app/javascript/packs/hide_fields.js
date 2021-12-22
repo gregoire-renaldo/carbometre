@@ -61,6 +61,22 @@ buttonBle.addEventListener("click", (event) => {
     }
   });
 });
+// bouton + - alimentation
+const buttonVetement = document.getElementById("hideShowVetements")
+const arrayVetement = Array.from(document.getElementsByClassName("vetement"));
+const vetementplusmoins = document.getElementById("vetementplusmoins")
+buttonVetement.addEventListener("click", (event) => {
+  arrayVetement.forEach(function (element) {
+    if (element.style.display === "block") {
+      element.style.display = "none";
+      vetementplusmoins.innerHTML = "+";
+    } else {
+      element.style.display = "block";
+      vetementplusmoins.innerHTML = "-";
+    }
+  });
+});
+
 
 // bouton + - autre
 const buttonAutre = document.getElementById("hideShowAutre")

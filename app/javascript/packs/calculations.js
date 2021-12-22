@@ -19,10 +19,11 @@ function total() {
   const numberTransport = Number(totalTransport.textContent);
   const numberEnergie = Number(totalEnergie.textContent);
   const numberAlim = Number(totalAlimBox.textContent);
+  const numberVetements = Number(totalVetement.textContent);
   const numberAutre = Number(totalAutre.textContent);
   const numberValeur = Number(totalValeur.textContent);
   const sumTotal =  numberVoiture + numberAlim + numberTransport
-    + numberEnergie + numberAutre + numberValeur  ;
+    + numberEnergie + numberAutre + numberValeur + numberVetements ;
   totalBilan.innerHTML = sumTotal.toFixed(2)
   divide()
 }
@@ -446,9 +447,9 @@ const gazkwhcc = 0.205
 const scoreGazkwh = document.getElementById('scoreGazkwh');
 const defaultGazkwh = (userGazkwh.value * gazkwhcc).toFixed(2)
 scoreGazkwh.innerHTML = defaultGazkwh
-userGaz.addEventListener("input", multiplyGazkwh);
+userGazkwh.addEventListener("input", multiplyGazkwh);
 function multiplyGazkwh() {
-  let one = parseFloat(userGaz.value) || 0;
+  let one = parseFloat(userGazkwh.value) || 0;
   let cc = parseFloat(one * gazkwhcc).toFixed(2);
   scoreGazkwh.innerHTML = cc;
   totEnergie()
@@ -903,6 +904,33 @@ const defaultAlim = (Number(defaultBle) + Number(defaultCarotte)
   + Number(defaultTruite) + Number(defaultCrevette) + Number(defaultPecheeuro)
   + Number(defaultPecheTropico) + Number(defaultPomme) ).toFixed(2)
 totalAlimBox.innerHTML = defaultAlim
+
+// category vetement
+const totalVetement = document.getElementById('totalVetements')
+function totVetements() {
+  const numberChemiseCoton = Number(scoreChemisecoton.textContent);
+  const sum = numberChemiseCoton
+  totalVetement.innerText = sum.toFixed(2);
+  total();
+}
+// field chemise coton
+let userChemisecoton = document.getElementById('userChemisecoton');
+const chemisecotoncc = 11
+const scoreChemisecoton = document.getElementById('scoreChemisecoton');
+const defaultChemiseCoton = (userChemisecoton.value * chemisecotoncc).toFixed(2)
+scoreChemisecoton.innerHTML = defaultChemiseCoton
+userChemisecoton.addEventListener("input", multiplyChemiseCoton);
+function multiplyChemiseCoton() {
+  let one = parseFloat(userChemisecoton.value) || 0;
+  let cc = parseFloat(one * chemisecotoncc).toFixed(2);
+  scoreChemisecoton.innerHTML = cc;
+  totVetements()
+}
+
+const defaultVetement = ( Number(defaultChemiseCoton) ).toFixed(2)
+totalVetement.innerHTML = defaultVetement
+
+
 
 // category autre
 const totalAutre = document.getElementById('totalAutre')

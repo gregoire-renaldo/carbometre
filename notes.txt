@@ -61,4 +61,6 @@ Anorak 39
 mettre Tweet mail streaming
 
 
-if empty case, == 0
+if empty case, == 0, in method in model ?
+
+pointer on button =

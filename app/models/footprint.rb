@@ -75,11 +75,11 @@ class Footprint < ApplicationRecord
   end
 
   def total_score
-    (total_voiture + total_autre_transport + total_logement + total_alimentation + total_autres + total_valeur + total_vetement + (self.person*1500)).ceil(2)
+    (total_voiture + total_autre_transport + total_logement + total_alimentation + total_autres + total_valeur + total_vetements + (self.person*1500)).ceil(2)
   end
 
   def score_person
-    ((total_voiture + total_autre_transport + total_logement + total_alimentation + total_autres + total_valeur + total_vetement) / self.person).ceil(2)
+    ((total_voiture + total_autre_transport + total_logement + total_alimentation + total_autres + total_valeur + total_vetements) / self.person).ceil(2)
   end
 
   def total_voiture
@@ -121,7 +121,7 @@ class Footprint < ApplicationRecord
     ((self.ble*0.439) + (self.boeuf*15) + (self.carotte*0.0706) + (self.riz*3.59) + (self.patate*0.0861) + (self.saladesaison*0.326) + (self.saladess*11.05) + (self.tomatesfr*0.177) + (self.tomatesfrss*2.23) + (self.veau*6.5) + (self.laitvache*0.9) + (self.poulet*2.14) + (self.oeufs*1.72) + (self.agneau*6) + (self.truite*3.08) + (self.crevette*9.3) + (self.poissonpecheeuro*1.9) + (self.poissonpechetropico*3.8) + (self.pomme*0.0675)            ).ceil(2)
   end
 
-  def total_vetement
+  def total_vetements
     (  (self.chemisecoton*11) + (self.chemiseviscose*10) + (self.tshirtcoton*5) + (self.tshirtpoly*6) + (self.polaire*24) + (self.pullacrylique*26) + (self.pullenlaine*53)+ (self.sweat*27) + (self.polo*8) + (self.robecoton*50) + (self.robepolyester*52) + (self.chaussuretissu*17) + (self.chaussuresport*19) + (self.anorak*39) ).ceil(2)
   end
 
