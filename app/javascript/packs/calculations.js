@@ -909,10 +909,17 @@ totalAlimBox.innerHTML = defaultAlim
 const totalVetement = document.getElementById('totalVetements')
 function totVetements() {
   const numberChemiseCoton = Number(scoreChemisecoton.textContent);
-  const sum = numberChemiseCoton
+  const numberChemiseViscose = Number(scoreChemisecviscose.textContent);
+  const numberTshirtCoton = Number(scoreTshirtCoton.textContent);
+  const numberTshirtPoly = Number(scoreTshirtPolyester.textContent);
+  const numberPolair = Number(scorePolair.textContent);
+  const sum = numberChemiseCoton + numberChemiseViscose + numberTshirtCoton
+  +numberTshirtPoly + numberPolair
   totalVetement.innerText = sum.toFixed(2);
   total();
 }
+
+
 // field chemise coton
 let userChemisecoton = document.getElementById('userChemisecoton');
 const chemisecotoncc = 11
@@ -926,8 +933,61 @@ function multiplyChemiseCoton() {
   scoreChemisecoton.innerHTML = cc;
   totVetements()
 }
+// field chemise viscose
+let userChemisecviscose = document.getElementById('userChemisecviscose');
+const chemiseviscosecc = 10
+const scoreChemisecviscose = document.getElementById('scoreChemisecviscose');
+const defaultChemiseviscose = (userChemisecviscose.value * chemiseviscosecc).toFixed(2)
+scoreChemisecviscose.innerHTML = defaultChemiseviscose
+userChemisecviscose.addEventListener("input", multiplyChemiseViscose);
+function multiplyChemiseViscose() {
+  let one = parseFloat(userChemisecviscose.value) || 0;
+  let cc = parseFloat(one * chemiseviscosecc).toFixed(2);
+  scoreChemisecviscose.innerHTML = cc;
+  totVetements()
+}
+// field t shirt coton
+let userTshirtCoton = document.getElementById('userTshirtCoton');
+const tshirtcotoncc = 5
+const scoreTshirtCoton = document.getElementById('scoreTshirtCoton');
+const defaultTshirtCoton = (userTshirtCoton.value * tshirtcotoncc).toFixed(2)
+scoreTshirtCoton.innerHTML = defaultTshirtCoton
+userTshirtCoton.addEventListener("input", multiplyTshirtCoton);
+function multiplyTshirtCoton() {
+  let one = parseFloat(userTshirtCoton.value) || 0;
+  let cc = parseFloat(one * tshirtcotoncc).toFixed(2);
+  scoreTshirtCoton.innerHTML = cc;
+  totVetements()
+}
+// field t shirt poly
+let userTshirtPolyester = document.getElementById('userTshirtPolyester');
+const tshirtpolycc = 6
+const scoreTshirtPolyester = document.getElementById('scoreTshirtPolyester');
+const defaultTshirtPoly = (userTshirtPolyester.value * tshirtpolycc).toFixed(2)
+scoreTshirtPolyester.innerHTML = defaultTshirtPoly
+userTshirtPolyester.addEventListener("input", multiplyTshirtPoly);
+function multiplyTshirtPoly() {
+  let one = parseFloat(userTshirtPolyester.value) || 0;
+  let cc = parseFloat(one * tshirtpolycc).toFixed(2);
+  scoreTshirtPolyester.innerHTML = cc;
+  totVetements()
+}
+// field polair
+let userPolair = document.getElementById('userPolair');
+const polaircc = 6
+const scorePolair = document.getElementById('scorePolair');
+const defaultPolair = (userPolair.value * polaircc).toFixed(2)
+scorePolair.innerHTML = defaultPolair
+userPolair.addEventListener("input", multiplyTshirtPoly);
+function multiplyTshirtPoly() {
+  let one = parseFloat(userPolair.value) || 0;
+  let cc = parseFloat(one * polaircc).toFixed(2);
+  scorePolair.innerHTML = cc;
+  totVetements()
+}
 
-const defaultVetement = ( Number(defaultChemiseCoton) ).toFixed(2)
+const defaultVetement = ( Number(defaultChemiseCoton) + Number(defaultChemiseviscose)
++Number(defaultTshirtCoton) +Number(defaultTshirtPoly) +Number(defaultPolair)).toFixed(2)
 totalVetement.innerHTML = defaultVetement
 
 

@@ -95,7 +95,19 @@
         <h4>Vetements : <%= @footprint.total_vetements %> kg</h4>
           <ul class="list-group">
             <li class="list-group-item"> Chemise Coton <%= (@footprint.chemisecoton*11).ceil(2)%> kg</li>
-
+            <li class="list-group-item"> Chemise Viscose <%= (@footprint.chemiseviscose*10).ceil(2)%> kg</li>
+            <li class="list-group-item"> T-shirt coton <%= (@footprint.tshirtcoton*5).ceil(2)%> kg</li>
+            <li class="list-group-item"> T-shirt polyester <%= (@footprint.tshirtpoly*6).ceil(2)%> kg</li>
+            <li class="list-group-item"> Polaire <%= (@footprint.polaire*24).ceil(2)%> kg</li>
+            <li class="list-group-item"> Pull acrylique <%= (@footprint.pullacrylique*26).ceil(2)%> kg</li>
+            <li class="list-group-item"> Pull en laine <%= (@footprint.pullenlaine*53).ceil(2)%> kg</li>
+            <li class="list-group-item"> Sweat <%= (@footprint.sweat*27).ceil(2)%> kg</li>
+            <li class="list-group-item"> Polo <%= (@footprint.polo*8).ceil(2)%> kg</li>
+            <li class="list-group-item"> Robe Coton <%= (@footprint.robecoton*50).ceil(2)%> kg</li>
+            <li class="list-group-item"> Robe Polyester <%= (@footprint.robepolyester*52).ceil(2)%> kg</li>
+            <li class="list-group-item"> Chaussure Tissu <%= (@footprint.chaussuretissu*17).ceil(2)%> kg</li>
+            <li class="list-group-item"> Chaussure Sport <%= (@footprint.chaussuresport*19).ceil(2)%> kg</li>
+            <li class="list-group-item"> Anorak <%= (@footprint.anorak*39).ceil(2)%> kg</li>
           </ul>
         </div>
       </div>

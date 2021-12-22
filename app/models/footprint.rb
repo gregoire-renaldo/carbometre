@@ -5,6 +5,12 @@ class Footprint < ApplicationRecord
   validates_length_of :title, maximum: 21, allow_blank: true
 
   def default_values
+    # self.attributes.each_pair do |name, value|
+    #   if value = nil
+    #     value =0
+    #   end
+    # end
+
     self.ble = 0 if self.ble.nil?
     self.carotte = 0 if self.carotte.nil?
     self.boeuf = 0 if self.boeuf.nil?

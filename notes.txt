@@ -42,10 +42,10 @@ Voiture éléctrique > 50kWh unité 14500
 trotinette electrique 92
 
 #  Vêtements  catégorie à ajouter
-Chemise coton unité 11
-Chemise viscose unité 10
-T-shirt coton 5
-T-shirt polyester 6
+# Chemise coton unité 11
+# Chemise viscose unité 10
+# T-shirt coton 5
+# T-shirt polyester 6
 Polaire 24
 Pull acrylique 26
 Pull en laine 53
