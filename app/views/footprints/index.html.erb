@@ -27,6 +27,10 @@
         <p class="card-text">Total vetements <%= footprint.total_vetements%> kg</p>
         <p class="card-text">Total autres <%= footprint.total_autres%> kg</p>
         <p class="card-text">Total valeurs additionnelles <%= footprint.total_valeur%> kg</p>
+        <div class="row text-center">
+        <p>Toutes les valeurs proposées ici sont issues des bases de données de l’Ademe qui indiquent quels degrés d’incertitude affectent ces données selon les catégories.
+        Contacter <a style="color:#35485e; text-decoration: underline" href="mailto:acces@escape-jobs.fr">acces@escape-jobs.fr</a> pour plus de détails et télécharger la feuille de calcul.</p>
+        </div>
         <div class="row justify-content-between">
           <div class="col-6">
             <%= link_to" Modifier", edit_footprint_path(footprint), class:"btn btn-gradient" %>

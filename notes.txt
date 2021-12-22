@@ -55,12 +55,12 @@ params !
 # mettre Tweet mail streaming
 
 
-if empty case, == 0, in method in model ?
+# if empty case, == 0, in method in model ?
 
 pointer on button =
 
 #  Achats ponctuels
-Déplacer jean dans catégorie vêtements
+# Déplacer jean dans catégorie vêtements
 
 # Voiture éléctrique < 50kWh unité 11000
 # Voiture éléctrique > 50kWh unité 14500

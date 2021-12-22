@@ -1,12 +1,18 @@
 <!-- main div containing all cards and fields -->
 <div class="container">
+      <div class="intro text-center mb-2">
+      <h3>Nouvelle empreinte familiale</h3>
+      Ici détaillez vos sources de GES en précisant combien de personnes dans votre calcul (et un titre pour retrouver votre calcul)
+      </div>
   <%= simple_form_for(@footprint) do |f| %>
     <div class="mb-2 text-center" >
-      <h3>Nouvelle empreinte familiale</h3>
       <%= f.label :titre, class:"titre"%>
       <%= f.text_field :title, maxlength: 20, class:"field_titre"  %>
       <%= f.label :personnes, class:"titre"%>
       <%= f.number_field :person, :value => 1, class:"field_titre", id:'userPerson'  %>
+    </div>
+    <div>
+    Bilan numéro xx
     </div>
     <div class="intro">
       <p>Vous allez détailler vos sources de gaz à effet de serre (majoritairement gaz carbonique qui nous fait parler carbone en
