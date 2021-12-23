@@ -1,3 +1,5 @@
+RAILS_ENV=production bundle exec rake assets:precompile
+
 # ajouter valeurs :
 migration
 model total_score, score_person, total_category
