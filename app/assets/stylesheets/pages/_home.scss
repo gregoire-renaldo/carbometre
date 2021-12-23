@@ -10,7 +10,7 @@ body {
 }
 
 footer {
-  min-height: 50px;
+  // min-height: 50px;
   background: PapayaWhip;
 }
 
@@ -22,4 +22,11 @@ body {
 
 footer {
   margin-top: auto;
+}
+
+
+.full-height {
+  @media (min-width: 576px) {
+    height:100%
+   }
 }

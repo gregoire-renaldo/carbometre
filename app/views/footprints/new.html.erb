@@ -1,7 +1,7 @@
 <!-- main div containing all cards and fields -->
 <div class="container">
       <div class="intro text-center mb-2">
-      <h3>Nouvelle empreinte familiale</h3>
+      <h2 class="mt-2">Nouvelle empreinte familiale</h2>
       Ici détaillez vos sources de GES en précisant combien de personnes dans votre calcul (et un titre pour retrouver votre calcul)
       </div>
   <%= simple_form_for(@footprint) do |f| %>
@@ -11,7 +11,7 @@
       <%= f.label :personnes, class:"titre"%>
       <%= f.number_field :person, :value => 1, class:"field_titre", id:'userPerson'  %>
     </div>
-    <div class="text-center titre">
+    <div class="text-center titre mb-2">
     Ceci est le <%=@footprint_num%>ème calcul du carbomètre
     </div>
     <div class="intro">
@@ -20,7 +20,7 @@
         projet, par exemple prévision 2021, prévision 2022)</p>
     </div>
     <%= render partial: "form", locals: {f: f} %>
-    <div class="intro">
+    <div class="intro mt-2">
       <p>Enfin, nous devons comptabiliser les émissions de gaz à effet de serre dont la France est
         responsable de façon collective, par ses services d’État, qu’elle doit également s’engager à réduire
         pour satisfaire la neutralité carbone. L’ADEME l’évalue en 2020 à <b>1500 kg</b> par personne.</p>
