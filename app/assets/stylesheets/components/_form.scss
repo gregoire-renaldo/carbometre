@@ -1,6 +1,6 @@
 .container {
   background-color: #596b52;
-  
+
 }
 
 h1,
@@ -50,6 +50,8 @@ h6 {
 
 input[type="number"] {
   width: 80px;
+  border-radius: 5px;
+  border: none;
 }
 
 .white-rectangle {
