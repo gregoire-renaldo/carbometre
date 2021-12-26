@@ -111,7 +111,7 @@ class Footprint < ApplicationRecord
   end
 
   def score_person
-    ((total_voiture + total_autre_transport + total_logement + total_alimentation + total_autres + total_valeur + total_vetements + total_divers) / self.person).ceil(2)
+    (((total_voiture + total_autre_transport + total_logement + total_alimentation + total_autres + total_valeur + total_vetements + total_divers) / self.person).ceil(2)) + 1500
   end
 
   def total_voiture
@@ -158,11 +158,11 @@ class Footprint < ApplicationRecord
   end
 
   def total_autres
-    ((self.appartemnentneuf*500) + (self.voitureasieelec*15) +  (self.voitureelec*7.6) + (self.voiture*5.5) + (self.velo*60) + (self.veloelec*160) + (self.aspirateur*52) + (self.congelateur*415) + (self.refrigerateur250l*300) + (self.fourelectrique*217) + (self.lavelinge*315) + (self.microonde*100) + (self.smartphone*15) + (self.ordinateur*150) + (self.voitureelecmoins50*11000) + (self.voitureelecplus50*14500) + (self.trotinette*92)     ).ceil(2)
+    ((self.appartemnentneuf*500) + (self.voitureasieelec*15) +  (self.voitureelec*7.6) + (self.voiture*5.5) + (self.velo*100) + (self.veloelec*160) + (self.aspirateur*52) + (self.congelateur*415) + (self.refrigerateur250l*300) + (self.fourelectrique*217) + (self.lavelinge*315) + (self.microonde*100) + (self.smartphone*15) + (self.ordinateur*150) + (self.voitureelecmoins50*11000) + (self.voitureelecplus50*14500) + (self.trotinette*92)     ).ceil(2)
   end
 
   def total_divers
-    (self.streaming*0.25) + (self.mail*0.035) + (self.tweet*0.00002)
+    ((self.streaming*0.25) + (self.mail*0.035) + (self.tweet*0.00002)).ceil(2)
   end
 
 

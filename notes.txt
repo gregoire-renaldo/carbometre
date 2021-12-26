@@ -1,4 +1,5 @@
 RAILS_ENV=production bundle exec rake assets:precompile
+RAILS_ENV=development bundle exec rake assets:precompile
 
 # ajouter valeurs :
 migration

@@ -2,9 +2,9 @@
 <div class="row  mt-2 sticky-top">
   <div class="total-mobile align-items-center">
     <p>Alimentaire</p>
-    <div class="">
+    <%# <div class="">
       <i>40% <br>d’incertitude</i>
-    </div>
+    </div> %>
     <div class="white-rectangle">
       <p id="totalAlimBox"></p>
     </div>
@@ -19,7 +19,7 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :ble, "Blé France" %>
-        <%= f.number_field :ble, step: :any, id: 'userBle' %>
+        <%= f.number_field :ble, step: :any, id: 'userBle', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
         <p>kg</p>
@@ -35,7 +35,7 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :carotte, "Carotte France" %>
-        <%= f.number_field :carotte, id: 'userCarotte' %>
+        <%= f.number_field :carotte, id: 'userCarotte', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
         <p>kg</p>
@@ -51,7 +51,7 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :"Riz Thai" %>
-        <%= f.number_field :riz, id: 'userRiz' %>
+        <%= f.number_field :riz, id: 'userRiz', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
         <p>kg</p>
@@ -67,7 +67,7 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :"Patates FR" %>
-        <%= f.number_field :patate, id: 'userPommeDeTerre' %>
+        <%= f.number_field :patate, id: 'userPommeDeTerre', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
         <p>kg</p>
@@ -83,7 +83,7 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :"Salade saison" %>
-        <%= f.number_field :saladesaison, id: 'userSaladeSaison' %>
+        <%= f.number_field :saladesaison, id: 'userSaladeSaison', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
         <p>kg</p>
@@ -99,7 +99,7 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :"Salade sous serre" %>
-        <%= f.number_field :saladess, id: 'userSaladeSs' %>
+        <%= f.number_field :saladess, id: 'userSaladeSs', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
         <p>kg</p>
@@ -115,7 +115,7 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :tomatesfr, "Tomates France plein champs" %>
-        <%= f.number_field :tomatesfr, id: 'userTomates' %>
+        <%= f.number_field :tomatesfr, id: 'userTomates', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
         <p>kg</p>
@@ -131,7 +131,7 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :tomatesfrss, "Tomates France sous serre" %>
-        <%= f.number_field :tomatesfrss, id: 'userTomatesFRss' %>
+        <%= f.number_field :tomatesfrss, id: 'userTomatesFRss', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
         <p>kg</p>
@@ -147,7 +147,7 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :"boeuf " %>
-        <%= f.number_field :boeuf, id: 'userBoeuf' %>
+        <%= f.number_field :boeuf, id: 'userBoeuf', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
         <p>kg</p>
@@ -163,7 +163,7 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :"veau " %>
-        <%= f.number_field :veau, id: 'userVeau' %>
+        <%= f.number_field :veau, id: 'userVeau', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
         <p>kg</p>
@@ -179,7 +179,7 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :"lait de vache " %>
-        <%= f.number_field :laitvache, id: 'userLaitvache' %>
+        <%= f.number_field :laitvache, id: 'userLaitvache', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
         <p>kg</p>
@@ -195,7 +195,7 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :"poulet" %>
-        <%= f.number_field :poulet, id: 'userPoulet' %>
+        <%= f.number_field :poulet, id: 'userPoulet', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
         <p>kg</p>
@@ -211,7 +211,7 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :"oeufs" %>
-        <%= f.number_field :oeufs, id: 'userOeufs' %>
+        <%= f.number_field :oeufs, id: 'userOeufs', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
         <p>kg</p>
@@ -227,7 +227,7 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :"agneau" %>
-        <%= f.number_field :agneau, id: 'userAgneau' %>
+        <%= f.number_field :agneau, id: 'userAgneau', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
         <p>kg</p>
@@ -243,7 +243,7 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :"truite" %>
-        <%= f.number_field :truite, id: 'userTruite' %>
+        <%= f.number_field :truite, id: 'userTruite', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
         <p>kg</p>
@@ -259,7 +259,7 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :"crevette" %>
-        <%= f.number_field :crevette, id: 'userCrevette' %>
+        <%= f.number_field :crevette, id: 'userCrevette', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
         <p>kg</p>
@@ -275,7 +275,7 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :"Poisson pêche européenne" %>
-        <%= f.number_field :poissonpecheeuro, id: 'userPecheeuro' %>
+        <%= f.number_field :poissonpecheeuro, id: 'userPecheeuro', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
         <p>kg</p>
@@ -291,7 +291,7 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :"Poisson pêche tropicale" %>
-        <%= f.number_field :poissonpechetropico, id: 'userPechetropico' %>
+        <%= f.number_field :poissonpechetropico, id: 'userPechetropico', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
         <p>kg</p>
@@ -307,7 +307,7 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :"Pomme" %>
-        <%= f.number_field :pomme, id: 'userPomme' %>
+        <%= f.number_field :pomme, id: 'userPomme', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
         <p>kg</p>

@@ -2,9 +2,9 @@
 <div class="row mt-2 sticky-top">
   <div class="total-mobile align-items-center">
     <p>Transports</p>
-    <div >
+    <%# <div >
       <i>10% <br>d’incertitude</i>
-    </div>
+    </div> %>
     <div class="white-rectangle">
       <p id="totalTransport"></p>
     </div>
@@ -20,7 +20,7 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :tgv, "TGV" %>
-        <%= f.number_field :tgv, id: 'userTgv' %>
+        <%= f.number_field :tgv, id: 'userTgv', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
         <p>km</p>
@@ -36,7 +36,7 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :terelectrique, "TER" %>
-        <%= f.number_field :terelectrique, id: 'userTerelec' %>
+        <%= f.number_field :terelectrique, id: 'userTerelec', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
         <p>km</p>
@@ -68,7 +68,7 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :intercite, "Train intercité"%>
-        <%= f.number_field :intercite, id: 'userIntercite' %>
+        <%= f.number_field :intercite, id: 'userIntercite', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
         <p>km</p>
@@ -84,7 +84,7 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :metro, "Metro / RER"%>
-        <%= f.number_field :metro, id: 'userMetro' %>
+        <%= f.number_field :metro, id: 'userMetro', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
         <p>km</p>
@@ -100,7 +100,7 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :"bus"%>
-        <%= f.number_field :bus, id: 'userBus' %>
+        <%= f.number_field :bus, id: 'userBus', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
         <p>km</p>
@@ -116,7 +116,7 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :avion, "Avion long courrier"%>
-        <%= f.number_field :avion, id: 'userAvion' %>
+        <%= f.number_field :avion, id: 'userAvion', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
         <p>km</p>
@@ -132,7 +132,7 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :avionregional, "Avion court courrier"%>
-        <%= f.number_field :avionregional, id: 'userAvionregional' %>
+        <%= f.number_field :avionregional, id: 'userAvionregional', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
         <p>km</p>

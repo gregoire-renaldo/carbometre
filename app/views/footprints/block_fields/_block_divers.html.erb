@@ -1,10 +1,10 @@
-<!-- begining differents usages -->
+<!-- begining Internet -->
 <div class="row mt-2 sticky-top">
   <div class="total-mobile align-items-center">
-    <p>Differents usages</p>
-    <div class="">
+    <p>Internet</p>
+    <%# <div class="">
       <i>50% <br>d’incertitude</i>
-    </div>
+    </div> %>
     <div class="white-rectangle">
       <p id="totalDivers"></p>
     </div>
@@ -20,7 +20,7 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :streaming, "Streaming(Youtube, Netflix...)" %>
-        <%= f.number_field :streaming, id: 'userStreaming' %>
+        <%= f.number_field :streaming, id: 'userStreaming', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
         <p>h</p>
@@ -32,11 +32,11 @@
         <p id="scoreStreaming"></p>
       </div>
     </div>
-    <!-- field mail -->
+    <!-- field tweet -->
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :"tweet" %>
-        <%= f.number_field :tweet, id: 'userTweet' %>
+        <%= f.number_field :tweet, id: 'userTweet', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
         <p>unité</p>
@@ -52,7 +52,7 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :"mail avec pj" %>
-        <%= f.number_field :mail, id: 'userMail' %>
+        <%= f.number_field :mail, id: 'userMail', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
         <p>unité</p>

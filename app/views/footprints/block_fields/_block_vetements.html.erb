@@ -2,9 +2,9 @@
 <div class="row  mt-2 sticky-top">
   <div class="total-mobile align-items-center">
     <p>Vetements</p>
-    <div class="">
+    <%# <div class="">
       <i>30% <br>d’incertitude</i>
-    </div>
+    </div> %>
     <div class="white-rectangle">
       <p id="totalVetements"></p>
     </div>
@@ -19,7 +19,7 @@
         <div class="row align-items-center item mt-1">
           <div class=" col-xs-4 field">
             <%= f.label :jeanmonde, "Jeans mondial" %>
-            <%= f.number_field :jeanmonde, id: 'userJeanmonde' %>
+            <%= f.number_field :jeanmonde, id: 'userJeanmonde',min: 0 %>
           </div>
           <div class="col-xs-2 unit">
             <p>unité</p>
@@ -31,11 +31,11 @@
             <p id="scoreJeanmonde"></p>
           </div>
         </div>
-        <!-- field jean fr -->
+  <!-- field jean fr -->
         <div class="row align-items-center item mt-1">
           <div class=" col-xs-4 field">
             <%= f.label :jeanfr, "Jeans français" %>
-            <%= f.number_field :jeanfr, id: 'userJeanfr' %>
+            <%= f.number_field :jeanfr, id: 'userJeanfr', min: 0 %>
           </div>
           <div class="col-xs-2 unit">
             <p>unité</p>
@@ -51,10 +51,10 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :"Chemise coton" %>
-        <%= f.number_field :chemisecoton, id: 'userChemisecoton' %>
+        <%= f.number_field :chemisecoton, id: 'userChemisecoton', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
-        <p>kg</p>
+        <p>unité</p>
       </div>
       <div class="col-xs-2 charge">
         <p>11 kg</p>
@@ -67,10 +67,10 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :"Chemise viscose" %>
-        <%= f.number_field :chemiseviscose, id: 'userChemisecviscose' %>
+        <%= f.number_field :chemiseviscose, id: 'userChemisecviscose', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
-        <p>kg</p>
+        <p>unité</p>
       </div>
       <div class="col-xs-2 charge">
         <p>10 kg</p>
@@ -83,10 +83,10 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :"T-shirt coton" %>
-        <%= f.number_field :tshirtcoton, id: 'userTshirtCoton' %>
+        <%= f.number_field :tshirtcoton, id: 'userTshirtCoton',min: 0 %>
       </div>
       <div class="col-xs-2 unit">
-        <p>kg</p>
+        <p>unité</p>
       </div>
       <div class="col-xs-2 charge">
         <p>5 kg</p>
@@ -99,10 +99,10 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :"T-shirt polyester" %>
-        <%= f.number_field :tshirtpoly, id: 'userTshirtPolyester' %>
+        <%= f.number_field :tshirtpoly, id: 'userTshirtPolyester',min: 0 %>
       </div>
       <div class="col-xs-2 unit">
-        <p>kg</p>
+        <p>unité</p>
       </div>
       <div class="col-xs-2 charge">
         <p>6 kg</p>
@@ -115,10 +115,10 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :"Polaire" %>
-        <%= f.number_field :polaire, id: 'userPolair' %>
+        <%= f.number_field :polaire, id: 'userPolair', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
-        <p>kg</p>
+        <p>unité</p>
       </div>
       <div class="col-xs-2 charge">
         <p>24 kg</p>
@@ -131,10 +131,10 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :"Pull acrylique" %>
-        <%= f.number_field :pullacrylique, id: 'userPullAcrylique' %>
+        <%= f.number_field :pullacrylique, id: 'userPullAcrylique', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
-        <p>kg</p>
+        <p>unité</p>
       </div>
       <div class="col-xs-2 charge">
         <p>26 kg</p>
@@ -147,10 +147,10 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :"Pull en laine" %>
-        <%= f.number_field :pullenlaine, id: 'userPullEnLaine' %>
+        <%= f.number_field :pullenlaine, id: 'userPullEnLaine', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
-        <p>kg</p>
+        <p>unité</p>
       </div>
       <div class="col-xs-2 charge">
         <p>53 kg</p>
@@ -163,10 +163,10 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :"Sweat" %>
-        <%= f.number_field :sweat, id: 'userSweat' %>
+        <%= f.number_field :sweat, id: 'userSweat', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
-        <p>kg</p>
+        <p>unité</p>
       </div>
       <div class="col-xs-2 charge">
         <p>27 kg</p>
@@ -179,10 +179,10 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :"Polo" %>
-        <%= f.number_field :polo, id: 'userPolo' %>
+        <%= f.number_field :polo, id: 'userPolo', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
-        <p>kg</p>
+        <p>unité</p>
       </div>
       <div class="col-xs-2 charge">
         <p>8 kg</p>
@@ -195,10 +195,10 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :"Robe Coton" %>
-        <%= f.number_field :robecoton, id: 'userRobeCoton' %>
+        <%= f.number_field :robecoton, id: 'userRobeCoton', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
-        <p>kg</p>
+        <p>unité</p>
       </div>
       <div class="col-xs-2 charge">
         <p>50 kg</p>
@@ -211,10 +211,10 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :"Robe Polyester" %>
-        <%= f.number_field :robepolyester, id: 'userRobePoly' %>
+        <%= f.number_field :robepolyester, id: 'userRobePoly', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
-        <p>kg</p>
+        <p>unité</p>
       </div>
       <div class="col-xs-2 charge">
         <p>52 kg</p>
@@ -227,10 +227,10 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :"Chaussure tissu" %>
-        <%= f.number_field :chaussuretissu, id: 'userChaussureTissu' %>
+        <%= f.number_field :chaussuretissu, id: 'userChaussureTissu', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
-        <p>kg</p>
+        <p>unité</p>
       </div>
       <div class="col-xs-2 charge">
         <p>17 kg</p>
@@ -243,10 +243,10 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :"Chaussure sport" %>
-        <%= f.number_field :chaussuresport, id: 'userChaussureSport' %>
+        <%= f.number_field :chaussuresport, id: 'userChaussureSport', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
-        <p>kg</p>
+        <p>unité</p>
       </div>
       <div class="col-xs-2 charge">
         <p>19 kg</p>
@@ -259,10 +259,10 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-xs-4 field">
         <%= f.label :"Anorak" %>
-        <%= f.number_field :anorak, id: 'userAnorak' %>
+        <%= f.number_field :anorak, id: 'userAnorak', min: 0 %>
       </div>
       <div class="col-xs-2 unit">
-        <p>kg</p>
+        <p>unité</p>
       </div>
       <div class="col-xs-2 charge">
         <p>39 kg</p>
@@ -271,7 +271,6 @@
         <p id="scoreAnorak"></p>
       </div>
     </div>
-
 
     <div class="intro">
       <p>Pour ajouter d’autres vetements ou produits, utiliser l’appli Karbon qui scanne les code-barres pour évaluer l’empreinte

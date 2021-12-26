@@ -1244,7 +1244,7 @@ function multiplyOrdinateur() {
 }
 // field velo
 let userVelo = document.getElementById('userVelo');
-const velocc = 60
+const velocc = 100
 const scoreVelo = document.getElementById('scoreVelo');
 const defaultVelo = (userVelo.value * velocc).toFixed(2)
 scoreVelo.innerHTML = defaultVelo
