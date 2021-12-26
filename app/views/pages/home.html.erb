@@ -9,8 +9,11 @@
         pour un <a style="color:whitesmoke; text-decoration: underline" href="www.comptecarbone.org">www.comptecarbone.org</a> et ne
         collecte pas de données ni ne transmet
         aucune information à quiconque.</br>
+        <% if current_user == nil %>
         Pour reprendre vos calculs d’un mois sur
-        l’autre, vous pouvez indiquer un nom ici : <%= link_to "Se connecter", new_user_session_path, class: "btn btn-gradient" %></br>
+        l’autre, vous pouvez indiquer un nom ici: <%= link_to "Se connecter", new_user_session_path, class: "btn btn-gradient" %></br>
+        Si vous n'avez pas de compte vous pouvez en créer un en cliquant ici (pas d'email requis) : <%= link_to "Créer un compte", new_user_registration_path, class: "btn btn-gradient" %></br>
+        <%end %>
         Spécial enfants : demandez à votre papa de
         rassembler les factures de consommation
         courante et répondre à 20 questions en
