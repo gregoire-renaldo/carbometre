@@ -1,7 +1,7 @@
 <!-- main div containing all cards and fields -->
 <div class="container">
       <div class="intro text-center mb-2">
-      <h2 class="mt-2">Nouvelle empreinte familiale</h2>
+      <h2 class="mt-2">Nouvelle empreinte familiale annuelle</h2>
       Ici détaillez vos sources de GES en précisant combien de personnes dans votre calcul (et un titre pour retrouver votre calcul)
       </div>
   <%= simple_form_for(@footprint) do |f| %>
@@ -15,18 +15,12 @@
     Ceci est le <%=@footprint_num%>ème calcul du carbomètre
     </div>
     <div class="intro">
-      <p>Vous allez détailler vos sources de gaz à effet de serre (majoritairement gaz carbonique qui nous fait parler carbone en
-        tonnes de CO2 équivalent) en précisant combien de personnes dans votre calcul (un titre pour retrouver votre calcul ou
-        projet, par exemple prévision 2021, prévision 2022)</p>
+
         <p>L’empreinte individuelle intégrera le contenu carbone des services publics, de l’ordre de 100 millions de tonnes d’équivalent CO2, réparti sur tous les français à raison de 1500kg/an/p.
 On parle de CO2 équivalent pour intégrer que les gaz à effet de serre (GES) sont du CO2, du méthane, de l’oxyde nitreux et des gaz fluorés, 80% du réchauffement climatique provenant du CO2.</p>
     </div>
     <%= render partial: "form", locals: {f: f} %>
-    <div class="intro mt-2">
-      <p>Enfin, nous devons comptabiliser les émissions de gaz à effet de serre dont la France est
-        responsable de façon collective, par ses services publics, qu’elle doit également s’engager à réduire
-        pour satisfaire la neutralité carbone. L’ADEME l’évalue en 2020 à <b>1500 kg</b> par personne.</p>
-    </div>
+
     <div class="row justify-content-center mt-2">
       <%= f.submit :"Sauvegarder mon bilan", data: {confirm: "Êtes-vous sûr de vouloir créer cette empreinte ? Lors de la sauvegarde sera ajouté le contenu des services publics évalué par l’ADEME à 1500kg/personne."}, class:"btn btn-gradient mb-5" %>
     </div>

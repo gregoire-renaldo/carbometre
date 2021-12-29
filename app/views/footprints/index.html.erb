@@ -18,15 +18,20 @@
     <% if footprint.user_id == current_user.id %>
     <div class="card mx-2 my-2" style="width: 20rem;">
       <div class="card-body">
+      <% if footprint.title == "" %>
+              <h4 class="card-title titre mt-1"><%=link_to  "sans titre", footprint_path(footprint) %></h4>
+
+      <%end%>
         <h4 class="card-title titre mt-1"><%=link_to footprint.title, footprint_path(footprint) %></h4>
         <h5 class="card-subtitle mb-2">Total <%= footprint.total_score%> kg <%=link_to "Détails", footprint_path(footprint), class:"btn btn-gradient" %></h5>
         <p class="card-text">Total voiture <%= footprint.total_voiture%> kg</p>
         <p class="card-text">Total transport <%= footprint.total_autre_transport%> kg</p>
         <p class="card-text">Total logement <%= footprint.total_logement%> kg</p>
-        <p class="card-text">Total alimentation <%= footprint.total_alimentation%> kg</p>
+        <p class="card-text">Total alimentaire <%= footprint.total_alimentation%> kg</p>
+        <p class="card-text">Total achats ponctuels <%= footprint.total_autres%> kg</p>
         <p class="card-text">Total vetements <%= footprint.total_vetements%> kg</p>
-        <p class="card-text">Total internet <%= footprint.total_autres%> kg</p>
-        <p class="card-text">Total valeurs additionnelles <%= footprint.total_valeur%> kg</p>
+        <p class="card-text">Total internet <%= footprint.total_divers%> kg</p>
+        <p class="card-text">Total autres <%= footprint.total_valeur%> kg</p>
         <div class="row text-center">
         <p>Toutes les valeurs proposées ici sont issues des bases de données de l’Ademe qui indiquent quels degrés d’incertitude affectent ces données selon les catégories.
         Contacter <a style="color:#35485e; text-decoration: underline" href="mailto:acces@escape-jobs.fr">acces@escape-jobs.fr</a> pour plus de détails et télécharger la feuille de calcul.</p>
