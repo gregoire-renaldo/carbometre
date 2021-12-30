@@ -11,13 +11,13 @@
     <div class="col-sm text-center">
       <h3>Total : <%= @footprint.total_score %> kg</h3>
       <h5>Total par personne <%="(#{(@footprint.person).ceil(0)})"%> : <%= @footprint.score_person  %>  kg</h5>
-      <div class="row mt-2  mb-3">
+      <div class="row mt-2 mb-3">
         <div class="col-sm">
           <div class="intro">
             <p>En synthèse nous avons comptabilisé les émissions de gaz à effet de serre dont la France est responsable de façon
               collective, par ses services publics, qu’elle doit également s’engager à réduire pour satisfaire la neutralité carbone. L’ADEME l’évalue en 2020 à <b>1500 kg</b> par personne.</p>
           </div>
-          <h4>Voiture : <%= @footprint.total_voiture%> kg</h4>
+          <h4>Voiture - 5% d’incertitude : <%= @footprint.total_voiture%> kg</h4>
           <ul class="list-group">
             <li class="list-group-item"> Essence <%= ((@footprint.essence*2.8) + @footprint.total_essencel).ceil(2)%> kg</li>
             <li class="list-group-item"> Gazole <%= ((@footprint.gazole*3.16) + @footprint.total_gazolel).ceil(2)%> kg</li>
@@ -108,7 +108,7 @@
       </div>
       <div class="row mb-3">
         <div class="col-sm">
-          <h4>Autres - 50% d'incertitude: <%= @footprint.total_autres %> kg</h4>
+          <h4>Achats ponctuels - 50% d'incertitude: <%= @footprint.total_autres %> kg</h4>
           <ul class="list-group">
             <li class="list-group-item"> Aspirateur <%= (@footprint.aspirateur*52).ceil(2)%> kg</li>
             <li class="list-group-item"> Congélateur 200 l<%= (@footprint.congelateur*415).ceil(2)%> kg</li>
@@ -145,7 +145,7 @@
       </div>
       <div class="row mb-3">
         <div class="col-sm">
-          <h4>Valeurs additionnelles - 50% d'incertitude: <%= @footprint.total_valeur %> kg</h4>
+          <h4>Autres - 50% d'incertitude: <%= @footprint.total_valeur %> kg</h4>
           <ul class="list-group">
             <li class="list-group-item"> Valeur 1 <%= (@footprint.autre).ceil(2)%> kg</li>
             <li class="list-group-item"> Valeur 2 <%= (@footprint.valeur2).ceil(2)%> kg</li>
