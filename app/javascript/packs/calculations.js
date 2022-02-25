@@ -1244,16 +1244,18 @@ function multiplyOrdinateur() {
 }
 // field velo
 let userVelo = document.getElementById('userVelo');
-const velocc = 100
+console.log(userVelo)
+const velocc = 100;
 const scoreVelo = document.getElementById('scoreVelo');
-const defaultVelo = (userVelo.value * velocc).toFixed(2)
-scoreVelo.innerHTML = defaultVelo
+const defaultVelo = (userVelo.value * velocc).toFixed(2);
+scoreVelo.innerHTML = defaultVelo;
 userVelo.addEventListener("input", multiplyVelo);
 function multiplyVelo() {
+  console.log('in multiply velo')
   let one = parseFloat(userVelo.value) || 0;
   let cc = parseFloat(one * velocc).toFixed(2);
   scoreVelo.innerHTML = cc;
-  totAutre()
+  totAutre();
 }
 
 // field velo éléctrique
