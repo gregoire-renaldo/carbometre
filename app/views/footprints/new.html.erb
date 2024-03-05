@@ -6,13 +6,13 @@
       </div>
   <%= simple_form_for(@footprint) do |f| %>
     <div class="mb-2 text-center" >
-      <%= f.label :titre, class:"titre"%>
-      <%= f.text_field :title, maxlength: 20, class:"field_titre"  %>
+      <%# f.label :titre, class:"titre"%>
+      <%# f.text_field :title, maxlength: 20, class:"field_titre"  %>
       <%= f.label :personnes, class:"titre"%>
       <%= f.number_field :person, :value => 1, class:"field_titre", id:'userPerson'  %>
     </div>
-    <div class="text-center titre mb-2">
-    Ceci est le <%=@footprint_num%>ème calcul du carbomètre
+    <div class="text-center titre mb-2 d-none">
+    Ceci est le <%#@footprint_num%>ème calcul du carbomètre
     </div>
     <div class="intro">
 
@@ -22,11 +22,11 @@ On parle de CO2 équivalent pour intégrer que les gaz à effet de serre (GES) s
     <%= render partial: "form", locals: {f: f} %>
 
     <div class="row justify-content-center mt-2">
-      <%= f.submit :"Sauvegarder mon bilan", data: {confirm: "Êtes-vous sûr de vouloir créer cette empreinte ? Lors de la sauvegarde sera ajouté le contenu des services publics évalué par l’ADEME à 1500kg/personne."}, class:"btn btn-gradient mb-5" %>
+      <%= f.submit :"Valider", class:"btn btn-gradient mb-5" %>
     </div>
   <% end %>
 </div>
-<%= javascript_pack_tag 'hide_fields' %>
+<%# javascript_pack_tag 'hide_fields' %>
 
 <script>
   // sticky total categ
@@ -96,11 +96,11 @@ On parle de CO2 équivalent pour intégrer que les gaz à effet de serre (GES) s
   //   }
   // }
 
-  // (field('userEssence',2.8,'scoreEssence', totVoiture()))()
+  // (field('userEssence',2.7,'scoreEssence', totVoiture()))()
 
 
   const userEssence = document.getElementById('userEssence');
-  const essencecc = 2.8
+  const essencecc = 2.7
   const scoreEssence = document.getElementById('scoreEssence');
   const defaultEssence = (userEssence.value * essencecc).toFixed(2)
   scoreEssence.innerHTML = defaultEssence
@@ -135,7 +135,7 @@ On parle de CO2 équivalent pour intégrer que les gaz à effet de serre (GES) s
 
   // field gazole
   const userGazole = document.getElementById('userGazole');
-  const gazolecc = 3.16
+  const gazolecc = 3.1
   const scoreGazole = document.getElementById('scoreGazole');
   const defaultGazole = (userGazole.value * gazolecc).toFixed(2)
   scoreGazole.innerHTML = defaultGazole
@@ -202,7 +202,7 @@ On parle de CO2 équivalent pour intégrer que les gaz à effet de serre (GES) s
 
   // field e85
   const userE85 = document.getElementById('userE85');
-  const e85cc = 1.68
+  const e85cc = 1.11
   const scoreE85 = document.getElementById('scoreE85');
   const defaultE85 = (userE85.value * e85cc).toFixed(2)
   scoreE85.innerHTML = defaultE85
@@ -235,7 +235,7 @@ On parle de CO2 équivalent pour intégrer que les gaz à effet de serre (GES) s
 
   // field gaz nat
   const userGaznat = document.getElementById('userGaznat');
-  const gazcc = 3.35
+  const gazcc = 3.22
   const scoreGaz = document.getElementById('scoreGaz');
   const defaultGaz = (userGaznat.value * gazcc).toFixed(2)
   scoreGaz.innerHTML = defaultGaz
@@ -268,7 +268,7 @@ On parle de CO2 équivalent pour intégrer que les gaz à effet de serre (GES) s
 
   // field electrique
   const userElectrique = document.getElementById('userElectrique');
-  const electriquecc = 0.0571
+  const electriquecc = 0.052
   const scoreElectrique = document.getElementById('scoreElectrique');
   const defaultElectrique = (userElectrique.value * electriquecc).toFixed(2)
   scoreElectrique.innerHTML = defaultElectrique
@@ -325,7 +325,7 @@ On parle de CO2 équivalent pour intégrer que les gaz à effet de serre (GES) s
 
   // field tgv
   const userTgv = document.getElementById('userTgv');
-  const tgvcc = 0.00173
+  const tgvcc = 0.00293
   const scoreTgv = document.getElementById('scoreTgv');
   const defaultTgv = (userTgv.value * tgvcc).toFixed(2)
   scoreTgv.innerHTML = defaultTgv
@@ -339,7 +339,7 @@ On parle de CO2 équivalent pour intégrer que les gaz à effet de serre (GES) s
 
   // field ter elec
   const userTerelec = document.getElementById('userTerelec');
-  const tereleccc = 0.00248
+  const tereleccc = 0.0277
   const scoreTerelec = document.getElementById('scoreTerelec');
   const defaultTerelec = (userTerelec.value * tereleccc).toFixed(2)
   scoreTerelec.innerHTML = defaultTerelec
@@ -381,7 +381,7 @@ On parle de CO2 équivalent pour intégrer que les gaz à effet de serre (GES) s
 
   // field metro / RER
   const userMetro = document.getElementById('userMetro');
-  const metrocc = 0.0057
+  const metrocc = 0.00978
   const scoreMetro = document.getElementById('scoreMetro');
   const defaultMetro = (userMetro.value * metrocc).toFixed(2)
   scoreMetro.innerHTML = defaultMetro
@@ -409,7 +409,7 @@ On parle de CO2 équivalent pour intégrer que les gaz à effet de serre (GES) s
 
   // field avion
   const userAvion = document.getElementById('userAvion');
-  const avioncc = 0.258
+  const avioncc = 0.178
   const scoreAvion = document.getElementById('scoreAvion');
   const defaultAvion = (userAvion.value * avioncc).toFixed(2)
   scoreAvion.innerHTML = defaultAvion
@@ -423,7 +423,7 @@ On parle de CO2 équivalent pour intégrer que les gaz à effet de serre (GES) s
 
   // field avion regional
   const userAvionregional = document.getElementById('userAvionregional');
-  const avionregionalcc = 0.453
+  const avionregionalcc = 0.258
   const scoreAvionregional = document.getElementById('scoreAvionregional');
   const defaultAvionregional = (userAvionregional.value * avionregionalcc).toFixed(2)
   scoreAvionregional.innerHTML = defaultAvionregional
@@ -459,7 +459,7 @@ On parle de CO2 équivalent pour intégrer que les gaz à effet de serre (GES) s
   }
   // field electricité
   const userElectricite = document.getElementById('userElectricite');
-  const elecricitecc = 0.0571
+  const elecricitecc = 0.052
   const scoreElectricite = document.getElementById('scoreelec');
   const defaultElectricite = (userElectricite.value * elecricitecc).toFixed(2)
   scoreElectricite.innerHTML = defaultElectricite
@@ -472,7 +472,7 @@ On parle de CO2 équivalent pour intégrer que les gaz à effet de serre (GES) s
   }
   // field gazkwh
   const userGazkwh = document.getElementById('userGaz');
-  const gazkwhcc = 0.205
+  const gazkwhcc = 0.243 
   const scoreGazkwh = document.getElementById('scoreGazkwh');
   const defaultGazkwh = (userGazkwh.value * gazkwhcc).toFixed(2)
   scoreGazkwh.innerHTML = defaultGazkwh
@@ -486,7 +486,7 @@ On parle de CO2 équivalent pour intégrer que les gaz à effet de serre (GES) s
 
   // field gazm
   const userGazm = document.getElementById('userGazm');
-  const gazm = 2.2
+  const gazm = 2.32
   const scoreGazm = document.getElementById('scoreGazm');
   const defaultGazm = (userGazm.value * gazm).toFixed(2)
   scoreGazm.innerHTML = defaultGazm
@@ -500,7 +500,7 @@ On parle de CO2 équivalent pour intégrer que les gaz à effet de serre (GES) s
 
   // field fioul
   const userFioul = document.getElementById('userFioul');
-  const fioulcc = 3.25
+  const fioulcc = 3.24
   const scoreFioul = document.getElementById('scoreFioul');
   const defaultFioul = (userFioul.value * fioulcc).toFixed(2)
   scoreFioul.innerHTML = defaultFioul
@@ -514,7 +514,7 @@ On parle de CO2 équivalent pour intégrer que les gaz à effet de serre (GES) s
 
   // field granule bois
   const userGranulebois = document.getElementById('userGranulebois');
-  const granulebois = 0.111
+  const granulebois = 0.0469
   const scoreGranulebois = document.getElementById('scoreGranulebois');
   const defaultGranulebois = (userGranulebois.value * granulebois).toFixed(2)
   scoreGranulebois.innerHTML = defaultGranulebois

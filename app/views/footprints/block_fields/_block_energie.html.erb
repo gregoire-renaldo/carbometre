@@ -18,145 +18,145 @@
   <div class="container">
     <!-- field electricite -->
     <div class="row align-items-center item mt-1">
-      <div class=" col-xs-4 field">
+      <div class=" col-4 field">
         <%= f.label :Electricité %>
         <%= f.number_field :electricite, step: :any, id: 'userElectricite',min: 0 %>
       </div>
-      <div class="col-xs-2 unit">
+      <div class="col-2 unit">
         <p>kWh</p>
       </div>
-      <div class="col-xs-2 charge">
-        <p>0.0571 kg/kWh</p>
+      <div class="col-2 charge">
+        <p>0.052 kg/kWh</p>
       </div>
-      <div class="col-xs-4 white-rectangle">
+      <div class="col-4 white-rectangle">
         <p id="scoreelec"></p>
       </div>
     </div>
     <!-- field gaz kwh -->
     <div class="row align-items-center item mt-1">
-      <div class=" col-xs-4 field">
+      <div class=" col-4 field">
         <%= f.label :gazkwh, "Gaz kWh" %>
         <%= f.number_field :gazkwh, step: :any, id: 'userGaz', min: 0 %>
       </div>
-      <div class="col-xs-2 unit">
+      <div class="col-2 unit">
         <p>kWh</p>
       </div>
-      <div class="col-xs-2 charge">
-        <p>0.205 kg/kWh</p>
+      <div class="col-2 charge">
+        <p>0.243  kg/kWh</p>
       </div>
-      <div class="col-xs-4 white-rectangle">
+      <div class="col-4 white-rectangle">
         <p id="scoreGazkwh"></p>
       </div>
     </div>
     <!-- field gaz kwh -->
     <div class="row align-items-center item mt-1">
-      <div class=" col-xs-4 field">
+      <div class=" col-4 field">
         <%= f.label :"gaz m³" %>
         <%= f.number_field :gazm, id: 'userGazm', min: 0 %>
       </div>
-      <div class="col-xs-2 unit">
+      <div class="col-2 unit">
         <p>m³</p>
       </div>
-      <div class="col-xs-2 charge">
-        <p>2.2 kg/m³</p>
+      <div class="col-2 charge">
+        <p>2.32 kg/m³</p>
       </div>
-      <div class="col-xs-4 white-rectangle">
+      <div class="col-4 white-rectangle">
         <p id="scoreGazm"></p>
       </div>
     </div>
     <!-- field fioul -->
     <div class="row align-items-center item mt-1">
-      <div class=" col-xs-4 field">
+      <div class=" col-4 field">
         <%= f.label :fioul %>
         <%= f.number_field :fioul, id: 'userFioul', min: 0 %>
       </div>
-      <div class="col-xs-2 unit">
+      <div class="col-2 unit">
         <p>l</p>
       </div>
-      <div class="col-xs-2 charge">
-        <p>3.25 kg/l</p>
+      <div class="col-2 charge">
+        <p>3.24 kg/l</p>
       </div>
-      <div class="col-xs-4 white-rectangle">
+      <div class="col-4 white-rectangle">
         <p id="scoreFioul"></p>
       </div>
     </div>
     <!-- field granule bois -->
     <div class="row align-items-center item mt-1">
-      <div class=" col-xs-4 field">
+      <div class=" col-4 field">
         <%= f.label :"granulés de bois" %>
         <%= f.number_field :granulebois, id: 'userGranulebois', min: 0 %>
       </div>
-      <div class="col-xs-2 unit">
+      <div class="col-2 unit">
         <p>kg</p>
       </div>
-      <div class="col-xs-2 charge">
-        <p>0.111 kg/kg</p>
+      <div class="col-2 charge">
+        <p>0.0469 kg/kg</p>
       </div>
-      <div class="col-xs-4 white-rectangle">
+      <div class="col-4 white-rectangle">
         <p id="scoreGranulebois"></p>
       </div>
     </div>
     <!-- field buche bois -->
     <div class="row align-items-center item mt-1">
-      <div class=" col-xs-4 field">
+      <div class=" col-4 field">
         <%= f.label :buchebois, "Bois buches" %>
         <%= f.number_field :buchebois, id: 'userBuche', min: 0 %>
       </div>
-      <div class="col-xs-2 unit">
+      <div class="col-2 unit">
         <p>kg</p>
       </div>
-      <div class="col-xs-2 charge">
+      <div class="col-2 charge">
         <p>0.114 kg/kg</p>
       </div>
-      <div class="col-xs-4 white-rectangle">
+      <div class="col-4 white-rectangle">
         <p id="scoreBuchebois"></p>
       </div>
     </div>
     <!-- field eau -->
     <div class="row align-items-center item mt-1">
-      <div class=" col-xs-4 field">
+      <div class=" col-4 field">
         <%= f.label :eau %>
         <%= f.number_field :eau, id: 'userEau', min: 0 %>
       </div>
-      <div class="col-xs-2 unit">
+      <div class="col-2 unit">
         <p>m³</p>
       </div>
-      <div class="col-xs-2 charge">
+      <div class="col-2 charge">
         <p>0.132 kg/m³</p>
       </div>
-      <div class="col-xs-4 white-rectangle">
+      <div class="col-4 white-rectangle">
         <p id="scoreEau"></p>
       </div>
     </div>
     <!-- field eau usée -->
     <div class="row align-items-center item mt-1">
-      <div class=" col-xs-4 field">
+      <div class=" col-4 field">
         <%= f.label :"eaux usées" %>
         <%= f.number_field :eauusee, id: 'userEauusee', min: 0 %>
       </div>
-      <div class="col-xs-2 unit">
+      <div class="col-2 unit">
         <p>m³</p>
       </div>
-      <div class="col-xs-2 charge">
+      <div class="col-2 charge">
         <p>0.262 kg/m³</p>
       </div>
-      <div class="col-xs-4 white-rectangle">
+      <div class="col-4 white-rectangle">
         <p id="scoreEauusee"></p>
       </div>
     </div>
     <!-- field déchet OM -->
     <div class="row align-items-center item mt-1">
-      <div class=" col-xs-4 field">
+      <div class=" col-4 field">
         <%= f.label :"déchets ménagers" %>
         <%= f.number_field :dechets, id: 'userDechet', min: 0 %>
       </div>
-      <div class="col-xs-2 unit">
+      <div class="col-2 unit">
         <p>kg</p>
       </div>
-      <div class="col-xs-2 charge">
+      <div class="col-2 charge">
         <p>0.172 kg</p>
       </div>
-      <div class="col-xs-4 white-rectangle">
+      <div class="col-4 white-rectangle">
         <p id="scoreDechet"></p>
       </div>
     </div>

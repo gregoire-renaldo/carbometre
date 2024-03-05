@@ -23,10 +23,10 @@ class FootprintsController < ApplicationController
 
   def create
     @footprint = Footprint.new(footprint_params)
-    @footprint.user = current_user
+    # @footprint.user = current_user
 
     @footprint.save
-    redirect_to footprints_path
+    redirect_to footprint_path(@footprint)
   end
 
   def edit
@@ -37,9 +37,7 @@ class FootprintsController < ApplicationController
   def update
     @footprint = Footprint.find(params[:id])
     @footprint.update(footprint_params)
-
-
-    redirect_to footprints_path
+    redirect_to footprint_path(@footprint)
   end
 
   def destroy
