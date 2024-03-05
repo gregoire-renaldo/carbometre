@@ -1,37 +1,39 @@
-<!-- total block -->
-<div class="row sticky-top">
-  <div class="col total-mobile align-items-center mb-1">
-    <p>Total</p>
-    <div class="white-rectangle" >
-      <p id="total"></p>
+<div data-controller="calculate-footprint">
+  <!-- total block -->
+  <div class="row sticky-top">
+    <div class="col total-mobile align-items-center mb-1">
+      <p>Total</p>
+      <div class="white-rectangle" >
+        <p id="total"></p>
+      </div>
+      <div class="button-ddl">
+      </div>
     </div>
-    <div class="button-ddl">
+    <div class=" col total-mobile align-items-center ">
+      <p>Total par personne</p>
+      <div class="white-rectangle">
+        <p id="total-personne"></p>
+      </div>
+      <div class="button-ddl">
+      </div>
     </div>
   </div>
-  <div class=" col total-mobile align-items-center ">
-    <p>Total par personne</p>
-    <div class="white-rectangle">
-      <p id="total-personne"></p>
-    </div>
-    <div class="button-ddl">
-    </div>
-  </div>
-</div>
-<!-- end of total block -->
+  <!-- end of total block -->
 
-<!-- block for total voiture -->
-<%=render "footprints/block_fields/block_voiture", f: f %>
-<!-- block for autres transports -->
-<%=render "footprints/block_fields/block_autres_transports", f: f %>
-<!-- block for energie (logement en front) -->
-<%=render "footprints/block_fields/block_energie", f: f %>
-<!-- block for alimentaire -->
-<%=render "footprints/block_fields/block_alimentaire", f: f %>
-<!-- block for achats ponctuels ) -->
-<%=render "footprints/block_fields/block_achats_ponctuels", f: f %>
-<!-- block for achats vetements ) -->
-<%=render "footprints/block_fields/block_vetements", f: f %>
-<!-- block for divers ) -->
-<%=render "footprints/block_fields/block_divers", f: f %>
-<!-- block for autres ) -->
-<%=render "footprints/block_fields/block_autres", f: f %>
+  <!-- block for total voiture -->
+  <%=render "footprints/block_fields/block_voiture", f: f %>
+  <!-- block for autres transports -->
+  <%=render "footprints/block_fields/block_autres_transports", f: f %>
+  <!-- block for energie (logement en front) -->
+  <%=render "footprints/block_fields/block_energie", f: f %>
+  <!-- block for alimentaire -->
+  <%=render "footprints/block_fields/block_alimentaire", f: f %>
+  <!-- block for achats ponctuels ) -->
+  <%=render "footprints/block_fields/block_achats_ponctuels", f: f %>
+  <!-- block for achats vetements ) -->
+  <%=render "footprints/block_fields/block_vetements", f: f %>
+  <!-- block for divers ) -->
+  <%=render "footprints/block_fields/block_divers", f: f %>
+  <!-- block for autres ) -->
+  <%=render "footprints/block_fields/block_autres", f: f %>
+</div>

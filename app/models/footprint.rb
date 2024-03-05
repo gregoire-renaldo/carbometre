@@ -1,5 +1,5 @@
 class Footprint < ApplicationRecord
-  belongs_to :user
+  # belongs_to :user
   before_save :default_values, :total_score
 
   validates_length_of :title, maximum: 21, allow_blank: true
@@ -115,15 +115,15 @@ class Footprint < ApplicationRecord
   end
 
   def total_voiture
-    ( total_electriquel + total_e85l + total_gpll + total_essencel + total_gazolel + (self.essence*2.8) + (self.gazole*3.16) + (self.gpl*1.86) + (self.e85*1.68) + (self.electrique*0.071) + total_gazl  + (self.voitgaznat * 3.35)  ).ceil(2)
+    ( total_electriquel + total_e85l + total_gpll + total_essencel + total_gazolel + (self.essence*2.7) + (self.gazole*3.1) + (self.gpl*1.86) + (self.e85*1.11) + (self.electrique*0.071) + total_gazl  + (self.voitgaznat * 3.22)  ).ceil(2)
   end
 
   def total_essencel
-    (((self.lessence/100) * self.kmessence*2.8)).ceil(2)
+    (((self.lessence/100) * self.kmessence*2.7)).ceil(2)
   end
 
   def total_gazolel
-    (((self.gazolel/100) * self.kmgazolel*3.16)).ceil(2)
+    (((self.gazolel/100) * self.kmgazolel*3.1)).ceil(2)
   end
 
   def total_gpll
@@ -131,22 +131,22 @@ class Footprint < ApplicationRecord
   end
 
   def total_e85l
-    (((self.le85/100) * self.kme85*1.68)).ceil(2)
+    (((self.le85/100) * self.kme85*1.11)).ceil(2)
   end
   def total_gazl
-    (((self.voitgaznatkwh/100) * self.voitgaznatkg*3.35)).ceil(2)
+    (((self.voitgaznatkwh/100) * self.voitgaznatkg*3.22)).ceil(2)
   end
 
   def total_electriquel
-    (((self.lelectrique/100) * self.kmelectrique*0.0571)).ceil(2)
+    (((self.lelectrique/100) * self.kmelectrique*0.052)).ceil(2)
   end
 
   def total_autre_transport
-    ((self.tgv*0.00173) + (self.terelectrique*0.00248) + (self.terthermique*0) + (self.intercite*0.00529) + (self.metro*0.0057) + (self.bus*0.092166667) + (self.avion*0.258) + (self.avionregional*0.453)).ceil(2)
+    ((self.tgv*0.00293) + (self.terelectrique*0.0277) + (self.terthermique*0) + (self.intercite*0.00898) + (self.metro*0.00978) + (self.bus*0.092166667) + (self.avion*0.178) + (self.avionregional*0.258)).ceil(2)
   end
 
   def total_logement
-    ((self.electricite*0.0571) + (self.gazkwh*0.205) + (self.gazm*2.2) + (self.fioul*3.25) + (self.granulebois*0.11) + (self.buchebois*0.114) + (self.eau*0.132) + (self.eauusee*0.262) + (self.dechets*0.172)).ceil(2)
+    ((self.electricite*0.052) + (self.gazkwh*0.243 ) + (self.gazm*2.32) + (self.fioul*3.24) + (self.granulebois*0.11) + (self.buchebois*0.114) + (self.eau*0.132) + (self.eauusee*0.262) + (self.dechets*0.172)).ceil(2)
   end
 
   def total_alimentation

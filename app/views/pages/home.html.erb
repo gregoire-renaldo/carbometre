@@ -9,11 +9,7 @@
         pour un <a style="color:whitesmoke; text-decoration: underline" target="blank" href="https://comptecarbone.cc/">www.comptecarbone.cc</a> et ne
         collecte pas de données ni ne transmet
         aucune information à quiconque.</br>
-        <% if current_user == nil %>
-        Pour reprendre vos calculs d’un mois sur
-        l’autre, vous pouvez indiquer un nom ici: <%= link_to "Se connecter", new_user_session_path, class: "btn btn-gradient" %></br>
-        Si vous n'avez pas de compte vous pouvez en créer un en cliquant ici (pas d'email requis) : <%= link_to "Créer un compte", new_user_registration_path, class: "btn btn-gradient" %></br>
-        <%end %>
+        
         Spécial enfants : demandez à un parent de
         rassembler les factures de consommation
         courante et répondre à 20 questions en
@@ -29,7 +25,7 @@
       <div class="mt-3">
         <%= link_to "Nouvelle empreinte professionnelle",  pages_professional_bilan_path, class: "btn btn-gradient" %>
       </div>
-      <div class="mt-3 mb-3">
+      <div class="mt-3 mb-3 d-none">
         <%= link_to "Mes empreintes",  footprints_path, class: "btn btn-gradient" %>
       </div>
       <div>

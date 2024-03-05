@@ -15,14 +15,14 @@
 
   <div class="row justify-content-center">
     <% @footprints.each do |footprint| %>
-    <% if footprint.user_id == current_user.id %>
+    <%# if footprint.user_id == current_user.id %>
     <div class="card mx-2 my-2" style="width: 20rem;">
       <div class="card-body">
-      <% if footprint.title == "" %>
-              <h4 class="card-title titre mt-1"><%=link_to  "sans titre", footprint_path(footprint) %></h4>
+      <%# if footprint.title == "" %>
+              <h4 class="card-title titre mt-1"><%#link_to  "sans titre", footprint_path(footprint) %></h4>
 
-      <%end%>
-        <h4 class="card-title titre mt-1"><%=link_to footprint.title, footprint_path(footprint) %></h4>
+      <%#end%>
+        <h4 class="card-title titre mt-1"><%#link_to footprint.title, footprint_path(footprint) %></h4>
         <h5 class="card-subtitle mb-2">Total <%= footprint.total_score%> kg <%=link_to "Détails", footprint_path(footprint), class:"btn btn-gradient" %></h5>
         <h5 class="mb-2" style="font-size: 1.1rem;">Total par personne(<%= footprint.person%>)<br> <%= footprint.score_person%> kg </h5>
         <p class="card-text">Voiture 5% d’incertitude<br> <%= footprint.total_voiture%> kg</p>
@@ -51,7 +51,7 @@
         </div>
       </div>
     </div>
-    <% end %>
+    <%# end %>
     <% end %>
   </div>
 
