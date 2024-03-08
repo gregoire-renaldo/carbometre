@@ -1,10 +1,20 @@
 // Import your components CSS files here.
 @import "alert";
 @import "avatar";
+@import "banner";
 @import "navbar";
 @import "form";
-@import "button";
+@import "buttons";
 @import "show";
 @import "cards";
-@import "buttons2";
 @import "connect-register";
+
+a {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.container {
+  padding: 80px 32px 60px 32px;
+  max-width: 900px;
+}

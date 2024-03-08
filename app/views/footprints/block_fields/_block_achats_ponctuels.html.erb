@@ -1,31 +1,31 @@
  <!-- début catégorie autre -->
     <div class="row mt-2 sticky-top">
-      <div class="total-mobile align-items-center">
-        <p>Achats ponctuels</p>
-        <%# <div class="">
-          <i>50%<br>d’incertitude</i>
-        </div> %>
-        <div class="white-rectangle">
-          <p id="totalAutre"></p>
+      <div class="category-header">
+    <div class="d-flex align-items-center">
+          <div><i class="fa-solid fa-cart-shopping me-2"></i>Achats ponctuels : </div>
+          <%# <div class="">
+            <i>50%<br>d’incertitude</i>
+          </div> %>
+          <div class="category-total">
+            <div id="totalAutre"></div>
+          </div>
         </div>
-        <div id="hideShowAutre">
-          <p id="autreplusmoins"> + </p>
+        <div id="hideShowAutre" class="toggle-icon">
+          <div id="autreplusmoins"> + </div>
         </div>
       </div>
     </div>
     <!-- fields for autre -->
     <div class="autre">
       <!-- change class for the good category and do css and js -->
-      <div class="container">
-        <div class="intro">
-          <p>Il s’agit des contenus carbone pour des achats, si vous n’achetez aucun de ces appareils cette année, ne mentionnez rien
+      <div class="p-3">
+        <p><i class="fa-solid fa-circle-info me-2"></i>Il s’agit des contenus carbone pour des achats, si vous n’achetez aucun de ces appareils cette année, ne mentionnez rien
           (leur consommation est déjà intégrée dans « logement »). Pour ces achats ponctuels, à imputer sur plusieurs années, le calcul intègre leur fin de vie (en années). Si le vendeur
           vous donne une autre valeur, vous pouvez comparer avec notre base ADEME.</p>
-        </div>
         <div class="row align-items-center item mt-1">
           <div class=" col-4 field">
             <%= f.label :aspirateur %>
-            <%= f.number_field :aspirateur, id: 'userAspirateur', min: 0 %>
+            <%= f.number_field :aspirateur, id: 'userAspirateur', min: 0, class:"form-control"%>
           </div>
           <div class="col-2 unit">
             <p>unité</p>
@@ -33,7 +33,7 @@
           <div class="col-2 charge">
             <p>52 kg (5 ans)</p>
           </div>
-          <div class="col-4 white-rectangle">
+          <div class="col-4 sub-category-result">
             <p id="scoreAspirateur"></p>
           </div>
         </div>
@@ -41,7 +41,7 @@
         <div class="row align-items-center item mt-1">
           <div class=" col-4 field">
             <%= f.label :"congélateur 200 l" %>
-            <%= f.number_field :congelateur, id: 'userCongelateur', min: 0 %>
+            <%= f.number_field :congelateur, id: 'userCongelateur', min: 0, class:"form-control"%>
           </div>
           <div class="col-2 unit">
             <p>unité</p>
@@ -49,7 +49,7 @@
           <div class="col-2 charge">
             <p>415 kg (15 ans)</p>
           </div>
-          <div class="col-4 white-rectangle">
+          <div class="col-4 sub-category-result">
             <p id="scoreCongelateur"></p>
           </div>
         </div>
@@ -57,7 +57,7 @@
         <div class="row align-items-center item mt-1">
           <div class=" col-4 field">
             <%= f.label :"réfrigérateur 250l " %>
-            <%= f.number_field :refrigerateur250l, id: 'userRefrigerateur', min: 0 %>
+            <%= f.number_field :refrigerateur250l, id: 'userRefrigerateur', min: 0, class:"form-control"%>
           </div>
           <div class="col-2 unit">
             <p>unité</p>
@@ -65,7 +65,7 @@
           <div class="col-2 charge">
             <p>300 kg (15 ans) </p>
           </div>
-          <div class="col-4 white-rectangle">
+          <div class="col-4 sub-category-result">
             <p id="scoreRefrigerateur"></p>
           </div>
         </div>
@@ -73,7 +73,7 @@
         <div class="row align-items-center item mt-1">
           <div class=" col-4 field">
             <%= f.label :"four électrique" %>
-            <%= f.number_field :fourelectrique, id: 'userFourelec', min: 0 %>
+            <%= f.number_field :fourelectrique, id: 'userFourelec', min: 0, class:"form-control"%>
           </div>
           <div class="col-2 unit">
             <p>unité</p>
@@ -81,7 +81,7 @@
           <div class="col-2 charge">
             <p>217 kg (15 ans)</p>
           </div>
-          <div class="col-4 white-rectangle">
+          <div class="col-4 sub-category-result">
             <p id="scoreFourelec"></p>
           </div>
         </div>
@@ -89,7 +89,7 @@
         <div class="row align-items-center item mt-1">
           <div class=" col-4 field">
             <%= f.label :"lave linge" %>
-            <%= f.number_field :lavelinge, id: 'userLavelinge', min: 0 %>
+            <%= f.number_field :lavelinge, id: 'userLavelinge', min: 0, class:"form-control"%>
           </div>
           <div class="col-2 unit">
             <p>unité</p>
@@ -97,7 +97,7 @@
           <div class="col-2 charge">
             <p>305 kg (15 ans)</p>
           </div>
-          <div class="col-4 white-rectangle">
+          <div class="col-4 sub-category-result">
             <p id="scoreLavelinge"></p>
           </div>
         </div>
@@ -105,7 +105,7 @@
         <div class="row align-items-center item mt-1">
           <div class=" col-4 field">
             <%= f.label :"micro-onde" %>
-            <%= f.number_field :microonde, id: 'userMicroonde', min: 0 %>
+            <%= f.number_field :microonde, id: 'userMicroonde', min: 0, class:"form-control"%>
           </div>
           <div class="col-2 unit">
             <p>unité</p>
@@ -113,7 +113,7 @@
           <div class="col-2 charge">
             <p>100 kg (15 ans)</p>
           </div>
-          <div class="col-4 white-rectangle">
+          <div class="col-4 sub-category-result">
             <p id="scoreMicroonde"></p>
           </div>
         </div>
@@ -121,7 +121,7 @@
         <div class="row align-items-center item mt-1">
           <div class=" col-4 field">
             <%= f.label :smartphone, "Smartphone 5''" %>
-            <%= f.number_field :smartphone, id: 'userSmartphone',min: 0 %>
+            <%= f.number_field :smartphone, id: 'userSmartphone',min: 0, class:"form-control" %>
           </div>
           <div class="col-2 unit">
             <p>unité</p>
@@ -129,7 +129,7 @@
           <div class="col-2 charge">
             <p>15 kg (5 ans)</p>
           </div>
-          <div class="col-4 white-rectangle">
+          <div class="col-4 sub-category-result">
             <p id="scoreSmartphone"></p>
           </div>
         </div>
@@ -137,7 +137,7 @@
         <div class="row align-items-center item mt-1">
           <div class=" col-4 field">
             <%= f.label :"ordinateur" %>
-            <%= f.number_field :ordinateur, id: 'userOrdinateur', min: 0 %>
+            <%= f.number_field :ordinateur, id: 'userOrdinateur', min: 0, class:"form-control"%>
           </div>
           <div class="col-2 unit">
             <p>unité</p>
@@ -145,7 +145,7 @@
           <div class="col-2 charge">
             <p>150 kg (10 ans)</p>
           </div>
-          <div class="col-4 white-rectangle">
+          <div class="col-4 sub-category-result">
             <p id="scoreOrdinateur"></p>
           </div>
         </div>
@@ -153,7 +153,7 @@
         <div class="row align-items-center item mt-1">
           <div class=" col-4 field">
             <%= f.label :velo, "Vélo" %>
-            <%= f.number_field :velo, id: 'userVelo', min: 0 %>
+            <%= f.number_field :velo, id: 'userVelo', min: 0, class:"form-control"%>
           </div>
           <div class="col-2 unit">
             <p>unité</p>
@@ -161,7 +161,7 @@
           <div class="col-2 charge">
             <p>100 kg (20 ans)</p>
           </div>
-          <div class="col-4 white-rectangle">
+          <div class="col-4 sub-category-result">
             <p id="scoreVelo"></p>
           </div>
         </div>
@@ -169,7 +169,7 @@
         <div class="row align-items-center item mt-1">
           <div class=" col-4 field">
             <%= f.label :veloelec, "Vélo électrique" %>
-            <%= f.number_field :veloelec, id: 'userVeloelectrique', min: 0 %>
+            <%= f.number_field :veloelec, id: 'userVeloelectrique', min: 0, class:"form-control"%>
           </div>
           <div class="col-2 unit">
             <p>unité</p>
@@ -177,7 +177,7 @@
           <div class="col-2 charge">
             <p>160 kg (10 ans)</p>
           </div>
-          <div class="col-4 white-rectangle">
+          <div class="col-4 sub-category-result">
             <p id="scoreVeloelectrique"></p>
           </div>
         </div>
@@ -185,7 +185,7 @@
         <div class="row align-items-center item mt-1">
           <div class=" col-4 field">
             <%= f.label :voiture, "Auto française" %>
-            <%= f.number_field :voiture, id: 'userAutofr', min: 0 %>
+            <%= f.number_field :voiture, id: 'userAutofr', min: 0, class:"form-control"%>
           </div>
           <div class="col-2 unit">
             <p>kg</p>
@@ -193,15 +193,15 @@
           <div class="col-2 charge">
             <p>5.5 kg/kg (15 ans)</p>
           </div>
-          <div class="col-4 white-rectangle">
+          <div class="col-4 sub-category-result">
             <p id="scoreAutofr"></p>
           </div>
         </div>
         <!-- field auto fr electrique -->
         <div class="row align-items-center item mt-1">
           <div class=" col-4 field">
-            <%= f.label :voitureelec, "Auto française électrique", min: 0 %>
-            <%= f.number_field :voitureelec, id: 'userAutofrelec' %>
+            <%= f.label :voitureelec, "Auto française électrique"%>
+            <%= f.number_field :voitureelec, id: 'userAutofrelec', min: 0, class:"form-control" %>
           </div>
           <div class="col-2 unit">
             <p>kg</p>
@@ -209,7 +209,7 @@
           <div class="col-2 charge">
             <p>7.6 kg/kg (10 ans)</p>
           </div>
-          <div class="col-4 white-rectangle">
+          <div class="col-4 sub-category-result">
             <p id="scoreAutofrelec"></p>
           </div>
         </div>
@@ -217,7 +217,7 @@
         <div class="row align-items-center item mt-1">
           <div class=" col-4 field">
             <%= f.label :voitureasie, "Auto d'Asie" %>
-            <%= f.number_field :voitureasie, id: 'userAutoasie', min: 0 %>
+            <%= f.number_field :voitureasie, id: 'userAutoasie', min: 0, class:"form-control"%>
           </div>
           <div class="col-2 unit">
             <p>kg</p>
@@ -225,7 +225,7 @@
           <div class="col-2 charge">
             <p>11 kg/kg (15 ans)</p>
           </div>
-          <div class="col-4 white-rectangle">
+          <div class="col-4 sub-category-result">
             <p id="scoreAutoasie"></p>
           </div>
         </div>
@@ -233,7 +233,7 @@
         <div class="row align-items-center item mt-1">
           <div class=" col-4 field">
             <%= f.label :voitureasieelec, "Auto d'Asie électrique" %>
-            <%= f.number_field :voitureasieelec, id: 'userAutoasieelec', min: 0 %>
+            <%= f.number_field :voitureasieelec, id: 'userAutoasieelec', min: 0, class:"form-control"%>
           </div>
           <div class="col-2 unit">
             <p>kg</p>
@@ -241,7 +241,7 @@
           <div class="col-2 charge">
             <p>15 kg/kg (10 ans)</p>
           </div>
-          <div class="col-4 white-rectangle">
+          <div class="col-4 sub-category-result">
             <p id="scoreAutoasieelec"></p>
           </div>
         </div>
@@ -249,7 +249,7 @@
         <div class="row align-items-center item mt-1">
           <div class=" col-4 field">
             <%= f.label :voitureelecmoins50, "Voiture électrique < 50kWh" %>
-            <%= f.number_field :voitureelecmoins50, id: 'userVoitureElecMoins', min: 0 %>
+            <%= f.number_field :voitureelecmoins50, id: 'userVoitureElecMoins', min: 0, class:"form-control"%>
           </div>
           <div class="col-2 unit">
             <p>unité</p>
@@ -257,7 +257,7 @@
           <div class="col-2 charge">
             <p>11000 kg</p>
           </div>
-          <div class="col-4 white-rectangle">
+          <div class="col-4 sub-category-result">
             <p id="scoreVoitureElecMoins"></p>
           </div>
         </div>
@@ -265,7 +265,7 @@
         <div class="row align-items-center item mt-1">
           <div class=" col-4 field">
             <%= f.label :voitureelecplus50, "Voiture électrique > 50kWh" %>
-            <%= f.number_field :voitureelecplus50, id: 'userVoitureElecPlus', min: 0 %>
+            <%= f.number_field :voitureelecplus50, id: 'userVoitureElecPlus', min: 0, class:"form-control"%>
           </div>
           <div class="col-2 unit">
             <p>unité</p>
@@ -273,7 +273,7 @@
           <div class="col-2 charge">
             <p>14500 kg</p>
           </div>
-          <div class="col-4 white-rectangle">
+          <div class="col-4 sub-category-result">
             <p id="scoreVoitureElecPlus"></p>
           </div>
         </div>
@@ -281,7 +281,7 @@
         <div class="row align-items-center item mt-1">
           <div class=" col-4 field">
             <%= f.label :trotinette, "Trotinette éléctrique" %>
-            <%= f.number_field :trotinette, id: 'userTrotinette', min: 0 %>
+            <%= f.number_field :trotinette, id: 'userTrotinette', min: 0, class:"form-control"%>
           </div>
           <div class="col-2 unit">
             <p>unité</p>
@@ -289,7 +289,7 @@
           <div class="col-2 charge">
             <p>92 kg</p>
           </div>
-          <div class="col-4 white-rectangle">
+          <div class="col-4 sub-category-result">
             <p id="scoreTrotinette"></p>
           </div>
         </div>
@@ -297,7 +297,7 @@
         <div class="row align-items-center item mt-1">
           <div class=" col-4 field">
             <%= f.label :appartemnentneuf, "Appartement neuf" %>
-            <%= f.number_field :appartemnentneuf, id: 'userAppartementneuf', min: 0 %>
+            <%= f.number_field :appartemnentneuf, id: 'userAppartementneuf', min: 0, class:"form-control"%>
           </div>
           <div class="col-2 unit">
             <p>m²</p>
@@ -305,7 +305,7 @@
           <div class="col-2 charge">
             <p>500 kg/m² (100 ans)</p>
           </div>
-          <div class="col-4 white-rectangle">
+          <div class="col-4 sub-category-result">
             <p id="scoreAppartementneuf"></p>
           </div>
         </div>

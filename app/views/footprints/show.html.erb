@@ -1,165 +1,179 @@
-<div class="container">
-  <div class="row my-3 justify-content-center">
-    <%= link_to" Modifier l'empreinte", edit_footprint_path(@footprint), class: "btn btn-gradient" %>
-    <%# link_to "Supprimer",
-                          footprint_path(@footprint),
-                          method: :delete,
-                          data: { confirm: "Êtes-vous sûr de vouloir supprimer cette emepreinte ?" },
-                          class: "btn btn-gradient" %>
-  </div>
-  <div class="row">
-    <div class="col-sm text-center">
-      <h3>Total : <%= @footprint.total_score %> kg</h3>
-      <h5>Total par personne <%="(#{(@footprint.person).ceil(0)})"%> : <%= @footprint.score_person  %>  kg</h5>
-      <div class="row mt-2 mb-3">
-        <div class="col-sm">
-          <div class="intro">
-            <p>En synthèse nous avons comptabilisé les émissions de gaz à effet de serre dont la France est responsable de façon
-              collective, par ses services publics, qu’elle doit également s’engager à réduire pour satisfaire la neutralité carbone. L’ADEME l’évalue en 2020 à <b>1500 kg</b> par personne.</p>
+<div class="bg-light">
+  <div class="container">
+    <h2 class="my-3 text-center">Mon empreinte familiale annuelle</h2>
+    
+    <div class="footprint-result-wrapper">
+      <div class="text-center">
+        <div class="d-flex fw-bold">
+          <div class="h4 mb-2"><i class="fa-solid fa-circle-check me-2"></i>Total : <%= @footprint.total_score %> kg/an</div>
+        </div>
+        <div class="d-flex ">
+          <div class="h6">Par personne <%="(#{(@footprint.person).ceil(0)})"%> : <%= @footprint.score_person  %> kg
           </div>
-          <h4>Voiture - 5% d’incertitude : <%= @footprint.total_voiture%> kg</h4>
-          <ul class="list-group">
-            <li class="list-group-item"> Essence <%= ((@footprint.essence*2.7) + @footprint.total_essencel).ceil(2)%> kg</li>
-            <li class="list-group-item"> Gazole <%= ((@footprint.gazole*3.1) + @footprint.total_gazolel).ceil(2)%> kg</li>
-            <li class="list-group-item"> GPL <%= ((@footprint.gpl*1.86 ) + @footprint.total_gpll).ceil(2)%> kg</li>
-            <li class="list-group-item"> E85 <%= ((@footprint.e85*1.11) + @footprint.total_e85l).ceil(2)%> kg</li>
-            <li class="list-group-item"> Gaz nat <%= ((@footprint.voitgaznat*3.22) + @footprint.total_gazl).ceil(2)%> kg</li>
-            <li class="list-group-item"> Electrique <%= ((@footprint.electrique*0.052) + @footprint.total_electriquel).ceil(2)%> kg</li>
-          </ul>
-        </div>
-      </div>
-      <div class="row mb-3">
-        <div class="col-sm">
-          <h4>Autres transports - 10% d'incertitude : <%= @footprint.total_autre_transport %> kg</h4>
-          <ul class="list-group">
-            <li class="list-group-item"> TGV <%= (@footprint.tgv*0.00293).ceil(2)%> kg</li>
-            <li class="list-group-item"> TER <%= (@footprint.terelectrique*0.0277).ceil(2)%> kg</li>
-            <!-- <li class="list-group-item"> TER Thermique <%= (@footprint.terthermique*0.0798).ceil(2)%> kg</li> -->
-            <li class="list-group-item"> Intercité <%= (@footprint.intercite*0.00898).ceil(2)%> kg</li>
-            <li class="list-group-item"> Metro <%= (@footprint.metro*0.00978).ceil(2)%> kg</li>
-            <li class="list-group-item"> Bus <%= (@footprint.bus*0.092166667).ceil(2)%> kg</li>
-            <li class="list-group-item"> Avion long courrier <%= (@footprint.avion*0.178).ceil(2)%> kg</li>
-            <li class="list-group-item"> Avion court courrier <%= (@footprint.avionregional*0.258).ceil(2)%> kg</li>
-          </ul>
-        </div>
-      </div>
-      <div class="row mb-3">
-        <div class="col-sm">
-          <h4>Logement - 20% d'incertitude : <%= @footprint.total_logement %> kg</h4>
-          <ul class="list-group">
-            <li class="list-group-item"> Electricité <%= (@footprint.electricite*0.071).ceil(2)%> kg</li>
-            <li class="list-group-item"> Gaz kWh <%= (@footprint.gazkwh*0.243 ).ceil(2)%> kg</li>
-            <li class="list-group-item"> Gaz m³ <%= (@footprint.gazm*2.32).ceil(2)%> kg</li>
-            <li class="list-group-item"> Fioul <%= (@footprint.fioul*3.24).ceil(2)%> kg</li>
-            <li class="list-group-item"> Granules de bois <%= (@footprint.granulebois*0.0469).ceil(2)%> kg</li>
-            <li class="list-group-item"> Bûches de bois <%= (@footprint.buchebois*0.114).ceil(2)%> kg</li>
-            <li class="list-group-item"> Eau <%= (@footprint.eau*0.132).ceil(2)%> kg</li>
-            <li class="list-group-item"> Eaux usées <%= (@footprint.eauusee*0.262).ceil(2)%> kg</li>
-            <li class="list-group-item"> Déchets ménagers <%= (@footprint.dechets*0.172).ceil(2)%> kg</li>
-          </ul>
-        </div>
-      </div>
-      <div class="row mb-3">
-        <div class="col-sm">
-          <h4>Alimentation - 40% d'incertitude: <%= @footprint.total_alimentation %> kg</h4>
-          <ul class="list-group">
-            <li class="list-group-item"> Blé France <%= (@footprint.ble*0.439).ceil(2)%> kg</li>
-            <li class="list-group-item"> Riz Thailandais <%= (@footprint.riz*3.59).ceil(2)%> kg</li>
-            <li class="list-group-item"> Carottes France <%= (@footprint.carotte*0.0706).ceil(2)%> kg</li>
-            <li class="list-group-item"> Pommes de terre France <%= (@footprint.patate*0.0861).ceil(2)%> kg</li>
-            <li class="list-group-item"> Salade de saison <%= (@footprint.saladesaison*0.326).ceil(2)%> kg</li>
-            <li class="list-group-item"> Salades <%=( @footprint.saladess*11.05).ceil(2)%> kg</li>
-            <li class="list-group-item"> Tomates France plein champs <%= (@footprint.tomatesfr*0.177).ceil(2)%> kg</li>
-            <li class="list-group-item"> Tomates France sous serre  <%= (@footprint.tomatesfrss*2.23).ceil(2)%> kg</li>
-            <li class="list-group-item"> Lait vache  <%= (@footprint.laitvache*0.9).ceil(2)%> kg</li>
-            <li class="list-group-item"> Boeuf  <%= (@footprint.boeuf*15).ceil(2)%> kg</li>
-            <li class="list-group-item"> Veau  <%= (@footprint.veau*6.5).ceil(2)%> kg</li>
-            <li class="list-group-item"> Poulet  <%= (@footprint.poulet*2.14).ceil(2)%> kg</li>
-            <li class="list-group-item"> Oeufs  <%= (@footprint.oeufs*1.72).ceil(2)%> kg</li>
-            <li class="list-group-item"> Agneau  <%= (@footprint.agneau*6).ceil(2)%> kg</li>
-            <li class="list-group-item"> Truite  <%= (@footprint.truite*3.08).ceil(2)%> kg</li>
-            <li class="list-group-item"> Crevettes  <%= (@footprint.crevette*9.3).ceil(2)%> kg</li>
-            <li class="list-group-item"> Poisson pêche européenne  <%= (@footprint.poissonpecheeuro*1.9).ceil(2)%> kg</li>
-            <li class="list-group-item"> Poisson pêche tropicale  <%= (@footprint.poissonpechetropico*3.8).ceil(2)%> kg</li>
-            <li class="list-group-item"> Pomme  <%= (@footprint.pomme*0.0675).ceil(2)%> kg</li>
-          </ul>
-        </div>
-      </div>
-      <div class="row mb-3">
-        <div class="col-sm">
-          <h4>Vetements - 30% d'incertitude: <%= @footprint.total_vetements %> kg</h4>
-          <ul class="list-group">
-            <li class="list-group-item"> Chemise Coton <%= (@footprint.chemisecoton*11).ceil(2)%> kg</li>
-            <li class="list-group-item"> Chemise Viscose <%= (@footprint.chemiseviscose*10).ceil(2)%> kg</li>
-            <li class="list-group-item"> T-shirt coton <%= (@footprint.tshirtcoton*5).ceil(2)%> kg</li>
-            <li class="list-group-item"> T-shirt polyester <%= (@footprint.tshirtpoly*6).ceil(2)%> kg</li>
-            <li class="list-group-item"> Polaire <%= (@footprint.polaire*24).ceil(2)%> kg</li>
-            <li class="list-group-item"> Pull acrylique <%= (@footprint.pullacrylique*26).ceil(2)%> kg</li>
-            <li class="list-group-item"> Pull en laine <%= (@footprint.pullenlaine*53).ceil(2)%> kg</li>
-            <li class="list-group-item"> Sweat <%= (@footprint.sweat*27).ceil(2)%> kg</li>
-            <li class="list-group-item"> Polo <%= (@footprint.polo*8).ceil(2)%> kg</li>
-            <li class="list-group-item"> Robe Coton <%= (@footprint.robecoton*50).ceil(2)%> kg</li>
-            <li class="list-group-item"> Robe Polyester <%= (@footprint.robepolyester*52).ceil(2)%> kg</li>
-            <li class="list-group-item"> Chaussure Tissu <%= (@footprint.chaussuretissu*17).ceil(2)%> kg</li>
-            <li class="list-group-item"> Chaussure Sport <%= (@footprint.chaussuresport*19).ceil(2)%> kg</li>
-            <li class="list-group-item"> Anorak <%= (@footprint.anorak*39).ceil(2)%> kg</li>
-          </ul>
-        </div>
-      </div>
-      <div class="row mb-3">
-        <div class="col-sm">
-          <h4>Achats ponctuels - 50% d'incertitude: <%= @footprint.total_autres %> kg</h4>
-          <ul class="list-group">
-            <li class="list-group-item"> Aspirateur <%= (@footprint.aspirateur*52).ceil(2)%> kg</li>
-            <li class="list-group-item"> Congélateur 200 l<%= (@footprint.congelateur*415).ceil(2)%> kg</li>
-            <li class="list-group-item"> Réfrigérateur 250 l <%= (@footprint.refrigerateur250l*300).ceil(2)%> kg</li>
-            <li class="list-group-item"> Four électrique <%= (@footprint.fourelectrique*217).ceil(2)%> kg</li>
-            <li class="list-group-item"> Lave linge <%= (@footprint.lavelinge*315).ceil(2)%> kg</li>
-            <li class="list-group-item"> Micro-onde <%= (@footprint.microonde*100).ceil(2)%> kg</li>
-            <li class="list-group-item"> Jeans mondial <%= (@footprint.jeanmonde*23).ceil(2)%> kg</li>
-            <li class="list-group-item"> Jeans français <%= (@footprint.jeanfr*15).ceil(2)%> kg</li>
-            <li class="list-group-item"> Smartphone 5'' <%= (@footprint.smartphone*15).ceil(2)%> kg</li>
-            <li class="list-group-item"> Ordinateur <%= (@footprint.ordinateur*150).ceil(2)%> kg</li>
-            <li class="list-group-item"> Vélo <%= (@footprint.velo*100).ceil(2)%> kg</li>
-            <li class="list-group-item"> Vélo électrique <%= (@footprint.veloelec*160).ceil(2)%> kg</li>
-            <li class="list-group-item"> Auto française <%= (@footprint.voiture*5.5).ceil(2)%> kg</li>
-            <li class="list-group-item"> Auto française éléctrique <%= (@footprint.voitureelec*7.6).ceil(2)%> kg</li>
-            <li class="list-group-item"> Auto d'Asie <%= (@footprint.voitureasie*11).ceil(2)%> kg</li>
-            <li class="list-group-item"> Auto d'Asie électrique <%= (@footprint.voitureasie*15).ceil(2)%> kg</li>
-            <li class="list-group-item"> Voiture éléctrique < 50 kWh <%= (@footprint.voitureasie*15).ceil(2)%> kg</li>
-            <li class="list-group-item"> Voiture éléctrique > 50 kWh <%= (@footprint.voitureelecmoins50*11000).ceil(2)%> kg</li>
-            <li class="list-group-item"> Trotinette <%= (@footprint.voitureelecplus50*11000).ceil(2)%> kg</li>
-            <li class="list-group-item"> Appartement neuf <%= (@footprint.trotinette*92).ceil(2)%> kg</li>
-          </ul>
-        </div>
-      </div>
-      <div class="row mb-3">
-        <div class="col-sm">
-          <h4>Internet - 50% d'incertitude: <%= @footprint.total_divers %> kg</h4>
-          <ul class="list-group">
-            <li class="list-group-item"> Streaming <%= (@footprint.streaming*0.25).ceil(2)%> kg</li>
-            <li class="list-group-item"> Tweet <%= (@footprint.tweet*0.00002).ceil(4)%> kg</li>
-            <li class="list-group-item"> Mail avec pj <%= (@footprint.mail*0.035).ceil(2)%> kg</li>
-          </ul>
-        </div>
-      </div>
-      <div class="row mb-3">
-        <div class="col-sm">
-          <h4>Autres - 50% d'incertitude: <%= @footprint.total_valeur %> kg</h4>
-          <ul class="list-group">
-            <li class="list-group-item"> Valeur 1 <%= (@footprint.autre).ceil(2)%> kg</li>
-            <li class="list-group-item"> Valeur 2 <%= (@footprint.valeur2).ceil(2)%> kg</li>
-          </ul>
         </div>
       </div>
     </div>
-  </div>
-  <div class="row mt-2 mb-2 text-center">
-    <div class="col-sm justify-content-center">
-      <%= link_to" Modifier l'empreinte", edit_footprint_path(@footprint), class:"btn btn-gradient" %>
-      <!-- <%= link_to 'Exporter (pdf)', footprint_path(@footprint, :format => :pdf), target: "_blank" %> -->
+    
+    <div class="d-flex justify-content-center my-3">
+      <%= link_to edit_footprint_path(@footprint), class: "btn btn-ghost" do %>
+        <i class="fa-solid fa-pen me-2"></i>Modifier
+      <% end %>
     </div>
-  </div>
-  <div class="bottom">
+
+
+    <p class="mt-3">En synthèse nous avons comptabilisé les émissions de gaz à effet de serre dont la France est responsable de façon collective, par ses services publics, qu’elle doit également s’engager à réduire pour satisfaire la neutralité carbone. L’ADEME l’évalue en 2020 à <b>1500 kg</b> par personne.</p>
+
+    <div class="result-card">
+      <h5><i class="fa-solid fa-car-side me-2"></i>Voiture : <%= @footprint.total_voiture%> kg</h5>
+      <div class="uncertainty">5% d'incertitude</div>
+      <ul class="list-group">
+        <li class="list-group-item"> Essence : <%= ((@footprint.essence*2.7) + @footprint.total_essencel).ceil(2)%> kg</li>
+        <li class="list-group-item"> Gazole : <%= ((@footprint.gazole*3.1) + @footprint.total_gazolel).ceil(2)%> kg</li>
+        <li class="list-group-item"> GPL : <%= ((@footprint.gpl*1.86 ) + @footprint.total_gpll).ceil(2)%> kg</li>
+        <li class="list-group-item"> E85 : <%= ((@footprint.e85*1.11) + @footprint.total_e85l).ceil(2)%> kg</li>
+        <li class="list-group-item"> Gaz nat : <%= ((@footprint.voitgaznat*3.22) + @footprint.total_gazl).ceil(2)%> kg</li>
+        <li class="list-group-item"> Electrique : <%= ((@footprint.electrique*0.052) + @footprint.total_electriquel).ceil(2)%> kg</li>
+      </ul> 
+    </div>
+
+    <div class="result-card">
+      <div class="col-sm">
+        <h5><i class="fa-solid fa-train-subway me-2"></i>Autres transports : <%= @footprint.total_autre_transport %> kg</h5>
+         <div class="uncertainty">10% d'incertitude</div>
+        <ul class="list-group">
+          <li class="list-group-item"> TGV : <%= (@footprint.tgv*0.00293).ceil(2)%> kg</li>
+          <li class="list-group-item"> TER : <%= (@footprint.terelectrique*0.0277).ceil(2)%> kg</li>
+          <!-- <li class="list-group-item"> TER Thermique <%= (@footprint.terthermique*0.0798).ceil(2)%> kg</li> -->
+          <li class="list-group-item"> Intercité : <%= (@footprint.intercite*0.00898).ceil(2)%> kg</li>
+          <li class="list-group-item"> Metro : <%= (@footprint.metro*0.00978).ceil(2)%> kg</li>
+          <li class="list-group-item"> Bus :<%= (@footprint.bus*0.092166667).ceil(2)%> kg</li>
+          <li class="list-group-item"> Avion long courrier :<%= (@footprint.avion*0.178).ceil(2)%> kg</li>
+          <li class="list-group-item"> Avion court courrier : <%= (@footprint.avionregional*0.258).ceil(2)%> kg</li>
+        </ul>
+      </div>
+    </div>
+    <div class="result-card">
+      <div class="col-sm">
+        <h5><i class="fa-solid fa-house-chimney me-2"></i>Logement : <%= @footprint.total_logement %> kg</h5>
+         <div class="uncertainty">20% d'incertitude</div>
+        <ul class="list-group">
+          <li class="list-group-item"> Electricité : <%= (@footprint.electricite*0.071).ceil(2)%> kg</li>
+          <li class="list-group-item"> Gaz kWh : <%= (@footprint.gazkwh*0.243 ).ceil(2)%> kg</li>
+          <li class="list-group-item"> Gaz m³ : <%= (@footprint.gazm*2.32).ceil(2)%> kg</li>
+          <li class="list-group-item"> Fioul : <%= (@footprint.fioul*3.24).ceil(2)%> kg</li>
+          <li class="list-group-item"> Granules de bois <%= (@footprint.granulebois*0.0469).ceil(2)%> kg</li>
+          <li class="list-group-item"> Bûches de bois : <%= (@footprint.buchebois*0.114).ceil(2)%> kg</li>
+          <li class="list-group-item"> Eau : <%= (@footprint.eau*0.132).ceil(2)%> kg</li>
+          <li class="list-group-item"> Eaux usées : <%= (@footprint.eauusee*0.262).ceil(2)%> kg</li>
+          <li class="list-group-item"> Déchets ménagers : <%= (@footprint.dechets*0.172).ceil(2)%> kg</li>
+        </ul>
+      </div>
+    </div>
+    <div class="result-card">
+      <div class="col-sm">
+        <h5><i class="fa-solid fa-utensils me-2"></i>Alimentation : <%= @footprint.total_alimentation %> kg</h5>
+        <div class="uncertainty">40% d'incertitude</div>
+        <ul class="list-group">
+          <li class="list-group-item"> Blé France : <%= (@footprint.ble*0.439).ceil(2)%> kg</li>
+          <li class="list-group-item"> Riz Thailandais : <%= (@footprint.riz*3.59).ceil(2)%> kg</li>
+          <li class="list-group-item"> Carottes France : <%= (@footprint.carotte*0.0706).ceil(2)%> kg</li>
+          <li class="list-group-item"> Pommes de terre France : <%= (@footprint.patate*0.0861).ceil(2)%> kg</li>
+          <li class="list-group-item"> Salade de saison : <%= (@footprint.saladesaison*0.326).ceil(2)%> kg</li>
+          <li class="list-group-item"> Salades : <%=( @footprint.saladess*11.05).ceil(2)%> kg</li>
+          <li class="list-group-item"> Tomates France plein champs : <%= (@footprint.tomatesfr*0.177).ceil(2)%> kg</li>
+          <li class="list-group-item"> Tomates France sous serre : <%= (@footprint.tomatesfrss*2.23).ceil(2)%> kg</li>
+          <li class="list-group-item"> Lait vache : <%= (@footprint.laitvache*0.9).ceil(2)%> kg</li>
+          <li class="list-group-item"> Boeuf : <%= (@footprint.boeuf*15).ceil(2)%> kg</li>
+          <li class="list-group-item"> Veau : <%= (@footprint.veau*6.5).ceil(2)%> kg</li>
+          <li class="list-group-item"> Poulet : <%= (@footprint.poulet*2.14).ceil(2)%> kg</li>
+          <li class="list-group-item"> Oeufs : <%= (@footprint.oeufs*1.72).ceil(2)%> kg</li>
+          <li class="list-group-item"> Agneau : <%= (@footprint.agneau*6).ceil(2)%> kg</li>
+          <li class="list-group-item"> Truite : <%= (@footprint.truite*3.08).ceil(2)%> kg</li>
+          <li class="list-group-item"> Crevettes : <%= (@footprint.crevette*9.3).ceil(2)%> kg</li>
+          <li class="list-group-item"> Poisson pêche européenne : <%= (@footprint.poissonpecheeuro*1.9).ceil(2)%> kg</li>
+          <li class="list-group-item"> Poisson pêche tropicale : <%= (@footprint.poissonpechetropico*3.8).ceil(2)%> kg</li>
+          <li class="list-group-item"> Pomme : <%= (@footprint.pomme*0.0675).ceil(2)%> kg</li>
+        </ul>
+      </div>
+    </div>
+    <div class="result-card">
+      <div class="col-sm">
+        <h5><i class="fa-solid fa-shirt me-2"></i>Vetements : <%= @footprint.total_vetements %> kg</h5>
+         <div class="uncertainty">30% d'incertitude</div>
+        <ul class="list-group">
+          <li class="list-group-item"> Chemise Coton : <%= (@footprint.chemisecoton*11).ceil(2)%> kg</li>
+          <li class="list-group-item"> Chemise Viscose : <%= (@footprint.chemiseviscose*10).ceil(2)%> kg</li>
+          <li class="list-group-item"> T-shirt coton : <%= (@footprint.tshirtcoton*5).ceil(2)%> kg</li>
+          <li class="list-group-item"> T-shirt polyester : <%= (@footprint.tshirtpoly*6).ceil(2)%> kg</li>
+          <li class="list-group-item"> Polaire : <%= (@footprint.polaire*24).ceil(2)%> kg</li>
+          <li class="list-group-item"> Pull acrylique : <%= (@footprint.pullacrylique*26).ceil(2)%> kg</li>
+          <li class="list-group-item"> Pull en laine : <%= (@footprint.pullenlaine*53).ceil(2)%> kg</li>
+          <li class="list-group-item"> Sweat : <%= (@footprint.sweat*27).ceil(2)%> kg</li>
+          <li class="list-group-item"> Polo : <%= (@footprint.polo*8).ceil(2)%> kg</li>
+          <li class="list-group-item"> Robe Coton : <%= (@footprint.robecoton*50).ceil(2)%> kg</li>
+          <li class="list-group-item"> Robe Polyester : <%= (@footprint.robepolyester*52).ceil(2)%> kg</li>
+          <li class="list-group-item"> Chaussure Tissu : <%= (@footprint.chaussuretissu*17).ceil(2)%> kg</li>
+          <li class="list-group-item"> Chaussure Sport : <%= (@footprint.chaussuresport*19).ceil(2)%> kg</li>
+          <li class="list-group-item"> Anorak : <%= (@footprint.anorak*39).ceil(2)%> kg</li>
+        </ul>
+      </div>
+    </div>
+    <div class="result-card">
+      <div class="col-sm">
+        <h5><i class="fa-solid fa-cart-shopping me-2"></i>Achats ponctuels : <%= @footprint.total_autres %> kg</h5>
+         <div class="uncertainty">50% d'incertitude</div>
+        <ul class="list-group">
+          <li class="list-group-item"> Aspirateur : <%= (@footprint.aspirateur*52).ceil(2)%> kg</li>
+          <li class="list-group-item"> Congélateur 200 l : <%= (@footprint.congelateur*415).ceil(2)%> kg</li>
+          <li class="list-group-item"> Réfrigérateur 250 l : <%= (@footprint.refrigerateur250l*300).ceil(2)%> kg</li>
+          <li class="list-group-item"> Four électrique : <%= (@footprint.fourelectrique*217).ceil(2)%> kg</li>
+          <li class="list-group-item"> Lave linge  : <%= (@footprint.lavelinge*315).ceil(2)%> kg</li>
+          <li class="list-group-item"> Micro-onde : <%= (@footprint.microonde*100).ceil(2)%> kg</li>
+          <li class="list-group-item"> Jeans mondial :  <%= (@footprint.jeanmonde*23).ceil(2)%> kg</li>
+          <li class="list-group-item"> Jeans français : <%= (@footprint.jeanfr*15).ceil(2)%> kg</li>
+          <li class="list-group-item"> Smartphone 5'' : <%= (@footprint.smartphone*15).ceil(2)%> kg</li>
+          <li class="list-group-item"> Ordinateur : <%= (@footprint.ordinateur*150).ceil(2)%> kg</li>
+          <li class="list-group-item"> Vélo : <%= (@footprint.velo*100).ceil(2)%> kg</li>
+          <li class="list-group-item"> Vélo électrique : <%= (@footprint.veloelec*160).ceil(2)%> kg</li>
+          <li class="list-group-item"> Auto française : <%= (@footprint.voiture*5.5).ceil(2)%> kg</li>
+          <li class="list-group-item"> Auto française éléctrique : <%= (@footprint.voitureelec*7.6).ceil(2)%> kg</li>
+          <li class="list-group-item"> Auto d'Asie : <%= (@footprint.voitureasie*11).ceil(2)%> kg</li>
+          <li class="list-group-item"> Auto d'Asie électrique : <%= (@footprint.voitureasie*15).ceil(2)%> kg</li>
+          <li class="list-group-item"> Voiture éléctrique < 50 kWh : <%= (@footprint.voitureasie*15).ceil(2)%> kg</li>
+          <li class="list-group-item"> Voiture éléctrique > 50 kWh : <%= (@footprint.voitureelecmoins50*11000).ceil(2)%> kg</li>
+          <li class="list-group-item"> Trotinette : <%= (@footprint.voitureelecplus50*11000).ceil(2)%> kg</li>
+          <li class="list-group-item"> Appartement neuf : <%= (@footprint.trotinette*92).ceil(2)%> kg</li>
+        </ul>
+      </div>
+    </div>
+    <div class="result-card">
+      <div class="col-sm">
+        <h5><i class="fa-solid fa-mobile-screen-button me-2"></i>Internet : <%= @footprint.total_divers %> kg</h5>
+        <div class="uncertainty">50% d'incertitude</div>
+        <ul class="list-group">
+          <li class="list-group-item"> Streaming : <%= (@footprint.streaming*0.25).ceil(2)%> kg</li>
+          <li class="list-group-item"> Tweet : <%= (@footprint.tweet*0.00002).ceil(4)%> kg</li>
+          <li class="list-group-item"> Mail avec pj : <%= (@footprint.mail*0.035).ceil(2)%> kg</li>
+        </ul>
+      </div>
+    </div>
+    <div class="result-card">
+      <div class="col-sm">
+        <h5><i class="fa-solid fa-circle-plus me-2"></i>Autres : <%= @footprint.total_valeur %> kg</h5>
+         <div class="uncertainty">50% d'incertitude</div>
+        <ul class="list-group">
+          <li class="list-group-item"> Valeur 1 : <%= (@footprint.autre).ceil(2)%> kg</li>
+          <li class="list-group-item"> Valeur 2 : <%= (@footprint.valeur2).ceil(2)%> kg</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-center my-3">
+      <%= link_to edit_footprint_path(@footprint), class: "btn btn-ghost" do %>
+        <i class="fa-solid fa-pen me-2"></i>Modifier
+      <% end %>
+    </div>
+    
+    </div>
   </div>
 </div>

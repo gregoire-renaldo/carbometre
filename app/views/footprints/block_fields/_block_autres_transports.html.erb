@@ -1,51 +1,53 @@
     <!-- autres transports -->
 <div class="row mt-2 sticky-top">
-  <div class="total-mobile align-items-center">
-    <p>Transports</p>
-    <%# <div >
-      <i>10% <br>d’incertitude</i>
-    </div> %>
-    <div class="white-rectangle">
-      <p id="totalTransport"></p>
+  <div class="category-header">
+    <div class="d-flex align-items-center">
+      <div><i class="fa-solid fa-train-subway me-2"></i>Transports : </div>
+      <%# <div >
+        <i>10% <br>d’incertitude</i>
+      </div> %>
+      <div class="category-total">
+        <div id="totalTransport"></div>
+      </div>
     </div>
-    <div id="hideShowTransport">
-      <p id="transportplusmoins"> + </p>
+    <div id="hideShowTransport" class="toggle-icon">
+      <div id="transportplusmoins"> + </div>
     </div>
   </div>
 </div>
 <!-- fields for autres transports -->
 <div class="transport">
-  <div class="container">
+  <div class="p-3">
     <!-- field tgv -->
     <div class="row align-items-center item mt-1">
       <div class=" col-4 field">
         <%= f.label :tgv, "TGV" %>
-        <%= f.number_field :tgv, id: 'userTgv', min: 0 %>
+        <%= f.number_field :tgv, id: 'userTgv', min: 0, class:"form-control"  %>
       </div>
       <div class="col-2 unit">
-        <p>km</p>
+        <div>km</div>
       </div>
       <div class="col-2 charge">
-        <p>0.00293 kg/km</p>
+        <div>0.00293 kg/km</div>
       </div>
-      <div class="col-4 white-rectangle">
-        <p id="scoreTgv"></p>
+      <div class="col-4 sub-category-result">
+        <div id="scoreTgv"></div>
       </div>
     </div>
     <!-- field ter electrique -->
     <div class="row align-items-center item mt-1">
       <div class=" col-4 field">
         <%= f.label :terelectrique, "TER" %>
-        <%= f.number_field :terelectrique, id: 'userTerelec', min: 0 %>
+        <%= f.number_field :terelectrique, id: 'userTerelec', min: 0, class:"form-control"  %>
       </div>
       <div class="col-2 unit">
-        <p>km</p>
+        <div>km</div>
       </div>
       <div class="col-2 charge">
-        <p>0.0277 kg/km</p>
+        <div>0.0277 kg/km</div>
       </div>
-      <div class="col-4 white-rectangle">
-        <p id="scoreTerelec"></p>
+      <div class="col-4 sub-category-result">
+        <div id="scoreTerelec"></div>
       </div>
     </div>
     <!-- field ter thermique -->
@@ -60,7 +62,7 @@
           <div class="col-2 charge">
             <p>0.0798 kg/km</p>
           </div>
-          <div class="col-4 white-rectangle">
+          <div class="col-4 sub-category-result">
             <p id="scoreTertherm"></p>
           </div>
         </div> -->
@@ -68,80 +70,80 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-4 field">
         <%= f.label :intercite, "Train intercité"%>
-        <%= f.number_field :intercite, id: 'userIntercite', min: 0 %>
+        <%= f.number_field :intercite, id: 'userIntercite', min: 0, class:"form-control"  %>
       </div>
       <div class="col-2 unit">
-        <p>km</p>
+        <div>km</div>
       </div>
       <div class="col-2 charge">
-        <p>0.00898 kg/km</p>
+        <div>0.00898 kg/km</div>
       </div>
-      <div class="col-4 white-rectangle">
-        <p id="scoreIntercite"></p>
+      <div class="col-4 sub-category-result">
+        <div id="scoreIntercite"></div>
       </div>
     </div>
     <!-- field metro -->
     <div class="row align-items-center item mt-1">
       <div class=" col-4 field">
         <%= f.label :metro, "Metro / RER"%>
-        <%= f.number_field :metro, id: 'userMetro', min: 0 %>
+        <%= f.number_field :metro, id: 'userMetro', min: 0, class:"form-control"  %>
       </div>
       <div class="col-2 unit">
-        <p>km</p>
+        <div>km</div>
       </div>
       <div class="col-2 charge">
-        <p>0.00978 kg/km</p>
+        <div>0.00978 kg/km</div>
       </div>
-      <div class="col-4 white-rectangle">
-        <p id="scoreMetro"></p>
+      <div class="col-4 sub-category-result">
+        <div id="scoreMetro"></div>
       </div>
     </div>
     <!-- field bus -->
     <div class="row align-items-center item mt-1">
       <div class=" col-4 field">
         <%= f.label :"bus"%>
-        <%= f.number_field :bus, id: 'userBus', min: 0 %>
+        <%= f.number_field :bus, id: 'userBus', min: 0, class:"form-control"  %>
       </div>
       <div class="col-2 unit">
-        <p>km</p>
+        <div>km</div>
       </div>
       <div class="col-2 charge">
-        <p>0.0904 kg/km</p>
+        <div>0.0904 kg/km</div>
       </div>
-      <div class="col-4 white-rectangle">
-        <p id="scoreBus"></p>
+      <div class="col-4 sub-category-result">
+        <div id="scoreBus"></div>
       </div>
     </div>
     <!-- field avion -->
     <div class="row align-items-center item mt-1">
       <div class=" col-4 field">
         <%= f.label :avion, "Avion long courrier"%>
-        <%= f.number_field :avion, id: 'userAvion', min: 0 %>
+        <%= f.number_field :avion, id: 'userAvion', min: 0, class:"form-control"  %>
       </div>
       <div class="col-2 unit">
-        <p>km</p>
+        <div>km</div>
       </div>
       <div class="col-2 charge">
-        <p>0.178 kg/km</p>
+        <div>0.178 kg/km</div>
       </div>
-      <div class="col-4 white-rectangle">
-        <p id="scoreAvion"></p>
+      <div class="col-4 sub-category-result">
+        <div id="scoreAvion"></div>
       </div>
     </div>
     <!-- field avion regional-->
     <div class="row align-items-center item mt-1">
       <div class=" col-4 field">
         <%= f.label :avionregional, "Avion court courrier"%>
-        <%= f.number_field :avionregional, id: 'userAvionregional', min: 0 %>
+        <%= f.number_field :avionregional, id: 'userAvionregional', min: 0, class:"form-control"  %>
       </div>
       <div class="col-2 unit">
-        <p>km</p>
+        <div>km</div>
       </div>
       <div class="col-2 charge">
-        <p>0.258 kg/km</p>
+        <div>0.258 kg/km</div>
       </div>
-      <div class="col-4 white-rectangle">
-        <p id="scoreAvionregional"></p>
+      <div class="col-4 sub-category-result">
+        <div id="scoreAvionregional"></div>
       </div>
     </div>
   </div>

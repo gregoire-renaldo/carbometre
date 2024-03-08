@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :footprints
   root to: 'pages#home'
-  get "/pages/professional_bilan" => "pages#professional_bilan"
+  get "/empreinte-personnelle", to: "footprints#new"
+  # post "/empreinte-personnelle", to: "footprints#create"
+  # get "/empreinte-personnelle/:id", to: "footprints#show", as: :footprint
+  # get "/empreinte-personnelle/:id/edit", to: "footprints#edit", as: :edit_footprint
+  # patch "/empreinte-personnelle/:id", to: "footprints#update"
+  resources :footprints, except: [:new]
+  get "/empreinte-professionnelle", to: "pages#professional_bilan"
 end

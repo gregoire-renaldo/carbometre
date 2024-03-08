@@ -1,15 +1,17 @@
 <!-- block for total voiture -->
 <div class="row mt-2 sticky-top">
-  <div class="total-mobile align-items-center">
-    <p>Voiture</p>
-    <%# <div class="">
-      <i>5% <br>d’incertitude</i>
-    </div> %>
-    <div class="white-rectangle">
-      <p id="totalVoiture"></p>
+  <div class="category-header">
+    <div class="d-flex align-items-center">
+      <div><i class="fa-solid fa-car-side me-2"></i>Voiture : </div>
+      <%# <div class="">
+        <i>5% <br>d’incertitude</i>
+      </div> %>
+      <div class="category-total">
+        <div id="totalVoiture"></div>
+      </div>
     </div>
-    <div id="hideShowVoiture">
-      <p id="voitureplusmoins"> + </p>
+    <div id="hideShowVoiture" class="toggle-icon">
+      <div id="voitureplusmoins"> + </div>
     </div>
   </div>
 </div>
@@ -17,19 +19,16 @@
 
 <!-- beginning of fields voiture -->
 <div class="voiture">
-  <div class="container">
-    <div class="intro">
-      <p>Vous avez le choix de calcul en kilomètres (en précisant votre consommation) ou en litrage complet (les coefficients
-        mentionnés sont les kg de CO2 par litre ou unité mentionnée, selon valeurs de l’ADEME)</p>
-    </div>
-    <div class="conso-voiture mt-1">
-      Calcul par nombre de litres ou nombre de kWh
+  <div class="my-2"><i class="fa-solid fa-circle-info me-2"></i>Les coefficients mentionnés sont les kg de CO2 par litre ou unité mentionnée, selon valeurs de l’ADEME.</div>
+  <div class="form-group px-4 my-3">
+    <div class="category-subtitle mt-1">
+      <strong>Option 1 :</strong> Calcul par nombre de litres ou nombre de kWh
     </div>
     <!-- field essence -->
     <div class="row align-items-center item mt-1">
       <div class=" col-4 field">
         <%= f.label :essence %>
-        <%= f.number_field :essence,  id: 'userEssence',  min: 0 %>
+        <%= f.number_field :essence,  id: 'userEssence',  min: 0, class:"form-control" %>
       </div>
       <div class="col-2 unit">
         <p>l</p>
@@ -37,7 +36,7 @@
       <div class="col-2 charge">
         <p>2.7 kg/l</p>
       </div>
-      <div class="col-4 white-rectangle" >
+      <div class="col-4 sub-category-result" >
         <p id="scoreEssence"></p>
       </div>
     </div>
@@ -45,7 +44,7 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-4 field">
         <%= f.label :gazole %>
-        <%= f.number_field :gazole,  id: 'userGazole', min: 0 %>
+        <%= f.number_field :gazole,  id: 'userGazole', min: 0, class:"form-control" %>
       </div>
       <div class="col-2 unit">
         <p>l</p>
@@ -53,7 +52,7 @@
       <div class="col-2 charge">
         <p>3.1 kg/l</p>
       </div>
-      <div class="col-4 white-rectangle" >
+      <div class="col-4 sub-category-result" >
         <p id="scoreGazole"></p>
       </div>
     </div>
@@ -61,7 +60,7 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-4 field">
         <%= f.label :gpl, "GPL" %>
-        <%= f.number_field :gpl,  id: 'userGpl', min: 0 %>
+        <%= f.number_field :gpl,  id: 'userGpl', min: 0, class:"form-control" %>
       </div>
       <div class="col-2 unit">
         <p>l</p>
@@ -69,7 +68,7 @@
       <div class="col-2 charge">
         <p>1.86 kg/l</p>
       </div>
-      <div class="col-4 white-rectangle">
+      <div class="col-4 sub-category-result">
         <p id="scoreGpl"></p>
       </div>
     </div>
@@ -77,7 +76,7 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-4 field">
         <%= f.label :e85 %>
-        <%= f.number_field :e85,  id: 'userE85', min: 0 %>
+        <%= f.number_field :e85,  id: 'userE85', min: 0, class:"form-control" %>
       </div>
       <div class="col-2 unit">
         <p>l</p>
@@ -85,7 +84,7 @@
       <div class="col-2 charge">
         <p>1.11 kg/l</p>
       </div>
-      <div class="col-4 white-rectangle">
+      <div class="col-4 sub-category-result">
         <p id="scoreE85"></p>
       </div>
     </div>
@@ -93,7 +92,7 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-4 field">
         <%= f.label :gaz, "Gaz NV" %>
-        <%= f.number_field :voitgaznat,  id: 'userGaznat', min: 0 %>
+        <%= f.number_field :voitgaznat,  id: 'userGaznat', min: 0, class:"form-control" %>
       </div>
       <div class="col-2 unit">
         <p>kg</p>
@@ -101,7 +100,7 @@
       <div class="col-2 charge">
         <p>3.22</p>
       </div>
-      <div class="col-4 white-rectangle">
+      <div class="col-4 sub-category-result">
         <p id="scoreGaz"></p>
       </div>
     </div>
@@ -109,7 +108,7 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-4 field">
         <%= f.label :electrique %>
-        <%= f.number_field :electrique,  id: 'userElectrique', min: 0 %>
+        <%= f.number_field :electrique,  id: 'userElectrique', min: 0, class:"form-control" %>
       </div>
       <div class="col-2 unit">
         <p>kWh</p>
@@ -117,126 +116,128 @@
       <div class="col-2 charge">
         <p>0.052 kg/kWh</p>
       </div>
-      <div class="col-4 white-rectangle">
+      <div class="col-4 sub-category-result">
         <p id="scoreElectrique"></p>
       </div>
     </div>
-    <div class="conso-voiture mt-1">
-      Calcul par consommation et nombre de km
-    </div>
-    <!-- field essencel  -->
-    <div class="row align-items-center item mt-1">
-      <div class=" col-2 field text-center"  >
-        <p>Essence</p>
-        <%= f.label :consommation %>
-        <%= f.number_field :lessence, id:'userEssencel', min: 0   %>
-        <%= f.label :"nombre km" %>
-        <%= f.number_field :kmessence, id:'userKmessencel', min: 0   %>
+  </div>
+  <div class="form-group px-4 my-2">
+      <div class="category-subtitle mt-1">
+        <strong>Option 2 :</strong> Calcul par consommation et nombre de km
       </div>
-      <div class="col-2 unit">
-        <p>l/100 km</p>
+      <!-- field essencel  -->
+      <div class="row align-items-center item mt-1">
+        <div class=" col-4 field"  >
+          <p>Essence</p>
+          <%= f.label :consommation %>
+          <%= f.number_field :lessence, id:'userEssencel', min: 0, class:"form-control"   %>
+          <%= f.label :"nombre km" %>
+          <%= f.number_field :kmessence, id:'userKmessencel', min: 0, class:"form-control"   %>
+        </div>
+        <div class="col-2 unit">
+          <p>l/100 km</p>
+        </div>
+        <div class="col-2 charge">
+          <p>2.7 kg</p>
+        </div>
+        <div class="col-4 sub-category-result">
+          <p id="scoreEssencel"></p>
+        </div>
       </div>
-      <div class="col-1 charge">
-        <p>2.7 kg</p>
+      <!-- field gazolel  -->
+      <div class="row align-items-center item mt-1">
+        <div class=" col-4 field">
+          <p>Gazole</p>
+          <%= f.label :consommation %>
+          <%= f.number_field :gazolel, id:'userGazolel', min: 0, class:"form-control"   %>
+          <%= f.label :"nombre km" %>
+          <%= f.number_field :kmgazolel, id:'userKmgazolel', min: 0, class:"form-control"   %>
+        </div>
+        <div class="col-2 unit">
+          <p>l/100 km</p>
+        </div>
+        <div class="col-2 charge">
+          <p>3.1 kg</p>
+        </div>
+        <div class="col-4 sub-category-result">
+          <p id="scoreGazolel"></p>
+        </div>
       </div>
-      <div class="col-4 white-rectangle">
-        <p id="scoreEssencel"></p>
+      <!-- field gpll  -->
+      <div class="row align-items-center item mt-1">
+        <div class=" col-4 field">
+          <p>GPL</p>
+          <%= f.label :consommation %>
+          <%= f.number_field :lgpl, id:'userLgpl',min: 0, class:"form-control"   %>
+          <%= f.label :"nombre km" %>
+          <%= f.number_field :kmgpl, id:'userKmgpl',min: 0, class:"form-control"   %>
+        </div>
+        <div class="col-2 unit">
+          <p>l/100 km</p>
+        </div>
+        <div class="col-2 charge">
+          <p>1.86 kg</p>
+        </div>
+        <div class="col-4 sub-category-result">
+          <p id="scoreLgpl"></p>
+        </div>
       </div>
-    </div>
-    <!-- field gazolel  -->
-    <div class="row align-items-center item mt-1">
-      <div class=" col-2 field text-center">
-        <p>Gazole</p>
-        <%= f.label :consommation %>
-        <%= f.number_field :gazolel, id:'userGazolel', min: 0   %>
-        <%= f.label :"nombre km" %>
-        <%= f.number_field :kmgazolel, id:'userKmgazolel', min: 0   %>
+      <!-- field e85  -->
+      <div class="row align-items-center item mt-1">
+        <div class=" col-4 field">
+          <p>E85</p>
+          <%= f.label :consommation %>
+          <%= f.number_field :le85, id:'userLe85', min: 0, class:"form-control"   %>
+          <%= f.label :"nombre km" %>
+          <%= f.number_field :kme85, id:'userKme85' , min: 0, class:"form-control"  %>
+        </div>
+        <div class="col-2 unit">
+          <p>l/100 km</p>
+        </div>
+        <div class="col-2 charge">
+          <p>1.11 kg</p>
+        </div>
+        <div class="col-4 sub-category-result">
+          <p id="scoreLe85"></p>
+        </div>
       </div>
-      <div class="col-2 unit">
-        <p>l/100 km</p>
+      <!-- field gaz nat kwH   -->
+      <div class="row align-items-center item mt-1">
+        <div class=" col-4 field">
+          <p>Gaz naturel</p>
+          <%= f.label :consommation %>
+          <%= f.number_field :voitgaznatkg, id:'userLGaz', min: 0, class:"form-control"   %>
+          <%= f.label :"nombre km" %>
+          <%= f.number_field :voitgaznatkwh, id:'userKGaz', min: 0, class:"form-control"   %>
+        </div>
+        <div class="col-2 unit">
+          <p>kg/100 km</p>
+        </div>
+        <div class="col-2 charge">
+          <p>3.22 kg</p>
+        </div>
+        <div class="col-4 sub-category-result">
+          <p id="scoreLgaz"></p>
+        </div>
       </div>
-      <div class="col-1 charge">
-        <p>3.1 kg</p>
+      <!-- field electrique  -->
+      <div class="row align-items-center item mt-1">
+        <div class="col-4 field">
+          <p>Electrique</p>
+          <%= f.label :consommation %>
+          <%= f.number_field :lelectrique, id:'userLelectrique', min: 0, class:"form-control"   %>
+          <%= f.label :"nombre km" %>
+          <%= f.number_field :kmelectrique, id:'userKmelectrique', min: 0, class:"form-control"  %>
+        </div>
+        <div class="col-2 unit">
+          <p>kWh/100</p>
+        </div>
+        <div class="col-2 charge">
+          <p>0.052 kg</p>
+        </div>
+        <div class="col-4 sub-category-result">
+          <p id="scoreLelectrique"></p>
+        </div>
       </div>
-      <div class="col-4 white-rectangle">
-        <p id="scoreGazolel"></p>
-      </div>
-    </div>
-    <!-- field gpll  -->
-    <div class="row align-items-center item mt-1">
-      <div class=" col-2 field text-center">
-        <p>GPL</p>
-        <%= f.label :consommation %>
-        <%= f.number_field :lgpl, id:'userLgpl',min: 0   %>
-        <%= f.label :"nombre km" %>
-        <%= f.number_field :kmgpl, id:'userKmgpl',min: 0   %>
-      </div>
-      <div class="col-2 unit">
-        <p>l/100 km</p>
-      </div>
-      <div class="col-1 charge">
-        <p>1.86 kg</p>
-      </div>
-      <div class="col-4 white-rectangle">
-        <p id="scoreLgpl"></p>
-      </div>
-    </div>
-    <!-- field e85  -->
-    <div class="row align-items-center item mt-1">
-      <div class=" col-2 field text-center">
-        <p>E85</p>
-        <%= f.label :consommation %>
-        <%= f.number_field :le85, id:'userLe85', min: 0   %>
-        <%= f.label :"nombre km" %>
-        <%= f.number_field :kme85, id:'userKme85' , min: 0  %>
-      </div>
-      <div class="col-2 unit">
-        <p>l/100 km</p>
-      </div>
-      <div class="col-1 charge">
-        <p>1.11 kg</p>
-      </div>
-      <div class="col-4 white-rectangle">
-        <p id="scoreLe85"></p>
-      </div>
-    </div>
-    <!-- field gaz nat kwH   -->
-    <div class="row align-items-center item mt-1">
-      <div class=" col-2 field text-center">
-        <p>Gaz naturel</p>
-        <%= f.label :consommation %>
-        <%= f.number_field :voitgaznatkg, id:'userLGaz', min: 0   %>
-        <%= f.label :"nombre km" %>
-        <%= f.number_field :voitgaznatkwh, id:'userKGaz', min: 0   %>
-      </div>
-      <div class="col-2 unit">
-        <p>kg/100 km</p>
-      </div>
-      <div class="col-1 charge">
-        <p>3.22 kg</p>
-      </div>
-      <div class="col-4 white-rectangle">
-        <p id="scoreLgaz"></p>
-      </div>
-    </div>
-    <!-- field electrique  -->
-    <div class="row align-items-center item mt-1">
-      <div class=" col-2 field text-center">
-        <p>Electrique</p>
-        <%= f.label :consommation %>
-        <%= f.number_field :lelectrique, id:'userLelectrique', min: 0   %>
-        <%= f.label :"nombre km" %>
-        <%= f.number_field :kmelectrique, id:'userKmelectrique', min: 0   %>
-      </div>
-      <div class="col-2 unit">
-        <p>kWh/100</p>
-      </div>
-      <div class="col-1 charge">
-        <p>0.052 kg</p>
-      </div>
-      <div class="col-4 white-rectangle">
-        <p id="scoreLelectrique"></p>
-      </div>
-    </div>
   </div>
 </div>

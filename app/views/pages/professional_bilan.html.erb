@@ -8,45 +8,49 @@
   }
 </script>
 
-
-<div class="container" data-controller="pro">
-  <h2>Empreinte métier</h2>
-  <div class="row myx-2 intro">
-    <p class="mx-2">Il faut vous procurer l’empreinte globale de votre entreprise, porter le nombre d’employés et ainsi vous aurez
-    l’empreinte de votre activité professionnelle.</p>
-  </div>
-  <div class="row">
-    <div class="col-sm list-pro text-center">
-         <li class="btn btn-gradient mt-2">Demander l’empreinte carbone à l’entreprise</li>
-         <li> <%= link_to "Chercher l'empreinte sur basecarbone.fr", "https://www.basecarbone.fr/fr/bilanenligne/bilans", class: "btn btn-gradient mt-2", target: "_blank" %></li>
-         <li> <%= link_to "Demander une étude à acces@escape-jobs.fr", "https://www.escape-jobs.fr/", class: "btn btn-gradient mt-2 mb-4", target: "_blank" %></li>
-    </div>
-  </div>
-
-  <div class="row justify-content-center">
-    <h4>Calculer empreinte métier</h4>
-  </div>
-  <div class="row mb-2">
-    <div class="col">
-      <label for="empreinte-entreprise" class="field-entreprise">Empreinte carbone (t/an)</label><br>
-      <input id="empreinte-entreprise" type="number"  />
-    </div>
-    <div class="col">
-      <label for="effectif" class="field-entreprise">Effectif de l'entreprise --</label><br>
-      <input id="effectif" type="number" />
-    </div>
-    <div class="col ">
-      <p class="field-entreprise">Empreinte métier (t/an)</p>
-      <div class="white-rectangle-pro"  >
-        <p id="totalPro"></p>
+<div class="bg-light">
+  <div class="container" data-controller="pro">
+    <h2 class="text-center my-3">Calculer mon empreinte professionnelle</h2>
+    <p>Vous pouvez calculer l'empreinte carbone de votre entreprise à partir de son empreinte carbone totale et de ses effectifs.</p>
+    <div class="row">
+      <div class="col-12 col-md-8">
+        <div class="row form-group">
+          <div class="col-12 col-md-6">
+            <label for="empreinte-entreprise" class="field-entreprise">Empreinte carbone (t/an) :</label><br>
+            <input id="empreinte-entreprise" type="number" class="form-control" />
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="effectif" class="field-entreprise">Effectifs :</label><br>
+            <input id="effectif" type="number" class="form-control"/>
+          </div>
+        </div>
+      </div>
+     <div class="col-12 col-md-4">
+      <div class="footprint-result-wrapper">
+        <div class="field-entreprise"><i class="fa-solid fa-circle-check me-2"></i>Mon empreinte pro :</div>
+        <div class="d-flex justify-content-center fw-bold"  >
+          <div id="totalPro">--</div>
+        </div>
+      </div>
       </div>
     </div>
   </div>
-  <div class="row myx-2 intro">
-    <p class="mx-2">Nota : les valeurs déclarées par les entreprises dans la basecarbone de l’ADEME sont souvent disparates, il faut
-    chercher le scope3 dans l’onglet « tableau de déclaration ». C’est obligatoire pour les entreprises de plus de 500
-    personnes (mais sans contrôle ou sanction), il faut insister auprès de l’employeur.</p>
-  </div>
-  <div class="bottom">
-  </div>
 </div>
+
+<div class="container">
+  <h5><i class="fa-solid fa-circle-info me-2"></i>Où trouver l'empreinte carbone de mon entreprise</h4>
+  <ul>
+    <li class="mb-4">
+      <div>Demander l’empreinte carbone à l’entreprise</div>
+      <small>C’est obligatoire pour les entreprises de plus de 500 personnes (mais sans contrôle ou sanction), il faut insister auprès de l’employeur.</small>
+    </li>
+    <li class="mb-4">
+      <div>Chercher l'empreinte sur <%= link_to "Basecarbone.fr de l'ADEME", "https://www.basecarbone.fr/fr/bilanenligne/bilans", target: "_blank" %></div>
+      <small>Les valeurs déclarées par les entreprises dans la basecarbone de l’ADEME sont souvent disparates, il faut
+      chercher le scope3 dans l’onglet « tableau de déclaration ».</small>
+    </li>
+    <li class="mb-4"> <%= link_to "Demander une étude à acces@escape-jobs.fr", "https://www.escape-jobs.fr/", target: "_blank" %></li>
+  </ul>
+
+</div>
+
