@@ -1,31 +1,15 @@
 <!-- main div containing all cards and fields -->
-<div class="container">
-  <%= simple_form_for(@footprint) do |f| %>
-    <div class="mb-2 text-center">
-      <h3>Mettre à jour l'empreinte</h3>
-      <%= f.label :titre, class:"titre" %>
-      <%= f.text_field :title, maxlength: 20, class:"field_titre" %>
-      <%= f.label :personnes, class:"titre"%>
-      <%= f.number_field :person,  class:"field_titre", id:'userPerson'  %>
-    </div>
-    <div class="text-center titre mb-2 d-none">
-    Ceci est le <%=@footprint_num%>ème calcul du carbomètre
-    </div>
-    <div class="intro">
-      <p>Vous allez détailler vos sources de gaz à effet de serre (majoritairement gaz carbonique qui nous fait parler carbone en
-        tonnes de CO2 équivalent) en précisant combien de personnes dans votre calcul (un titre pour retrouver votre calcul ou
-        projet, par exemple prévision 2021, prévision 2022)</p>
-        <p>L’empreinte individuelle intégrera le contenu carbone des services publics, de l’ordre de 100 millions de tonnes d’équivalent CO2, réparti sur tous les français à raison de 1500kg/an/p.
-On parle de CO2 équivalent pour intégrer que les gaz à effet de serre (GES) sont du CO2, du méthane, de l’oxyde nitreux et des gaz fluorés, 80% du réchauffement climatique provenant du CO2.</p>
-    </div>
-    <%= render partial: "form", locals: {f: f} %>
-    <div class="intro">
-      <p>Enfin, nous devons comptabiliser les émissions de gaz à effet de serre dont la France est
-        responsable de façon collective, par ses services publics, qu’elle doit également s’engager à réduire
-        pour satisfaire la neutralité carbone. L’ADEME l’évalue en 2020 à <b>1500 kg</b> par personne.</p>
-    </div>
-    <div class="row justify-content-center mt-2">
-      <%= f.submit :"Valider", data: {confirm: "Êtes-vous sûr de vouloir modifier cette empreinte ?"}, class:"btn btn-gradient mb-5" %>
-    </div>
-  <% end %>
+<div class="bg-light">
+  <div class="container">
+    <h2 class="my-4 text-center">Modifier mon empreinte familiale annuelle</h2>
+
+    <%= simple_form_for(@footprint) do |f| %>
+      
+      <%= render partial: "form", locals: {f: f} %>
+      
+      <div class="d-flex justify-content-center mt-3">
+        <%= f.submit :"Valider", data: {confirm: "Êtes-vous sûr de vouloir modifier cette empreinte ?"}, class:"btn btn-flat" %>
+      </div>
+    <% end %>
+  </div>
 </div>

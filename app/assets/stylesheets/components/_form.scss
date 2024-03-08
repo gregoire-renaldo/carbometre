@@ -1,19 +1,4 @@
-.container {
-  background-color: #596b52;
-
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: whitesmoke;
-}
-
 .titre {
-  color: whitesmoke;
   font-weight: bold;
 }
 
@@ -23,62 +8,49 @@ h6 {
   box-shadow: 0 1px 2px rgba(90, 90, 90, 0.2);
 }
 
-.total-mobile {
-  width: 95%;
-  height: 50px;
+.category-header {
   display: flex;
-  justify-content: space-around;
-  margin-left: 10px;
-  background-color: #618669;
+  align-items: center;
+  background-color: #737373;
   border-radius: 5px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  justify-content: space-between;
+  color: white !important;
+  padding: 12px;
 }
 
-.total-mobile p {
-  text-align: center;
-  color: whitesmoke;
-  margin-top: 8px;
+.category-total {
+  font-weight: bold;
+  margin-left: 8px;
 }
 
 .item {
-  background-color: #96c58e;
-  border-radius: 5px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  display: flex;
-  justify-content: space-around;
+  background-color: white;
+  margin-bottom: 16px;
 }
 
 input[type="number"] {
-  width: 80px;
-  border-radius: 5px;
-  border: none;
-}
-
-.white-rectangle {
-  background-color: white;
-  width: 70px;
-  height: 30px;
-  z-index: 1;
-  border: #96c58e;
-  text-align: justify;
+  width: 100px;
   border-radius: 5px;
 }
 
-.white-rectangle p {
+.sub-category-result {
+  font-weight: bold;
+}
+
+.sub-category-result p {
   color: black;
 }
 
 .field {
   margin-top: 8px;
   margin-bottom: 8px;
-  flex: 0 0 100px;
+  // flex: 0 0 100px;
 }
 
-.conso-voiture {
-  background-color: #618669;
-  border-radius: 5px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  text-align: center;
+.category-subtitle {
+  font-weight: 400;
+  margin: 8px 0;
+  text-transform: uppercase;
 }
 
 .charge p {
@@ -118,4 +90,26 @@ input[type="number"] {
 }
 .divers {
   display: none;
+}
+
+.form-group {
+  border: 1px solid $green;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.form-control {
+  min-width: 100px;
+}
+
+.footprint-result-wrapper {
+  height: 100%;
+  background-color: $green;
+  padding: 16px;
+  border-radius: 12px;
+  color: white !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

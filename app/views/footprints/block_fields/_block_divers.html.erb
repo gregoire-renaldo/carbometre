@@ -1,26 +1,28 @@
 <!-- begining Internet -->
 <div class="row mt-2 sticky-top">
-  <div class="total-mobile align-items-center">
-    <p>Internet</p>
-    <%# <div class="">
-      <i>50% <br>d’incertitude</i>
-    </div> %>
-    <div class="white-rectangle">
-      <p id="totalDivers"></p>
+  <div class="category-header">
+    <div class="d-flex align-items-center">
+      <div><i class="fa-solid fa-mobile-screen me-2"></i>Internet : </div>
+      <%# <div class="">
+        <i>50% <br>d’incertitude</i>
+      </div> %>
+      <div class="category-total">
+        <div id="totalDivers"></div>
+      </div>
     </div>
-    <div id="hideShowDivers">
-      <p id="diversplusmoins"> + </p>
+    <div id="hideShowDivers" class="toggle-icon">
+      <div id="diversplusmoins"> + </div>
     </div>
   </div>
 </div>
 <!-- fields for divers -->
 <div class="divers">
-  <div class="container">
+  <div class="p-3">
     <!-- field streaming -->
     <div class="row align-items-center item mt-1">
       <div class=" col-4 field">
-        <%= f.label :streaming, "Streaming(Youtube, Netflix...)" %>
-        <%= f.number_field :streaming, id: 'userStreaming', min: 0 %>
+        <%= f.label :streaming, "Streaming (Youtube, Netflix...)" %>
+        <%= f.number_field :streaming, id: 'userStreaming', min: 0, class:"form-control" %>
       </div>
       <div class="col-2 unit">
         <p>h</p>
@@ -28,7 +30,7 @@
       <div class="col-2 charge">
         <p>0.25 kg/h</p>
       </div>
-      <div class="col-4 white-rectangle">
+      <div class="col-4 sub-category-result">
         <p id="scoreStreaming"></p>
       </div>
     </div>
@@ -36,7 +38,7 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-4 field">
         <%= f.label :"tweet" %>
-        <%= f.number_field :tweet, id: 'userTweet', min: 0 %>
+        <%= f.number_field :tweet, id: 'userTweet', min: 0, class:"form-control" %>
       </div>
       <div class="col-2 unit">
         <p>unité</p>
@@ -44,7 +46,7 @@
       <div class="col-2 charge">
         <p>0.00002</p>
       </div>
-      <div class="col-4 white-rectangle">
+      <div class="col-4 sub-category-result">
         <p id="scoreTweet"></p>
       </div>
     </div>
@@ -52,7 +54,7 @@
     <div class="row align-items-center item mt-1">
       <div class=" col-4 field">
         <%= f.label :"mail avec pj" %>
-        <%= f.number_field :mail, id: 'userMail', min: 0 %>
+        <%= f.number_field :mail, id: 'userMail', min: 0, class:"form-control" %>
       </div>
       <div class="col-2 unit">
         <p>unité</p>
@@ -60,7 +62,7 @@
       <div class="col-2 charge">
         <p>0.035</p>
       </div>
-      <div class="col-4 white-rectangle">
+      <div class="col-4 sub-category-result">
         <p id="scoreMail"></p>
       </div>
     </div>

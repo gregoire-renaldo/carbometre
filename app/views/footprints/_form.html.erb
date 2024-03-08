@@ -1,24 +1,28 @@
 <div data-controller="calculate-footprint">
   <!-- total block -->
-  <div class="row sticky-top">
-    <div class="col total-mobile align-items-center mb-1">
-      <p>Total</p>
-      <div class="white-rectangle" >
-        <p id="total"></p>
-      </div>
-      <div class="button-ddl">
-      </div>
-    </div>
-    <div class=" col total-mobile align-items-center ">
-      <p>Total par personne</p>
-      <div class="white-rectangle">
-        <p id="total-personne"></p>
-      </div>
-      <div class="button-ddl">
+  <div class="row sticky-top mb-2">
+    <div class="footprint-result-wrapper">
+      <div>
+        <div class="d-flex fw-bold">
+          <div class="me-2"><i class="fa-solid fa-circle-check me-2"></i>Total : </div>
+          <div id="total"></div>
+          <div class="ms-2">kg/an</div>
+        </div>
+        <div class="d-flex ">
+          <div class="me-2"><i class="fa-solid fa-circle-check me-2"></i>Total par personne : </div>
+          <div id="total-personne"></div>
+          <div class="ms-2">kg/an</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <!-- end of total block -->
+
+  <div class="mb-2 d-flex align-items-center" >
+    <%= f.label :personnes, "Nombre de personnes :" %>
+    <%= f.number_field :person, :value => 1, class:"field_titre form-control ms-2", id:'userPerson'  %>
+  </div>
 
   <!-- block for total voiture -->
   <%=render "footprints/block_fields/block_voiture", f: f %>
@@ -36,4 +40,3 @@
   <%=render "footprints/block_fields/block_divers", f: f %>
   <!-- block for autres ) -->
   <%=render "footprints/block_fields/block_autres", f: f %>
-</div>

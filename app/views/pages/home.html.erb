@@ -1,36 +1,84 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path 'banner.avif' %>) ;">
+  <div class="container">
+    <h1>Freinons le chaos climatique !</h1>
+    <p>Calculez votre empreinte carbone en quelques clics</p>
+    <%= link_to "#selectionner-une-empreinte", class: "btn btn-flat" do %>
+      Démarrer
+    <% end %>
+  </div>
+</div>
 
-<div class="container full-height text-center" >
-  <div class="row ">
-    <div class="col  text-center">
-      <h2 class="mt-2">Carbomètre</h2>
-      <div class="intro">
-        <p>Bienvenue à freiner le chaos climatique !</br>
-        Ce calculateur accompagne le mouvement
-        pour un <a style="color:whitesmoke; text-decoration: underline" target="blank" href="https://comptecarbone.cc/">www.comptecarbone.cc</a> et ne
-        collecte pas de données ni ne transmet
-        aucune information à quiconque.</br>
-        
-        Spécial enfants : demandez à un parent de
-        rassembler les factures de consommation
-        courante et répondre à 20 questions en
-        famille : vous pourrez suivre de mois en mois
-        les améliorations. Racontez-nous comment ça
-        se passe et le meilleur gagne une récompense
-        chaque mois sur <a style="color:whitesmoke; text-decoration: underline" target="blank" href="https://www.comptecarbone.org/jouer">www.comptecarbone.org/jouer</a></br>
-        </p>
-      </div>
-      <div class="mt-3">
-        <%= link_to "Nouvelle empreinte familiale", new_footprint_path, class: "btn btn-gradient" %>
-      </div>
-      <div class="mt-3">
-        <%= link_to "Nouvelle empreinte professionnelle",  pages_professional_bilan_path, class: "btn btn-gradient" %>
-      </div>
-      <div class="mt-3 mb-3 d-none">
-        <%= link_to "Mes empreintes",  footprints_path, class: "btn btn-gradient" %>
-      </div>
-      <div>
-    <a  style="color:whitesmoke; text-decoration:underlined"href="https://comptecarbone.cc/wp-content/uploads/2024/02/carbonempreinte5.xls">La feuille de calcul est téléchargeable ici </a>
-      </div>
+<div class="container" >
+
+  <h3 class="mb-3" id="selectionner-une-empreinte">Quelle empreinte voulez-vous calculer ?</h3>
+
+  <div class="d-flex justify-content-center">
+    <div class="cards">
+    
+      <%= link_to empreinte_personnelle_path do %>
+        <div class="card-trip">
+          <%= image_tag "perso.avif" %>
+          <div class="card-trip-infos">
+            <div>
+              <h2>Empreinte personnelle <i class="fa-solid fa-arrow-right ms-2"></i></h2>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+      <%= link_to empreinte_professionnelle_path do %>
+        <div class="card-trip">
+          <%= image_tag "pro.avif" %>
+          <div class="card-trip-infos">
+            <div>
+              <h2>Empreinte professionnelle <i class="fa-solid fa-arrow-right ms-2"></i></h2>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
+</div>
+
+<div class="bg-light">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-12 col-md-10">
+        <h4 class="h4">Notre projet</h4>
+        <p> Ce calculateur accompagne le mouvement pour un <a target="blank" href="https://comptecarbone.cc/" class="fw-bold">www.comptecarbone.cc</a>, un mécanisme de justice climatique & sociale pour stopper doucement les gaz à effet de serre.</p>
+        <p> Il ne collecte pas de données et ne transmet
+        aucune information à quiconque.</p>
+      </div>
+      <div class="col-12 col-md-2 d-flex justify-content-center align-items-center">
+        <%= image_tag "compte_carbone.png", height: 40 %>
+      </div>
+    </div>
+    <%= link_to "https://comptecarbone.cc/wp-content/uploads/2024/02/carbonempreinte5.xls", class: "d-flex green mt-3" do %>
+      <i class="fa-solid fa-download me-2"></i>Télécharger la feuille de calcul
+    <% end %>
+  </div>
+</div>
+
+<div class="container ">
+            
+  <h4 class="h4 mb-3">Spécial enfants</h4>
+    <div class="row d-flex align-items-center">
+      <div class="col-12 col-md-10">
+        <div>Demandez à un parent de rassembler les factures de consommation courante et répondre à 20 questions en famille : vous pourrez suivre de mois en mois les améliorations. </div>
+      </div>
+      <div class="col-12 col-md-2 d-flex justify-content-center align-items-center py-2">
+        <%= image_tag "family.svg", height: 60 %>
+      </div>
+    </div>
+
+   <div class="row d-flex align-items-center">
+      <div class="col-12 col-md-10">
+        <div>Racontez-nous comment ça se passe et le meilleur gagnez une récompense chaque mois sur <a class="" target="blank" href="https://www.comptecarbone.org/jouer">www.comptecarbone.org/jouer</a></div>
+      </div>
+      <div class="col-12 col-md-2 d-flex justify-content-center align-items-center py-2">
+        <%= image_tag "gift.svg", height: 60 %>
+      </div>
+    </div>
+
 </div>

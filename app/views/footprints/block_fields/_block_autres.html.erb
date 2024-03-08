@@ -1,51 +1,53 @@
 <div class="row mt-2 sticky-top">
-  <div class="total-mobile align-items-center">
-    <p>Autres</p>
-    <%# <div class="">
-      <i>50% <br>d’incertitude</i>
-    </div> %>
-    <div class="white-rectangle">
-      <p id="totalValeur"></p>
+  <div class="category-header">
+    <div class="d-flex align-items-center">
+      <div><i class="fa-solid fa-circle-plus me-2"></i>Autres : </div>
+      <%# <div class="">
+        <i>50% <br>d’incertitude</i>
+      </div> %>
+      <div class="category-total">
+        <div id="totalValeur"></div>
+      </div>
     </div>
-    <div id="hideShowValeur">
-      <p id="valeurplusmoins"> + </p>
+    <div id="hideShowValeur" class="toggle-icon">
+      <div id="valeurplusmoins"> + </div>
     </div>
   </div>
 </div>
 <div class="valeur">
   <!-- change class for the good category and do css and js -->
-  <div class="container">
+  <div class="p-3">
     <div class="intro">
-      <p>Nous proposons ici d’ajouter des kg de CO2 tels que collectés par l’application Karbon ou par l’usage d’autres produits</p>
+      <div>Nous proposons ici d’ajouter des kg de CO2 tels que collectés par l’application Karbon ou par l’usage d’autres produits :</div>
     </div>
     <div class="row align-items-center item mt-1">
       <div class=" col-4 field">
         <%= f.label :"valeur 1" %>
-        <%= f.number_field :autre, id: 'userValeur1' %>
+        <%= f.number_field :autre, id: 'userValeur1', class:"form-control" %>
       </div>
       <div class="col-2 unit">
-        <p>kg</p>
+        <div>kg</div>
       </div>
       <div class="col-2 charge">
-        <p></p>
+        <div></div>
       </div>
-      <div class="col-4 white-rectangle">
-        <p id="scoreValeur1"></p>
+      <div class="col-4 sub-category-result">
+        <div id="scoreValeur1"></div>
       </div>
     </div>
     <div class="row align-items-center item mt-1">
       <div class=" col-4 field">
         <%= f.label :"valeur 2" %>
-        <%= f.number_field :valeur2, id: 'userValeur2' %>
+        <%= f.number_field :valeur2, id: 'userValeur2', class:"form-control" %>
       </div>
       <div class="col-2 unit">
-        <p>kg</p>
+        <div>kg</div>
       </div>
       <div class="col-2 charge">
-        <p></p>
+        <div></div>
       </div>
-      <div class="col-4 white-rectangle">
-        <p id="scoreValeur2"></p>
+      <div class="col-4 sub-category-result">
+        <div id="scoreValeur2"></div>
       </div>
     </div>
   </div>

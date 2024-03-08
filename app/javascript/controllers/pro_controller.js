@@ -20,7 +20,7 @@ export default class extends Controller {
       let one = parseFloat(userEmpreinte.value) || 0;
       let two = parseFloat(userEffectif.value) || 1;
       let result = (one / two).toFixed(2)
-      totalPro.innerHTML = result
+      totalPro.innerHTML = `${result} t/an`
     }
 
     userEffectif.addEventListener("input", divide2);
@@ -28,7 +28,7 @@ export default class extends Controller {
       let one = parseFloat(userEmpreinte.value) || 0;
       let two = parseFloat(userEffectif.value) || 1;
       let result = (one / two).toFixed(2)
-      totalPro.innerHTML = result
+      totalPro.innerHTML = `${result} t/an`
     }
 
 
