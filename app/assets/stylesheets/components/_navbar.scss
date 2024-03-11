@@ -30,3 +30,8 @@
 .navbar-toggler {
   border: none !important
 }
+
+.navbar-toggler:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
