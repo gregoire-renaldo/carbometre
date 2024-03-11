@@ -85,34 +85,34 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_05_114708) do
     t.float "jeanmonde"
     t.float "jeanfr"
     t.float "appartemnentneuf"
-    t.float "voitgaznatkg", default: 0.0
-    t.float "voitgaznatkwh", default: 0.0
-    t.float "eauusee", default: 0.0
-    t.float "dechets", default: 0.0
-    t.float "agneau", default: 0.0
-    t.float "truite", default: 0.0
-    t.float "crevette", default: 0.0
-    t.float "poissonpecheeuro", default: 0.0
-    t.float "poissonpechetropico", default: 0.0
-    t.float "pomme", default: 0.0
-    t.float "voitureelecmoins50", default: 0.0
-    t.float "voitureelecplus50", default: 0.0
-    t.float "trotinette", default: 0.0
-    t.float "chemisecoton", default: 0.0
-    t.float "chemiseviscose", default: 0.0
-    t.float "tshirtcoton", default: 0.0
-    t.float "tshirtpoly", default: 0.0
-    t.float "polaire", default: 0.0
-    t.float "pullacrylique", default: 0.0
-    t.float "pullenlaine", default: 0.0
-    t.float "sweat", default: 0.0
-    t.float "polo", default: 0.0
-    t.float "robecoton", default: 0.0
-    t.float "robepolyester", default: 0.0
-    t.float "chaussuretissu", default: 0.0
-    t.float "chaussuresport", default: 0.0
-    t.float "anorak", default: 0.0
-    t.float "voitgaznat", default: 0.0
+    t.float "voitgaznatkg"
+    t.float "voitgaznatkwh"
+    t.float "eauusee"
+    t.float "dechets"
+    t.float "agneau"
+    t.float "truite"
+    t.float "crevette"
+    t.float "poissonpecheeuro"
+    t.float "poissonpechetropico"
+    t.float "pomme"
+    t.float "voitureelecmoins50"
+    t.float "voitureelecplus50"
+    t.float "trotinette"
+    t.float "chemisecoton"
+    t.float "chemiseviscose"
+    t.float "tshirtcoton"
+    t.float "tshirtpoly"
+    t.float "polaire"
+    t.float "pullacrylique"
+    t.float "pullenlaine"
+    t.float "sweat"
+    t.float "polo"
+    t.float "robecoton"
+    t.float "robepolyester"
+    t.float "chaussuretissu"
+    t.float "chaussuresport"
+    t.float "anorak"
+    t.float "voitgaznat"
     t.index ["user_id"], name: "index_footprints_on_user_id"
   end
 
