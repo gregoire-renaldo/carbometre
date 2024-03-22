@@ -17,137 +17,152 @@
 </div>
 <!-- fields for autres transports -->
 <div class="transport">
-  <div class="p-3">
+ 
     <!-- field tgv -->
-    <div class="row align-items-center item mt-1">
-      <div class=" col-4 field">
-        <%= f.label :tgv, "TGV" %>
-        <%= f.number_field :tgv, id: 'userTgv', min: 0, class:"form-control"  %>
-      </div>
-      <div class="col-2 unit">
-        <div>km</div>
-      </div>
-      <div class="col-2 charge">
-        <div>0.00293 kg/km</div>
-      </div>
-      <div class="col-4 sub-category-result">
-        <div id="scoreTgv"></div>
+    <div class="item">
+      <%= f.label :tgv, "TGV" %>
+      <div class="row">
+        <div class="col-6 col-md-5 field">
+          <div class="input-group">
+            <%= f.number_field :tgv, id: 'userTgv', min: 0, class:"form-control"%>
+            <div class="input-group-text">km</div>
+          </div>
+        </div>
+         <div class="col-6 col-md-2 charge">
+          <div>0.00293 kg/km</div>
+        </div>
+        <div class="col-12 col-md-5 sub-category-result">
+          <div id="scoreTgv"></div>
+        </div>
       </div>
     </div>
     <!-- field ter electrique -->
-    <div class="row align-items-center item mt-1">
-      <div class=" col-4 field">
-        <%= f.label :terelectrique, "TER" %>
-        <%= f.number_field :terelectrique, id: 'userTerelec', min: 0, class:"form-control"  %>
-      </div>
-      <div class="col-2 unit">
-        <div>km</div>
-      </div>
-      <div class="col-2 charge">
-        <div>0.0277 kg/km</div>
-      </div>
-      <div class="col-4 sub-category-result">
-        <div id="scoreTerelec"></div>
+    <div class="item">
+      <%= f.label :terelectrique, "TER" %>
+      <div class="row">
+        <div class="col-6 col-md-5 field">
+          <div class="input-group">
+            <%= f.number_field :terelectrique, id: 'userTerelec', min: 0, class:"form-control"  %>
+            <div class="input-group-text">km</div>
+          </div>
+        </div>
+         <div class="col-6 col-md-2 charge">
+          <div>0.0277 kg/km</div>
+        </div>
+        <div class="col-12 col-md-4 sub-category-result">
+          <div id="scoreTerelec"></div>
+        </div>
       </div>
     </div>
     <!-- field ter thermique -->
-    <!-- <div class="row align-items-center item mt-1">
-          <div class=" col-4 field">
+    <!-- <div class="row item">
+          <div class="col-6 col-md-5 field">
             <%= f.label :terthermique, "TER thermique" %>
             <%= f.number_field :terthermique, id: 'userTertherm' %>
           </div>
           <div class="col-2 unit">
             <p>km</p>
           </div>
-          <div class="col-2 charge">
+           <div class="col-6 col-md-2 charge">
             <p>0.0798 kg/km</p>
           </div>
-          <div class="col-4 sub-category-result">
+          <div class="col-12 col-md-5 sub-category-result">
             <p id="scoreTertherm"></p>
           </div>
         </div> -->
     <!-- field intercite -->
-    <div class="row align-items-center item mt-1">
-      <div class=" col-4 field">
-        <%= f.label :intercite, "Train intercité"%>
-        <%= f.number_field :intercite, id: 'userIntercite', min: 0, class:"form-control"  %>
-      </div>
-      <div class="col-2 unit">
-        <div>km</div>
-      </div>
-      <div class="col-2 charge">
-        <div>0.00898 kg/km</div>
-      </div>
-      <div class="col-4 sub-category-result">
-        <div id="scoreIntercite"></div>
+    <div class="item">
+      <%= f.label :intercite, "Train intercité"%>
+      <div class="row">
+        <div class="col-6 col-md-5 field">
+         <div class="input-group">
+           <%= f.number_field :intercite, id: 'userIntercite', min: 0, class:"form-control"  %>
+            <div class="input-group-text">km</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-2 charge">
+          <div>0.00898 kg/km</div>
+        </div>
+        <div class="col-12 col-md-5 sub-category-result">
+          <div id="scoreIntercite"></div>
+        </div>
       </div>
     </div>
     <!-- field metro -->
-    <div class="row align-items-center item mt-1">
-      <div class=" col-4 field">
-        <%= f.label :metro, "Metro / RER"%>
-        <%= f.number_field :metro, id: 'userMetro', min: 0, class:"form-control"  %>
-      </div>
-      <div class="col-2 unit">
-        <div>km</div>
-      </div>
-      <div class="col-2 charge">
-        <div>0.00978 kg/km</div>
-      </div>
-      <div class="col-4 sub-category-result">
-        <div id="scoreMetro"></div>
+    <div class="item">
+      <%= f.label :metro, "Metro / RER"%>
+      <div class="row">
+        <div class="col-6 col-md-5 field">
+          <div class="input-group">
+            <%= f.number_field :metro, id: 'userMetro', min: 0, class:"form-control"  %>
+            <div class="input-group-text">km</div>
+          </div>
+        </div>
+         <div class="col-6 col-md-2 charge">
+          <div>0.00978 kg/km</div>
+        </div>
+        <div class="col-12 col-md-5 sub-category-result">
+          <div id="scoreMetro"></div>
+        </div>
       </div>
     </div>
+    
     <!-- field bus -->
-    <div class="row align-items-center item mt-1">
-      <div class=" col-4 field">
-        <%= f.label :"bus"%>
-        <%= f.number_field :bus, id: 'userBus', min: 0, class:"form-control"  %>
-      </div>
-      <div class="col-2 unit">
-        <div>km</div>
-      </div>
-      <div class="col-2 charge">
-        <div>0.0904 kg/km</div>
-      </div>
-      <div class="col-4 sub-category-result">
-        <div id="scoreBus"></div>
+    <div class="item">
+      <%= f.label :"bus"%>
+      <div class="row">
+        <div class="col-6 col-md-5 field">
+          <div class="input-group">
+            <%= f.number_field :bus, id: 'userBus', min: 0, class:"form-control"  %>
+            <div class="input-group-text">km</div>
+          </div>
+        </div>
+         <div class="col-6 col-md-2 charge">
+          <div>0.0904 kg/km</div>
+        </div>
+        <div class="col-12 col-md-5 sub-category-result">
+          <div id="scoreBus"></div>
+        </div>
       </div>
     </div>
+
     <!-- field avion -->
-    <div class="row align-items-center item mt-1">
-      <div class=" col-4 field">
-        <%= f.label :avion, "Avion long courrier"%>
-        <%= f.number_field :avion, id: 'userAvion', min: 0, class:"form-control"  %>
-      </div>
-      <div class="col-2 unit">
-        <div>km</div>
-      </div>
-      <div class="col-2 charge">
-        <div>0.178 kg/km</div>
-      </div>
-      <div class="col-4 sub-category-result">
-        <div id="scoreAvion"></div>
+    <div class="item">
+      <%= f.label :avion, "Avion long courrier"%>   
+      <div class="row">
+        <div class="col-6 col-md-5 field">
+          <div class="input-group">
+            <%= f.number_field :avion, id: 'userAvion', min: 0, class:"form-control"  %>
+           <div class="input-group-text">km</div>
+          </div>
+        </div>
+         <div class="col-6 col-md-2 charge">
+          <div>0.178 kg/km</div>
+        </div>
+        <div class="col-12 col-md-5 sub-category-result">
+          <div id="scoreAvion"></div>
+        </div>
       </div>
     </div>
     
     <!-- field avion regional-->
-    <div class="row align-items-center item mt-1">
-      <div class=" col-4 field">
-        <%= f.label :avionregional, "Avion court courrier"%>
-        <%= f.number_field :avionregional, id: 'userAvionregional', min: 0, class:"form-control"  %>
-      </div>
-      <div class="col-2 unit">
-        <div>km</div>
-      </div>
-      <div class="col-2 charge">
-        <div>0.258 kg/km</div>
-      </div>
-      <div class="col-4 sub-category-result">
-        <div id="scoreAvionregional"></div>
+    <div class="item">
+      <%= f.label :avionregional, "Avion court courrier"%>
+      <div class="row">
+        <div class="col-6 col-md-5 field">
+          <div class="input-group">
+            <%= f.number_field :avionregional, id: 'userAvionregional', min: 0, class:"form-control"  %>
+           <div class="input-group-text">km</div>
+          </div>
+        </div>
+         <div class="col-6 col-md-2 charge">
+          <div>0.258 kg/km</div>
+        </div>
+        <div class="col-12 col-md-5 sub-category-result">
+          <div id="scoreAvionregional"></div>
+        </div>
       </div>
     </div>
     <small><i class="fa-solid fa-circle-info me-2"></i> Ces évaluations intègrent les trainées d’avion.</small>
-  </div>
   <!-- fin de liste transport -->
 </div>

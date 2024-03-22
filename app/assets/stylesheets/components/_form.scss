@@ -25,7 +25,11 @@
 
 .item {
   background-color: white;
-  margin-bottom: 16px;
+  margin: 12px auto;
+  padding: 12px;
+  .row {
+    align-items: center;
+  }
 }
 
 input[type="number"] {
@@ -41,10 +45,10 @@ input[type="number"] {
   color: black;
 }
 
-.field {
-  margin-top: 8px;
-  margin-bottom: 8px;
-  // flex: 0 0 100px;
+@media(min-width: 786px) {
+  .field {
+    min-width: 200px !important;
+  }
 }
 
 .category-subtitle {
